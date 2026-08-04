@@ -134,7 +134,7 @@
 | 050 | 使用教程 | 用 AI 处理 Excel：公式和数据清洗 | ai处理excel | ai写excel公式；excel ai怎么用；ai整理表格数据 | 信息型 | 中 | ai-excel-tutorial | C7 办公提效 | 5 |
 | 051 | 使用教程 | 用 AI 写邮件：三种场景可套模板 | ai写邮件 | ai写邮件模板；商务邮件ai生成；ai写英文邮件 | 信息型 | 低 | ai-email-writing-guide | C7 办公提效 | 7 |
 | 052 | 使用教程 | AI 提示词怎么写？四段结构和万能模板 | ai提示词怎么写 | 提示词技巧；prompt怎么写；ai指令怎么下 | 信息型 | 中 | how-to-write-ai-prompts | **C11 支柱页** | 1 |
-| 053 | 使用教程 | 提示词万能公式：一句话变成好指令 | 提示词模板公式 | 万能提示词模板；prompt公式；提示词框架 | 信息型 | 低 | ai-prompt-formula-template | C11 提示词 | 2 |
+| 053 | 使用教程 | 提示词模板公式：一句话改写成好指令 | 提示词模板公式 | 万能提示词模板；prompt公式；提示词框架 | 信息型 | 低 | ai-prompt-formula-template | C11 提示词 | 2 |
 | 054 | 使用教程 | AI 味太重怎么改？六个去味技巧 | ai味太重怎么改 | ai写的文章怎么改；去除ai痕迹；让ai说人话 | 信息型 | 低 | remove-ai-tone-writing | C11 提示词 | 2 |
 | 055 | 使用教程 | AI 胡说八道怎么办？五个防错习惯 | ai胡说八道怎么办 | ai编造答案；ai不准确怎么办；怎么验证ai回答 | 信息型 | 低 | avoid-ai-hallucination-tips | C11 提示词 | 4 |
 | 056 | 使用教程 | 怎么给 AI 投喂资料？文档问答实操 | 怎么给ai投喂资料 | ai上传文件怎么用；ai怎么读pdf；给ai喂资料 | 信息型 | 低 | feed-documents-to-ai | C11 提示词 | 6 |
