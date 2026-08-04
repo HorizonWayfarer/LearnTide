@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 写小红书文案：从选题到成稿的完整流程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-xiaohongshu-copywriting.html">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="description" content="用 AI 写小红书文案，写出来一眼就假？问题出在流程。本文给出选题、标题、正文分三步走的做法，附 3 段可直接复制的提示词，以及成稿前必须人工改的四个地方。">
+<meta property="og:title" content="用 AI 写小红书文案：从选题到成稿的完整流程">
+<meta property="og:description" content="用 AI 写小红书文案，写出来一眼就假？问题出在流程。本文给出选题、标题、正文分三步走的做法，附 3 段可直接复制的提示词，以及成稿前必须人工改的四个地方。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-xiaohongshu-copywriting.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 写小红书文案：从选题到成稿的完整流程">
+<meta name="twitter:description" content="用 AI 写小红书文案，写出来一眼就假？问题出在流程。本文给出选题、标题、正文分三步走的做法，附 3 段可直接复制的提示词，以及成稿前必须人工改的四个地方。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 写小红书文案：从选题到成稿",
+  "description":"用 AI 写小红书文案，写出来一眼就假？问题出在流程。本文给出选题、标题、正文分三步走的做法，附 3 段可直接复制的提示词，以及成稿前必须人工改的四个地方。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-04","dateModified":"2026-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-xiaohongshu-copywriting.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 写小红书文案：从选题到成稿"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand">Learntide<small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 写小红书文案：从选题到成稿</span>
+  </nav>
+  <h1>用 AI 写小红书文案：从选题到成稿</h1>
+  <div class="article-meta">使用教程 · 2026-08-04</div>
+  <p class="lede">一次让 AI 写完选题、标题、正文，三件都会平庸。拆成三步分开跑，中间由你筛选，才写得出人味。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">为什么 AI 写的小红书文案一眼假</a></li>
+      <li><a href="#sec-2">第一步：用 AI 写小红书文案前，先定选题和人群</a></li>
+      <li><a href="#sec-3">第二步：标题单独生成，一次要 10 条</a></li>
+      <li><a href="#sec-4">第三步：正文套结构，痛点、转折、干货、互动</a></li>
+      <li><a href="#sec-5">最后 5 分钟人工改什么</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">为什么 AI 写的小红书文案一眼假</h2>
+
+<p>用 AI 写小红书文案最常见的失败，不是写不出来，是写出来一眼就假。三个特征最扎眼：书面语太重，「综上所述」这种词小红书上没人说；没有情绪起伏，从头到尾平铺直叙；没有细节，只有「效果很好」，没有「用了两周，下巴那颗痘平了」。</p>
+
+<p>问题出在流程，不在提示词长短。多数人上来就说「帮我写一篇小红书笔记」，让 AI 一口气把活全干完。可这里面藏着三种完全不同的思考：选题要判断人群，标题要抢注意力，正文要有节奏。混在一轮里做，哪一样都做不深。</p>
+
+<p>正确的解法是分三轮跑，每轮只解决一件事，你在中间挑。</p>
+
+<h2 id="sec-2">第一步：用 AI 写小红书文案前，先定选题和人群</h2>
+
+<p>第一步别急着写，先定方向。同一个大主题，切入角度不同，数据可能差出十倍。先让 AI 把话题拆成若干具体角度，你再从里面挑一个最有反差感的。</p>
+
+<pre><code>我在小红书做（领域）账号，粉丝主要是（人群画像）。
+围绕（大主题），给我 8 个具体选题，每个选题写清楚：
+1. 一句话切入角度；2. 戳中的具体痛点；3. 为什么这群人会点进来。
+要求角度互不重复，避免「盘点」「攻略」这类泛化选题。</code></pre>
+
+<p>拿到 8 个选题后自己挑，别让 AI 替你定。它不知道你的账号最近哪类内容数据好，也不知道你评论区在问什么。优先选两类：你真有亲身经历的，以及别人都在写、但你能给出相反结论的。</p>
+
+<h2 id="sec-3">第二步：标题单独生成，一次要 10 条</h2>
+
+<p>标题决定点击率，必须单独跑一轮，而且一次要够多才挑得出好的。让 AI 一次只给 3 条，你只能矮子里拔将军。</p>
+
+<pre><code>为这个选题写 10 条小红书标题：（粘贴选题）。
+要求：每条不超过 20 字；至少包含 3 条疑问式、3 条数字式、2 条反常识式；
+用口语，可带一个表情符号；不要用「必看」「震惊」这类词。</code></pre>
+
+<p>挑的时候只看一条标准：如果这条标题出现在你自己的信息流里，你会不会停下来。拿不准就把前三名发给朋友，让他凭直觉选，比自己纠结半小时准。</p>
+
+<h2 id="sec-4">第三步：正文套结构，痛点、转折、干货、互动</h2>
+
+<p>正文别放任 AI 自由发挥，把结构写死在指令里。小红书正文有相对固定的节奏：先让人对号入座，再给一个转折，然后交付干货，最后留个话头。</p>
+
+<pre><code>按这个结构写正文，全文 300 字以内：
+① 开头 2 句写一个具体场景的痛点，用「我」的口吻；
+② 一句转折，说明我后来发现了什么；
+③ 3 条可操作的干货，每条一行，前面加序号；
+④ 结尾一句提问，引导评论。
+语气像跟朋友聊天，短句为主，不要书面语和总结句。</code></pre>
+
+<p>结构定死之后，AI 的发挥空间被压缩在措辞上，出来反而更像人写的。</p>
+
+<h2 id="sec-5">最后 5 分钟人工改什么</h2>
+
+<p>四件事，AI 替不了你。加具体数字，把「效果好」改成「三周瘦了 4 斤」。加个人细节，时间、地点、当时的心情。拆长句，超过 25 字的一律断开。删掉所有「总而言之」「希望对你有帮助」。</p>
+
+<p>这一步看着琐碎，却是真正决定数据的地方。平台推荐的是真人经验，不是通顺的段落。</p>
+
+<p>最后说一句反的：<strong>涉及医疗、护肤功效、投资收益的内容，别让 AI 替你下结论</strong>，平台对这类表述有明确限制，写错了不只是没流量那么简单。还有，AI 写小红书文案能帮你提效，替不了真实体验，没用过的东西编得再顺，评论区照样拆穿你。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-writing-tools-compare.html">AI 写作工具哪个好用</a></li>
+      <li><a href="how-to-write-ai-prompts.html">AI 提示词怎么写</a></li>
+      <li><a href="free-ai-tools-list.html">免费 AI 工具推荐</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>
