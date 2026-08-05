@@ -334,6 +334,7 @@ def page_shell(prefix, active, title, description, head_extra, body,
 <title>{title}</title>
 <link rel="canonical" href="{canon}">
 <link rel="stylesheet" href="{prefix}assets/style.css">
+<link rel="icon" type="image/svg+xml" href="{prefix}assets/learntide-logo.svg">
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{og_title}">
 <meta property="og:description" content="{desc}">
@@ -351,7 +352,7 @@ def page_shell(prefix, active, title, description, head_extra, body,
 <body>
 <header class="site-header">
   <div class="container">
-    <span class="brand">Learntide<small>学习潮汐</small></span>
+    <span class="brand"><img class="brand-logo" src="{prefix}assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
     <nav class="nav">
 {nav}
     </nav>
