@@ -4,11 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Learntide · 学习潮汐 — AI 工具、教程与资讯</title>
+<link rel="canonical" href="https://learntide.cc.cd/">
 <link rel="stylesheet" href="assets/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/learntide-logo.svg">
 <meta name="description" content="Learntide 学习潮汐：精选好用 AI 工具、上手教程与行业资讯，帮你用 AI 把学习和工作做得更顺。">
 <meta property="og:title" content="Learntide · 学习潮汐">
 <meta property="og:description" content="精选 AI 工具、上手教程与行业资讯。">
 <meta property="og:type" content="website">
+<meta property="og:url" content="https://learntide.cc.cd/">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"Learntide 学习潮汐","url":"https://learntide.cc.cd"}
 </script>
@@ -16,11 +22,11 @@
 <body>
 <header class="site-header">
   <div class="container">
-    <span class="brand">Learntide<small>学习潮汐</small></span>
+    <span class="brand"><img class="brand-logo" src="assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
     <nav class="nav">
       <a href="index.html" class="active" aria-current="page">首页</a>
       <a href="tools.html">AI 工具</a>
-      <a href="articles/ai-weekly-report-guide.html">教程</a>
+      <a href="articles.html">全部文章</a>
       <a href="about.html">关于</a>
     </nav>
   </div>
@@ -36,28 +42,42 @@
 <section class="section">
   <div class="container">
     <h2>最新文章</h2>
+    <!-- 下方卡片由 build_articles.py 自动生成，手改会被覆盖 -->
     <div class="card-grid">
-      <a class="card" href="articles/ai-weekly-report-guide.html">
-        <h3>用 AI 写周报：从流水账到一眼看懂</h3>
-        <div class="meta">AI 教程 · 2026-08-04</div>
-        <p>把一周的散碎工作交给 AI 整理成结构化周报，附可直接复用的提示词模板。</p>
+<!-- ARTICLES:START -->
+      <a class="card" href="articles/what-is-llm-explained.html">
+        <h3>大模型是什么？用点外卖的例子讲明白</h3>
+        <div class="meta">资讯科普 · 2026-08-04</div>
+        <p>它不是存了所有答案的数据库，也不是有人在后台回你，它只是在猜下一个词。</p>
       </a>
-      <a class="card" href="tools.html">
-        <h3>32 个精选 AI 工具，按场景分类</h3>
-        <div class="meta">AI 工具 · 导航</div>
-        <p>对话、图像、编程、写作、音视频、效率——一张表看懂该用哪个。</p>
+      <a class="card" href="articles/what-is-ai-agent.html">
+        <h3>AI 智能体是什么？和聊天机器人的区别</h3>
+        <div class="meta">资讯科普 · 2026-08-04</div>
+        <p>会办事的 AI 和会聊天的 AI，差别在动手：你给目标，前者自己拆解、调用工具、交出结果，后者只出主意。</p>
       </a>
-      <a class="card" href="articles/free-ai-image-tools-2026.html">
-        <h3>2026 免费 AI 做图工具横评</h3>
-        <div class="meta">AI 教程 · 2026-08-04</div>
-        <p>即梦、可灵、通义万相、醒图，按需求对号入座，不盲选。</p>
+      <a class="card" href="articles/tongyi-qianwen-review.html">
+        <h3>通义千问好用吗？免费额度与适用场景</h3>
+        <div class="meta">工具测评 · 2026-08-04</div>
+        <p>免费 AI 助手不少，它赢在打开就能用、中文日常任务稳；真正要掂量的是长文档和重度场景下的表现。</p>
       </a>
-      <a class="card" href="articles/ai-chat-assistant-compare.html">
-        <h3>AI 对话助手怎么选</h3>
-        <div class="meta">AI 教程 · 2026-08-04</div>
-        <p>ChatGPT、Claude、Kimi、通义千问，按场景定位对比，不排座次。</p>
+      <a class="card" href="articles/remove-ai-tone-writing.html">
+        <h3>AI 味太重怎么改？六个去味技巧和改写指令</h3>
+        <div class="meta">使用教程 · 2026-08-04</div>
+        <p>AI 写的东西一眼就能看出是机器写的，因为排比泛滥、万金油话多、缺少细节、每段总结，这是四个具体特征。</p>
       </a>
+      <a class="card" href="articles/notebooklm-tutorial-cn.html">
+        <h3>NotebookLM 怎么用？中文资料整理教程</h3>
+        <div class="meta">使用教程 · 2026-08-04</div>
+        <p>把 PDF 和网页变成能提问的知识库，只用三步：建本、传资料、开问，还能生成音频与导图。</p>
+      </a>
+      <a class="card" href="articles/notebooklm-review-guide.html">
+        <h3>NotebookLM 好用吗？资料整理场景与免费额度</h3>
+        <div class="meta">工具测评 · 2026-08-04</div>
+        <p>资料多到读不完时它最顺手：把 PDF 传进去，变成能提问、带引用的知识库，但别指望它全能。</p>
+      </a>
+    <!-- ARTICLES:END -->
     </div>
+    <p class="more-link"><a href="articles.html">查看全部文章 →</a></p>
   </div>
 </section>
 
@@ -66,7 +86,7 @@
     <h2>按栏目浏览</h2>
     <div class="cat-row">
       <a class="chip" href="tools.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="5" height="5" rx="1"/><rect x="9" y="2" width="5" height="5" rx="1"/><rect x="2" y="9" width="5" height="5" rx="1"/><rect x="9" y="9" width="5" height="5" rx="1"/></svg>AI 工具</a>
-      <a class="chip" href="articles/ai-weekly-report-guide.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4.5S6.5 3 3.5 3H2v9h1.5C6.5 12 8 13.5 8 13.5"/><path d="M8 4.5S9.5 3 12.5 3H14v9h-1.5c-3 0-4.5 1.5-4.5 1.5"/><path d="M8 4.5v9"/></svg>AI 教程</a>
+      <a class="chip" href="articles.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 4.5S6.5 3 3.5 3H2v9h1.5C6.5 12 8 13.5 8 13.5"/><path d="M8 4.5S9.5 3 12.5 3H14v9h-1.5c-3 0-4.5 1.5-4.5 1.5"/><path d="M8 4.5v9"/></svg>AI 教程</a>
       <a class="chip" href="about.html"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="12" height="10" rx="1.5"/><path d="M4.5 6h4.5M4.5 8.5h7M4.5 11h7"/></svg>AI 资讯</a>
     </div>
   </div>

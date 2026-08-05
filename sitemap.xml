@@ -1,9 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://learntide.cc.cd/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://learntide.cc.cd/tools.html</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://learntide.cc.cd/</loc><lastmod>2026-08-05</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://learntide.cc.cd/articles.html</loc><lastmod>2026-08-05</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://learntide.cc.cd/tools.html</loc><lastmod>2026-08-05</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://learntide.cc.cd/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://learntide.cc.cd/articles/ai-weekly-report-guide.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://learntide.cc.cd/articles/free-ai-image-tools-2026.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://learntide.cc.cd/articles/ai-chat-assistant-compare.html</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-chat-assistant-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-coding-assistants-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-ppt-tools-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-prompt-formula-template.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-resume-optimization.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-thesis-writing-guide.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-trends-2026.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-video-tools-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-voice-tools-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-wechat-article-writing.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-weekly-report-guide.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-writing-tools-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-xiaohongshu-copywriting.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/chatgpt-alternatives-china.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/chatgpt-plus-worth-it.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/china-llm-landscape-2026.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/claude-free-tier-limits.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/cursor-vs-copilot-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/deepseek-vs-chatgpt-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/doubao-vs-kimi-compare.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/free-ai-image-tools-2026.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/free-ai-tools-list.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/how-to-make-ppt-with-ai.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/how-to-write-ai-prompts.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/jimeng-ai-review.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/midjourney-free-alternatives.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/midjourney-prompt-tips.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/notebooklm-review-guide.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/notebooklm-tutorial-cn.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/remove-ai-tone-writing.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/tongyi-qianwen-review.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/what-is-ai-agent.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/what-is-llm-explained.html</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NotebookLM 怎么用？中文资料整理手把手教程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/notebooklm-tutorial-cn.html">
+<link rel="stylesheet" href="../assets/style.css">
+<meta name="description" content="NotebookLM 怎么用？本文从建笔记本、上传资料到提问、生成播客与思维导图，给出中文资料整理的完整步骤，讲清免费版额度和国内访问情况，附一段自定义音频的提示词。">
+<meta property="og:title" content="NotebookLM 怎么用？中文资料整理手把手教程">
+<meta property="og:description" content="NotebookLM 怎么用？本文从建笔记本、上传资料到提问、生成播客与思维导图，给出中文资料整理的完整步骤，讲清免费版额度和国内访问情况，附一段自定义音频的提示词。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/notebooklm-tutorial-cn.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NotebookLM 怎么用？中文资料整理手把手教程">
+<meta name="twitter:description" content="NotebookLM 怎么用？本文从建笔记本、上传资料到提问、生成播客与思维导图，给出中文资料整理的完整步骤，讲清免费版额度和国内访问情况，附一段自定义音频的提示词。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"NotebookLM 怎么用？中文资料整理教程",
+  "description":"NotebookLM 怎么用？本文从建笔记本、上传资料到提问、生成播客与思维导图，给出中文资料整理的完整步骤，讲清免费版额度和国内访问情况，附一段自定义音频的提示词。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-04","dateModified":"2026-08-05",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/notebooklm-tutorial-cn.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"NotebookLM 怎么用？中文资料整理教程"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand">Learntide<small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">NotebookLM 怎么用？中文资料整理教程</span>
+  </nav>
+  <h1>NotebookLM 怎么用？中文资料整理教程</h1>
+  <div class="article-meta">使用教程 · 2026-08-04</div>
+  <p class="lede">把 PDF 和网页变成能提问的知识库，只用三步：建本、传资料、开问，还能生成音频与导图。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">NotebookLM 怎么用？开始前需要什么条件</a></li>
+      <li><a href="#sec-2">第一步：建笔记本、传资料</a></li>
+      <li><a href="#sec-3">第二步：用提问把资料读薄</a></li>
+      <li><a href="#sec-4">第三步：生成学习指南、思维导图、音频概览</a></li>
+      <li><a href="#sec-5">整理资料的小技巧 + 别踩的坑</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">NotebookLM 怎么用？开始前需要什么条件</h2>
+
+<p>NotebookLM 怎么用？一句话：建一个笔记本、把资料传进去、然后像聊天一样提问。开始前需要三样条件：一个 Google 账号；能稳定访问，国内可能需要额外网络条件，先确认再开始；一份想整理的资料。PDF、网页链接、粘贴文本都支持，中文资料可以正常处理。条件齐了，后面就是几分钟的流程。别在传完一堆资料后才意识到访问不稳，那就白忙一场。</p>
+
+<h2 id="sec-2">第一步：建笔记本、传资料</h2>
+
+<p>登录后点「新建笔记本」，给它起个名字。然后上传资料：拖入 PDF、粘贴网页链接或文本都行。传完会在右侧看到来源列表，每条资料可以单独查看。一个笔记本建议只放同一主题的资料。来源太杂提问会乱。想整理论文，可以参考<a href="ai-thesis-writing-guide.html">用 AI 写论文的边界</a>那篇，里面有更细的分工建议。资料越多，后面提问的素材就越足。传完记得给每个笔记本标清楚主题，回头找起来不费劲。</p>
+
+<h2 id="sec-3">第二步：用提问把资料读薄</h2>
+
+<p>右侧问答框用自然语言提问，回答带引用，可以点回原文核对。三类提问最常用：概括——「用五条要点总结这份报告」；找矛盾——「这些资料里有哪些说法不一致」；出题——「基于这些资料给我出三道自测题」。多来源交叉提问更强大。同一主题放三五份资料，互相印证，比单份问得深。提问越具体，回答越有用。别问太泛的问题，它会给你一段正确的废话。把资料读薄，靠的是会提问，不是问得多。</p>
+
+<h2 id="sec-4">第三步：生成学习指南、思维导图、音频概览</h2>
+
+<p>一键生成学习指南和思维导图，把散落要点结构化。音频概览把资料变成可听的对话，适合通勤时听，生成方向可以用提示词自定义。免费版有每日提问、音频生成、每笔记本来源上限，具体以官网当前说明为准。数据上传 Google 服务器，机密文件先确认政策。音频方向指令放文末，照着填就能用，重点把听众和主题写清楚。这几个生成功能是它的加分项，核心还是提问。</p>
+
+<h2 id="sec-5">整理资料的小技巧 + 别踩的坑</h2>
+
+<p>资料要有焦点：三到八个高质量来源，好过堆一百份没重点的。音频概览的中文效果，以官方实际表现为准，期望值别拉太高。最后提醒：不要把它当全能助手。它只基于你上传的资料回答，资料有错它跟着错。它是整理工具，不是搜索引擎，更不是创作工具。用下面这段提示词自定义音频概览的方向，先列提纲再展开，效果更可控：</p>
+
+<pre><code>请生成一段音频概览，面向【听众，如：没读过原文的同学】，
+重点讲【你希望突出的主题】，用【通俗/专业】语言，
+时长控制在【N】分钟。先列提纲再展开。</code></pre>
+
+<p>工具价格与免费额度可能变动，实际以各工具官网当前说明为准。 NotebookLM 怎么用？建笔记本、传资料、提问三步走，但别把它当全能助手，资料有错它跟着错。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-05。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-thesis-writing-guide.html">AI 写论文怎么用</a></li>
+      <li><a href="notebooklm-review-guide.html">NotebookLM 好用吗</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

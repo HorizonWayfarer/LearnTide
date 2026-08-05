@@ -68,7 +68,10 @@ svg{flex:none;}
   position:sticky;top:0;z-index:20;
 }
 .site-header .container{display:flex;align-items:center;justify-content:space-between;height:56px;}
-.brand{font-weight:var(--weight-semibold);font-size:var(--text-md);color:var(--water-dark);}
+.brand{display:inline-flex;align-items:center;font-weight:var(--weight-semibold);font-size:var(--text-md);color:var(--water-dark);}
+.brand-logo{width:28px;height:28px;margin-right:8px;display:block;}
+.brand-name{color:var(--water-dark);}
+.brand-name b{color:var(--wood);font-weight:var(--weight-semibold);}
 .brand small{color:var(--wood);font-weight:400;font-size:13px;margin-left:6px;}
 .nav{display:flex;align-items:center;}
 .nav a{
