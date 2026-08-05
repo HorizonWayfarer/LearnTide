@@ -18,7 +18,7 @@ internal_links:
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
-verified: 2026-08
+verified: 2026-08-04
 ---
 
 ## AI 生成 PPT 哪个好？先确认水印、导出和免费次数

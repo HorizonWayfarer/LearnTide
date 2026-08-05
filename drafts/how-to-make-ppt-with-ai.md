@@ -18,7 +18,7 @@ internal_links:
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
-verified: 2026-08
+verified: 2026-08-04
 ---
 
 ## AI 做 PPT 怎么做？正确顺序是先大纲后排版

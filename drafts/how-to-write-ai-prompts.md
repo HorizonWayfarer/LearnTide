@@ -18,7 +18,7 @@ internal_links:
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
-verified: 2026-08
+verified: 2026-08-04
 ---
 
 ## AI 提示词怎么写？答非所问九成是缺了这四段

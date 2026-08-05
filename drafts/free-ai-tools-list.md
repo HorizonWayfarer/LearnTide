@@ -18,7 +18,7 @@ internal_links:
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
-verified: 2026-08
+verified: 2026-08-04
 ---
 
 ## 免费 AI 工具推荐之前，先分清三种「免费」

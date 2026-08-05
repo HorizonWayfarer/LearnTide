@@ -18,7 +18,7 @@ internal_links:
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
-verified: 2026-08
+verified: 2026-08-04
 ---
 
 ## 一句话结论：豆包和 Kimi 哪个好用，看你手上有没有长文档
