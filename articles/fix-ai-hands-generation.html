@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 画手指崩坏怎么解决？四层修复法从简单到难 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/fix-ai-hands-generation.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 画手指崩坏怎么解决？从加一行负面提示词，到换模型、局部重绘、手部 LoRA，四种方法按难度排列。先试最简单的，不行再进阶，总有一种能搞定你的手部问题。">
+<meta property="og:title" content="AI 画手指崩坏怎么解决？四层修复法从简单到难">
+<meta property="og:description" content="AI 画手指崩坏怎么解决？从加一行负面提示词，到换模型、局部重绘、手部 LoRA，四种方法按难度排列。先试最简单的，不行再进阶，总有一种能搞定你的手部问题。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/fix-ai-hands-generation.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 画手指崩坏怎么解决？四层修复法从简单到难">
+<meta name="twitter:description" content="AI 画手指崩坏怎么解决？从加一行负面提示词，到换模型、局部重绘、手部 LoRA，四种方法按难度排列。先试最简单的，不行再进阶，总有一种能搞定你的手部问题。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 画手指崩坏怎么解决？四层修复法",
+  "description":"AI 画手指崩坏怎么解决？从加一行负面提示词，到换模型、局部重绘、手部 LoRA，四种方法按难度排列。先试最简单的，不行再进阶，总有一种能搞定你的手部问题。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/fix-ai-hands-generation.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 画手指崩坏怎么解决？四层修复法"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 画手指崩坏怎么解决？四层修复法</span>
+  </nav>
+  <h1>AI 画手指崩坏怎么解决？四层修复法</h1>
+  <div class="article-meta">使用教程 · 2026-08-06</div>
+  <p class="lede">AI 画手指崩坏不用慌。从加负面提示词到局部重绘，四层修法由浅入深，总有一层能解决，先试最简单的。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 画手指崩坏怎么解决？先试第一层</a></li>
+      <li><a href="#sec-2">第一层：加负面提示词——最简单但最有效</a></li>
+      <li><a href="#sec-3">第二层：换模型——有些模型天生手画得好</a></li>
+      <li><a href="#sec-4">第三层：局部重绘（Inpainting）——重塑手部区域</a></li>
+      <li><a href="#sec-5">第四层：手部 LoRA + 什么时候别修了</a></li>
+    </ol>
+  </div>
+
+<p>AI 画手指崩坏怎么解决？先别急着删图。AI 画手指崩坏，本质是模型对手部结构理解不足。修复画手问题，有四种方法按难度排列。从最简单的负面提示词，到最复杂的局部重绘，总有一层能救你的图。多数情况下，第一层就够用。</p>
+
+<blockquote><strong>关键要点</strong> - 负面提示词最简单，先加一行试试- 换模型比调提示词更省事，选手部干净的那款- 局部重绘能精准修手，最可控- 手部 LoRA 是专业级方案，也最费配置</blockquote>
+
+<h2 id="sec-1">AI 画手指崩坏怎么解决？先试第一层</h2>
+
+<p>AI 画手指崩坏怎么解决？很多人的答案是从负面提示词开始。这一层不花钱，不装插件，改一行字就行。先把最简单的试完，再谈换模型和局部重绘。四层方案逐层升级，别跳级。修手是个概率游戏，每一层只是提高成功率，不是保证百分百成功。所以先试成本最低的，成功率够了就不用往下走。</p>
+
+<h2 id="sec-2">第一层：加负面提示词——最简单但最有效</h2>
+
+<p>负面提示词就是告诉 AI 不要画什么。加一行，效果立竿见影。示例：</p>
+
+<pre><code>bad hands, extra fingers, deformed hands, missing fingers,
+malformed limbs, crossed fingers, mutated hands</code></pre>
+
+<p>把这串词加进提示词，坏手概率立刻下降。AI 画手指崩坏怎么解决，先试这一层，成本最低。注意负面提示词别写太杂，十几二十个词混在一起，模型反而不知道该听谁的。挑三四条针对手部的就够了。</p>
+
+<h2 id="sec-3">第二层：换模型——有些模型天生手画得好</h2>
+
+<p>负面提示词不够，就换模型。Juggernaut XL、DreamShaper XL 这类模型，手部表现更稳定。不用改提示词，模型本身对手指结构理解更好。AI 画手指崩坏怎么解决，换模型是第二步。下载时看模型主页的示例图，挑手部干净的那款。换模型成本也不高，多数模型免费下载，只是占硬盘空间。先备份现在用的模型，试完不满意再换回来。</p>
+
+<h2 id="sec-4">第三层：局部重绘（Inpainting）——重塑手部区域</h2>
+
+<p>局部重绘只改手部区域，不动整张图。操作分四步：遮罩手部、单独重绘、保持风格一致、反复抽卡。AI 画手指崩坏怎么解决，这层最可控。在 Stable Diffusion WebUI 里，用画笔涂住手部，重新生成一次。遮罩要盖住整只手，别只涂手指，边缘留一点余量，重绘出来的衔接才自然。实现细节可参考 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" rel="noopener">AUTOMATIC1111 WebUI</a>{:target=&quot;_blank&quot;}。</p>
+
+<pre><code>遮罩手部 → 单独重绘 → 保持风格一致 → 挑最好的结果</code></pre>
+
+<h2 id="sec-5">第四层：手部 LoRA + 什么时候别修了</h2>
+
+<p>手部 LoRA 是专门训练的手部模型，专业用户的终极方案。到 <a href="https://civitai.com" target="_blank" rel="noopener">CivitAI 官方站</a>{:target=&quot;_blank&quot;} 搜 hand 相关模型，下载后加载即可。效果最稳，但配置最麻烦。AI 画手指崩坏怎么解决，这是第四层，也是最后一层。</p>
+
+<p>不过先想清楚：手部不是画面重点，别修了。整体构图已经满意，裁剪或重新生成，比修手更快。想看更多出图思路，可以看<a href="free-ai-image-tools-2026.html">免费 AI 做图工具横评</a>、<a href="midjourney-prompt-tips.html">Midjourney 提示词怎么写</a>和<a href="jimeng-prompt-tips.html">即梦 AI 提示词技巧</a>，找工具回 <a href="../tools.html">AI 工具导航</a>。</p>
+
+<p>AI 画手指崩坏怎么解决？四层按顺序试，别一上来就上最难的。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="free-ai-image-tools-2026.html">免费 AI 做图工具横评</a></li>
+      <li><a href="midjourney-prompt-tips.html">Midjourney 提示词怎么写</a></li>
+      <li><a href="jimeng-prompt-tips.html">即梦 AI 提示词技巧</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,12 +1,23 @@
 # 本地项目记忆与构建/预览产物，不属于站点资产，不进版本库
 .workbuddy/
+__pycache__/
+*.pyc
 
 # 临时测量/审计脚本目录，一次性用完即弃
 .buildtest/
 
-__pycache__/
-*.pyc
+# === 根目录一次性 QA / 统计 / 验证产物（自动排除） ===
+_*.txt
+_*.py
+*.out.txt
+qa_out.txt
+validate_batch*.py
+提交代码.bat
 
-# 说明：drafts/（Markdown 源稿）、research/（选题地图）、reports/（审计报告）
-# 刻意「不」排除——它们是内容生产的核心资产，进版本库才有异地备份。
-# 这些 .md 会被 Cloudflare Pages 一并上传但不会生成页面，不影响站点。
+# === reports/ 下旧批次脚本 & 中间产物（仅保留最终报告 .md） ===
+reports/_*.py
+reports/_*.txt
+reports/*.json
+
+# === research/ 下原始数据快照（非报告文档） ===
+research/*.json

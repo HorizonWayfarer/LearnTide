@@ -17,6 +17,8 @@ internal_links:
     anchor: AI 对话助手横向对比
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: deepseek-vs-qwen-compare
+    anchor: DeepSeek vs Qwen 对比
 date: 2026-08-04
 verified: 2026-08-04
 ---

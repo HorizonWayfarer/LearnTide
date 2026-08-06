@@ -17,6 +17,8 @@ internal_links:
     anchor: DeepSeek 和 ChatGPT 哪个好用
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: ai-learning-path-guide
+    anchor: 零基础 AI 学习路径
 date: 2026-08-04
 verified: 2026-08-04
 ---

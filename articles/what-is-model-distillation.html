@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>模型蒸馏和量化是什么？老师教学生与减肥两个类比讲清 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-model-distillation.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="模型蒸馏是让大模型当老师教出个聪明的小模型，量化是给模型减肥。本文用大白话讲清两者的区别，以及它们和手机 AI、本地部署的关系，看完不再被术语吓住。">
+<meta property="og:title" content="模型蒸馏和量化是什么？老师教学生与减肥两个类比讲清">
+<meta property="og:description" content="模型蒸馏是让大模型当老师教出个聪明的小模型，量化是给模型减肥。本文用大白话讲清两者的区别，以及它们和手机 AI、本地部署的关系，看完不再被术语吓住。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-model-distillation.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="模型蒸馏和量化是什么？老师教学生与减肥两个类比讲清">
+<meta name="twitter:description" content="模型蒸馏是让大模型当老师教出个聪明的小模型，量化是给模型减肥。本文用大白话讲清两者的区别，以及它们和手机 AI、本地部署的关系，看完不再被术语吓住。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"模型蒸馏和量化是什么？通俗解释",
+  "description":"模型蒸馏是让大模型当老师教出个聪明的小模型，量化是给模型减肥。本文用大白话讲清两者的区别，以及它们和手机 AI、本地部署的关系，看完不再被术语吓住。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-model-distillation.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"模型蒸馏和量化是什么？通俗解释"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">模型蒸馏和量化是什么？通俗解释</span>
+  </nav>
+  <h1>模型蒸馏和量化是什么？通俗解释</h1>
+  <div class="article-meta">资讯科普 · 2026-08-06</div>
+  <p class="lede">大模型像一位知识渊博的老师，蒸馏是让老师把经验浓缩教给学生，量化是给模型瘦身——都是为了变小变快。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">模型蒸馏是什么：老师教出个聪明的学生</a></li>
+      <li><a href="#sec-2">为什么需要蒸馏和量化：大模型太费钱</a></li>
+      <li><a href="#sec-3">量化：给模型「减肥」</a></li>
+      <li><a href="#sec-4">蒸馏和量化有什么不一样</a></li>
+      <li><a href="#sec-5">和普通用户有什么关系</a></li>
+    </ol>
+  </div>
+
+<p>模型蒸馏是什么？一句话：让大模型当老师，把自己的经验浓缩教给一个小模型。量化则是给模型「减肥」——把高精度参数换成低精度，体积变小、跑得更快。两个都是让大模型「变小变快」的办法。</p>
+
+<h2 id="sec-1">模型蒸馏是什么：老师教出个聪明的学生</h2>
+
+<p>想象毕业班老师带学生。老师（大模型）教了很多年，解题经验丰富；学生（小模型）还很单薄，但学得快。</p>
+
+<p>蒸馏就是让学生学老师的解题思路，而不是背答案。背答案的学生换个题型就懵，学会思路的学生能举一反三。所以蒸馏出来的小模型，体积小，本事却不小。</p>
+
+<p>这个概念最早由 Hinton 等人在论文里提出，见<a href="https://arxiv.org/abs/1503.02531" target="_blank" rel="noopener">原始论文</a>{:target=&quot;_blank&quot;}。</p>
+
+<h2 id="sec-2">为什么需要蒸馏和量化：大模型太费钱</h2>
+
+<p>先得知道它要解决什么问题。大模型跑起来太费钱：显存按 GB 买，回答慢，手机根本装不下。</p>
+
+<p>想让普通人和手机也能用上 AI，就得把模型变小。它装不下，就只能想办法瘦身。答案很简单：蒸馏和量化，就是两条主流的路。</p>
+
+<h2 id="sec-3">量化：给模型「减肥」</h2>
+
+<p>聊完蒸馏，再看量化。量化不换模型，只换「身材」。模型里存着大量数字参数，原本用很高精度存，占空间、算得慢。</p>
+
+<p>量化就是把这些数字的精度降下来，像把高清照片压缩成小图：图还是那张图，体积小了，细节略损。体积小了，跑得快。这就是减肥的意义。</p>
+
+<p>减肥后的模型能装进手机。量化工具的用法，以 <a href="https://huggingface.co/docs/" target="_blank" rel="noopener">Hugging Face 官方文档</a>{:target=&quot;_blank&quot;}为准。</p>
+
+<h2 id="sec-4">蒸馏和量化有什么不一样</h2>
+
+<p>蒸馏和量化经常被一起问。一句话区别：蒸馏是「换个更聪明的小个子」，量化是「同一个人瘦身」——一个动脑子，一个动身材。实际操作里两者常搭配：先蒸馏出一个聪明的小模型，再量化让它更轻。想具体了解量化模型怎么让本地部署跑得动，看<a href="local-ai-model-setup.html">本地部署 AI 模型入门</a>。</p>
+
+<h2 id="sec-5">和普通用户有什么关系</h2>
+
+<p>手机语音助手、拍照识图、离线翻译，背后常常就是蒸馏加量化过的小模型。你感觉不到模型存在，但它的确装进了你的手机。小模型不是更差：够用就好，具体看任务。</p>
+
+<p>日常问答、总结、翻译，小模型完全胜任；复杂推理和创作，再上大模型。落到手机上，就是这些装进 App 的小模型。想了解国产模型里有哪些蒸馏版本，看<a href="china-llm-landscape-2026.html">国产大模型有哪些</a>，模型处理文字的基本单位见<a href="what-is-token-ai.html">Token 是什么</a>。</p>
+
+<p>如果你还是分不清，可以让 AI 用类比再讲一遍：</p>
+
+<pre><code>请用「老师教学生」和「减肥」两个类比，
+分别解释模型蒸馏和模型量化，每个类比控制在三句话以内。</code></pre>
+
+<p>模型蒸馏是什么，现在应该清楚了：它是让大模型当老师，教出个聪明的小模型；量化是给模型减肥。两个办法一起用，AI 才可能装进你的手机、跑在你的电脑上。</p>
+
+<p>想从头理解大模型，看<a href="what-is-llm-explained.html">大模型是什么</a>，找工具去<a href="../tools.html">AI 工具导航</a>。模型蒸馏是什么、量化是什么，说白了都是让模型变小变快。别以为模型越小就是越差，也别盲目追求最大的模型。按任务选模型，够用才是真的好。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-llm-explained.html">大模型是什么</a></li>
+      <li><a href="local-ai-model-setup.html">本地部署 AI 模型入门</a></li>
+      <li><a href="china-llm-landscape-2026.html">国产大模型有哪些</a></li>
+      <li><a href="what-is-token-ai.html">Token 是什么</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

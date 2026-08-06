@@ -17,6 +17,8 @@ internal_links:
     anchor: 用 AI 写小红书文案
   - slug: how-to-make-ppt-with-ai
     anchor: 用 AI 做 PPT 怎么做
+  - slug: how-to-use-ai-photoshop
+    anchor: 用 AI 修图教程
 date: 2026-08-04
 verified: 2026-08-05
 ---

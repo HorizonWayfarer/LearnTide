@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本地部署 AI 模型入门：Ollama 上手，先看显存再选模型 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/local-ai-model-setup.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="本地部署 AI 模型先看显存再选模型。本文讲 Ollama 怎么装、一条命令怎么跑起来、数据不出本机的隐私优势，以及新手别碰的边界，附完整命令与常见模型选型参考。">
+<meta property="og:title" content="本地部署 AI 模型入门：Ollama 上手，先看显存再选模型">
+<meta property="og:description" content="本地部署 AI 模型先看显存再选模型。本文讲 Ollama 怎么装、一条命令怎么跑起来、数据不出本机的隐私优势，以及新手别碰的边界，附完整命令与常见模型选型参考。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/local-ai-model-setup.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="本地部署 AI 模型入门：Ollama 上手，先看显存再选模型">
+<meta name="twitter:description" content="本地部署 AI 模型先看显存再选模型。本文讲 Ollama 怎么装、一条命令怎么跑起来、数据不出本机的隐私优势，以及新手别碰的边界，附完整命令与常见模型选型参考。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"本地部署 AI 模型入门：Ollama 上手",
+  "description":"本地部署 AI 模型先看显存再选模型。本文讲 Ollama 怎么装、一条命令怎么跑起来、数据不出本机的隐私优势，以及新手别碰的边界，附完整命令与常见模型选型参考。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/local-ai-model-setup.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"本地部署 AI 模型入门：Ollama 上手"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">本地部署 AI 模型入门：Ollama 上手</span>
+  </nav>
+  <h1>本地部署 AI 模型入门：Ollama 上手</h1>
+  <div class="article-meta">使用教程 · 2026-08-06</div>
+  <p class="lede">模型装在自己电脑里，隐私留在本机，没网也能用。门槛主要在显存：先看配置再选模型，别一上来就奔着最大的去。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">本地部署 AI 模型是什么，为什么值得试</a></li>
+      <li><a href="#sec-2">硬件要求：显存和内存是两回事</a></li>
+      <li><a href="#sec-3">十分钟上手：装 Ollama、拉模型、跑起来</a></li>
+      <li><a href="#sec-4">让本地模型干活的三种方式</a></li>
+      <li><a href="#sec-5">边界提醒：哪些事别指望本地小模型</a></li>
+    </ol>
+  </div>
+
+<p>本地部署 AI 模型，先别想「要不要跑 70B 的大模型」，先看自己显卡有多少显存——这才是决定一切的问题。显存够，装个 Ollama，一条命令就能跑起来，数据不出本机。</p>
+
+<h2 id="sec-1">本地部署 AI 模型是什么，为什么值得试</h2>
+
+<p>所谓本地部署，就是把模型装进自己电脑，而不是打开网页用别人的服务。最大的好处是隐私：数据不出本机，离线也能用，没有按次收费的 token 费。</p>
+
+<p>对不想把聊天记录传出去的人来说，这点很值钱。它也有局限：吃配置，而且能力比旗舰云端模型差一截。适合隐私敏感、需要离线、想省订阅费的人。</p>
+
+<h2 id="sec-2">硬件要求：显存和内存是两回事</h2>
+
+<p>显存不够，再好的模型也白搭。显存（VRAM）是核心变量，内存是地基。显存不够，模型根本跑不动。</p>
+
+<p>按普遍反馈：7B 模型约需 8GB 显存、16GB 内存起步，跑得动；13B 以上的模型建议 24GB 显存；Mac 用 M 系列芯片体验好。判断方法很简单：先查自己电脑的显存和内存，再选模型，别硬上大模型。具体数值以 <a href="https://ollama.com/" target="_blank" rel="noopener">Ollama 官网</a>{:target=&quot;_blank&quot;}当前说明为准。</p>
+
+<h2 id="sec-3">十分钟上手：装 Ollama、拉模型、跑起来</h2>
+
+<p>真正上手，就是一条命令的事。从 Ollama 官网下载对应系统的安装包，装完打开终端，输入一条命令就能拉模型并运行。比如跑一个 7B 的 Qwen 模型：</p>
+
+<pre><code>ollama run qwen2.5:7b</code></pre>
+
+<p>第一次运行会自动下载模型，之后秒开。装好就能用，不联网也不慌。真正离线的体验，只有本地部署给得了。</p>
+
+<p>想换模型，去官网模型库看名字改一下就行。想停掉对话，输入 <code>/bye</code>。想理解为什么本地能跑动 7B 小模型，看<a href="what-is-model-distillation.html">模型蒸馏和量化是什么</a>。</p>
+
+<h2 id="sec-4">让本地模型干活的三种方式</h2>
+
+<p>让它干活，有三种方式可选。第一种是终端对话，最简单，适合问答和改写。第二种是装 Open WebUI，图形界面，聊起来更像网页版。</p>
+
+<p>第三种是接入现有工具，比如<a href="ai-coding-assistants-compare.html">AI 编程助手对比</a>里的 Cursor，把本地模型设成后端，写完代码不出本机。本地模型接进编程工具后，代码同样不出本机。想深入了解 Cursor 的用法，看<a href="cursor-beginner-tutorial.html">Cursor 新手教程</a>。不写代码也想体验 AI 做网页的，看<a href="ai-build-webpage-nocode.html">不写代码用 AI 做网页</a>。</p>
+
+<h2 id="sec-5">边界提醒：哪些事别指望本地小模型</h2>
+
+<p>动手之前，先想清楚边界。本地小模型适合总结、翻译、日常问答，别拿它和旗舰大模型比。它也有够不到的地方。写复杂代码、深度推理、需要最新知识的任务，仍用云端。</p>
+
+<p>下载安装只用两个官方渠道：Ollama 官网和 <a href="https://github.com/ollama/ollama" target="_blank" rel="noopener">GitHub 官方仓库</a>{:target=&quot;_blank&quot;}。任何「官方汉化版」「绿色版」「一键加速包」都是可疑来源。</p>
+
+<p>反向提醒：别硬跑显存放不下的大模型，也别从非官方渠道下载安装包。本地部署 AI 模型，先看显存、再选模型、只信官方，这条路才走得稳。更多工具去<a href="../tools.html">AI 工具导航</a>。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-coding-assistants-compare.html">AI 编程助手对比</a></li>
+      <li><a href="cursor-beginner-tutorial.html">Cursor 新手教程</a></li>
+      <li><a href="ai-build-webpage-nocode.html">不写代码用 AI 做网页</a></li>
+      <li><a href="what-is-model-distillation.html">模型蒸馏和量化是什么</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -107,7 +107,9 @@ def _load_planned():
 
 PLANNED = _load_planned()
 BAN = ["神器", "躺平", "颜值飙升", "暴富", "随着人工智能", "众所周知",
-       "毋庸置疑", "SWE-bench", "上下文窗口"]
+       "毋庸置疑", "SWE-bench", "上下文窗口", "待核实", "TODO"]
+# 2026-08-06 加「待核实/TODO」：第五批曾残留 [待核实] 占位符，编辑审查建议列入禁词从源头堵住。
+# 注意不加「待补充」：ai-reading-notes-method 正文教读者「没有例子就标待补充」属教学内容，会误伤。
 EMOJI = re.compile("[\U0001F300-\U0001FAFF\u2600-\u26FF]")
 REQ = ["id", "slug", "title", "category", "primary_keyword", "meta_title",
        "meta_description", "lede", "internal_links", "date", "verified"]
@@ -231,8 +233,12 @@ for s in FILES:
         issues.append("缺字段" + ",".join(miss))
     if EMOJI.search(body):
         issues.append("含emoji")
+    # 主关键词本身含禁词时放行：禁词是选题总表规划的主题词（如 088「上下文窗口是什么」），
+    # 属于合法核心主题而非滥用措辞。2026-08-06 加。
+    kw_lower = re.search(r"^primary_keyword:\s*(.+)$", fm, flags=re.M)
+    kw_lower = kw_lower.group(1).strip().lower() if kw_lower else ""
     for b in BAN:
-        if b.lower() in body.lower():
+        if b.lower() in body.lower() and b.lower() not in kw_lower:
             issues.append("禁词" + b)
     # 正文内链：从「一律禁止」改为「校验目标存在」，保留死链防护
     for _anchor, href in re.findall(r"\[([^]]+)\]\(([^)]+)\)", nocode):

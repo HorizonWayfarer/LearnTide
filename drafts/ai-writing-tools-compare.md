@@ -13,8 +13,10 @@ internal_links:
     anchor: 用 AI 写小红书文案
   - slug: how-to-write-ai-prompts
     anchor: AI 提示词怎么写
-  - slug: what-is-llm-explained
-    anchor: 生成型工具为什么会编内容
+  - slug: huoshan-writing-review
+    anchor: 火山写作评测
+  - slug: ai-wechat-article-writing
+    anchor: AI 写公众号文章
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
@@ -42,7 +44,7 @@ AI 写作工具哪个好用，这个问题问偏了。写作不是一件事，�
 
 稿子已经写完，只想让它更干净，就该换校对型。
 
-秘塔写作猫会标出错别字、语法问题、标点误用和敏感表述，每处改动都摆在你面前，不会偷偷重写你的句子。火山写作在扩写、缩写、语气调整上更顺手，也支持中英互改。一段话要改出几个版本时省事。
+[秘塔写作猫](miota-writing-cat-review.html)会标出错别字、语法问题、标点误用和敏感表述，每处改动都摆在你面前，不会偷偷重写你的句子。火山写作在扩写、缩写、语气调整上更顺手，也支持[中英互改](ai-translation-tools-compare.html)。一段话要改出几个版本时省事。
 
 两款都有免费额度，国内直接可用，具体额度以官网当前说明为准。短板也一样明显。让它们从零写一篇长文，输出平淡而且偏短，比不过生成型。
 

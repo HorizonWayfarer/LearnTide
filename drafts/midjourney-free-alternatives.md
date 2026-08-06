@@ -13,8 +13,10 @@ internal_links:
     anchor: 免费 AI 图像工具
   - slug: jimeng-ai-review
     anchor: 即梦 AI 好用吗
-  - slug: free-ai-tools-list
-    anchor: 免费 AI 工具推荐
+  - slug: how-to-use-ai-photoshop
+    anchor: 用 AI 修图教程
+  - slug: midjourney-prompt-tips
+    anchor: Midjourney 提示词怎么写
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
@@ -49,7 +51,7 @@ ChatGPT 免费版自带图片生成，随对话出图。它理解中文提示词
 
 日常配图、社交媒体系列、创意灵感——即梦或可灵足够。对出图有精细控制需求、愿意投入时间——Stable Diffusion 本地部署。需要顶级质感参赛或商用——Midjourney 仍然是首选，免费方案暂时替代不了。
 
-需要顶级质感，Midjourney 的订阅费不该省。Midjourney 替代品，适合日常替代，替代不了顶级质感。
+需要顶级质感，Midjourney 的订阅费不该省。四档怎么选，见[midjourney 值得订阅吗](midjourney-worth-subscribing.html)。Midjourney 替代品，适合日常替代，替代不了顶级质感。
 
 最后说一句反的：**如果产出要商用、或你吃饭靠的就是出图质感，别让免费方案凑合，Midjourney 的订阅费不该省。** 免费方案适合日常和试水，不适合把它当生产力主力却抱怨质感不够。把下面这条提示词发给 AI，它能帮你把 Midjourney 提示词转成中文工具能用的格式：
 

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 幻觉是什么？为什么会一本正经胡说，一篇大白话讲清 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-ai-hallucination.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 一本正经胡说不是它「坏」，而是它在猜下一个词而不是查资料。本文用大白话讲清 AI 幻觉是什么、为什么这么肯定、和说谎的区别，以及怎么少踩坑，读完不再被它带偏。">
+<meta property="og:title" content="AI 幻觉是什么？为什么会一本正经胡说，一篇大白话讲清">
+<meta property="og:description" content="AI 一本正经胡说不是它「坏」，而是它在猜下一个词而不是查资料。本文用大白话讲清 AI 幻觉是什么、为什么这么肯定、和说谎的区别，以及怎么少踩坑，读完不再被它带偏。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-ai-hallucination.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 幻觉是什么？为什么会一本正经胡说，一篇大白话讲清">
+<meta name="twitter:description" content="AI 一本正经胡说不是它「坏」，而是它在猜下一个词而不是查资料。本文用大白话讲清 AI 幻觉是什么、为什么这么肯定、和说谎的区别，以及怎么少踩坑，读完不再被它带偏。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 幻觉是什么？为什么会一本正经胡说",
+  "description":"AI 一本正经胡说不是它「坏」，而是它在猜下一个词而不是查资料。本文用大白话讲清 AI 幻觉是什么、为什么这么肯定、和说谎的区别，以及怎么少踩坑，读完不再被它带偏。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-ai-hallucination.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 幻觉是什么？为什么会一本正经胡说"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 幻觉是什么？为什么会一本正经胡说</span>
+  </nav>
+  <h1>AI 幻觉是什么？为什么会一本正经胡说</h1>
+  <div class="article-meta">资讯科普 · 2026-08-06</div>
+  <p class="lede">它能把不存在的书、不存在的法条说得有板有眼，原因很朴素：它从不查资料，只是按概率把话说圆。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 幻觉是什么：先看一个例子</a></li>
+      <li><a href="#sec-2">为什么它敢这么肯定：AI 在猜，不是在查</a></li>
+      <li><a href="#sec-3">什么场景最容易出幻觉</a></li>
+      <li><a href="#sec-4">它和说谎的区别</a></li>
+      <li><a href="#sec-5">知道了原理，你能做什么</a></li>
+    </ol>
+  </div>
+
+<p>AI 幻觉是什么？一句话：模型生成「看着像真的、其实是编的」内容。AI 一本正经地胡说八道，不是它「坏」，而是它本来就不是在查资料——它在猜。猜出来的答案只要像那么回事，它就会很自信地说出来。</p>
+
+<h2 id="sec-1">AI 幻觉是什么：先看一个例子</h2>
+
+<p>假设你问它「有没有一本叫《深海灯塔》的书」。它可能认真回答：有，作者叫某某，2019 年出版，豆瓣评分 8.2。实际上这本书不存在，作者、年份、评分全是它顺口编的。AI 幻觉是什么，用这个例子看得最清楚：细节齐全，来源为零。</p>
+
+<h2 id="sec-2">为什么它敢这么肯定：AI 在猜，不是在查</h2>
+
+<p>把 AI 想成猜谜高手，而不是查字典的人。查字典的人翻到才有，翻不到就说没有。AI 没有「我不知道」这个默认选项。</p>
+
+<p>训练时它被要求永远给出像样的回答，所以哪怕信息不够，它也会顺着前文把话补圆。答案越顺口，它越自信。它不会说不知道。</p>
+
+<p>判断的关键，是看它在猜还是查。想理解它按什么单位处理文字，看<a href="what-is-token-ai.html">Token 是什么</a>。</p>
+
+<h2 id="sec-3">什么场景最容易出幻觉</h2>
+
+<p>数字、人名、法条、引用、时间，这几类它最常「编圆」。问「某政策什么时候生效」，它可能给出一个日期，看起来特别具体，其实没查过。这些正是 AI 幻觉的高发区。越具体的回答，越值得多看一眼。</p>
+
+<p>最容易露馅的，正是这几类信息。聊得越长越容易编：AI 的记性空间有限，前面的内容被挤掉，它就靠猜把话接下去。想理解记性空间是怎么回事，看<a href="what-is-context-window.html">AI 的记性空间</a>。</p>
+
+<h2 id="sec-4">它和说谎的区别</h2>
+
+<p>说谎要有主观意图，AI 没有。它不恨你，也不骗你，只是能力边界摆在那里：它不知道哪些是编的，它只把最像样的答案排在最前面。</p>
+
+<p>弄懂这一点，就明白它和说谎不是一回事。别把它当恶意，但也别全信它。把它当成一个表达欲很强、记性一般的助手，用之前多留个心眼。</p>
+
+<h2 id="sec-5">知道了原理，你能做什么</h2>
+
+<p>原理懂了，动作就三条：交叉验证，高风险信息换来源查；要求标来源，让它把出处列出来；拿不准就外部核对，法条查官方数据库，数据查原始报表。懂得原理，防范才谈得上。各家模型对自身局限的说明，以 <a href="https://platform.openai.com/docs/" target="_blank" rel="noopener">OpenAI 官方文档</a>{:target=&quot;_blank&quot;}和 <a href="https://docs.anthropic.com/" target="_blank" rel="noopener">Anthropic 官方文档</a>{:target=&quot;_blank&quot;}为准。实操里可以先给 AI 一句提示词，把它不确定的地方逼出来：</p>
+
+<pre><code>请逐条回答，并在每条后面标注把握程度：确定/较有把握/不确定。
+不确定的项目请明确写出，并给出你判断的依据。</code></pre>
+
+<p>具体的防错步骤，看<a href="avoid-ai-hallucination-tips.html">AI 胡说八道怎么办</a>这篇教程，它专讲怎么防；这篇负责让你看懂「为什么」。想从头理解大模型，看<a href="what-is-llm-explained.html">大模型是什么</a>，找工具去<a href="../tools.html">AI 工具导航</a>。别把高风险事实直接采信 AI，也别因为 AI 编过就完全弃用。AI 幻觉是什么，答案就一句：它在猜，不是在查——所以关键信息，永远要你自己去核。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-llm-explained.html">大模型是什么</a></li>
+      <li><a href="avoid-ai-hallucination-tips.html">AI 胡说八道怎么办</a></li>
+      <li><a href="what-is-context-window.html">AI 的记性空间</a></li>
+      <li><a href="what-is-token-ai.html">Token 是什么</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

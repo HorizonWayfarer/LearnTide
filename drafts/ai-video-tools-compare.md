@@ -9,12 +9,14 @@ meta_title: AI 视频生成工具怎么选？六款按用途分类推荐 — Lea
 meta_description: AI 视频生成工具分文生视频、图生视频、AI 剪辑三类，用途完全不同。本文按创意片段、完整短视频、口播数字人三种需求分类推荐 6 款工具，并说明时长与商用限制。
 lede: 搜 AI 视频工具会搜到一堆名字，但它们分三类，输入方式和产出完全不同，选之前先搞清楚。
 internal_links:
-  - slug: free-ai-tools-list
-    anchor: 免费 AI 工具推荐
+  - slug: heygen-digital-human-review
+    anchor: HeyGen 数字人评测
   - path: free-ai-image-tools-2026.html
     anchor: 免费 AI 图像工具
   - slug: kling-vs-jimeng-compare
     anchor: 可灵和即梦哪个好
+  - slug: ai-voice-tools-compare
+    anchor: AI 配音工具哪个好
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
@@ -42,11 +44,11 @@ AI 剪辑：从素材里自动剪辑加字幕，适合后期处理
 | Runway | 文生+图生视频 | 电影感、多种风格 | 有免费试用 | 否 |
 | Sora | 文生视频 | 高质量、长视频潜力 | 已并入 ChatGPT 订阅，独立 App 已关停 | 否 |
 
-可灵和即梦国内直接可用，免费额度做创意片段够用。Runway 功能更丰富，但需要额外网络条件。Sora 的开放状态变过多次：独立 App 已在 2026 年 4 月关停，视频生成能力并入 ChatGPT 订阅。想用它，先去 OpenAI 官网看当前入口和额度。
+可灵和即梦国内直接可用，免费额度做创意片段够用。第一次用可灵，想照步骤走看[可灵 AI 教程](kling-ai-tutorial.html)。[Runway](runway-ai-video-review.html)功能更丰富，但需要额外网络条件。Sora 的开放状态变过多次：独立 App 已在 2026 年 4 月关停，视频生成能力并入 ChatGPT 订阅。想用它，先去 OpenAI 官网看当前入口和额度。
 
 ## 做完整短视频后期：剪映 AI
 
-如果你的需求不是生成视频画面，而是把手头的素材剪成完整短视频，剪映 AI 是门槛最低的选择。智能成片、自动字幕、素材匹配、转场建议，这些功能国内免费可用，不需要额外网络条件。剪映的 AI 字幕准确率高，支持多语种生成，适合做知识类、口播类短视频。对做短视频内容的人来说，剪映 AI 一套基本能覆盖从剪辑到发布的全流程。
+如果你的需求不是生成视频画面，而是把手头的素材剪成完整短视频，剪映 AI 是门槛最低的选择。智能成片、自动字幕、素材匹配、转场建议，这些功能国内免费可用，不需要额外网络条件。剪映的 AI 字幕准确率高，支持多语种生成，适合做知识类、口播类短视频。对做短视频内容的人来说，剪映 AI 一套基本能覆盖从剪辑到发布的全流程，第一次用想照步骤走看[剪映新手教程](jianying-ai-tutorial.html)。
 
 ## 做口播与数字人：HeyGen 类
 

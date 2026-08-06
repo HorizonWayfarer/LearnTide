@@ -17,6 +17,8 @@ internal_links:
     anchor: 免费 AI 图像工具
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: fix-ai-hands-generation
+    anchor: AI 画手修复教程
 date: 2026-08-04
 verified: 2026-08-05
 ---

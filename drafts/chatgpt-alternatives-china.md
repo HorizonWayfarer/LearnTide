@@ -15,6 +15,8 @@ internal_links:
     anchor: 豆包和 Kimi 哪个好用
   - path: ai-chat-assistant-compare.html
     anchor: AI 对话助手横向对比
+  - slug: tongyi-qianwen-review
+    anchor: 通义千问好用吗
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04

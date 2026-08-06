@@ -17,6 +17,8 @@ internal_links:
     anchor: 用 AI 写小红书文案
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: ai-content-creation-guide
+    anchor: AI 内容创作完整流程
 date: 2026-08-04
 verified: 2026-08-05
 ---

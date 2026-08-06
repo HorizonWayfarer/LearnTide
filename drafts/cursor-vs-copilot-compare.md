@@ -17,6 +17,8 @@ internal_links:
     anchor: 通义灵码好用吗
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: github-copilot-worth-buying
+    anchor: GitHub Copilot 值不值
 date: 2026-08-04
 verified: 2026-08-05
 ---

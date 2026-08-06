@@ -17,6 +17,8 @@ internal_links:
     anchor: AI 写周报完全指南
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: best-ai-ppt-tools-compare
+    anchor: 2026 最佳 AI PPT 工具
 date: 2026-08-04
 verified: 2026-08-04
 ---

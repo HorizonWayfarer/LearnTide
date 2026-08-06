@@ -13,8 +13,10 @@ internal_links:
     anchor: ChatGPT 国内替代品
   - slug: deepseek-vs-chatgpt-compare
     anchor: DeepSeek 和 ChatGPT 哪个好
-  - slug: free-ai-tools-list
-    anchor: 免费 AI 工具推荐
+  - slug: ai-subscription-cost-guide
+    anchor: AI 订阅费用怎么省
+  - slug: claude-free-tier-limits
+    anchor: Claude 免费额度限制
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
@@ -31,7 +33,7 @@ ChatGPT Plus 值得开吗，这个问题跟问「健身房年卡值得办吗」�
 
 一周只打开一两次，查个资料、写几句文案、改个标题，免费版完全够用。免费版有消息条数上限和高峰期的响应降级，但低频用户几乎碰不到这个天花板。
 
-如果网络访问本身就有门槛，更没必要开。国内直接可用的 AI 助手——豆包、Kimi、通义千问、DeepSeek——在中文日常任务上都不输 ChatGPT，且免费额度慷慨。先看看 [ChatGPT 国内替代品](chatgpt-alternatives-china.html) 能不能解决你大部分需求，省下的订阅费是实打实的。
+如果网络访问本身就有门槛，更没必要开。国内直接可用的 AI 助手——豆包、Kimi、通义千问、DeepSeek——在中文日常任务上都不输 ChatGPT，且免费额度慷慨。先看看 [ChatGPT 国内替代品](chatgpt-alternatives-china.html) 能不能解决你大部分需求，省下的订阅费是实打实的。也可以对比下 [Gemini 免费额度怎么算](gemini-free-plan-review.html)，看看谷歌家的免费档撑不撑得住。
 
 ## 中频用户：值不值看你用不用得上这三样
 

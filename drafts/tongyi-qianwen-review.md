@@ -17,6 +17,8 @@ internal_links:
     anchor: 豆包和 Kimi 哪个好用
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: deepseek-vs-qwen-compare
+    anchor: DeepSeek vs Qwen 对比
 date: 2026-08-04
 verified: 2026-08-05
 ---

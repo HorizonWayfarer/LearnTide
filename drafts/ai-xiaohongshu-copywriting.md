@@ -15,6 +15,8 @@ internal_links:
     anchor: AI 提示词怎么写
   - slug: free-ai-tools-list
     anchor: 免费 AI 工具推荐
+  - slug: ai-wechat-article-writing
+    anchor: 用 AI 写公众号文章
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04

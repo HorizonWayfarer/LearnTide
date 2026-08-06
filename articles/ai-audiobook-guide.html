@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 做有声书和播客：文本到成品的完整流程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-audiobook-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 做有声书和播客分两步：先把书面稿改成口播稿，再用文字转语音生成音频。本文给口播稿提示词、声音与工具选择、有声书/播客分流程，以及版权和 AI 标识边界。">
+<meta property="og:title" content="用 AI 做有声书和播客：文本到成品的完整流程">
+<meta property="og:description" content="AI 做有声书和播客分两步：先把书面稿改成口播稿，再用文字转语音生成音频。本文给口播稿提示词、声音与工具选择、有声书/播客分流程，以及版权和 AI 标识边界。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-audiobook-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 做有声书和播客：文本到成品的完整流程">
+<meta name="twitter:description" content="AI 做有声书和播客分两步：先把书面稿改成口播稿，再用文字转语音生成音频。本文给口播稿提示词、声音与工具选择、有声书/播客分流程，以及版权和 AI 标识边界。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做有声书和播客：文本到成品",
+  "description":"AI 做有声书和播客分两步：先把书面稿改成口播稿，再用文字转语音生成音频。本文给口播稿提示词、声音与工具选择、有声书/播客分流程，以及版权和 AI 标识边界。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-audiobook-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做有声书和播客：文本到成品"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做有声书和播客：文本到成品</span>
+  </nav>
+  <h1>用 AI 做有声书和播客：文本到成品</h1>
+  <div class="article-meta">使用教程 · 2026-08-06</div>
+  <p class="lede">AI 做有声书分两步：先让 AI 把书面稿改成口播稿，再用文字转语音生成音频。只朗读自己或获授权的内容，商用前查授权和标识。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">先把版权和商用边界放在最前面</a></li>
+      <li><a href="#sec-2">ai做有声书第一步：先改写口播稿</a></li>
+      <li><a href="#sec-3">第二步：选声音和工具</a></li>
+      <li><a href="#sec-4">有声书和播客怎么做：两条流程</a></li>
+      <li><a href="#sec-5">发布前最后检查：授权和 AI 标识</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">先把版权和商用边界放在最前面</h2>
+
+<p>ai做有声书，红线是版权。朗读自己的内容、拿到授权的内容，没问题。朗读网络小说、出版物、他人文章，侵权。</p>
+
+<p>商用之前，先查工具的授权条款，再看要不要标 AI 标识。这一步不做，后面全白搭。</p>
+
+<p>博主老周想把一本畅销书做成有声书，被提醒侵权后，改成朗读自己的专栏，顺利上线。差别就在授权这一关。</p>
+
+<blockquote><strong>关键要点</strong> - 未授权文本（网络小说、出版物）别朗读别商用- 书面稿先转口播稿，直接朗读一定像机器人- 有声书=单主播长文本，播客=对话/旁白多角色- 商用前查工具授权条款，发布按规标 AI 标识</blockquote>
+
+<h2 id="sec-2">ai做有声书第一步：先改写口播稿</h2>
+
+<p>直接朗读书面稿，一定像机器人念稿。关键是把书面语改成口语：短句、口语词、标点停顿。用下面这段提示词，让 AI 先改写：</p>
+
+<pre><code>把下面的文字改成口播稿：
+1. 拆成长句，每句不超过 20 个字；
+2. 书面词换成口语，比如「进行」改「做」；
+3. 在需要停顿的地方加逗号和句号；
+4. 保留原意，不要添加内容。
+原文：（粘贴你的文字）</code></pre>
+
+<p>改完的稿子自己读一遍。不顺的地方，再让 AI 修。这一步做好了，声音自然一半。</p>
+
+<h2 id="sec-3">第二步：选声音和工具</h2>
+
+<p>ai做有声书的工具很多，剪映文字转语音、百度智能云 TTS、科大讯飞都行。免费额度各工具不同，以官网当前说明为准（<a href="https://www.xfyun.cn/" target="_blank" rel="noopener">科大讯飞官网</a>{:target=&quot;_blank&quot;}、<a href="https://cloud.baidu.com/" target="_blank" rel="noopener">百度智能云</a>{:target=&quot;_blank&quot;}）。工具对比见<a href="ai-voice-tools-compare.html">AI 配音工具横向对比</a>，中文效果可以看<a href="elevenlabs-voice-review.html">ElevenLabs 的中文配音效果</a>。</p>
+
+<p>判断 ai做有声书工具够不够，看免费额度覆盖多少字符。音色匹配场景：旁白用沉稳男声或温柔女声，教程用清晰明亮的音色，故事用有代入感的音色。多试几个，听众耳朵不会骗你。</p>
+
+<h2 id="sec-4">有声书和播客怎么做：两条流程</h2>
+
+<p>有声书和播客，其实是两套流程。有声书是单主播长文本，核心是一致性。分章生成时，固定同一个音色，别一章一个声音。</p>
+
+<p>加发音表，人名地名读错就手动纠正。章节间留固定的停顿，听感才连贯。</p>
+
+<p>播客更灵活。单人旁白像有声书，但节奏更快。双人对谈要写对话脚本，两个角色音色要搭。下面这段提示词，生成双人播客脚本：</p>
+
+<pre><code>写一段 3 分钟的双人播客对谈脚本：
+1. 两位主播，音色一沉稳一活泼；
+2. 开头 30 秒抛出话题，中间有提问和回应；
+3. 结尾 30 秒给行动建议；
+4. 每句不超过 25 个字，标注说话人。
+话题：（你的主题）</code></pre>
+
+<p>想做对话式播客，ai做有声书那套单主播流程要换，改成双人脚本。想延伸玩音频创作，看<a href="suno-ai-tutorial-cn.html">Suno 中文歌生成教程</a>。想定制自己的声音，先读<a href="ai-voice-cloning-guide.html">AI 声音克隆的合规前提</a>。</p>
+
+<h2 id="sec-5">发布前最后检查：授权和 AI 标识</h2>
+
+<p>ai做有声书的最后一道关，是发布合规。未授权文本别朗读、别商用。网络小说、出版物、他人文章，都不在你手里。</p>
+
+<p>别人声音、明星声音，更是碰都不能碰。平台有 AI 内容标识要求，该标就标，别藏着。</p>
+
+<p>别朗读未授权的内容，别用任何明星声音做配音。ai做有声书要守住两条底线：内容合法，声音也合法。守住这两条，你的作品才走得远。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-voice-tools-compare.html">AI 配音工具横向对比</a></li>
+      <li><a href="suno-ai-tutorial-cn.html">Suno 中文歌生成教程</a></li>
+      <li><a href="ai-voice-cloning-guide.html">AI 声音克隆的合规前提</a></li>
+      <li><a href="elevenlabs-voice-review.html">ElevenLabs 的中文配音效果</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -15,6 +15,8 @@ internal_links:
     anchor: 通义灵码好用吗
   - slug: cursor-beginner-tutorial
     anchor: Cursor 新手教程
+  - slug: free-ai-code-completion-tools
+    anchor: 免费 AI 代码补全工具
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 生成图表：把数据变成图，提示词五要素一次讲清 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-chart-generation-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="用 AI 生成图表，先整理数据再让它选图。本文讲对话 AI 和表格内置 AI 两条路线、提示词五要素、生成后必查三件事，附可复制提示词，图才能直接拿去用，越用越顺手。">
+<meta property="og:title" content="用 AI 生成图表：把数据变成图，提示词五要素一次讲清">
+<meta property="og:description" content="用 AI 生成图表，先整理数据再让它选图。本文讲对话 AI 和表格内置 AI 两条路线、提示词五要素、生成后必查三件事，附可复制提示词，图才能直接拿去用，越用越顺手。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-chart-generation-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 生成图表：把数据变成图，提示词五要素一次讲清">
+<meta name="twitter:description" content="用 AI 生成图表，先整理数据再让它选图。本文讲对话 AI 和表格内置 AI 两条路线、提示词五要素、生成后必查三件事，附可复制提示词，图才能直接拿去用，越用越顺手。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 生成图表：把数据变成图",
+  "description":"用 AI 生成图表，先整理数据再让它选图。本文讲对话 AI 和表格内置 AI 两条路线、提示词五要素、生成后必查三件事，附可复制提示词，图才能直接拿去用，越用越顺手。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-chart-generation-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 生成图表：把数据变成图"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 生成图表：把数据变成图</span>
+  </nav>
+  <h1>用 AI 生成图表：把数据变成图</h1>
+  <div class="article-meta">使用教程 · 2026-08-06</div>
+  <p class="lede">想让 AI 画图，先给它能读懂的表格，再告诉它要什么图。顺序对了，图才能直接拿去用。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">用 AI 生成图表前，先选对路线</a></li>
+      <li><a href="#sec-2">第一步：把数据整理成 AI 能看懂的样子</a></li>
+      <li><a href="#sec-3">第二步：用提示词指定图表类型和信息重点</a></li>
+      <li><a href="#sec-4">第三步：生成后检查三件事</a></li>
+      <li><a href="#sec-5">什么数据别画：涉密内容不上传</a></li>
+    </ol>
+  </div>
+
+<p>用 AI 生成图表，先确认它拿到的是「原始数据」还是「你总结好的要点」——这决定图表能不能直接用。正确顺序：整理数据 → 指定图表类型 → 写清坐标和用途 → 核验数字。</p>
+
+<h2 id="sec-1">用 AI 生成图表前，先选对路线</h2>
+
+<p>先分清两条路线。对话 AI（ChatGPT、豆包这类）最灵活，你说需求它就能出图，适合快速看趋势、想思路。表格工具内置 AI（Excel、WPS 里的 AI 功能）能直接改原表，图表和数字联动，改一个数图就更新，适合做正式报表。</p>
+
+<p>日常随手画选对话 AI，正式交付选表格工具。想系统学表格处理，看<a href="ai-excel-tutorial.html">用 AI 处理 Excel</a>。</p>
+
+<p>选对路线，比会写提示词更重要。同一份数据，对话 AI 出的图适合看趋势，表格 AI 出的图适合改细节。</p>
+
+<h2 id="sec-2">第一步：把数据整理成 AI 能看懂的样子</h2>
+
+<p>AI 不擅长读截图和零散笔记。先把它整理成行列清晰的表格：表头写清楚「月份」「销售额」，单位写进列名或单独标注。缺的列补上，要画折线图就一定要有时间列。整理这一步虽然麻烦，却是整张图的地基，偷懒不得。</p>
+
+<p>数据越规整，AI 选图越准。整理完还可以让 AI 先复核一遍，别把错的数送进图里。</p>
+
+<p>第一步的核心，是把数据整理成表格。格式统一、单位清楚，AI 才分得清横轴和纵轴。</p>
+
+<h2 id="sec-3">第二步：用提示词指定图表类型和信息重点</h2>
+
+<p>提示词有五要素：图表类型、数据范围、X/Y 轴含义、颜色标注、用途。缺一个，AI 就自己猜，一猜就容易偏。</p>
+
+<p>提示词写得越具体，图越接近你想要的样子。想改样式，就在提示词里直接说颜色和字号。下面这段可以直接抄：</p>
+
+<pre><code>我有 2026 年 1-6 月的销售数据，格式如下：
+月份,销售额(万元)
+1月,12
+2月,15
+3月,13
+4月,18
+5月,20
+6月,24
+请生成柱状图：X 轴为月份，Y 轴为销售额，
+每根柱子标注具体数值，标题写「上半年销售趋势」，
+用于月度经营汇报。只依据我提供的数据，不要改动数字。</code></pre>
+
+<h2 id="sec-4">第三步：生成后检查三件事</h2>
+
+<p>AI 生成图表后，别急着用。一查数字对不对：AI 有时会悄悄改数，拿原表抽查几个关键点。二查图例和坐标：轴标签、单位有没有标反。三查能不能导出商用：多数对话 AI 出的图只适合做示意图，正式汇报请用 Excel/WPS 官方功能导出，具体以<a href="https://support.microsoft.com/zh-cn/excel" target="_blank" rel="noopener">微软 Excel 官方支持</a>{:target=&quot;_blank&quot;}和 <a href="https://ai.wps.cn/" target="_blank" rel="noopener">WPS AI 官网</a>{:target=&quot;_blank&quot;}当前说明为准。</p>
+
+<p>最怕的，是数字被悄悄改掉。核验这步省不得，尤其要上交的图。</p>
+
+<h2 id="sec-5">什么数据别画：涉密内容不上传</h2>
+
+<p>涉密和未发布的数据别传在线工具。财报、内部成本、还没公开的产品数据，一旦进了第三方服务器，泄露风险你控制不了。AI 出的图当示意图可以，正式场合要人工复核。</p>
+
+<p>图不是画得越花越好，一眼能看懂才重要。想了解图表怎么进汇报，看<a href="ai-ppt-tools-compare.html">AI 生成 PPT 工具对比</a>和<a href="how-to-make-ppt-with-ai.html">用 AI 做 PPT 怎么做</a>。</p>
+
+<p>反向提醒：别把涉密数据传在线工具，也别直接拿 AI 的图发正式汇报。数据自己把好关，图才敢放心用。用 AI 生成图表，先整理、再指定、后核验，三步走完再上会。更多工具去<a href="../tools.html">AI 工具导航</a>。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-excel-tutorial.html">用 AI 处理 Excel</a></li>
+      <li><a href="ai-ppt-tools-compare.html">AI 生成 PPT 工具对比</a></li>
+      <li><a href="how-to-make-ppt-with-ai.html">用 AI 做 PPT 怎么做</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

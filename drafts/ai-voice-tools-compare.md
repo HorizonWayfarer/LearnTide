@@ -11,12 +11,14 @@ lede: AI 配音没有通吃答案，先分清口播、长解说、商用还是�
 internal_links:
   - slug: suno-ai-music-review
     anchor: Suno 写歌怎么样
-  - slug: elevenlabs-voice-review
+  - slug: elevenlabs-voice-clone-review
     anchor: ElevenLabs 配音怎么样
   - slug: suno-ai-tutorial-cn
     anchor: Suno 怎么用
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: elevenlabs-voice-review
+    anchor: ElevenLabs 配音评测
 date: 2026-08-04
 verified: 2026-08-05
 ---

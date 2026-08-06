@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 整理账单：月度支出一目了然，隐私红线一次讲清 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-expense-tracking-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="用 AI 整理账单，别把几千行明细直接丢给它。正确顺序：导出 → 本地去敏汇总 → 分类分析 → 回官方核对。附可复制提示词和隐私红线提醒，让月度支出一目了然。">
+<meta property="og:title" content="用 AI 整理账单：月度支出一目了然，隐私红线一次讲清">
+<meta property="og:description" content="用 AI 整理账单，别把几千行明细直接丢给它。正确顺序：导出 → 本地去敏汇总 → 分类分析 → 回官方核对。附可复制提示词和隐私红线提醒，让月度支出一目了然。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-expense-tracking-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 整理账单：月度支出一目了然，隐私红线一次讲清">
+<meta name="twitter:description" content="用 AI 整理账单，别把几千行明细直接丢给它。正确顺序：导出 → 本地去敏汇总 → 分类分析 → 回官方核对。附可复制提示词和隐私红线提醒，让月度支出一目了然。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 整理账单：月度支出一目了然",
+  "description":"用 AI 整理账单，别把几千行明细直接丢给它。正确顺序：导出 → 本地去敏汇总 → 分类分析 → 回官方核对。附可复制提示词和隐私红线提醒，让月度支出一目了然。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-expense-tracking-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 整理账单：月度支出一目了然"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 整理账单：月度支出一目了然</span>
+  </nav>
+  <h1>用 AI 整理账单：月度支出一目了然</h1>
+  <div class="article-meta">使用教程 · 2026-08-06</div>
+  <p class="lede">想用 AI 看清每月钱花哪了，关键不在模型多聪明，而在你喂数据的方式：汇总后上传，明细留在本机。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">用 AI 整理账单前，先分清记账和记账 App</a></li>
+      <li><a href="#sec-2">第一步：导出账单，本地汇总去敏</a></li>
+      <li><a href="#sec-3">第二步：让 AI 分类、找异常、算趋势</a></li>
+      <li><a href="#sec-4">第三步：核对数字，别让 AI 替你做决定</a></li>
+      <li><a href="#sec-5">隐私红线：只传汇总，不传明细</a></li>
+    </ol>
+  </div>
+
+<p>用 AI 整理账单，别急着把几个月流水整份丢给对话框。它能读懂账单，不代表它该替你管钱。正确顺序是四步：导出 → 本地去敏汇总 → 分类分析 → 回官方核对。前三步决定效率，最后一步决定数字能不能信。</p>
+
+<h2 id="sec-1">用 AI 整理账单前，先分清记账和记账 App</h2>
+
+<p>记账 App 和 AI 整理账单各管一段。随手记这类 App 负责自动记录每一笔，扫码就能记。AI 整理账单负责分析已有账单：把几十类支出归成几大类，找出花超的项目，算出月度趋势。</p>
+
+<p>一个是记录员，一个是分析师。想用 AI 整理账单的人，多半不是缺记账工具，而是账单堆着没人看。</p>
+
+<p>很多人卡在第一步：几千行流水，不知道从哪喂起。这套流程，就是把「几千行」变成「几十行」再上交。</p>
+
+<h2 id="sec-2">第一步：导出账单，本地汇总去敏</h2>
+
+<p>微信支付、支付宝、银行卡 App 通常都有账单导出入口，一般在「我的」或「设置」里，可以按月份导出 CSV 或 Excel。导出后先别上传。</p>
+
+<p>把明细在本地表格里汇总成「分类 + 金额」几十行，再交给 AI。这一步叫去敏：商户名、交易号这些信息留在本机。想顺手把表格处理干净，参考<a href="ai-excel-tutorial.html">用 AI 处理 Excel</a>的做法。</p>
+
+<p>颗粒度按「自己看得懂」来，按餐饮、交通、居住、娱乐、其他分大类就够了。太细，AI 反而容易分错。</p>
+
+<h2 id="sec-3">第二步：让 AI 分类、找异常、算趋势</h2>
+
+<p>汇总成几十行之后，就可以让 AI 干活了。AI 整理账单准不准，一半看数据格式，一半看提示词。下面这段可以直接抄：</p>
+
+<pre><code>我把上个月的开支按「分类,金额」列给你，一共 35 行。
+请你：
+1. 按餐饮、交通、居住、娱乐、其他五类汇总；
+2. 标出比上月波动超过 30% 的项目；
+3. 算每个分类占总支出的比例。
+只依据我给的数字，不要编造，不要补充我没列出的内容。</code></pre>
+
+<p>跑完你会发现，AI 最擅长把「异常」挑出来：外卖突然翻倍，订阅费连扣三个月。这些正是月度复盘最该盯的地方。</p>
+
+<h2 id="sec-4">第三步：核对数字，别让 AI 替你做决定</h2>
+
+<p>AI 整理账单算出来的是约数，不是审计报告。跨月结转、退款、预授权这类情况最容易算错，比如上个月付的定金这个月才入账。</p>
+
+<p>回<a href="https://pay.weixin.qq.com/" target="_blank" rel="noopener">微信支付官方</a>{:target=&quot;_blank&quot;}、支付宝或银行 App 的账单核对一遍，重点看总额和几个大项。核对完，数字才能拿去当参考。想算得更准，把「含退款」「含预授权」这类备注也写进汇总。</p>
+
+<h2 id="sec-5">隐私红线：只传汇总，不传明细</h2>
+
+<p>账单是全站最敏感的数据之一，比照片和聊天记录更值得警惕。两条底线：只传汇总，不传明细；别在公共 Wi-Fi 下传。</p>
+
+<p>任何要求输入支付密码、验证码、绑定银行卡的「记账工具」都是骗局。AI 只做分析，不代管资金，一切交易记录以微信支付、支付宝、银行官方为准。老牌记账产品<a href="https://www.feidee.com/" target="_blank" rel="noopener">随手记</a>{:target=&quot;_blank&quot;}的功能和价格，以官网当前说明为准。</p>
+
+<p>整理完的汇总别急着删，还能复用：年底直接<a href="ai-year-end-summary-guide.html">用 AI 写年终总结</a>，出门前配合<a href="ai-travel-planning-guide.html">用 AI 做旅行攻略</a>做预算。更多办公场景，看<a href="ai-weekly-report-guide.html">AI 办公提效指南</a>，找工具去<a href="../tools.html">AI 工具导航</a>。</p>
+
+<p>反向提醒：别把完整账单整份丢给在线 AI，也别把账单交给任何非官方工具。数据留在自己手里才最安全。用 AI 整理账单，让它当分析师，你当拍板的人。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-excel-tutorial.html">用 AI 处理 Excel</a></li>
+      <li><a href="ai-year-end-summary-guide.html">用 AI 写年终总结</a></li>
+      <li><a href="ai-travel-planning-guide.html">用 AI 做旅行攻略</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

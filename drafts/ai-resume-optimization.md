@@ -17,6 +17,8 @@ internal_links:
     anchor: 用 AI 模拟面试
   - slug: ai-self-intro-writing
     anchor: 用 AI 写自我介绍
+  - slug: ai-cv-resume-optimization
+    anchor: AI 简历优化实操
 date: 2026-08-04
 verified: 2026-08-05
 ---

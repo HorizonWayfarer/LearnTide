@@ -17,6 +17,8 @@ internal_links:
     anchor: 提示词工程是什么
   - path: ../tools.html
     anchor: AI 工具导航
+  - slug: what-is-context-window
+    anchor: 上下文窗口是什么
 date: 2026-08-04
 verified: 2026-08-05
 ---
