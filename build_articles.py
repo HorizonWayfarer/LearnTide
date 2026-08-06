@@ -53,29 +53,10 @@ CATEGORY_ALIAS = {
 }
 
 # 早期手写的文章：不走 drafts 流水线，但要进归档页和 sitemap
-LEGACY_ARTICLES = [
-    {
-        "slug": "ai-weekly-report-guide",
-        "title": "用 AI 写周报：从流水账到一眼看懂",
-        "category": "使用教程",
-        "date": "2026-08-04",
-        "summary": "把一周的散碎工作交给 AI 整理成结构化周报，附可直接复用的提示词模板。",
-    },
-    {
-        "slug": "free-ai-image-tools-2026",
-        "title": "2026 免费 AI 做图工具横评",
-        "category": "工具测评",
-        "date": "2026-08-04",
-        "summary": "即梦、可灵、通义万相、醒图，按需求对号入座，不盲选。",
-    },
-    {
-        "slug": "ai-chat-assistant-compare",
-        "title": "AI 对话助手怎么选",
-        "category": "工具测评",
-        "date": "2026-08-04",
-        "summary": "ChatGPT、Claude、Kimi、通义千问，按场景定位对比，不排座次。",
-    },
-]
+# 2026-08-06 用户决定删除 3 篇 legacy 文章（ai-weekly-report-guide /
+# free-ai-image-tools-2026 / ai-chat-assistant-compare）——它们无 drafts 源文件、
+# 且被大量内链引用已清理。列表清空；若需恢复，把这三篇补回 drafts 并重跑 build 即可。
+LEGACY_ARTICLES = []
 
 CJK_RE = re.compile(r"[\u4e00-\u9fff]")
 

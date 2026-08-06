@@ -9,8 +9,6 @@ meta_title: 用 AI 写邮件：三种场景三种模板五分钟就学会 — Le
 meta_description: 用 AI 写邮件，关键是给对信息，不是让 AI 替你想。商务邮件、正式对外、英文邮件——三种场景三种模板，附可直接复制的提示词，五分钟学会，新手也能直接上手。
 lede: 用 AI 写邮件的关键不是让 AI 替你想，而是你给出关键信息让 AI 帮你润色。三种场景三种写法，五分钟学会。
 internal_links:
-  - path: ai-weekly-report-guide.html
-    anchor: 用 AI 写周报完全指南
   - slug: ai-meeting-minutes-guide
     anchor: 用 AI 整理会议纪要
   - slug: ai-excel-tutorial
@@ -88,6 +86,6 @@ AI 写邮件模板再多，也逃不出这四个要素。记熟公式，比背�
 
 ## 什么情况下别用 AI 写邮件
 
-涉密内容别用 AI 写。敏感谈判别用 AI 写。道歉信也别用 AI 写。这些场合，人工写比 AI 写更真诚。AI 写邮件适合日常与正式文本，不适合需要感情和判断的时刻。边界划清楚，AI 就是好帮手。想提升整体办公效率，可以继续看[用 AI 写周报完全指南](ai-weekly-report-guide.html)、[用 AI 整理会议纪要](ai-meeting-minutes-guide.html)和[用 AI 处理 Excel](ai-excel-tutorial.html)，找工具回 [AI 工具导航](../tools.html)。
+涉密内容别用 AI 写。敏感谈判别用 AI 写。道歉信也别用 AI 写。这些场合，人工写比 AI 写更真诚。AI 写邮件适合日常与正式文本，不适合需要感情和判断的时刻。边界划清楚，AI 就是好帮手。想提升整体办公效率，可以继续看用 AI 写周报完全指南、[用 AI 整理会议纪要](ai-meeting-minutes-guide.html)和[用 AI 处理 Excel](ai-excel-tutorial.html)，找工具回 [AI 工具导航](../tools.html)。
 
 别把 AI 写邮件当成万能，关键信息还是你来定。

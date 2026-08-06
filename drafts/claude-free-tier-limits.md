@@ -35,7 +35,7 @@ Claude 免费版够用吗？答案取决于你把它当偶尔帮手还是主力�
 
 ## 撞到上限怎么办
 
-换个时段再试，避开高峰期通常能恢复。新开一个对话，比在超长对话里硬挤更省额度。提示词写短、问题拆细，也能减少消耗。如果只是偶尔用，[国内能直接打开的中文 AI](chatgpt-alternatives-china.html)完全可以当补充。豆包、Kimi、通义千问这些，免费额度更慷慨，日常任务并不输。把免费 AI 工具推荐那篇翻一遍，能找到更省心的平替。也可以顺带看看 [Gemini 免费版够不够用](gemini-free-plan-review.html)，三家免费档的取舍不完全一样。
+换个时段再试，避开高峰期通常能恢复。新开一个对话，比在超长对话里硬挤更省额度。提示词写短、问题拆细，也能减少消耗。如果只是偶尔用，[国内能直接打开的中文 AI]([ChatGPT](https://chat.openai.com){:target="_blank"}-alternatives-china.html)完全可以当补充。豆包、Kimi、通义千问这些，免费额度更慷慨，日常任务并不输。把免费 AI 工具推荐那篇翻一遍，能找到更省心的平替。也可以顺带看看 [Gemini 免费版够不够用]([Gemini](https://gemini.google.com){:target="_blank"}-free-plan-review.html)，三家免费档的取舍不完全一样。
 
 ## 什么时候才值得升付费
 

@@ -13,8 +13,6 @@ internal_links:
     anchor: 国内可用的 ChatGPT 替代方案
   - slug: notebooklm-tutorial-cn
     anchor: 用 NotebookLM 做资料研究
-  - path: ai-chat-assistant-compare.html
-    anchor: AI 对话助手横向对比
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-05
@@ -31,7 +29,7 @@ Perplexity 怎么样，得先弄明白它是什么。它是一个带引用的 AI
 
 ## 三个真正好用的地方
 
-**答案带来源。** 这是它和[AI 对话助手](ai-chat-assistant-compare.html)最大的分野。哪怕它写错了，你也能顺着链接抓到错在哪。
+**答案带来源。** 这是它和AI 对话助手最大的分野。哪怕它写错了，你也能顺着链接抓到错在哪。
 
 **追问式检索。** 接着追问时它会带着前文重新去搜，不用你把问题从头描述一遍。查陌生领域，这种一层层剥开的手感很顺。
 

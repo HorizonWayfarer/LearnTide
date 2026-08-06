@@ -9,8 +9,6 @@ meta_title: AI 画手指崩坏怎么解决？四层修复法从简单到难 — 
 meta_description: AI 画手指崩坏怎么解决？从加一行负面提示词，到换模型、局部重绘、手部 LoRA，四种方法按难度排列。先试最简单的，不行再进阶，总有一种能搞定你的手部问题。
 lede: AI 画手指崩坏不用慌。从加负面提示词到局部重绘，四层修法由浅入深，总有一层能解决，先试最简单的。
 internal_links:
-  - path: free-ai-image-tools-2026.html
-    anchor: 免费 AI 做图工具横评
   - slug: midjourney-prompt-tips
     anchor: Midjourney 提示词怎么写
   - slug: jimeng-prompt-tips
@@ -60,6 +58,6 @@ malformed limbs, crossed fingers, mutated hands
 
 手部 LoRA 是专门训练的手部模型，专业用户的终极方案。到 [CivitAI 官方站](https://civitai.com){:target="_blank"} 搜 hand 相关模型，下载后加载即可。效果最稳，但配置最麻烦。AI 画手指崩坏怎么解决，这是第四层，也是最后一层。
 
-不过先想清楚：手部不是画面重点，别修了。整体构图已经满意，裁剪或重新生成，比修手更快。想看更多出图思路，可以看[免费 AI 做图工具横评](free-ai-image-tools-2026.html)、[Midjourney 提示词怎么写](midjourney-prompt-tips.html)和[即梦 AI 提示词技巧](jimeng-prompt-tips.html)，找工具回 [AI 工具导航](../tools.html)。
+不过先想清楚：手部不是画面重点，别修了。整体构图已经满意，裁剪或重新生成，比修手更快。想看更多出图思路，可以看免费 AI 做图工具横评、[Midjourney 提示词怎么写](midjourney-prompt-tips.html)和[即梦 AI 提示词技巧](jimeng-prompt-tips.html)，找工具回 [AI 工具导航](../tools.html)。
 
 AI 画手指崩坏怎么解决？四层按顺序试，别一上来就上最难的。

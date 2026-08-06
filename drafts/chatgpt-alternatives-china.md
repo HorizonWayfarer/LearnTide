@@ -13,8 +13,6 @@ internal_links:
     anchor: DeepSeek 和 ChatGPT 哪个好用
   - slug: doubao-vs-kimi-compare
     anchor: 豆包和 Kimi 哪个好用
-  - path: ai-chat-assistant-compare.html
-    anchor: AI 对话助手横向对比
   - slug: tongyi-qianwen-review
     anchor: 通义千问好用吗
   - path: ../tools.html
@@ -29,8 +27,8 @@ verified: 2026-08-04
 
 | 工具 | 最擅长 | 免费情况 |
 |---|---|---|
-| DeepSeek | 中文写作、推理、代码 | 日常对话免费 |
-| 通义千问 | 综合任务、文档与图片理解 | 有免费额度 |
+| [DeepSeek](https://www.deepseek.com){:target="_blank"} | 中文写作、推理、代码 | 日常对话免费 |
+| [通义千问](https://tongyi.aliyun.com){:target="_blank"} | 综合任务、文档与图片理解 | 有免费额度 |
 | 豆包 | 语音对话、拍照识图、短文案 | 常规使用免费 |
 | Kimi | 长文档阅读与摘要 | 常规使用免费 |
 | 智谱清言 | 联网查资料、资料整理 | 有免费额度 |

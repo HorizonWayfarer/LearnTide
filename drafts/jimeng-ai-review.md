@@ -9,8 +9,6 @@ meta_title: 即梦 AI 好用吗？中文出图能力与免费额度解读 — Le
 meta_description: 即梦 AI 是字节推出的中文出图工具，最大优势是中文提示词不用翻译成英文。本文说明它擅长和不擅长的场景、免费额度大致怎么算，以及什么情况下该换别的工具。
 lede: 即梦 AI 是字节跳动出品的免费中文出图工具，国内直接可用，中文提示词不用翻译成英文。
 internal_links:
-  - path: free-ai-image-tools-2026.html
-    anchor: 免费 AI 图像工具
   - slug: midjourney-free-alternatives
     anchor: Midjourney 的免费替代品
   - slug: free-ai-tools-list
@@ -33,7 +31,7 @@ verified: 2026-08-05
 
 用海外出图工具，最烦的一步不是写提示词，而是先翻译。你脑子里想的是「一只橘猫趴在窗台上，午后阳光斜照」，先得翻成英文，还得考虑英文提示词的语法顺序和权重写法。即梦直接用中文描述就行，它理解中文场景词、风格词、意境描述的能力在国产工具里属于第一梯队。
 
-省掉的不只是翻译时间，还有因为你英文写得不地道而反复试错的时间。即梦能理解「国风」「赛博朋克」「脑洞」「氛围感」这类中文语境词，不需要先查英文怎么表达。想系统学中文提示词写法，看[即梦提示词技巧](jimeng-prompt-tips.html)。
+省掉的不只是翻译时间，还有因为你英文写得不地道而反复试错的时间。即梦能理解「国风」「赛博朋克」「脑洞」「氛围感」这类中文语境词，不需要先查英文怎么表达。想系统学中文提示词写法，看[即梦提示词技巧]([Jimeng](https://jimeng.jianying.com){:target="_blank"}-prompt-tips.html)。
 
 ## 擅长什么，不擅长什么
 
@@ -53,7 +51,7 @@ verified: 2026-08-05
 
 ## 什么情况下该换别的工具
 
-需要极致艺术质感的时候。即梦的风格化输出适合日常，但高要求输出仍是 Midjourney 领先。需要精细控制构图的场景。如果你对出图有精确的布局要求，即梦的随机性会让你反复试。建议考虑本地部署 Stable Diffusion 配合 ControlNet，或者看看 [Midjourney 的免费替代品](midjourney-free-alternatives.html) 里有没有更合适的。
+需要极致艺术质感的时候。即梦的风格化输出适合日常，但高要求输出仍是 [Midjourney](https://www.midjourney.com){:target="_blank"} 领先。需要精细控制构图的场景。如果你对出图有精确的布局要求，即梦的随机性会让你反复试。建议考虑本地部署 [Stable Diffusion](https://stability.ai){:target="_blank"} 配合 ControlNet，或者看看 [Midjourney 的免费替代品](midjourney-free-alternatives.html) 里有没有更合适的。
 
 最后说一句反的：**免费工具不等于适合商用。** 用于商业项目前，一定查清楚授权条款。另外，精细控制和多次迭代一致性目前还不是免费工具的强项，这些需求对应的是几百到上千的订阅费用。
 

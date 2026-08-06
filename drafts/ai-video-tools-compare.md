@@ -11,8 +11,6 @@ lede: 搜 AI 视频工具会搜到一堆名字，但它们分三类，输入方�
 internal_links:
   - slug: heygen-digital-human-review
     anchor: HeyGen 数字人评测
-  - path: free-ai-image-tools-2026.html
-    anchor: 免费 AI 图像工具
   - slug: kling-vs-jimeng-compare
     anchor: 可灵和即梦哪个好
   - slug: ai-voice-tools-compare
@@ -42,9 +40,9 @@ AI 剪辑：从素材里自动剪辑加字幕，适合后期处理
 | 可灵 | 文生视频 | 写实风格、人物动作自然 | 有免费额度 | 是 |
 | 即梦 | 文生视频 | 中文描述理解、风格化 | 每日积分刷新 | 是 |
 | Runway | 文生+图生视频 | 电影感、多种风格 | 有免费试用 | 否 |
-| Sora | 文生视频 | 高质量、长视频潜力 | 已并入 ChatGPT 订阅，独立 App 已关停 | 否 |
+| Sora | 文生视频 | 高质量、长视频潜力 | 已并入 [ChatGPT](https://chat.openai.com){:target="_blank"} 订阅，独立 App 已关停 | 否 |
 
-可灵和即梦国内直接可用，免费额度做创意片段够用。第一次用可灵，想照步骤走看[可灵 AI 教程](kling-ai-tutorial.html)。[Runway](runway-ai-video-review.html)功能更丰富，但需要额外网络条件。Sora 的开放状态变过多次：独立 App 已在 2026 年 4 月关停，视频生成能力并入 ChatGPT 订阅。想用它，先去 OpenAI 官网看当前入口和额度。
+可灵和即梦国内直接可用，免费额度做创意片段够用。第一次用可灵，想照步骤走看[可灵 AI 教程](kling-ai-tutorial.html)。[Runway](runway-ai-video-review.html)功能更丰富，但需要额外网络条件。Sora 的开放状态变过多次：独立 App 已在 2026 年 4 月关停，视频生成能力并入 ChatGPT 订阅。想用它，先去 [OpenAI](https://openai.com){:target="_blank"} 官网看当前入口和额度。
 
 ## 做完整短视频后期：剪映 AI
 

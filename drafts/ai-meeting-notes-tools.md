@@ -13,8 +13,6 @@ internal_links:
     anchor: 通义千问的免费额度与场景
   - slug: free-ai-tools-list
     anchor: 免费 AI 工具清单
-  - path: ai-weekly-report-guide.html
-    anchor: 用 AI 写周报的完整做法
   - path: ../tools.html
     anchor: AI 工具导航
   - slug: ai-meeting-record-tips
@@ -84,7 +82,7 @@ verified: 2026-08-05
 逐字稿里没提到的信息不要补充，负责人不明确就写「未指派」。
 ```
 
-输出完直接贴进任务工具。想把纪要顺手变成周报，看[用 AI 写周报的完整做法](ai-weekly-report-guide.html)；想再找几个省事的，[免费 AI 工具清单](free-ai-tools-list.html)里有。
+输出完直接贴进任务工具。想把纪要顺手变成周报，看用 AI 写周报的完整做法；想再找几个省事的，[免费 AI 工具清单](free-ai-tools-list.html)里有。
 
 功能与免费额度更新频繁，实际以官网当天说明为准。
 

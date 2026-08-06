@@ -66,6 +66,6 @@ AI 整理账单算出来的是约数，不是审计报告。跨月结转、退�
 
 任何要求输入支付密码、验证码、绑定银行卡的「记账工具」都是骗局。AI 只做分析，不代管资金，一切交易记录以微信支付、支付宝、银行官方为准。老牌记账产品[随手记](https://www.feidee.com/){:target="_blank"}的功能和价格，以官网当前说明为准。
 
-整理完的汇总别急着删，还能复用：年底直接[用 AI 写年终总结](ai-year-end-summary-guide.html)，出门前配合[用 AI 做旅行攻略](ai-travel-planning-guide.html)做预算。更多办公场景，看[AI 办公提效指南](ai-weekly-report-guide.html)，找工具去[AI 工具导航](../tools.html)。
+整理完的汇总别急着删，还能复用：年底直接[用 AI 写年终总结](ai-year-end-summary-guide.html)，出门前配合[用 AI 做旅行攻略](ai-travel-planning-guide.html)做预算。更多办公场景，看AI 办公提效指南，找工具去[AI 工具导航](../tools.html)。
 
 反向提醒：别把完整账单整份丢给在线 AI，也别把账单交给任何非官方工具。数据留在自己手里才最安全。用 AI 整理账单，让它当分析师，你当拍板的人。

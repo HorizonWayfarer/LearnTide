@@ -13,8 +13,6 @@ internal_links:
     anchor: Midjourney 的免费替代品
   - slug: jimeng-ai-review
     anchor: 即梦 AI 好用吗
-  - path: free-ai-image-tools-2026.html
-    anchor: 免费 AI 图像工具
   - path: ../tools.html
     anchor: AI 工具导航
   - slug: fix-ai-hands-generation
@@ -66,7 +64,7 @@ clean white background, centered, soft shadows --ar 1:1 --stylize 400
 
 ## 三个常见错误
 
-过度堆砌形容词，十来个形容词不如一个清晰的主体。忽略参数，比例和风格化不设，出图全凭运气。主体太多，一个画面塞三四个主角，AI 只能乱来。注意：这套结构适用于 Midjourney，Stable Diffusion、即梦等中文工具语法不同，别照搬。它需要付费订阅，国内访问可能要额外网络条件，介意的话可以看[Midjourney 的免费替代品](midjourney-free-alternatives.html)那篇。把这三个错误记熟，能避开大多数翻车现场。
+过度堆砌形容词，十来个形容词不如一个清晰的主体。忽略参数，比例和风格化不设，出图全凭运气。主体太多，一个画面塞三四个主角，AI 只能乱来。注意：这套结构适用于 Midjourney，[Stable Diffusion](https://stability.ai){:target="_blank"}、[即梦](https://jimeng.jianying.com){:target="_blank"}等中文工具语法不同，别照搬。它需要付费订阅，国内访问可能要额外网络条件，介意的话可以看[Midjourney 的免费替代品](midjourney-free-alternatives.html)那篇。把这三个错误记熟，能避开大多数翻车现场。
 
 工具价格与免费额度可能变动，实际以各工具官网当前说明为准。
 Midjourney 提示词怎么写？六段结构记熟，但参数不是越多越好，别把中文工具的语法硬套进来。

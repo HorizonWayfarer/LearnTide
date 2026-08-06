@@ -9,8 +9,6 @@ meta_title: 用 AI 做证件照：换底色和正装的完整步骤（附尺寸�
 meta_description: AI 证件照怎么做？简历、电子报名可用 AI 做，护照、身份证等官方证件必须现场拍。本文给自拍、换底色、换正装、选尺寸的完整步骤，以及人脸隐私和审核避坑提醒。
 lede: AI 证件照有边界：简历、电子报名能用，护照、身份证等官方证件必须现场拍。步骤只有三步：自拍、换底、选尺寸。
 internal_links:
-  - path: free-ai-image-tools-2026.html
-    anchor: 免费 AI 图像工具盘点
   - slug: jimeng-ai-review
     anchor: 即梦 AI 的出图能力
   - slug: fix-ai-hands-generation
@@ -55,7 +53,7 @@ ai做证件照的第一课，是拍好原图。AI 只是锦上添花，原图决
 
 ai做证件照的操作大同小异。入口分三类：手机小程序、美图秀秀类 App、在线网页。上传自拍，选底色（白、蓝、红），选正装模板，AI 自动合成，导出照片。免费额度各工具不同，以工具内当前说明为准（[美图秀秀官网](https://www.meitu.com/){:target="_blank"}）。
 
-国内工具里，[即梦 AI 的出图能力](jimeng-ai-review.html)在生成人像时表现稳定。换装后检查手指和衣领，AI 偶尔会画崩，修法可以参考[AI 生成人像手部崩坏的修法](fix-ai-hands-generation.html)。想要更多免费工具，翻一遍[免费 AI 图像工具盘点](free-ai-image-tools-2026.html)。
+国内工具里，[即梦 AI 的出图能力](jimeng-ai-review.html)在生成人像时表现稳定。换装后检查手指和衣领，AI 偶尔会画崩，修法可以参考[AI 生成人像手部崩坏的修法](fix-ai-hands-generation.html)。想要更多免费工具，翻一遍免费 AI 图像工具盘点。
 
 ## 第三步：选尺寸导出
 

@@ -13,8 +13,6 @@ internal_links:
     anchor: ChatGPT 国内替代品
   - slug: deepseek-vs-chatgpt-compare
     anchor: DeepSeek 和 ChatGPT 哪个好用
-  - path: ai-chat-assistant-compare.html
-    anchor: AI 对话助手横向对比
   - path: ../tools.html
     anchor: AI 工具导航
 date: 2026-08-04
@@ -37,7 +35,7 @@ Kimi 一开始就是靠「能一次读完很长的资料」出名的。把一份
 
 豆包的强项是「随身」。手机上按住就能语音提问，回答也能念出来，走路、通勤、做饭的时候都不用腾手。它还能认拍下来的照片，比如翻译一张外文菜单，或者看看孩子这道题该怎么解。
 
-写朋友圈配文、短文案、起标题这类活，豆包的语气更活，改起来省事。它背后连着抖音系的内容生态，聊生活话题和网络流行说法时反应更贴地气。
+写朋友圈配文、短文案、起标题这类活，豆包的语气更活，改起来省事。它背后连着[抖音](https://www.douyin.com){:target="_blank"}系的内容生态，聊生活话题和网络流行说法时反应更贴地气。
 
 ## 免费程度和使用门槛对比
 

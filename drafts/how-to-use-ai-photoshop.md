@@ -23,12 +23,12 @@ date: 2026-08-06
 verified: yes
 ---
 
-设计师小王接到紧急需求——客户要换掉海报背景。他没有逐个擦除图层，而是用 Photoshop AI 功能，选区、输入描述、点生成，两秒出三版。15 分钟，任务完成。
+设计师小王接到紧急需求——客户要换掉海报背景。他没有逐个擦除图层，而是用 [Photoshop](https://www.adobe.com/products/photoshop.html){:target="_blank"} AI 功能，选区、输入描述、点生成，两秒出三版。15 分钟，任务完成。
 
 > **关键要点**
 > - Generative Fill 通过选区加描述替换或扩展图像
 > - Prompt 要简短具体，选区比目标区域大 10 到 20 百分比
-> - Adobe Firefly 有额度限制，商业使用前需确认版权
+> - [Adobe](https://www.adobe.com){:target="_blank"} Firefly 有额度限制，商业使用前需确认版权
 > - 每次生成独立图层，支持非破坏性编辑，随时回退
 
 ## Photoshop AI 功能概览
@@ -41,7 +41,7 @@ Photoshop 的 AI 功能依赖 Adobe Firefly 模型。核心工具有三类。
 
 **Remove Tool 移除工具**：框选物体后一键擦除，背景自动补全。
 
-想了解更自由的出图方案？可以参考 [AI 图像生成工具](midjourney-free-alternatives.html)。Photoshop AI 与设计工作流无缝衔接。
+想了解更自由的出图方案？可以参考 [AI 图像生成工具]([Midjourney](https://www.midjourney.com){:target="_blank"}-free-alternatives.html)。Photoshop AI 与设计工作流无缝衔接。
 
 ## Generative Fill 操作步骤
 

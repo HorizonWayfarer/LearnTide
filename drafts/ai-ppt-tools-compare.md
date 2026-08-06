@@ -13,8 +13,6 @@ internal_links:
     anchor: 用 AI 做 PPT 怎么做
   - slug: how-to-write-ai-prompts
     anchor: AI 提示词怎么写
-  - path: ai-weekly-report-guide.html
-    anchor: AI 写周报完全指南
   - path: ../tools.html
     anchor: AI 工具导航
   - slug: best-ai-ppt-tools-compare
@@ -31,7 +29,7 @@ AI 生成 PPT 哪个好，先别看模板。有三件事得问在前面：免费
 
 ## 办公套件内置：WPS AI 一类，胜在不用换工具
 
-本来就用 WPS 或 Office 的人，别折腾了。套件内置的 AI 能在演示文档里根据主题或已有文字直接生成整套幻灯片，生成完就躺在你熟悉的编辑器里，改字体、换版式、导出全是老操作，不会撞上格式兼容问题。
+本来就用 WPS 或 [Office](https://www.office.com){:target="_blank"} 的人，别折腾了。套件内置的 AI 能在演示文档里根据主题或已有文字直接生成整套幻灯片，生成完就躺在你熟悉的编辑器里，改字体、换版式、导出全是老操作，不会撞上格式兼容问题。
 
 它属于会员增值功能，免费用户有体验次数，具体权益去官网会员页看。公司电脑装了 WPS、又不方便装新软件的人，这条路最短。
 
@@ -43,7 +41,7 @@ AiPPT、讯飞智文这类专做 AI PPT 的国产网站，中文排版适配最�
 
 ## 海外演示工具：视觉好但中文长文本偏弱
 
-Gamma、Canva 这类工具视觉水准明显更高，排版和动效有设计感，适合对外提案和作品集。Gamma 有免费额度，Canva 免费版模板也够用。
+Gamma、[Canva](https://www.canva.com){:target="_blank"} 这类工具视觉水准明显更高，排版和动效有设计感，适合对外提案和作品集。Gamma 有免费额度，Canva 免费版模板也够用。
 
 短板有两个。中文长句排版容易挤、断行难看，得手动把文案改短；它们又更偏向网页式演示，导出成 .pptx 后版式可能走样，国内访问速度也不稳。用之前先导一份测试文件看看，别省这一步。
 

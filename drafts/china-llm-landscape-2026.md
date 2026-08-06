@@ -41,9 +41,9 @@ verified: 2026-08-05
 |---|---|---|---|
 | 字节跳动 | 豆包大模型 | 豆包、即梦、剪映 AI | 通用对话 + 多模态 |
 | 月之暗面 | Kimi | Kimi 智能助手 | 长文本处理 |
-| 阿里 | 通义系列 | 通义千问、通义灵码 | 通用对话 + 编程 |
+| 阿里 | 通义系列 | [通义千问](https://tongyi.aliyun.com){:target="_blank"}、通义灵码 | 通用对话 + 编程 |
 | 百度 | 文心系列 | 文心一言 | 中文知识问答 |
-| 深度求索 | DeepSeek | DeepSeek 对话 | 推理 + 开源 |
+| [深度求索](https://www.deepseek.com){:target="_blank"} | [DeepSeek](https://www.deepseek.com){:target="_blank"} | DeepSeek 对话 | 推理 + 开源 |
 | 腾讯 | 混元 | 混元助手 | 通用对话 |
 | 智谱 | GLM 系列 | 智谱清言 | 通用对话 + 开源 |
 

@@ -52,7 +52,7 @@ AI 写作工具可以参考 [AI 写作工具对比](ai-writing-tools-compare.htm
 
 选题是内容创作的基础。用 AI 进行关键词研究和竞品分析，可以快速找到内容空白。
 
-使用 ChatGPT 或 Perplexity，结合 SEO 工具，分析关键词搜索量和竞争度。从搜索意图出发，找到用户真正需要但尚未被充分覆盖的话题。
+使用 [ChatGPT](https://chat.openai.com){:target="_blank"} 或 [Perplexity](https://www.perplexity.ai){:target="_blank"}，结合 SEO 工具，分析关键词搜索量和竞争度。从搜索意图出发，找到用户真正需要但尚未被充分覆盖的话题。
 
 **提示词示例**：
 
@@ -72,7 +72,7 @@ AI 写作工具可以参考 [AI 写作工具对比](ai-writing-tools-compare.htm
 
 国内自媒体平台的适配各有侧重。如果想写公众号，可以参考 [AI 微信公众号写作](ai-wechat-article-writing.html)；如果做小红书，[AI 小红书文案](ai-xiaohongshu-copywriting.html)更有针对性。
 
-配图环节可以用 AI 完成。Midjourney 适合高质量图片，Canva 适合快速出图。保持品牌调性一致性，建立固定的色彩和风格模板。
+配图环节可以用 AI 完成。[Midjourney](https://www.midjourney.com){:target="_blank"} 适合高质量图片，Canva 适合快速出图。保持品牌调性一致性，建立固定的色彩和风格模板。
 
 ## 第三阶段：优化与发布
 

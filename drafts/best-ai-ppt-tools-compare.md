@@ -21,7 +21,7 @@ verified: 2026-08-06
 
 ## AI PPT 工具赛道全景
 
-AI 做 PPT 工具对比的核心对象，包括 Gamma、Canva、Beautiful.ai、Tome、Copilot 五大主流工具。Gamma 是速度王者，输入主题即可快速出稿，适合赶工场景。Canva 模板生态最丰富，设计审美在线，适合品牌调性要求高的用户。Beautiful.ai 主打智能排版，自动优化布局。Tome 走叙事路线，适合需要讲故事的展示场景。Copilot for PowerPoint 深度集成微软生态，适合已用 Office 团队。国内 WPS AI 和 Canva 中国版也可正常使用。这个赛道 2025 年爆发，工具众多，选型前先看自己的核心需求。更多参数对比可参考 [AI PPT 工具详细评测](ai-ppt-tools-compare.html)。多数工具提供免费试用，先试后用更稳妥。选型时还要考虑团队人数、协作频率和已有软件生态，避免买完用不上。
+AI 做 PPT 工具对比的核心对象，包括 Gamma、[Canva](https://www.canva.com){:target="_blank"}、Beautiful.ai、Tome、Copilot 五大主流工具。Gamma 是速度王者，输入主题即可快速出稿，适合赶工场景。Canva 模板生态最丰富，设计审美在线，适合品牌调性要求高的用户。Beautiful.ai 主打智能排版，自动优化布局。Tome 走叙事路线，适合需要讲故事的展示场景。Copilot for [PowerPoint](https://www.microsoft.com/powerpoint){:target="_blank"} 深度集成微软生态，适合已用 [Office](https://www.office.com){:target="_blank"} 团队。国内 WPS AI 和 Canva 中国版也可正常使用。这个赛道 2025 年爆发，工具众多，选型前先看自己的核心需求。更多参数对比可参考 [AI PPT 工具详细评测](ai-ppt-tools-compare.html)。多数工具提供免费试用，先试后用更稳妥。选型时还要考虑团队人数、协作频率和已有软件生态，避免买完用不上。
 
 ```
 AI PPT 工具核心优势速查：

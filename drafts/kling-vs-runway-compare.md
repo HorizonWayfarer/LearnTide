@@ -21,7 +21,7 @@ date: 2026-08-06
 verified: yes
 ---
 
-Kling vs Runway 是两款最强大的 AI 视频生成工具，但适合的人群完全不同。
+[Kling](https://kling.kuaishou.com){:target="_blank"} vs [Runway](https://runwayml.com){:target="_blank"} 是两款最强大的 AI 视频生成工具，但适合的人群完全不同。
 
 如果你已经在用 Kling，可以参考 [Kling AI 使用教程](kling-ai-tutorial.html)快速上手；如果更关注 Runway，[Runway AI 视频评测](runway-ai-video-review.html)有详细介绍。
 
@@ -54,7 +54,7 @@ Runway 起步于 2018 年，是 AI 视频领域的老牌玩家。它不仅是生
 
 物理真实感是 Kling 的核心卖点，也是大多数用户首选它的原因。Runway 的 Gen 4 References 功能可以锁定角色特征，确保同一角色在不同镜头中保持一致。对于需要多镜头叙事的创作者来说，这是刚需。
 
-想了解国内 AI 视频工具的更多选择？可以参考 [AI 视频工具对比](kling-vs-jimeng-compare.html)。
+想了解国内 AI 视频工具的更多选择？可以参考 [AI 视频工具对比](kling-vs-[Jimeng](https://jimeng.jianying.com){:target="_blank"}-compare.html)。
 
 ## 生成速度与定价
 

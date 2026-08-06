@@ -13,8 +13,6 @@ internal_links:
     anchor: ChatGPT 国内替代品
   - slug: doubao-vs-kimi-compare
     anchor: 豆包和 Kimi 哪个好用
-  - path: ai-chat-assistant-compare.html
-    anchor: AI 对话助手横向对比
   - path: ../tools.html
     anchor: AI 工具导航
   - slug: deepseek-vs-qwen-compare
@@ -37,7 +35,7 @@ DeepSeek 和 ChatGPT 哪个好，跑分表回答不了。分水岭是两条：�
 
 ## 代码、数据、多模态：ChatGPT 生态更全
 
-写代码两边水平接近。真正的差距在周边：ChatGPT 能直接跑一段程序帮你算数据、画图表，能读上传的 Excel 和 PDF，能出图，也支持语音对话。这些串起来就是一条完整的工作流。
+写代码两边水平接近。真正的差距在周边：ChatGPT 能直接跑一段程序帮你算数据、画图表，能读上传的 [Excel](https://www.microsoft.com/excel){:target="_blank"} 和 PDF，能出图，也支持语音对话。这些串起来就是一条完整的工作流。
 
 DeepSeek 更专注在文字和推理上，文件解析、图像生成的支持范围有限，以官网当前说明为准。活儿要是经常横跨「文字加表格加图」，ChatGPT 省下的来回切换时间是实打实的。
 

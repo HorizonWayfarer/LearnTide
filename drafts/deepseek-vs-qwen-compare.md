@@ -19,7 +19,7 @@ date: 2026-08-06
 verified: yes
 ---
 
-DeepSeek vs Qwen 是 2026 年国产开源大模型的双雄。两者均采用 MoE 架构，但在推理、多模态、价格上各有侧重。
+[DeepSeek](https://www.deepseek.com){:target="_blank"} vs Qwen 是 2026 年国产开源大模型的双雄。两者均采用 MoE 架构，但在推理、多模态、价格上各有侧重。
 
 > **关键要点**
 > - DeepSeek 优势在数学推理和代码，MIT 许可证，成本更低
@@ -29,7 +29,7 @@ DeepSeek vs Qwen 是 2026 年国产开源大模型的双雄。两者均采用 Mo
 
 ## DeepSeek vs Qwen 核心差异概览
 
-DeepSeek 由深度求索公司开发，专注数学推理与代码生成，采用 MIT 许可证。它的 R1 模型在数学和推理能力上表现突出，是纯文本模型的代表。
+DeepSeek 由[深度求索](https://www.deepseek.com){:target="_blank"}公司开发，专注数学推理与代码生成，采用 MIT 许可证。它的 R1 模型在数学和推理能力上表现突出，是纯文本模型的代表。
 
 通义千问 Qwen 由阿里巴巴开发，定位为多模态通用大模型，采用 Apache 2.0 许可证。Qwen 不仅支持文本，还能处理图像、音频、视频输入，生态更丰富。
 
@@ -64,7 +64,7 @@ API 价格上，DeepSeek 更具优势。根据公开资料，DeepSeek Flash 的 
 
 国内访问方面，DeepSeek 与通义千问均免费可用，无需额外工具。
 
-想了解 DeepSeek 与 ChatGPT 的差异？可以参考 [DeepSeek vs ChatGPT 对比](deepseek-vs-chatgpt-compare.html)。
+想了解 DeepSeek 与 [ChatGPT](https://chat.openai.com){:target="_blank"} 的差异？可以参考 [DeepSeek vs ChatGPT 对比](deepseek-vs-chatgpt-compare.html)。
 
 ## 选型建议：你该选哪个？
 

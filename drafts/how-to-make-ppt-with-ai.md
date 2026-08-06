@@ -13,8 +13,6 @@ internal_links:
     anchor: AI 生成 PPT 工具哪个好
   - slug: how-to-write-ai-prompts
     anchor: AI 提示词怎么写
-  - path: ai-weekly-report-guide.html
-    anchor: AI 写周报完全指南
   - path: ../tools.html
     anchor: AI 工具导航
   - slug: best-ai-ppt-tools-compare
@@ -29,7 +27,7 @@ AI 做 PPT 怎么做，最容易踩的坑是打开一个 AI PPT 网站，输入�
 
 正确的分工是两步走。先用对话 AI 写出结构化大纲，把内容想清楚；再把大纲导入 AI PPT 工具，让它只负责排版和配图。先解决说什么，再解决好不好看。
 
-写大纲这步用 DeepSeek、豆包、Kimi 都行，这三款国内都能直接打开，日常对话免费。
+写大纲这步用 [DeepSeek](https://www.deepseek.com){:target="_blank"}、豆包、[Kimi](https://kimi.moonshot.cn){:target="_blank"} 都行，这三款国内都能直接打开，日常对话免费。
 
 这个顺序看着多一步，实际更省时间。大纲阶段改一句话只要几秒，等 PPT 排好版再想改结构，就得一页页挪。
 

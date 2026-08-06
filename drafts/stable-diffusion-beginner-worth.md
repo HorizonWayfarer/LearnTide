@@ -9,8 +9,6 @@ meta_title: Stable Diffusion 新手值得折腾吗？先看三件事 — Learnti
 meta_description: 有 NVIDIA 显卡、愿意花几天调试，Stable Diffusion 新手值得折腾吗？答案多半是值得；否则先用在线工具。本文从硬件、时间、用途三关帮你决定，五分钟就能判断。
 lede: 没有独立显卡就先别折腾，先用在线工具；有 6GB 以上显存、愿意花一两周，再考虑本地部署。
 internal_links:
-  - path: free-ai-image-tools-2026.html
-    anchor: 免费 AI 做图工具横评
   - slug: midjourney-worth-subscribing
     anchor: Midjourney 值不值得订阅
   - slug: midjourney-free-alternatives
@@ -51,6 +49,6 @@ cd stable-diffusion-webui
 
 ## 什么情况下别折腾 SD
 
-五类人先别碰：没有独立显卡；每月出图不到十张；要商用级稳定输出；讨厌命令行；网络不稳定。这几类先用现成工具，比如[免费 AI 做图工具横评](free-ai-image-tools-2026.html)，或对比 [Midjourney 值不值得订阅](midjourney-worth-subscribing.html)、[Midjourney 免费替代品](midjourney-free-alternatives.html)。反过来，当你需要完全控制生成过程、离线运行、在本地训练自己的模型时，SD 几乎是唯一选择。
+五类人先别碰：没有独立显卡；每月出图不到十张；要商用级稳定输出；讨厌命令行；网络不稳定。这几类先用现成工具，比如免费 AI 做图工具横评，或对比 [Midjourney 值不值得订阅](midjourney-worth-subscribing.html)、[Midjourney 免费替代品](midjourney-free-alternatives.html)。反过来，当你需要完全控制生成过程、离线运行、在本地训练自己的模型时，SD 几乎是唯一选择。
 
 别在没有显卡时硬装，也别为低频需求投入整周时间。Stable Diffusion 新手值得折腾吗？有显卡、有时间、有明确用途，就值得；三关过不了，先用在线工具更聪明。方向对了，折腾才不白费。更多工具见[AI 工具导航](../tools.html)。
