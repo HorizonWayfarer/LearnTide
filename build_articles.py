@@ -334,6 +334,9 @@ def page_shell(prefix, active, title, description, head_extra, body,
 <title>{title}</title>
 <link rel="canonical" href="{canon}">
 <link rel="stylesheet" href="{prefix}assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="{prefix}assets/learntide-logo.svg">
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{og_title}">
@@ -352,7 +355,7 @@ def page_shell(prefix, active, title, description, head_extra, body,
 <body>
 <header class="site-header">
   <div class="container">
-    <span class="brand"><img class="brand-logo" src="{prefix}assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <span class="brand"><img class="brand-logo" src="{prefix}assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
     <nav class="nav">
 {nav}
     </nav>
@@ -363,7 +366,8 @@ def page_shell(prefix, active, title, description, head_extra, body,
 
 <footer class="site-footer">
   <div class="container">
-    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="{prefix}about.html">关于本站</a>
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）</span>
+    <a href="{prefix}about.html">关于本站</a>
   </div>
 </footer>
 </body>
@@ -491,13 +495,22 @@ def render_article(meta, body_html, sections, slug_index):
   </nav>
 """.format(cat=esc(category), h1=esc(title))
 
-    body = """<article class="article">
-{crumb}  <h1>{h1}</h1>
-  <div class="article-meta">{cat} · {pub}</div>
-  <p class="lede">{lede}</p>
-
-{toc}{content}
-{verify}{related}</article>""".format(
+    body = """<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">{cat}</span>
+    <h1>{h1}</h1>
+    <p class="lede">{lede}</p>
+    <div class="article-meta">更新于 {pub}</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+{crumb}
+{content}
+{verify}{related}    </div>
+    <aside class="article-aside">
+{toc}    </aside>
+  </div>
+</article>""".format(
         crumb=crumb,
         h1=esc(title),
         cat=esc(category),
@@ -536,7 +549,7 @@ def render_archive(posts):
         cards = "\n".join(
             """      <a class="card" href="articles/{s}.html">
         <h3>{t}</h3>
-        <div class="meta">{c} · {d}</div>
+        <div class="meta"><span class="cat-tag">{c}</span> · {d}</div>
         <p>{p}</p>
       </a>""".format(
                 s=esc(x["slug"]),
@@ -550,7 +563,9 @@ def render_archive(posts):
         blocks.append(
             """<section class="section">
   <div class="container">
-    <h2>{cat}<span class="count">{n} 篇</span></h2>
+    <div class="section-head">
+      <h2>{cat}<span class="count">{n} 篇</span></h2>
+    </div>
     <div class="card-grid">
 {cards}
     </div>
@@ -558,7 +573,7 @@ def render_archive(posts):
 </section>""".format(cat=esc(cat), n=len(items), cards=cards)
         )
 
-    body = """<section class="hero">
+    body = """<section class="about-hero">
   <div class="container">
     <h1>全部文章</h1>
     <p>共 {total} 篇，按栏目归档。工具测评讲清免费额度与国内可用性，教程给可直接复制的提示词，科普用大白话。</p>
@@ -619,7 +634,7 @@ def update_homepage(posts, dry_run=False):
     cards = "\n".join(
         """      <a class="card" href="articles/{s}.html">
         <h3>{t}</h3>
-        <div class="meta">{c} · {d}</div>
+        <div class="meta"><span class="cat-tag">{c}</span> · {d}</div>
         <p>{p}</p>
       </a>""".format(
             s=esc(x["slug"]), t=esc(x["title"]), c=esc(x["category"]),

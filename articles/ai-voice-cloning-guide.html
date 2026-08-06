@@ -6,6 +6,9 @@
 <title>AI 声音克隆怎么做？合规前提下的步骤与避坑 — Learntide</title>
 <link rel="canonical" href="https://learntide.cc.cd/articles/ai-voice-cloning-guide.html">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
 <meta name="description" content="AI 声音克隆怎么做？红线在前：只能克隆自己或拿到授权的人。本文给录样本、上传、建模、生成、导出的完整步骤，以及声纹隐私和 AI 标识注意点，商用前先确认授权范围。">
 <meta property="og:title" content="AI 声音克隆怎么做？合规前提下的步骤与避坑">
@@ -48,7 +51,7 @@
 <body>
 <header class="site-header">
   <div class="container">
-    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
     <nav class="nav">
       <a href="../index.html">首页</a>
       <a href="../tools.html">AI 工具</a>
@@ -58,7 +61,15 @@
   </div>
 </header>
 
-<article class="article">
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 声音克隆怎么做？合规前提下的步骤</h1>
+    <p class="lede">想克隆声音？先过一道选择题：这个声音是本人的，还是拿到了本人授权？两道都答对，再往下走。</p>
+    <div class="article-meta">更新于 2026-08-06</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
   <nav class="breadcrumb" aria-label="面包屑">
     <a href="../index.html">首页</a>
     <span aria-hidden="true">›</span>
@@ -66,20 +77,6 @@
     <span aria-hidden="true">›</span>
     <span class="current">AI 声音克隆怎么做？合规前提下的步骤</span>
   </nav>
-  <h1>AI 声音克隆怎么做？合规前提下的步骤</h1>
-  <div class="article-meta">使用教程 · 2026-08-06</div>
-  <p class="lede">想克隆声音？先过一道选择题：这个声音是本人的，还是拿到了本人授权？两道都答对，再往下走。</p>
-
-  <div class="toc">
-    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
-    <ol>
-      <li><a href="#sec-1">先看红线：AI声音克隆怎么做，先分清能克隆谁</a></li>
-      <li><a href="#sec-2">准备样本：AI声音克隆怎么做，先录一段干净的声音</a></li>
-      <li><a href="#sec-3">上手步骤：录样本→上传→建模→生成→导出</a></li>
-      <li><a href="#sec-4">隐私与安全：声纹是敏感生物信息</a></li>
-      <li><a href="#sec-5">商用与发布：先确认授权范围</a></li>
-    </ol>
-  </div>
 
 <p>AI声音克隆怎么做？简单说，就是录一段干净的样本，上传给工具建模，之后输入文字就能用你的声音读出来。但红线在前：只能克隆自己，或拿到明确授权的人。</p>
 
@@ -133,11 +130,27 @@
       <li><a href="../tools.html">AI 工具导航</a></li>
     </ul>
   </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">先看红线：AI声音克隆怎么做，先分清能克隆谁</a></li>
+      <li><a href="#sec-2">准备样本：AI声音克隆怎么做，先录一段干净的声音</a></li>
+      <li><a href="#sec-3">上手步骤：录样本→上传→建模→生成→导出</a></li>
+      <li><a href="#sec-4">隐私与安全：声纹是敏感生物信息</a></li>
+      <li><a href="#sec-5">商用与发布：先确认授权范围</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
 </article>
 
 <footer class="site-footer">
   <div class="container">
-    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）</span>
+    <a href="../about.html">关于本站</a>
   </div>
 </footer>
 </body>

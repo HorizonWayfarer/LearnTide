@@ -6,6 +6,9 @@
 <title>上下文窗口是什么？AI 为什么会忘事，一张工作台讲明白 — Learntide</title>
 <link rel="canonical" href="https://learntide.cc.cd/articles/what-is-context-window.html">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
 <meta name="description" content="上下文窗口是 AI 一次对话里能同时记住的最大文字量，像一张有限大小的工作台。本文用大白话讲清它是什么、AI 为什么会忘事、窗口越大越好吗，以及怎么对话更省心。">
 <meta property="og:title" content="上下文窗口是什么？AI 为什么会忘事，一张工作台讲明白">
@@ -48,7 +51,7 @@
 <body>
 <header class="site-header">
   <div class="container">
-    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
     <nav class="nav">
       <a href="../index.html">首页</a>
       <a href="../tools.html">AI 工具</a>
@@ -58,7 +61,15 @@
   </div>
 </header>
 
-<article class="article">
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>上下文窗口是什么？AI 为什么会忘事</h1>
+    <p class="lede">AI 聊着聊着就忘了前面说过什么，不是它笨，是它一次能记住的文字量有限，那张「工作台」装满了。</p>
+    <div class="article-meta">更新于 2026-08-06</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
   <nav class="breadcrumb" aria-label="面包屑">
     <a href="../index.html">首页</a>
     <span aria-hidden="true">›</span>
@@ -66,20 +77,6 @@
     <span aria-hidden="true">›</span>
     <span class="current">上下文窗口是什么？AI 为什么会忘事</span>
   </nav>
-  <h1>上下文窗口是什么？AI 为什么会忘事</h1>
-  <div class="article-meta">资讯科普 · 2026-08-06</div>
-  <p class="lede">AI 聊着聊着就忘了前面说过什么，不是它笨，是它一次能记住的文字量有限，那张「工作台」装满了。</p>
-
-  <div class="toc">
-    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
-    <ol>
-      <li><a href="#sec-1">一句话解释：上下文窗口是什么，一张工作台</a></li>
-      <li><a href="#sec-2">里面装了什么：问题、文件、回答都占地方</a></li>
-      <li><a href="#sec-3">为什么 AI 会忘事：窗口满了，最旧的内容被挤出视野</a></li>
-      <li><a href="#sec-4">窗口越大越好吗：不一定</a></li>
-      <li><a href="#sec-5">怎么和 AI 对话更省心：先懂上下文窗口是什么</a></li>
-    </ol>
-  </div>
 
 <p>上下文窗口是什么？用一句话说：它是 AI 一次对话里能同时「记住」的最大文字量，就像一张有限大小的工作台。放不下的时候，最早的内容就被挤出去，这就是 AI 聊久了会「忘事」的原因。这个比喻，会贯穿整篇文章。</p>
 
@@ -128,11 +125,27 @@
       <li><a href="../tools.html">AI 工具导航</a></li>
     </ul>
   </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">一句话解释：上下文窗口是什么，一张工作台</a></li>
+      <li><a href="#sec-2">里面装了什么：问题、文件、回答都占地方</a></li>
+      <li><a href="#sec-3">为什么 AI 会忘事：窗口满了，最旧的内容被挤出视野</a></li>
+      <li><a href="#sec-4">窗口越大越好吗：不一定</a></li>
+      <li><a href="#sec-5">怎么和 AI 对话更省心：先懂上下文窗口是什么</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
 </article>
 
 <footer class="site-footer">
   <div class="container">
-    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）</span>
+    <a href="../about.html">关于本站</a>
   </div>
 </footer>
 </body>

@@ -6,6 +6,9 @@
 <title>用 AI 整理账单：月度支出一目了然，隐私红线一次讲清 — Learntide</title>
 <link rel="canonical" href="https://learntide.cc.cd/articles/ai-expense-tracking-guide.html">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
 <meta name="description" content="用 AI 整理账单，别把几千行明细直接丢给它。正确顺序：导出 → 本地去敏汇总 → 分类分析 → 回官方核对。附可复制提示词和隐私红线提醒，让月度支出一目了然。">
 <meta property="og:title" content="用 AI 整理账单：月度支出一目了然，隐私红线一次讲清">
@@ -48,7 +51,7 @@
 <body>
 <header class="site-header">
   <div class="container">
-    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
     <nav class="nav">
       <a href="../index.html">首页</a>
       <a href="../tools.html">AI 工具</a>
@@ -58,7 +61,15 @@
   </div>
 </header>
 
-<article class="article">
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 整理账单：月度支出一目了然</h1>
+    <p class="lede">想用 AI 看清每月钱花哪了，关键不在模型多聪明，而在你喂数据的方式：汇总后上传，明细留在本机。</p>
+    <div class="article-meta">更新于 2026-08-06</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
   <nav class="breadcrumb" aria-label="面包屑">
     <a href="../index.html">首页</a>
     <span aria-hidden="true">›</span>
@@ -66,20 +77,6 @@
     <span aria-hidden="true">›</span>
     <span class="current">用 AI 整理账单：月度支出一目了然</span>
   </nav>
-  <h1>用 AI 整理账单：月度支出一目了然</h1>
-  <div class="article-meta">使用教程 · 2026-08-06</div>
-  <p class="lede">想用 AI 看清每月钱花哪了，关键不在模型多聪明，而在你喂数据的方式：汇总后上传，明细留在本机。</p>
-
-  <div class="toc">
-    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
-    <ol>
-      <li><a href="#sec-1">用 AI 整理账单前，先分清记账和记账 App</a></li>
-      <li><a href="#sec-2">第一步：导出账单，本地汇总去敏</a></li>
-      <li><a href="#sec-3">第二步：让 AI 分类、找异常、算趋势</a></li>
-      <li><a href="#sec-4">第三步：核对数字，别让 AI 替你做决定</a></li>
-      <li><a href="#sec-5">隐私红线：只传汇总，不传明细</a></li>
-    </ol>
-  </div>
 
 <p>用 AI 整理账单，别急着把几个月流水整份丢给对话框。它能读懂账单，不代表它该替你管钱。正确顺序是四步：导出 → 本地去敏汇总 → 分类分析 → 回官方核对。前三步决定效率，最后一步决定数字能不能信。</p>
 
@@ -139,11 +136,27 @@
       <li><a href="../tools.html">AI 工具导航</a></li>
     </ul>
   </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">用 AI 整理账单前，先分清记账和记账 App</a></li>
+      <li><a href="#sec-2">第一步：导出账单，本地汇总去敏</a></li>
+      <li><a href="#sec-3">第二步：让 AI 分类、找异常、算趋势</a></li>
+      <li><a href="#sec-4">第三步：核对数字，别让 AI 替你做决定</a></li>
+      <li><a href="#sec-5">隐私红线：只传汇总，不传明细</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
 </article>
 
 <footer class="site-footer">
   <div class="container">
-    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）</span>
+    <a href="../about.html">关于本站</a>
   </div>
 </footer>
 </body>

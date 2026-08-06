@@ -6,6 +6,9 @@
 <title>AI 画手指崩坏怎么解决？四层修复法从简单到难 — Learntide</title>
 <link rel="canonical" href="https://learntide.cc.cd/articles/fix-ai-hands-generation.html">
 <link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
 <meta name="description" content="AI 画手指崩坏怎么解决？从加一行负面提示词，到换模型、局部重绘、手部 LoRA，四种方法按难度排列。先试最简单的，不行再进阶，总有一种能搞定你的手部问题。">
 <meta property="og:title" content="AI 画手指崩坏怎么解决？四层修复法从简单到难">
@@ -48,7 +51,7 @@
 <body>
 <header class="site-header">
   <div class="container">
-    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
     <nav class="nav">
       <a href="../index.html">首页</a>
       <a href="../tools.html">AI 工具</a>
@@ -58,7 +61,15 @@
   </div>
 </header>
 
-<article class="article">
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 画手指崩坏怎么解决？四层修复法</h1>
+    <p class="lede">AI 画手指崩坏不用慌。从加负面提示词到局部重绘，四层修法由浅入深，总有一层能解决，先试最简单的。</p>
+    <div class="article-meta">更新于 2026-08-06</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
   <nav class="breadcrumb" aria-label="面包屑">
     <a href="../index.html">首页</a>
     <span aria-hidden="true">›</span>
@@ -66,20 +77,6 @@
     <span aria-hidden="true">›</span>
     <span class="current">AI 画手指崩坏怎么解决？四层修复法</span>
   </nav>
-  <h1>AI 画手指崩坏怎么解决？四层修复法</h1>
-  <div class="article-meta">使用教程 · 2026-08-06</div>
-  <p class="lede">AI 画手指崩坏不用慌。从加负面提示词到局部重绘，四层修法由浅入深，总有一层能解决，先试最简单的。</p>
-
-  <div class="toc">
-    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
-    <ol>
-      <li><a href="#sec-1">AI 画手指崩坏怎么解决？先试第一层</a></li>
-      <li><a href="#sec-2">第一层：加负面提示词——最简单但最有效</a></li>
-      <li><a href="#sec-3">第二层：换模型——有些模型天生手画得好</a></li>
-      <li><a href="#sec-4">第三层：局部重绘（Inpainting）——重塑手部区域</a></li>
-      <li><a href="#sec-5">第四层：手部 LoRA + 什么时候别修了</a></li>
-    </ol>
-  </div>
 
 <p>AI 画手指崩坏怎么解决？先别急着删图。AI 画手指崩坏，本质是模型对手部结构理解不足。修复画手问题，有四种方法按难度排列。从最简单的负面提示词，到最复杂的局部重绘，总有一层能救你的图。多数情况下，第一层就够用。</p>
 
@@ -127,11 +124,27 @@ malformed limbs, crossed fingers, mutated hands</code></pre>
       <li><a href="../tools.html">AI 工具导航</a></li>
     </ul>
   </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 画手指崩坏怎么解决？先试第一层</a></li>
+      <li><a href="#sec-2">第一层：加负面提示词——最简单但最有效</a></li>
+      <li><a href="#sec-3">第二层：换模型——有些模型天生手画得好</a></li>
+      <li><a href="#sec-4">第三层：局部重绘（Inpainting）——重塑手部区域</a></li>
+      <li><a href="#sec-5">第四层：手部 LoRA + 什么时候别修了</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
 </article>
 
 <footer class="site-footer">
   <div class="container">
-    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）</span>
+    <a href="../about.html">关于本站</a>
   </div>
 </footer>
 </body>

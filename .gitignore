@@ -21,3 +21,4 @@ reports/*.json
 
 # === research/ 下原始数据快照（非报告文档） ===
 research/*.json
+".workbuddy/preview-shots/" 
