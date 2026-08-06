@@ -1,0 +1,23 @@
+# Cloudflare Pages 重定向规则
+# 语法：<来源路径>  <目标路径>  <状态码>
+# 说明：只对「实际不存在的文件」生效；已存在的静态文件优先直出，不会被这里拦截。
+#
+# 目标一律写「不带 .html」的形式 —— Cloudflare Pages 内置 clean URL，
+# /articles/x.html 会 308 跳到 /articles/x。若目标写成 .html，会变成
+# 301 -> 308 双跳，多一次跳转、白白损耗一点权重。
+
+# ── 2026-08-06 下线的 3 篇（无草稿源、内容已被更好的文章覆盖）──────────
+# 原本这 3 个 URL 在线上返回 200 + 首页内容（软 404），会被 Google 判重复内容
+# 并持续消耗抓取预算。改为 301 到最相关的现有文章，把旧链接的权重接住。
+/articles/ai-weekly-report-guide.html     /articles/ai-meeting-minutes-guide        301
+/articles/free-ai-image-tools-2026.html   /articles/midjourney-free-alternatives    301
+/articles/ai-chat-assistant-compare.html  /articles/chatgpt-alternatives-china      301
+
+# 同时兜住无 .html 的写法（clean URL 直接被访问的情况）
+/articles/ai-weekly-report-guide          /articles/ai-meeting-minutes-guide        301
+/articles/free-ai-image-tools-2026        /articles/midjourney-free-alternatives    301
+/articles/ai-chat-assistant-compare       /articles/chatgpt-alternatives-china      301
+
+# ── 说明 ──────────────────────────────────────────────────────────
+# 未匹配到规则、且文件不存在的路径 → 落到根目录 404.html，返回真 404 状态码。
+# 以后再下线文章，在这里补一条 301 即可，不要让它变成软 404。
