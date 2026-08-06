@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 论文降重怎么做？改写不失原意的完整实操步骤 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-paper-rewrite-tips.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai论文降重怎么做？先分清重复率和 AIGC 率这两个会打架的指标，再按正确顺序动手改。给出三条可直接复制的改写提示词、四类不能交给 AI 改的内容和终审清单。">
+<meta property="og:title" content="AI 论文降重怎么做？改写不失原意的完整实操步骤">
+<meta property="og:description" content="ai论文降重怎么做？先分清重复率和 AIGC 率这两个会打架的指标，再按正确顺序动手改。给出三条可直接复制的改写提示词、四类不能交给 AI 改的内容和终审清单。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-paper-rewrite-tips.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 论文降重怎么做？改写不失原意的完整实操步骤">
+<meta name="twitter:description" content="ai论文降重怎么做？先分清重复率和 AIGC 率这两个会打架的指标，再按正确顺序动手改。给出三条可直接复制的改写提示词、四类不能交给 AI 改的内容和终审清单。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 论文降重怎么做？改写不失原意的实操步骤",
+  "description":"ai论文降重怎么做？先分清重复率和 AIGC 率这两个会打架的指标，再按正确顺序动手改。给出三条可直接复制的改写提示词、四类不能交给 AI 改的内容和终审清单。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-05","dateModified":"2026-08-05",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-paper-rewrite-tips.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 论文降重怎么做？改写不失原意的实操步骤"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 论文降重怎么做？改写不失原意的实操步骤</span>
+  </nav>
+  <h1>AI 论文降重怎么做？改写不失原意的实操步骤</h1>
+  <div class="article-meta">使用教程 · 2026-08-05</div>
+  <p class="lede">很多人改到最后重复率是下来了，AI 检出率却翻着倍往上涨，因为这压根是两套判定逻辑。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 论文降重怎么做？先分清两个指标</a></li>
+      <li><a href="#sec-2">动手前先做两件零风险的事</a></li>
+      <li><a href="#sec-3">四类内容不要交给 AI 改</a></li>
+      <li><a href="#sec-4">三条可直接复制的改写提示词</a></li>
+      <li><a href="#sec-5">改完必须过的人工终审</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">AI 论文降重怎么做？先分清两个指标</h2>
+
+<p>AI 论文降重怎么做，第一步不是打开工具，是看懂两份报告。重复率查句子和已有文献撞了多少，AIGC 率查句子像不像模型写的。</p>
+
+<p>知网把这两件事做成了分开售卖的服务。<a href="https://cx.cnki.net/" target="_blank" rel="noopener">知网个人查重服务页</a>上，「文档查重」和「AIGC 检测」并排列着，各出各的报告单。</p>
+
+<p>麻烦就出在这儿：整段丢给模型重写，撞句少了，可它写的句子偏模板腔，正好踩中 AIGC 检测。</p>
+
+<p>有同学整章喂模型，数字错了被退稿。</p>
+
+<p><strong>正确顺序：先压重复率，再处理机器味。</strong>去机器味的动作和降重完全不同，看<a href="remove-ai-tone-writing.html">去掉 AI 味的具体改法</a>。</p>
+
+<h2 id="sec-2">动手前先做两件零风险的事</h2>
+
+<p>这两件事一个字都不用改，数字也会降。</p>
+
+<p><strong>第一件，把该引的引出来。</strong> 标红里相当一部分是没标注的引用。补上引号、编号和条目，就从「重复」变「引用」。</p>
+
+<p><strong>第二件，确认检测范围。</strong> 封面、目录、致谢、模板套话，很多学校要求单独拆出；提交前按本校格式整理。引用和格式怎么一次弄对，套<a href="ai-prompt-formula-template.html">提示词模板公式</a>更省事。</p>
+
+<h2 id="sec-3">四类内容不要交给 AI 改</h2>
+
+<p>有些句子越改越错。它们该走引用，不该走改写。</p>
+
+<div class="table-wrap"><table><thead><tr><th>内容类型</th><th>为什么不能改</th><th>替代做法</th></tr></thead><tbody><tr><td>理论定义</td><td>术语一换词就成了外行话</td><td>加引号直引，标注出处</td></tr><tr><td>法律与政策原文</td><td>一字之差，含义就变</td><td>原文照录，注明文号</td></tr><tr><td>公式与变量说明</td><td>符号被改名会全篇错乱</td><td>保留符号，只改叙述句</td></tr><tr><td>直接引语</td><td>改了就不叫引语</td><td>保留原句，规范标注</td></tr></tbody></table></div>
+
+<p>学术规范不是我们定的。<a href="https://www.moe.gov.cn/jyb_sjzl/sjzl_zcfg/zcfg_jyfl/202404/t20240426_1127804.html" target="_blank" rel="noopener">教育部公布的《中华人民共和国学位法》全文</a>写明，学位申请人存在学术不端情形的，经学位评定委员会决议可以不授予或撤销学位。语言润色是辅助，代写和观点生成不算。各校规定不同，动手前先翻本校研究生手册。</p>
+
+<h2 id="sec-4">三条可直接复制的改写提示词</h2>
+
+<p>关键在于把「不许动什么」写死。不写死，模型会顺手替换你的术语。指令结构怎么搭，看<a href="how-to-write-ai-prompts.html">提示词写法</a>。</p>
+
+<pre><code>【逻辑重组型】用于整段标红的综述部分
+保留以下段落的全部核心事实与数字，不新增任何信息，
+按「现象—成因—结论」的顺序重新组织为一段学术表述。
+专业术语与文献标注原样保留。分段输出，只给正文。
+
+【句式重构型】用于零星标红的分析句
+仅改变句式与语序，不替换任何专业术语、数字、引用标注。
+长句拆成短句，被动语态改为主动语态。输出简体中文。
+
+【自检型】用于改完之后
+指出以下段落中哪些表述过于口语化、哪些像模板句、
+哪些连接词用得过密。只列出问题并标出位置，不要修改原文。</code></pre>
+
+<p>用法上一条硬规矩：分段喂，一次一段。整篇上传会让模型丢掉你的论证链条。</p>
+
+<h2 id="sec-5">改完必须过的人工终审</h2>
+
+<p>模型不懂你的领域黑话，它只负责让句子读着顺。最后这一遍必须你自己来。</p>
+
+<ul><li><strong>术语有没有被换错</strong>，比如「显著性水平」被改成「明显程度」。</li><li><strong>数字有没有被动</strong>，样本量、年份、比例逐个和原稿对。</li><li><strong>逻辑连接断没断</strong>，改完的段落和上下文还接得上吗。</li></ul>
+
+<p>四条过完，再跑一次查重和 AIGC 检测，看两个数字是否同时达标，以本校通知为准。</p>
+
+<p>想把 AI 用在开题和写作阶段，而不是留到救火，看<a href="ai-thesis-writing-guide.html">AI 辅助论文写作的完整流程</a>。</p>
+
+<p>别把整篇论文一次性丢给模型，那不叫降重，那叫换个人替你写。AI 论文降重怎么做，拆开就是三步：先补引用格式，再分段改写，最后自己通读一遍。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-05。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="remove-ai-tone-writing.html">去掉 AI 味的具体改法</a></li>
+      <li><a href="ai-thesis-writing-guide.html">AI 辅助论文写作的完整流程</a></li>
+      <li><a href="how-to-write-ai-prompts.html">提示词写法</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

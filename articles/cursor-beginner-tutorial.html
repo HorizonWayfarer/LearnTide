@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cursor 新手教程：零基础做出你的第一个小工具 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/cursor-beginner-tutorial.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="cursor怎么用新手？不装开发环境、不建工程，目标锁死成双击就能在浏览器跑的网页小工具。讲清三个快捷键、两条可复制提示词、报错处理办法，以及免费额度用完的降级机制。">
+<meta property="og:title" content="Cursor 新手教程：零基础做出你的第一个小工具">
+<meta property="og:description" content="cursor怎么用新手？不装开发环境、不建工程，目标锁死成双击就能在浏览器跑的网页小工具。讲清三个快捷键、两条可复制提示词、报错处理办法，以及免费额度用完的降级机制。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/cursor-beginner-tutorial.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cursor 新手教程：零基础做出你的第一个小工具">
+<meta name="twitter:description" content="cursor怎么用新手？不装开发环境、不建工程，目标锁死成双击就能在浏览器跑的网页小工具。讲清三个快捷键、两条可复制提示词、报错处理办法，以及免费额度用完的降级机制。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"Cursor 新手教程：做出第一个小工具",
+  "description":"cursor怎么用新手？不装开发环境、不建工程，目标锁死成双击就能在浏览器跑的网页小工具。讲清三个快捷键、两条可复制提示词、报错处理办法，以及免费额度用完的降级机制。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-05","dateModified":"2026-08-05",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/cursor-beginner-tutorial.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"Cursor 新手教程：做出第一个小工具"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">Cursor 新手教程：做出第一个小工具</span>
+  </nav>
+  <h1>Cursor 新手教程：做出第一个小工具</h1>
+  <div class="article-meta">使用教程 · 2026-08-05</div>
+  <p class="lede">很多人装完 Cursor 就卡在第一步：不是界面看不懂，是不知道该拿它做出个什么东西。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">cursor怎么用新手：装好之后先做三件事</a></li>
+      <li><a href="#sec-2">cursor新手教程的核心：只要记三个快捷键</a></li>
+      <li><a href="#sec-3">动手做一个番茄钟（单个 HTML 文件）</a></li>
+      <li><a href="#sec-4">跑不起来怎么办：把报错粘回去</a></li>
+      <li><a href="#sec-5">免费额度会降级，新手常踩的三个坑</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">cursor怎么用新手：装好之后先做三件事</h2>
+
+<p>cursor怎么用新手最省事？别急着装环境，目标先定死：做一个双击就能在浏览器里打开的网页小工具。装好后先做的三件事很简单。</p>
+
+<p>第一，导入你原来 VS Code 的配置可以跳过，不导入也能用。第二，登录账号，国内能直接登，但公司或校园网有时会拦 API 请求，表现就是对话框一直转圈或报网络错误，换网络环境通常就好。第三，确认左上角当前用的是哪个模型，后面讲额度时会用上。想挑工具，先看<a href="../tools.html">AI 工具导航</a>。</p>
+
+<h2 id="sec-2">cursor新手教程的核心：只要记三个快捷键</h2>
+
+<p>别被一堆功能吓住，新手只要记三个。</p>
+
+<ul><li><strong>Tab</strong>：模型给出补全时，按 Tab 接受。</li><li><strong>Ctrl+K</strong>：选中一段代码，按它做局部修改，比如「把这段改成蓝色」。</li><li><strong>Ctrl+L</strong>：打开对话，描述你想要什么，让它生成。</li></ul>
+
+<p>Composer、@ 引用、.cursorrules 这些先别管，标记为「以后再学」。想看它和别的工具怎么比，看<a href="cursor-vs-copilot-compare.html">Cursor 和 Copilot 哪个好</a>。</p>
+
+<h2 id="sec-3">动手做一个番茄钟（单个 HTML 文件）</h2>
+
+<p>我们做番茄钟：一个大号倒计时，开始、暂停、重置三个按钮。关键约束写进提示词，生成的就是一个文件，双击就能跑。</p>
+
+<p>第一条，生成初版：</p>
+
+<pre><code>请用单个 HTML 文件做一个番茄钟，不引入任何外部依赖（不用框架、不引用外部脚本或样式），
+双击就能在浏览器里打开运行。界面简洁，一个大号倒计时数字，下面三个按钮：开始、暂停、重置。
+工作 25 分钟，休息 5 分钟，可手动切换，用中文显示「工作」和「休息」状态。</code></pre>
+
+<p>第二条，改一处：</p>
+
+<pre><code>在现有番茄钟里加一个功能：每完成一轮工作播放一段很短的提示音（用浏览器自带音频，不引外部文件）。
+保持界面简洁，只改需要改的地方，不要重写整个文件。</code></pre>
+
+<p>约束句为什么要写死，看<a href="how-to-write-ai-prompts.html">AI 提示词怎么写</a>。新建一个文件夹，用 File → Open Folder 打开它（只开单个文件后面会找不到上下文），把上面的提示词粘进 Ctrl+L 对话框，等它生成。生成后双击那个 .html 文件，浏览器就打开了。再用 Ctrl+K 改两处：换个配色、加一个「跳过休息」的按钮。</p>
+
+<h2 id="sec-4">跑不起来怎么办：把报错粘回去</h2>
+
+<p>新手卡死，多半是报错后自己瞎猜。正确节奏是「跑—反馈—修」：把浏览器控制台或 Cursor 里的报错原文整段粘回对话框，说「这是报错，帮我改」。三个常见现象这样处理：</p>
+
+<ul><li><strong>一直转圈或网络报错</strong>：多是网络拦了 API，先换网络。</li><li><strong>页面空白</strong>：多半是提示词里写了外部依赖，重申「不引入任何外部依赖」。</li><li><strong>按钮没反应</strong>：把这段告诉它「按钮点了没反应，检查事件绑定」。</li></ul>
+
+<p>想横向比编程助手，看<a href="ai-coding-assistants-compare.html">AI 编程助手哪个好</a>。</p>
+
+<h2 id="sec-5">免费额度会降级，新手常踩的三个坑</h2>
+
+<p>免费档有请求额度，额度用完后的具体表现以官网当期说明为准，很多人误以为 Cursor 变差了，其实是额度用完了。</p>
+
+<p>三个坑：</p>
+
+<ul><li><strong>不给上下文就提问</strong>：先打开文件夹、粘进代码，再问。</li><li><strong>无脑全部接受</strong>：Tab 补全每次看一眼再按，别一路按到底。</li><li><strong>一句话想造完整系统</strong>：一次只让它做一小块，拼着来。</li></ul>
+
+<p>额度与定价随时可能调整，掏钱前去 <a href="https://cursor.com/" target="_blank" rel="noopener">Cursor 官网</a> 扫一眼当前说明，帮助中心在 <a href="https://cursor.com/help" target="_blank" rel="noopener">Cursor 帮助页</a>。</p>
+
+<p>cursor怎么用新手，说到底就是先把目标锁死在单个网页文件上，别一上来就研究工程配置。想看 Agent 模式这类进阶玩法，先看<a href="what-is-ai-agent.html">什么是 AI Agent</a>。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-05。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-coding-assistants-compare.html">AI 编程助手哪个好</a></li>
+      <li><a href="cursor-vs-copilot-compare.html">Cursor 和 Copilot 哪个好</a></li>
+      <li><a href="how-to-write-ai-prompts.html">AI 提示词怎么写</a></li>
+      <li><a href="what-is-ai-agent.html">什么是 AI Agent</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 整理会议纪要：从录音到待办的完整五步 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-meeting-minutes-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="用 AI 整理会议纪要，五步把录音变成能发出的纪要：先转写再清洗，用完整提示词生成结论与待办表，发前按五条清单核对，另附录音太长、多人抢话、口音重三种情况的处理办法。">
+<meta property="og:title" content="用 AI 整理会议纪要：从录音到待办的完整五步">
+<meta property="og:description" content="用 AI 整理会议纪要，五步把录音变成能发出的纪要：先转写再清洗，用完整提示词生成结论与待办表，发前按五条清单核对，另附录音太长、多人抢话、口音重三种情况的处理办法。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-meeting-minutes-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 整理会议纪要：从录音到待办的完整五步">
+<meta name="twitter:description" content="用 AI 整理会议纪要，五步把录音变成能发出的纪要：先转写再清洗，用完整提示词生成结论与待办表，发前按五条清单核对，另附录音太长、多人抢话、口音重三种情况的处理办法。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 整理会议纪要：从录音到待办",
+  "description":"用 AI 整理会议纪要，五步把录音变成能发出的纪要：先转写再清洗，用完整提示词生成结论与待办表，发前按五条清单核对，另附录音太长、多人抢话、口音重三种情况的处理办法。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-05","dateModified":"2026-08-05",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-meeting-minutes-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 整理会议纪要：从录音到待办"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 整理会议纪要：从录音到待办</span>
+  </nav>
+  <h1>用 AI 整理会议纪要：从录音到待办</h1>
+  <div class="article-meta">使用教程 · 2026-08-05</div>
+  <p class="lede">一段两小时的会议录音，怎么变成责任人和期限都写清楚的东西，中间其实隔着好几道工序。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">用 AI 整理会议纪要，第一步是拿到带说话人的文字稿</a></li>
+      <li><a href="#sec-2">第二步：把逐字稿洗一遍再喂进去</a></li>
+      <li><a href="#sec-3">第三步：生成纪要的完整提示词模板</a></li>
+      <li><a href="#sec-4">第四步：发出去之前，过一遍这五条清单</a></li>
+      <li><a href="#sec-5">录音合规与特殊情况：先问一句再开录</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">用 AI 整理会议纪要，第一步是拿到带说话人的文字稿</h2>
+
+<p>最常见的翻车在第一步：把两小时录音原样丢进聊天框，指望它吐出能发群的成品。多数对话工具一次能吃下的内容有限，长录音进去，中段会被无声跳过。</p>
+
+<p>顺序反过来：先转写，再归纳。<a href="https://www.feishu.cn/product/minutes" target="_blank" rel="noopener">飞书妙记</a>、<a href="https://tingwu.aliyun.com/" target="_blank" rel="noopener">通义听悟</a>、腾讯会议自带的记录都属于转写层，能区分说话人。具体怎么挑，看<a href="ai-meeting-notes-tools.html">AI 会议纪要工具怎么选</a>；免费额度各家不同，用之前去官网扫一眼。</p>
+
+<p>三个小动作就能把识别率抬一大截：设备放桌子正中间；开场让每人报名字；重要结论当场复述一句。产品经理老陈养成第三个习惯后，返工率砍半。</p>
+
+<h2 id="sec-2">第二步：把逐字稿洗一遍再喂进去</h2>
+
+<p>原始逐字稿全是「那个」「就是说」「嗯对对对」。这些词稀释信息密度，模型抓不住重点。</p>
+
+<p>要洗三样：口水词、说话人标签、议题分段。前两样让 AI 代劳，议题边界得自己动手，只有在场的人清楚。</p>
+
+<p>直接复制这段提示词：</p>
+
+<pre><code>以下是一段会议逐字稿，请只做三件事：
+1. 删除语气词和重复口误，不改变任何事实表述；
+2. 把「说话人1/2/3」按这张对照表替换成真名：说话人1=陈明，说话人2=李婷……
+3. 按话题切分，每段前加一个不超过 10 字的小标题。
+不要总结，不要删减观点，不要补充原文里没有的内容。
+逐字稿：&lt;粘贴&gt;</code></pre>
+
+<p>最后一行最关键。少了它，模型会顺手「润色」，把没说过的话补进去。想杜绝这种编造，可参考<a href="avoid-ai-hallucination-tips.html">防止 AI 编造内容</a>。</p>
+
+<h2 id="sec-3">第三步：生成纪要的完整提示词模板</h2>
+
+<p>多数写法就一句「帮我总结会议纪要」，出来的是流水账。管用的提示词得写清四件事：角色、输出结构、待办字段、禁止编造。怎么搭更稳，看<a href="how-to-write-ai-prompts.html">提示词怎么写更稳</a>。</p>
+
+<pre><code>你是一名资深会议秘书。基于我提供的会议文字稿，输出中文纪要，结构固定：
+一、基本信息（时间、主题、参会人）
+二、议题与结论（每个议题：背景一句 + 最终结论一句）
+三、待办事项（表格：事项 | 责任人 | 期限 | 验收标准）
+四、待定问题（未达成一致的争议点，注明分歧双方）
+
+硬性要求：
+- 每条结论都要能在原文找到对应句子，找不到就写「原文未明确」；
+- 不要推测责任人，文字稿里没指派的一律写「待指派」；
+- 期限没提到的写「待定」，不许自己安排日期；
+- 客观陈述，不加评价。
+文字稿：&lt;粘贴&gt;</code></pre>
+
+<p>「找不到就写原文未明确」这条最省事，能把校对量压掉一大半。待办表格出来后直接复制进多维表格，责任人一栏就能 @ 到人。</p>
+
+<h2 id="sec-4">第四步：发出去之前，过一遍这五条清单</h2>
+
+<ul><li>每条结论能定位到原句吗？定位不到就删或标问号。</li><li>责任人是本人当场认下的吗？别把一句「我看看」写成「张三负责」。</li><li>数字动过没有？金额、日期、百分比是错误高发区。</li><li>有没有把讨论过程写成决议？没拍板的挪进「待定问题」。</li><li>涉及客户名、报价、人事的段落，发之前先脱敏。</li></ul>
+
+<p>运营小李一次项目会后偷懒，AI 生成什么就转发什么，把「下周内部评估」写成了「下周给客户答复」。第二天客户真来问了。这类错误不怪模型笨，怪没人核。</p>
+
+<h2 id="sec-5">录音合规与特殊情况：先问一句再开录</h2>
+
+<p>录音这事，法律上最稳的是开录前先问一句。有客户、外部顾问或媒体在场，先征得同意并留记录，别默认对方不介意。内部涉密内容别传个人账号转写，走公司统一平台；涉及商业机密的会，能离线转写就别上云。</p>
+
+<p>录音太长的会，按议题切段处理再让模型合并；整段硬塞，中间部分大概率丢失。抢话靠清洗阶段理顺交叉段落，或会前约定一次只说一人。口音则提前把黑话、代号、姓名列成对照表，转写完批量替换，比事后逐句改快太多。</p>
+
+<p>用 AI 整理会议纪要，省下的是打字时间，省不掉的署名责任。发出去之前通读一遍，不要连自己都没看就点了发送。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-05。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-meeting-notes-tools.html">AI 会议纪要工具怎么选</a></li>
+      <li><a href="how-to-write-ai-prompts.html">提示词怎么写更稳</a></li>
+      <li><a href="avoid-ai-hallucination-tips.html">防止 AI 编造内容</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

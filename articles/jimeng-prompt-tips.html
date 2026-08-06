@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>即梦提示词技巧：中文出图更准的写法与避坑指南 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/jimeng-prompt-tips.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="即梦提示词技巧的关键，是分清哪些词用中文最准、哪些用英文更稳。讲透中文特有的四个失手点、负面词写法、垫图捷径、三条可抄的模板，以及出图不对时对症改哪里。">
+<meta property="og:title" content="即梦提示词技巧：中文出图更准的写法与避坑指南">
+<meta property="og:description" content="即梦提示词技巧的关键，是分清哪些词用中文最准、哪些用英文更稳。讲透中文特有的四个失手点、负面词写法、垫图捷径、三条可抄的模板，以及出图不对时对症改哪里。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/jimeng-prompt-tips.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="即梦提示词技巧：中文出图更准的写法与避坑指南">
+<meta name="twitter:description" content="即梦提示词技巧的关键，是分清哪些词用中文最准、哪些用英文更稳。讲透中文特有的四个失手点、负面词写法、垫图捷径、三条可抄的模板，以及出图不对时对症改哪里。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"即梦 AI 提示词技巧：中文出图更准",
+  "description":"即梦提示词技巧的关键，是分清哪些词用中文最准、哪些用英文更稳。讲透中文特有的四个失手点、负面词写法、垫图捷径、三条可抄的模板，以及出图不对时对症改哪里。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-05","dateModified":"2026-08-05",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/jimeng-prompt-tips.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"即梦 AI 提示词技巧：中文出图更准"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">即梦 AI 提示词技巧：中文出图更准</span>
+  </nav>
+  <h1>即梦 AI 提示词技巧：中文出图更准</h1>
+  <div class="article-meta">使用教程 · 2026-08-05</div>
+  <p class="lede">即梦是中文原生的出图模型，可大多数人还是拿写英文提示词那套去喂它，出来的图自然总差一口气。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">即梦提示词技巧的基本骨架（先写满前四项）</a></li>
+      <li><a href="#sec-2">即梦提示词技巧：中文怎么写才准</a></li>
+      <li><a href="#sec-3">负面提示词和垫图：两招一起用</a></li>
+      <li><a href="#sec-4">即梦提示词技巧：三条可直接抄的模板</a></li>
+      <li><a href="#sec-5">出图不对怎么修</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">即梦提示词技巧的基本骨架（先写满前四项）</h2>
+
+<p>即梦提示词技巧其实就一句话：先按「主体 → 动作 → 环境 → 光线 → 风格 → 构图」把骨架搭全。再决定哪些词用中文、哪些用英文。比如「一位三十岁亚洲女性，窗边翻书，侧光，胶片质感」就能直接出图。</p>
+
+<p>只写「好看的小姐姐」这种空话，模型不知道她穿什么、在哪儿，只能自由发挥。把前四项写满，成图才可控。指令结构怎么搭，看<a href="how-to-write-ai-prompts.html">提示词写法</a>。</p>
+
+<h2 id="sec-2">即梦提示词技巧：中文怎么写才准</h2>
+
+<p>即梦是中文原生模型，主体、场景、动作、国内地标和本土意象（旗袍、胡同、国潮、水墨留白）用中文反而识别更稳。这是它的长项。想了解英文模型的写法差异，<a href="midjourney-prompt-tips.html">Midjourney 提示词技巧</a>那套思路在即梦上常水土不服。</p>
+
+<p>摄影和光影术语建议用英文：85mm lens、cinematic lighting、bokeh、rim light，画质词也用英文更稳，中文对应词识别率不稳。</p>
+
+<p>中文有四个特有的失手点，新手几乎必踩：</p>
+
+<ul><li><strong>成语和意境词</strong>：「禅意悠远」常被理解成字面画面，不如直接说构图和色块。</li><li><strong>数量词</strong>：「三个人」经常数错，用画面语言兜底，比如「左侧站两人，右侧一人」。</li><li><strong>一句话堆多种风格</strong>：「莫奈风+赛博朋克」会打架，一次只定一个主风格。</li><li><strong>否定式中文</strong>：「不要有人」不如写进负面提示词，模型对否定句一向马虎。</li></ul>
+
+<p>中文文字上图是即梦的相对强项，做国风海报直接把文案写进提示词。</p>
+
+<h2 id="sec-3">负面提示词和垫图：两招一起用</h2>
+
+<p>人像负面词组合：畸形手指、多余肢体、脸型崩坏、模糊、水印。商品图加：变形、比例失调、背景杂乱。通用兜底再加：低分辨率、文字乱码、多余文字。</p>
+
+<p>如果你还在选工具，<a href="kling-vs-jimeng-compare.html">可灵和即梦怎么选</a>这篇把两者出图取向讲清楚了。</p>
+
+<p>写不准就先垫图：垫一张想要的构图或风格参考，即梦会照着学，比死磕提示词快。固定构图、风格、人物一致性，垫图都比纯文字有效。相似度这类参数具体怎么调，以<a href="https://jimeng.jianying.com/" target="_blank" rel="noopener">即梦官网</a>当期说明为准。</p>
+
+<h2 id="sec-4">即梦提示词技巧：三条可直接抄的模板</h2>
+
+<p>下面三条是完整中文长句，改主体就能用。英文摄影术语写法可对照 <a href="https://docs.midjourney.com/" target="_blank" rel="noopener">Midjourney 官方文档</a>。即梦真实出图表现，看<a href="jimeng-ai-review.html">即梦 AI 的实际表现</a>。</p>
+
+<pre><code>照片级人像：
+一位三十岁亚洲女性，短发，身穿米白色针织衫，坐在靠窗的木桌旁翻书，
+午后阳光从右侧打进来，背景是虚化的绿植和书架，胶片质感，浅景深，85mm 镜头。
+
+电商产品图：
+一个透明玻璃香水瓶居中摆放，瓶身有金色细闪，纯黑背景，顶部一束聚光灯，
+高光锐利，表面反射清晰，商业摄影风格，产品图，8k 细节。
+
+国风海报：
+水墨留白构图，远处淡墨远山，近处一枝梅花横斜，画面右上留白处写「立春」二字，
+宣纸质感，淡彩，意境清雅，竖版海报。</code></pre>
+
+<h2 id="sec-5">出图不对怎么修</h2>
+
+<p>对着问题改比加词有用。先别急着加词：</p>
+
+<ul><li><strong>脸或手畸形</strong>：把「畸形手指、多余肢体」写进负面词，再垫正脸参考图。</li><li><strong>画面发灰</strong>：加「高对比度、饱和鲜明、锐利」，或减少「雾感」类词。</li><li><strong>和描述不符</strong>：检查是否一句话塞了多个风格，先砍到只剩一个主风格。</li><li><strong>背景杂乱</strong>：明确写「纯色背景」或「虚化背景」，别留白让模型自己填。</li><li><strong>文字乱码</strong>：中文标题务必写进提示词正文，别指望模型拼对字形。</li></ul>
+
+<p>即梦的视频能力是另一个话题，本文只讲出图，留到专门评测再展开。</p>
+
+<p>别把整段英文模板硬搬过来，那不叫写提示词，那叫给模型出谜语。即梦提示词技巧，归根到底是先写满骨架、再用对中文，成图自然就稳。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-05。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="kling-vs-jimeng-compare.html">可灵和即梦怎么选</a></li>
+      <li><a href="jimeng-ai-review.html">即梦 AI 的实际表现</a></li>
+      <li><a href="midjourney-prompt-tips.html">Midjourney 提示词技巧</a></li>
+      <li><a href="how-to-write-ai-prompts.html">提示词写法</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

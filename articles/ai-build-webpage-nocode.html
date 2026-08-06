@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>不会写代码怎么用 AI 做网页？四步上线附提示词 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-build-webpage-nocode.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai做网页，不会代码也能做到能上线的小型网页。先选路线，再走生成、预览微调、部署上线四步。本文给页面生成提示词、报错回喂方法、免费托管思路和交互功能边界提醒。">
+<meta property="og:title" content="不会写代码怎么用 AI 做网页？四步上线附提示词">
+<meta property="og:description" content="ai做网页，不会代码也能做到能上线的小型网页。先选路线，再走生成、预览微调、部署上线四步。本文给页面生成提示词、报错回喂方法、免费托管思路和交互功能边界提醒。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-build-webpage-nocode.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="不会写代码怎么用 AI 做网页？四步上线附提示词">
+<meta name="twitter:description" content="ai做网页，不会代码也能做到能上线的小型网页。先选路线，再走生成、预览微调、部署上线四步。本文给页面生成提示词、报错回喂方法、免费托管思路和交互功能边界提醒。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"不会写代码怎么用 AI 做网页",
+  "description":"ai做网页，不会代码也能做到能上线的小型网页。先选路线，再走生成、预览微调、部署上线四步。本文给页面生成提示词、报错回喂方法、免费托管思路和交互功能边界提醒。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-06","dateModified":"2026-08-06",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-build-webpage-nocode.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"不会写代码怎么用 AI 做网页"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">不会写代码怎么用 AI 做网页</span>
+  </nav>
+  <h1>不会写代码怎么用 AI 做网页</h1>
+  <div class="article-meta">使用教程 · 2026-08-06</div>
+  <p class="lede">开甜品店的小刘花了三个晚上没搭出官网，改用 AI 对话生成加免费托管，一个周末就上线了。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">用 ai做网页，先选路线</a></li>
+      <li><a href="#sec-2">第一步 生成网页骨架</a></li>
+      <li><a href="#sec-3">第二步 预览与微调</a></li>
+      <li><a href="#sec-4">第三步 部署上线</a></li>
+      <li><a href="#sec-5">表单、后台与数据怎么办</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">用 ai做网页，先选路线</h2>
+
+<p>用 AI 做网页，先想清楚你要走哪条路。对话生成 HTML 代码，还是用 AI 建站工具？两条路都能做出能上线的网站。差别在自由度和省心程度。</p>
+
+<div class="table-wrap"><table><thead><tr><th>路线</th><th>自由度高</th><th>要学的东西</th><th>适合</th></tr></thead><tbody><tr><td>对话生成代码</td><td>高，代码归你</td><td>会看报错、会部署</td><td>想长期改、不想被锁平台</td></tr><tr><td>AI 建站工具</td><td>中，受平台限制</td><td>少</td><td>快速做一版展示页</td></tr></tbody></table></div>
+
+<p>完全不会代码的人，第一条路依然可行，因为你不用自己写，只负责「说需求、看效果、提修改」。想系统学提示词，看<a href="how-to-write-ai-prompts.html">AI 提示词怎么写</a>。</p>
+
+<p>开甜品店的小刘，找人报价做官网要八千。他抱着试试看的心态，用 AI 生成了第一版。免费托管上线，第一周就接了三单团购咨询。</p>
+
+<h2 id="sec-2">第一步 生成网页骨架</h2>
+
+<p>用对话模型生成一个单文件网页，是零基础最快的起步。把需求说清楚，比会写代码更重要。</p>
+
+<pre><code>请用单个 HTML 文件做一个甜品店官网首页，不引入任何外部依赖。
+结构：顶部导航（关于、菜单、联系）、一块大图横幅、三个产品卡片、底部联系方式。
+风格：暖色、简洁、移动端可用。文字内容先用占位符，我自己替换。</code></pre>
+
+<p>提示词里的「不引入任何外部依赖」这句别省。它保证生成的文件双击就能打开。缺了它，页面会白屏。</p>
+
+<p>想学习在编辑器里改代码、用 Agent 帮忙调试的进阶路径，看<a href="cursor-beginner-tutorial.html">Cursor 新手教程</a>。</p>
+
+<h2 id="sec-3">第二步 预览与微调</h2>
+
+<p>生成后先别急着部署，本地看效果：</p>
+
+<ol><li>把生成的代码保存成 index.html，用浏览器双击打开。</li><li>逐屏看，哪里不对记下来。</li><li>把问题连同代码一起贴回对话框，让它改。</li></ol>
+
+<p>改完再看一遍，循环两三次很正常。别指望一次生成就是成品，AI 做网页的价值在快速迭代，不在一步到位。</p>
+
+<p>AI 生成的代码有 bug，很正常。处理办法是「报错回喂」：</p>
+
+<pre><code>这是我从浏览器复制来的报错：&lt;粘贴报错原文&gt;。
+请解释原因，并给出修改后的完整代码，只改必要部分，不要重写整个文件。</code></pre>
+
+<h2 id="sec-4">第三步 部署上线</h2>
+
+<p>静态网页可以免费托管，三个常用选择：<a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages 官方文档</a>、<a href="https://www.netlify.com" target="_blank" rel="noopener">Netlify</a>、<a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a>。免费额度会调整，具体以平台当期说明为准。</p>
+
+<p>部署流程大同小异。注册账号，上传文件或连接代码仓库，拿到一个公开网址。第一次部署成功的成就感，比想象中大。</p>
+
+<p>免费档够个人作品和展示页用，等流量上去了再考虑付费升级，不必一开始就掏钱。</p>
+
+<h2 id="sec-5">表单、后台与数据怎么办</h2>
+
+<p>到这里要划清边界。AI 能快速做出展示型网页。但登录、支付、数据库这类交互功能，别指望一句话全包。它们涉及服务器和数据处理，需要专业方案。</p>
+
+<p>也别把敏感数据写进前端代码，比如数据库密码、支付密钥。前端代码任何人右键都能看到。</p>
+
+<p>真要收集用户信息，用现成的表单服务或云数据库。把数据交给专门的平台处理。这比写死在前端里安全得多。</p>
+
+<p>把边界想清楚，AI 做网页就落在它擅长的地方：快速出稿、反复迭代。想横向比较编程助手，看<a href="ai-coding-assistants-compare.html">AI 编程助手横向对比</a>。工具汇总在<a href="../tools.html">AI 工具导航</a>。</p>
+
+<p>用 AI 做网页，记住「生成、预览、微调、部署」四步循环，先做一版能上线的，再慢慢加功能。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-coding-assistants-compare.html">AI 编程助手横向对比</a></li>
+      <li><a href="cursor-beginner-tutorial.html">Cursor 新手教程</a></li>
+      <li><a href="how-to-write-ai-prompts.html">AI 提示词怎么写</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

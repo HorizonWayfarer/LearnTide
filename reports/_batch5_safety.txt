@@ -1,0 +1,9 @@
+wenxin-yiyan-review: 干净 | 结尾提醒=有 | 提醒在末句=否
+midjourney-worth-subscribing: 干净 | 结尾提醒=有 | 提醒在末句=否
+suno-ai-music-review: 干净 | 结尾提醒=有 | 提醒在末句=否
+miota-writing-cat-review: 干净 | 结尾提醒=有 | 提醒在末句=否
+best-ai-apps-mobile: 干净 | 结尾提醒=有 | 提醒在末句=否
+ai-paper-rewrite-tips: 干净 | 结尾提醒=有 | 提醒在末句=否
+ai-excel-tutorial: 干净 | 结尾提醒=有 | 提醒在末句=否
+jimeng-prompt-tips: 干净 | 结尾提醒=有 | 提醒在末句=否
+jobs-replaced-by-ai: 干净 | 结尾提醒=有 | 提醒在末句=否

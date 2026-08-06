@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 处理 Excel：不订阅也能写公式和清洗数据 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-excel-tutorial.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai处理excel，不订阅 Copilot 也能做。三条路线怎么选、四类可直接复制的提示词模板、哪些表不能上传，以及最容易被跳过的一步：AI 给的公式怎么验证才不出错。">
+<meta property="og:title" content="用 AI 处理 Excel：不订阅也能写公式和清洗数据">
+<meta property="og:description" content="ai处理excel，不订阅 Copilot 也能做。三条路线怎么选、四类可直接复制的提示词模板、哪些表不能上传，以及最容易被跳过的一步：AI 给的公式怎么验证才不出错。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-excel-tutorial.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 处理 Excel：不订阅也能写公式和清洗数据">
+<meta name="twitter:description" content="ai处理excel，不订阅 Copilot 也能做。三条路线怎么选、四类可直接复制的提示词模板、哪些表不能上传，以及最容易被跳过的一步：AI 给的公式怎么验证才不出错。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 处理 Excel：写公式与数据清洗",
+  "description":"ai处理excel，不订阅 Copilot 也能做。三条路线怎么选、四类可直接复制的提示词模板、哪些表不能上传，以及最容易被跳过的一步：AI 给的公式怎么验证才不出错。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-05","dateModified":"2026-08-05",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-excel-tutorial.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 处理 Excel：写公式与数据清洗"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="28" height="28"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页</a>
+      <a href="../tools.html">AI 工具</a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章</a>
+      <a href="../about.html">关于</a>
+    </nav>
+  </div>
+</header>
+
+<article class="article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 处理 Excel：写公式与数据清洗</span>
+  </nav>
+  <h1>用 AI 处理 Excel：写公式与数据清洗</h1>
+  <div class="article-meta">使用教程 · 2026-08-05</div>
+  <p class="lede">让 AI 碰你那张几千行的表之前，先想清楚一件事：它到底该不该看见里面的手机号。</p>
+
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">用 AI 处理 Excel 前，先选你的那条路线</a></li>
+      <li><a href="#sec-2">让 AI 写公式：必须交代的三件事</a></li>
+      <li><a href="#sec-3">数据清洗：一条指令干掉六种脏数据</a></li>
+      <li><a href="#sec-4">AI 给的公式怎么验</a></li>
+      <li><a href="#sec-5">哪些表不能传，AI 又做不到什么</a></li>
+    </ol>
+  </div>
+
+<h2 id="sec-1">用 AI 处理 Excel 前，先选你的那条路线</h2>
+
+<p>用 AI 处理 Excel 有三条路。区别不在谁更聪明，在于你要不要把原始数据交出去。</p>
+
+<div class="table-wrap"><table><thead><tr><th>路线</th><th>要上传数据吗</th><th>要付费吗</th><th>能直接改表吗</th><th>适合什么活</th></tr></thead><tbody><tr><td>A 通用大模型只给公式</td><td>不用</td><td>免费档常够用</td><td>不能</td><td>写公式、查错、拆逻辑</td></tr><tr><td>B 表格内置 AI</td><td>数据在自家云上</td><td>多为订阅制</td><td>能</td><td>边聊边改当前工作表</td></tr><tr><td>C 专用表格工具</td><td>要传整份文件</td><td>分档收费</td><td>能</td><td>多表合并、批量清洗</td></tr></tbody></table></div>
+
+<p>路线 B 国内就能用：微软 <a href="https://support.microsoft.com/zh-cn/copilot-excel" target="_blank" rel="noopener">Excel 中的 Copilot 入门</a>能直接编辑工作簿，<a href="https://ai.wps.cn/" target="_blank" rel="noopener">WPS AI 官网</a>在表格里输入等号就能唤起。两家额度价格都在调，掏钱前去定价页扫一眼。</p>
+
+<p>新手的默认答案是路线 A。免费，不用传表，出错也只是一条公式的事。</p>
+
+<h2 id="sec-2">让 AI 写公式：必须交代的三件事</h2>
+
+<p>大多数人拿到烂公式，是因为只说了半句话。一条能用的指令，必须交代列结构、想要的结果、边界情况。</p>
+
+<p>做电商的小周第一次只写「帮我做个匹配」，模型给的 VLOOKUP 碰上重复订单号就崩；第二次贴了表头、补「取日期最新的一条」，一遍就对。</p>
+
+<pre><code>我的表结构：
+Sheet1 A列=订单号 B列=客户名 C列=金额 D列=下单日期
+Sheet2 A列=订单号 B列=物流状态
+我想要：在 Sheet1 的 E 列显示对应的物流状态。
+边界情况：订单号可能重复，取日期最新的一条；
+查不到时显示「未发货」，不要显示 #N/A。
+请给出 Excel 公式，并逐段解释每个参数的作用。</code></pre>
+
+<p>把里面的列名换成你自己的，直接就能用。指令为什么要写成这种结构，看<a href="how-to-write-ai-prompts.html">把需求说清楚的提示词方法</a>。</p>
+
+<h2 id="sec-3">数据清洗：一条指令干掉六种脏数据</h2>
+
+<p>脏数据的花样翻来覆去就那几种。与其一个个问，不如一次列全。</p>
+
+<pre><code>以下是一份 3000 行的客户表，列为：姓名、手机号、金额、注册日期、城市。
+请给出清洗步骤和对应公式（不要 VBA）：
+1 去掉姓名列首尾空格和不可见字符
+2 手机号统一为 11 位纯数字，非法值标记为「待核」
+3 注册日期统一为 YYYY-MM-DD 格式
+4 金额列去掉「元」字和千分位逗号，转为数值
+5 按手机号去重，保留注册日期最早的一条
+6 城市列统一去掉「市」字后缀
+每一步请说明放在哪一列、公式怎么写。</code></pre>
+
+<p>注意最后一句。不写「放在哪一列」，模型很容易给你一串落不了地的描述。路线 A 用哪个国产模型都行，能接住这类长指令的几个，<a href="free-ai-tools-list.html">免费可用的 AI 工具</a>里都列了。</p>
+
+<h2 id="sec-4">AI 给的公式怎么验</h2>
+
+<p>这一节比前面两节都重要。模型给的公式看着专业，错起来也很安静。</p>
+
+<p><strong>第一招，抽三行手工对。</strong> 挑第一行、中间一行、最后一行，用计算器或者肉眼核一遍。</p>
+
+<p><strong>第二招，故意喂边界值。</strong> 空单元格、0、负数、重复项、缺失项，各造一个塞进去，看公式会不会报错或者算歪。</p>
+
+<p><strong>第三招，用 IFERROR 兜底。</strong> 让公式查不到时返回一个你认得出的标记，而不是一片 #N/A 盖住真实问题。</p>
+
+<p>只做第一招不够，真正咬人的错误几乎都躲在边界值里。模型编公式和编事实是同一个毛病，<a href="avoid-ai-hallucination-tips.html">怎么防 AI 一本正经胡说</a>里那套核对办法，换到表格上一样管用。</p>
+
+<h2 id="sec-5">哪些表不能传，AI 又做不到什么</h2>
+
+<p>三条底线：含姓名和手机号的客户表不整份上传；含金额、成本、合同条款的表不整份上传；公司标了密级的文件不上传。</p>
+
+<p>绕开的办法很省事。只贴表头加两行假数据，让模型给公式，你自己回本地跑。公式本身不含任何真实信息。</p>
+
+<p>也得说清它做不到什么：通用大模型碰不到你本地的 xlsx，给的是公式和思路，执行的人还是你，复杂规则得你先想明白。</p>
+
+<p>带客户姓名和手机号的原表，不要直接拖进对话框。用 AI 处理 Excel 的诀窍就一句：让它写公式，数据留在你手里。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-05。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="how-to-write-ai-prompts.html">把需求说清楚的提示词方法</a></li>
+      <li><a href="free-ai-tools-list.html">免费可用的 AI 工具</a></li>
+      <li><a href="avoid-ai-hallucination-tips.html">怎么防 AI 一本正经胡说</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    Learntide · 学习潮汐 — 内容站（信息流动）。© 2026 · <a href="../about.html">关于本站</a>
+  </div>
+</footer>
+</body>
+</html>

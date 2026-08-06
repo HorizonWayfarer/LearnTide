@@ -1,0 +1,9 @@
+﻿ai-paper-rewrite-tips           860   5   1   4   57  148   19.9    20  OK
+ai-excel-tutorial               868   5   2   5   56  149   21.5    30  OK
+jimeng-prompt-tips              897   5   1   4   56  152   23.0    11  WARN: 鐭彞11%
+jobs-replaced-by-ai             822   5   1   5   59  158   22.6    18  OK
+wenxin-yiyan-review             806   5   1   4   62  149   23.0    24  OK
+midjourney-worth-subscribing    827   4   1   3   64  154   25.7    13  WARN: 鐭彞13%
+suno-ai-music-review            779   4   1   3   58  160   23.3     9  WARN: 鐭彞9%
+miota-writing-cat-review        757   4   1   3   61  153   25.8    14  WARN: 鐭彞14%
+best-ai-apps-mobile             989   5   1   4   59  149   20.6    15  OK
