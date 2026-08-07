@@ -23,3 +23,10 @@ reports/*.json
 research/*.json
 ".workbuddy/preview-shots/" 
 ".workbuddy/preview-shots/" 
+
+# === 内部运营 / 百度引流自动化（不进公开仓库与站点） ===
+marketing/
+scripts/autopublish/
+scripts/autopublish.py
+# === 文章源稿 drafts（已构建产物在 articles/，源稿不需公开） ===
+drafts/
