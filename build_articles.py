@@ -33,6 +33,13 @@ SITE_URL = "https://learntide.cc.cd"
 SITE_NAME = "Learntide 学习潮汐"
 OG_IMAGE = SITE_URL + "/assets/og-default.png"  # 1200×630 站点默认分享图
 
+# 文章卡片封面图（复用 autopublish 流程已从 Pexels 拉取的科技调性图，按分类分配，避免单调）
+CATEGORY_COVERS = {
+    "工具测评": ["assets/covers/AI工具_4480531.jpg", "assets/covers/AI工具_36522032.jpg"],
+    "使用教程": ["assets/covers/AI写作工具_7947665.jpg", "assets/covers/小红书文案_32301687.jpg"],
+    "资讯科普": ["assets/covers/国产AI大模型_33996458.jpg", "assets/covers/artificialintellige_20870805.jpg"],
+}
+
 # 栏目 → 首页/归档页展示顺序
 CATEGORY_ORDER = ["工具测评", "使用教程", "资讯科普"]
 
@@ -529,17 +536,21 @@ def render_archive(posts):
         items.sort(key=lambda x: (x["date"], x["title"]), reverse=True)
         cards = "\n".join(
             """      <a class="card" href="articles/{s}.html">
+        <div class="card-thumb"><img src="{i}" alt="{t}" loading="lazy"></div>
+        <div class="card-body">
         <h3>{t}</h3>
         <div class="meta"><span class="cat-tag">{c}</span> · {d}</div>
         <p>{p}</p>
+        </div>
       </a>""".format(
                 s=esc(x["slug"]),
+                i=esc(CATEGORY_COVERS.get(x["category"], CATEGORY_COVERS["资讯科普"])[idx % 2]),
                 t=esc(x["title"]),
                 c=esc(x["category"]),
                 d=esc(x["date"]),
                 p=esc(x["summary"]),
             )
-            for x in items
+            for idx, x in enumerate(items)
         )
         blocks.append(
             """<section class="section">
@@ -647,14 +658,18 @@ def update_homepage(posts, dry_run=False):
     latest = sorted(posts, key=lambda x: (x["date"], x["slug"]), reverse=True)[:6]
     cards = "\n".join(
         """      <a class="card" href="articles/{s}.html">
+        <div class="card-thumb"><img src="{i}" alt="{t}" loading="lazy"></div>
+        <div class="card-body">
         <h3>{t}</h3>
         <div class="meta"><span class="cat-tag">{c}</span> · {d}</div>
         <p>{p}</p>
+        </div>
       </a>""".format(
             s=esc(x["slug"]), t=esc(x["title"]), c=esc(x["category"]),
             d=esc(x["date"]), p=esc(x["summary"]),
+            i=esc(CATEGORY_COVERS.get(x["category"], CATEGORY_COVERS["资讯科普"])[idx % 2]),
         )
-        for x in latest
+        for idx, x in enumerate(latest)
     )
     block = "%s\n%s\n    %s" % (HOME_START, cards, HOME_END)
     new = re.sub(

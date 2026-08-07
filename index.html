@@ -48,29 +48,60 @@
       </div>
     </div>
     <div class="hero-visual" aria-hidden="true">
-      <svg viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 460 420" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <linearGradient id="heroCard" x1="0" y1="0" x2="1" y2="1">
             <stop offset="0" stop-color="#2E6FB5"/><stop offset="1" stop-color="#4E7E63"/>
           </linearGradient>
+          <linearGradient id="heroWave" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0" stop-color="#2E6FB5"/><stop offset="1" stop-color="#4E7E63"/>
+          </linearGradient>
+          <filter id="softShadow" x="-30%" y="-30%" width="160%" height="160%">
+            <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#2E6FB5" flood-opacity="0.16"/>
+          </filter>
         </defs>
-        <rect x="40" y="60" width="320" height="300" rx="20" fill="#FFFFFF" stroke="#E2E8F0"/>
-        <rect x="40" y="60" width="320" height="56" rx="20" fill="#EAF2F9"/>
-        <rect x="40" y="92" width="320" height="24" fill="#EAF2F9"/>
-        <circle cx="68" cy="88" r="10" fill="url(#heroCard)"/>
-        <rect x="88" y="82" width="120" height="12" rx="6" fill="#9AA6B0"/>
-        <rect x="72" y="148" width="256" height="12" rx="6" fill="#EEF2F5"/>
-        <rect x="72" y="176" width="220" height="12" rx="6" fill="#EEF2F5"/>
-        <rect x="72" y="204" width="256" height="12" rx="6" fill="#EEF2F5"/>
-        <rect x="72" y="248" width="160" height="36" rx="10" fill="url(#heroCard)"/>
-        <rect x="240" y="248" width="88" height="36" rx="10" fill="#ECF3EE"/>
-        <rect x="250" y="150" width="170" height="150" rx="18" fill="#FFFFFF" stroke="#E2E8F0" transform="rotate(6 335 225)"/>
-        <rect x="270" y="172" width="130" height="10" rx="5" fill="#9AA6B0" transform="rotate(6 335 225)"/>
-        <rect x="270" y="196" width="100" height="10" rx="5" fill="#EEF2F5" transform="rotate(6 335 225)"/>
-        <rect x="270" y="248" width="120" height="30" rx="8" fill="#EAF2F9" transform="rotate(6 335 225)"/>
-        <path d="M40 392 C100 372 150 412 210 392 S320 372 420 392" stroke="#4E7E63" stroke-width="4" stroke-linecap="round" opacity="0.5"/>
-        <circle cx="400" cy="70" r="26" fill="#ECF3EE"/>
-        <path d="M400 56v28M386 70h28" stroke="#4E7E63" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- 主面板 -->
+        <rect x="34" y="52" width="298" height="298" rx="20" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#softShadow)"/>
+        <rect x="34" y="52" width="298" height="52" rx="20" fill="#EAF2F9"/>
+        <rect x="34" y="84" width="298" height="20" fill="#EAF2F9"/>
+        <circle cx="60" cy="78" r="9" fill="url(#heroCard)"/>
+        <rect x="78" y="73" width="108" height="10" rx="5" fill="#9AA6B0"/>
+        <rect x="62" y="134" width="242" height="11" rx="5.5" fill="#EEF2F5"/>
+        <rect x="62" y="158" width="206" height="11" rx="5.5" fill="#EEF2F5"/>
+        <rect x="62" y="182" width="242" height="11" rx="5.5" fill="#EEF2F5"/>
+        <!-- 迷你柱状图（水木配色） -->
+        <rect x="62" y="226" width="22" height="44" rx="6" fill="#9DB8D6"/>
+        <rect x="94" y="210" width="22" height="60" rx="6" fill="#2E6FB5"/>
+        <rect x="126" y="194" width="22" height="76" rx="6" fill="#6E9A86"/>
+        <rect x="158" y="178" width="22" height="92" rx="6" fill="#4E7E63"/>
+        <rect x="190" y="206" width="22" height="64" rx="6" fill="#9DB8D6"/>
+        <rect x="222" y="190" width="22" height="80" rx="6" fill="#2E6FB5"/>
+        <!-- CTA -->
+        <rect x="62" y="306" width="120" height="30" rx="9" fill="url(#heroCard)"/>
+        <rect x="194" y="306" width="80" height="30" rx="9" fill="#ECF3EE"/>
+
+        <!-- 浮动洞察卡 -->
+        <g transform="rotate(7 330 208)">
+          <rect x="250" y="148" width="158" height="120" rx="16" fill="#FFFFFF" stroke="#E2E8F0" filter="url(#softShadow)"/>
+          <rect x="268" y="166" width="86" height="9" rx="4.5" fill="#9AA6B0"/>
+          <polyline points="268,240 288,228 306,234 324,212 346,220 366,196" fill="none" stroke="url(#heroWave)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="366" cy="196" r="4" fill="#4E7E63"/>
+          <rect x="268" y="252" width="118" height="8" rx="4" fill="#EEF2F5"/>
+        </g>
+
+        <!-- AI 节点 -->
+        <circle cx="408" cy="72" r="24" fill="#ECF3EE"/>
+        <path d="M408 58v28M394 72h28" stroke="#4E7E63" stroke-width="3" stroke-linecap="round"/>
+
+        <!-- 流动点 -->
+        <circle cx="118" cy="380" r="5" fill="#2E6FB5"/>
+        <circle cx="168" cy="394" r="4" fill="#4E7E63"/>
+        <circle cx="218" cy="382" r="5" fill="#2E6FB5" opacity=".7"/>
+
+        <!-- 潮汐波纹 -->
+        <path d="M18 404 C78 384 128 424 188 404 S298 384 358 404 S438 384 462 404" stroke="url(#heroWave)" stroke-width="3.5" stroke-linecap="round" opacity="0.45"/>
+        <path d="M0 416 C70 398 120 434 190 416 S310 398 380 416 S450 400 470 416" stroke="#4E7E63" stroke-width="3" stroke-linecap="round" opacity="0.3"/>
       </svg>
     </div>
   </div>
@@ -126,34 +157,52 @@
     <div class="card-grid">
 <!-- ARTICLES:START -->
       <a class="card" href="articles/zhipu-qingyan-review.html">
+        <div class="card-thumb"><img src="assets/covers/AI工具_4480531.jpg" alt="智谱清言好用吗？擅长和不擅长的事一次说清" loading="lazy"></div>
+        <div class="card-body">
         <h3>智谱清言好用吗？擅长和不擅长的事一次说清</h3>
         <div class="meta"><span class="cat-tag">工具测评</span> · 2026-08-06</div>
         <p>它擅长读长文档、讲代码，但时效信息与重度生产力别指望，适合谁、不适合谁一次分清。</p>
+        </div>
       </a>
       <a class="card" href="articles/what-is-token-ai.html">
+        <div class="card-thumb"><img src="assets/covers/artificialintellige_20870805.jpg" alt="Token 是什么？为什么 AI 按它收费" loading="lazy"></div>
+        <div class="card-body">
         <h3>Token 是什么？为什么 AI 按它收费</h3>
         <div class="meta"><span class="cat-tag">资讯科普</span> · 2026-08-06</div>
         <p>每次对话都在后台悄悄计费，按的是 Token 这种最小单位。它像店里按杯卖咖啡，决定账单，也决定怎么省。</p>
+        </div>
       </a>
       <a class="card" href="articles/what-is-rag-explained.html">
+        <div class="card-thumb"><img src="assets/covers/国产AI大模型_33996458.jpg" alt="RAG 是什么？给 AI 装一个「知识库外挂」" loading="lazy"></div>
+        <div class="card-body">
         <h3>RAG 是什么？给 AI 装一个「知识库外挂」</h3>
         <div class="meta"><span class="cat-tag">资讯科普</span> · 2026-08-06</div>
         <p>RAG 就是让 AI 在回答问题之前先去查一下你的资料库，而不是凭记忆瞎编。它解决了 AI 最头疼的问题：胡说八道。</p>
+        </div>
       </a>
       <a class="card" href="articles/what-is-prompt-engineering.html">
+        <div class="card-thumb"><img src="assets/covers/artificialintellige_20870805.jpg" alt="提示词工程是什么？普通人要不要学" loading="lazy"></div>
+        <div class="card-body">
         <h3>提示词工程是什么？普通人要不要学</h3>
         <div class="meta"><span class="cat-tag">资讯科普</span> · 2026-08-06</div>
         <p>提示词工程是让 AI 稳定输出预期结果的方法论。对普通人，把话说清楚、给个例子、要个格式，已经够用，不必专门学。</p>
+        </div>
       </a>
       <a class="card" href="articles/what-is-multimodal-ai.html">
+        <div class="card-thumb"><img src="assets/covers/国产AI大模型_33996458.jpg" alt="多模态 AI 是什么？能看能听意味着什么" loading="lazy"></div>
+        <div class="card-body">
         <h3>多模态 AI 是什么？能看能听意味着什么</h3>
         <div class="meta"><span class="cat-tag">资讯科普</span> · 2026-08-06</div>
         <p>以前 AI 只读文字，现在它看得见图、听得懂话、读得了字，还能把三种信息串起来回答你。这就是多模态 AI 的通俗解释。</p>
+        </div>
       </a>
       <a class="card" href="articles/what-is-model-distillation.html">
+        <div class="card-thumb"><img src="assets/covers/artificialintellige_20870805.jpg" alt="模型蒸馏和量化是什么？通俗解释" loading="lazy"></div>
+        <div class="card-body">
         <h3>模型蒸馏和量化是什么？通俗解释</h3>
         <div class="meta"><span class="cat-tag">资讯科普</span> · 2026-08-06</div>
         <p>大模型像一位知识渊博的老师，蒸馏是让老师把经验浓缩教给学生，量化是给模型瘦身——都是为了变小变快。</p>
+        </div>
       </a>
     <!-- ARTICLES:END -->
     </div>

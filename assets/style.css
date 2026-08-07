@@ -110,7 +110,7 @@ svg{flex:none;}
   margin-left:6px;opacity:.7;display:inline;
   font-family:'Outfit',system-ui,sans-serif;
 }
-.hero-actions .btn small{
+.btn small{
   display:block;font-size:12px;font-weight:400;
   margin-top:2px;opacity:.7;
   font-family:'Outfit',system-ui,sans-serif;
@@ -206,11 +206,15 @@ svg{flex:none;}
 .card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--space-5);}
 .card{
   background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--radius-lg);padding:var(--space-6);
+  border-radius:var(--radius-lg);padding:0;overflow:hidden;
   display:flex;flex-direction:column;
   transition:box-shadow var(--motion),border-color var(--motion),transform var(--motion);
 }
 .card:hover{box-shadow:var(--elev-card);border-color:var(--water);text-decoration:none;transform:translateY(-2px);}
+.card-thumb{aspect-ratio:16/9;overflow:hidden;background:var(--surface-soft);border-bottom:1px solid var(--border);}
+.card-thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform var(--motion);}
+.card:hover .card-thumb img{transform:scale(1.04);}
+.card-body{padding:var(--space-6);display:flex;flex-direction:column;flex:1;}
 .card h3{margin:0 0 8px;font-size:var(--text-md);font-weight:var(--weight-semibold);line-height:1.4;color:var(--ink);}
 .card:hover h3{color:var(--water-dark);}
 .card .meta{color:var(--meta);font-size:var(--text-xs);margin-bottom:10px;display:flex;align-items:center;gap:8px;}
