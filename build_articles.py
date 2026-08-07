@@ -40,6 +40,18 @@ CATEGORY_COVERS = {
     "资讯科普": ["assets/covers/国产AI大模型_33996458.jpg", "assets/covers/artificialintellige_20870805.jpg"],
 }
 
+
+def cover_for_slug(slug, category):
+    """卡片封面：优先用按 slug 从 Pexels 拉取的独立图，回退到分类默认图。
+
+    输出站点绝对路径（以 / 开头），确保 articles/ 下的详情页也能正确解析。
+    """
+    local = os.path.join(ROOT, "assets", "covers", "%s.jpg" % slug)
+    if os.path.exists(local):
+        return "/assets/covers/%s.jpg" % slug
+    fallback = CATEGORY_COVERS.get(category, CATEGORY_COVERS["资讯科普"])[0]
+    return "/" + fallback.lstrip("/")
+
 # 栏目 → 首页/归档页展示顺序
 CATEGORY_ORDER = ["工具测评", "使用教程", "资讯科普"]
 
@@ -544,7 +556,7 @@ def render_archive(posts):
         </div>
       </a>""".format(
                 s=esc(x["slug"]),
-                i=esc(CATEGORY_COVERS.get(x["category"], CATEGORY_COVERS["资讯科普"])[idx % 2]),
+                i=esc(cover_for_slug(x["slug"], x["category"])),
                 t=esc(x["title"]),
                 c=esc(x["category"]),
                 d=esc(x["date"]),
@@ -667,9 +679,9 @@ def update_homepage(posts, dry_run=False):
       </a>""".format(
             s=esc(x["slug"]), t=esc(x["title"]), c=esc(x["category"]),
             d=esc(x["date"]), p=esc(x["summary"]),
-            i=esc(CATEGORY_COVERS.get(x["category"], CATEGORY_COVERS["资讯科普"])[idx % 2]),
+            i=esc(cover_for_slug(x["slug"], x["category"])),
         )
-        for idx, x in enumerate(latest)
+        for x in latest
     )
     block = "%s\n%s\n    %s" % (HOME_START, cards, HOME_END)
     new = re.sub(

@@ -21,8 +21,6 @@ reports/*.json
 
 # === research/ 下原始数据快照（非报告文档） ===
 research/*.json
-".workbuddy/preview-shots/" 
-".workbuddy/preview-shots/" 
 
 # === 内部运营 / 百度引流自动化（不进公开仓库与站点） ===
 marketing/
