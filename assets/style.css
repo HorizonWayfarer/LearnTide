@@ -39,7 +39,7 @@
   --code-bg:#F6F8FA;
   --font-mono:"JetBrains Mono","Fira Code","Consolas",monospace;
   /* 标签色（全部 token 化；国内标签归入木绿系） */
-  --tag-hot-bg:#FCEFEF; --tag-hot-text:#B91C1C;
+  --tag-hot-bg:var(--wood-light); --tag-hot-text:var(--wood-dark);
   --tag-free-bg:var(--wood-light); --tag-free-text:var(--wood-dark);
   --tag-new-bg:var(--water-light); --tag-new-text:var(--water-dark);
   --tag-cn-bg:var(--wood-light); --tag-cn-text:var(--wood-dark);
@@ -58,7 +58,9 @@ body{
   font-size:var(--text-base);
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
+  display:flex;flex-direction:column;min-height:100vh;
 }
+.page-shell{flex:1 0 auto;}
 a{color:var(--water-dark);text-decoration:none;transition:color var(--motion);}
 a:hover{text-decoration:underline;}
 img{max-width:100%;display:block;}
@@ -83,14 +85,35 @@ svg{flex:none;}
 .nav{display:flex;align-items:center;}
 .nav a{
   margin-left:28px;color:var(--muted);font-size:var(--text-sm);
-  display:inline-flex;align-items:center;height:64px;position:relative;
-  transition:color var(--motion);
+  display:inline-flex;align-items:center;position:relative;
+  padding:4px 0;transition:color var(--motion);
 }
 .nav a:hover{color:var(--water-dark);text-decoration:none;}
 .nav a.active{color:var(--water-dark);font-weight:var(--weight-semibold);}
 .nav a.active::after{
-  content:"";position:absolute;left:0;right:0;bottom:-1px;
+  content:"";position:absolute;left:0;right:0;bottom:-2px;
   height:2px;background:var(--water);border-radius:2px;
+}
+.nav a small{
+  font-size:11px;color:var(--meta);font-weight:400;
+  margin-left:4px;opacity:.7;display:inline;
+  font-family:'Outfit',system-ui,sans-serif;
+}
+
+.site-footer small{
+  display:block;font-size:12px;color:var(--meta);
+  margin-top:4px;opacity:.7;
+  font-family:'Outfit',system-ui,sans-serif;
+}
+.eyebrow small{
+  font-size:12px;color:var(--meta);font-weight:400;
+  margin-left:6px;opacity:.7;display:inline;
+  font-family:'Outfit',system-ui,sans-serif;
+}
+.hero-actions .btn small{
+  display:block;font-size:12px;font-weight:400;
+  margin-top:2px;opacity:.7;
+  font-family:'Outfit',system-ui,sans-serif;
 }
 
 /* ---------- 通用区块 ---------- */
@@ -382,7 +405,25 @@ svg{flex:none;}
 }
 .about-hero .eyebrow{margin-bottom:var(--space-4);}
 .about-hero h1{font-size:var(--text-2xl);line-height:1.15;margin:0 0 var(--space-5);letter-spacing:-.02em;color:var(--ink);font-weight:var(--weight-bold);}
-.about-hero p{color:var(--muted);font-size:var(--text-md);margin:0;max-width:680px;line-height:1.7;}
+.about-hero p{color:var(--muted);font-size:var(--text-md);margin:0 0 var(--space-5);max-width:680px;line-height:1.7;}
+
+.archive-search{
+  display:flex;align-items:center;gap:8px;
+  background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:var(--space-2) var(--space-3);
+  transition:border-color var(--motion),box-shadow var(--motion);
+}
+.archive-search:focus-within{border-color:var(--water);box-shadow:var(--focus-ring);}
+.archive-search input{
+  flex:1;border:none;outline:none;background:transparent;
+  font-size:var(--text-md);color:var(--ink);font-family:var(--font-body);
+}
+.archive-search input::placeholder{color:var(--meta);}
+.archive-search .search-icon{color:var(--meta);flex-shrink:0;}
+.archive-search .search-count{
+  font-size:var(--text-xs);color:var(--meta);
+  white-space:nowrap;flex-shrink:0;
+}
 
 .story{width:100%;margin:0;padding:var(--space-16) 0;}
 .story .eyebrow{margin-bottom:var(--space-3);}
@@ -400,7 +441,7 @@ svg{flex:none;}
 .principle-card:hover{box-shadow:var(--elev-card);border-color:var(--water);}
 .principle-card.feature{grid-column:1 / -1;flex-direction:row;align-items:center;gap:var(--space-6);background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--water);box-shadow:var(--elev-card);}
 .principle-card.feature .feature-body{flex:1;min-width:0;}
-.principle-card.feature .feature-deco{flex:none;width:140px;height:140px;margin-left:var(--space-6);color:var(--water);opacity:.12;display:flex;align-items:center;justify-content:center;}
+.principle-card.feature .feature-deco{flex:none;width:140px;height:140px;margin-left:var(--space-6);color:var(--water);opacity:.2;display:flex;align-items:center;justify-content:center;}
 .principle-card.feature .feature-deco svg{width:100%;height:100%;}
 .principle-card.feature .ico{background:var(--water-light);flex:none;}
 .principle-card.feature .ico svg{stroke:var(--water);}

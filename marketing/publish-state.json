@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "baidu_yinliu": {
+    "definition": "百度系内容平台引流 = 百家号 + 百度知道（百度旗下产品）。知乎/小红书为原路线后续扩展，不属百度系。",
+    "goal": "用百度系平台给 learntide.cc.cd 引流；养号期去裸链留软品牌，多平台不原封照搬。",
+    "source_pool": "drafts/*.md（复用站点已发文章，按平台风格适配后分发）",
+    "rule": "养号期前3篇不挂本域裸链（留软提及）；每次发布后必须更新本状态；相邻平台发布间隔≥1天（养号节奏）。",
+    "platforms": {
+      "baijiahao": {
+        "raised_stage": true,
+        "published": [
+          {"slug": "manual-20260806-chatgpt-alt", "title": "国内5个平替ChatGPT的AI工具", "date": "2026-08-06", "source": "manual"},
+          {"slug": "manual-20260807-llm-compare", "title": "通义千问/文心一言/豆包/Kimi怎么选", "date": "2026-08-07", "source": "manual"},
+          {"slug": "bjh-03-xiaohongshu-copywriting", "title": "小红书爆款文案怎么写", "date": "2026-08-07", "source": "queue", "note": "已发布并自动归档"},
+          {"slug": "bjh-04-ai-content-creation-guide", "title": "AI内容创作指南：从0到1搭建你的创作流", "date": "2026-08-07", "source": "queue", "note": "已发布并自动归档"}
+        ],
+        "deprecated": [
+          {"slug": "bjh-01-chatgpt-alternatives", "reason": "与手动已发 ChatGPT平替 撞车，永久弃用"},
+          {"slug": "bjh-02-ai-models-compare", "reason": "与手动已发 大模型对比 撞车，永久弃用"}
+        ],
+        "next_slug": "bjh-05",
+        "last_published_date": "2026-08-07"
+      },
+      "zhidao": {
+        "raised_stage": true,
+        "stage": "yanghao",
+        "yanghao_target": 15,
+        "yanghao_done": 2,
+        "yanghao_anonymous": 2,
+        "yanghao_note": "已发布2条（均匿名发出，养号效力偏弱，需后续补实名回答弥补权重）：只读文件怎么保存（阅读1425）、电脑怎么更换wifi（阅读13），均未删",
+        "published": [],
+        "next_slug": "bzd-01",
+        "last_published_date": null
+      }
+    },
+    "used_drafts": ["bjh-03-xiaohongshu-copywriting", "ai-content-creation-guide"],
+    "last_updated": "2026-08-07"
+  }
+}

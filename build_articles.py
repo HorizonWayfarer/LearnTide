@@ -287,19 +287,19 @@ def md_to_html(body):
 def nav_html(prefix, active):
     """prefix: 根页面为 ''，articles/ 下为 '../'。"""
     items = [
-        ("home", "首页", prefix + "index.html"),
-        ("tools", "AI 工具", prefix + "tools.html"),
-        ("articles", "全部文章", prefix + "articles.html"),
-        ("about", "关于", prefix + "about.html"),
+        ("home", "首页", "Home", prefix + "index.html"),
+        ("tools", "AI 工具", "Tools", prefix + "tools.html"),
+        ("articles", "全部文章", "Articles", prefix + "articles.html"),
+        ("about", "关于", "About", prefix + "about.html"),
     ]
     parts = []
-    for key, label, href in items:
+    for key, label, en, href in items:
         if key == active:
             parts.append(
-                '      <a href="%s" class="active" aria-current="page">%s</a>' % (href, label)
+                '      <a href="%s" class="active" aria-current="page">%s <small>%s</small></a>' % (href, label, en)
             )
         else:
-            parts.append('      <a href="%s">%s</a>' % (href, label))
+            parts.append('      <a href="%s">%s <small>%s</small></a>' % (href, label, en))
     return "\n".join(parts)
 
 
@@ -347,8 +347,8 @@ def page_shell(prefix, active, title, description, head_extra, body,
 
 <footer class="site-footer">
   <div class="container">
-    <span>Learntide · 学习潮汐 — 内容站（信息流动）</span>
-    <a href="{prefix}about.html">关于本站</a>
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="{prefix}about.html">关于本站 <small>About</small></a>
   </div>
 </footer>
 </body>
@@ -558,10 +558,43 @@ def render_archive(posts):
   <div class="container">
     <h1>全部文章</h1>
     <p>共 {total} 篇，按栏目归档。工具测评讲清免费额度与国内可用性，教程给可直接复制的提示词，科普用大白话。</p>
+    <div class="archive-search">
+      <span class="search-icon"><svg width="18" height="18" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="7" cy="7" r="4.5"/><path d="M10.5 10.5 14 14"/></svg></span>
+      <input id="archive-search" type="search" autocomplete="off" aria-label="搜索文章" placeholder="搜索文章标题、关键词，如「视频」「简历」「提示词」...">
+      <span class="search-count" id="archive-count"></span>
+    </div>
   </div>
 </section>
 
-{blocks}""".format(total=len(posts), blocks="\n\n".join(blocks))
+{blocks}
+<script>
+(function(){{
+  var input=document.getElementById("archive-search");
+  var counter=document.getElementById("archive-count");
+  var cards=document.querySelectorAll(".card-grid .card");
+  var sections=document.querySelectorAll(".card-grid").length?document.querySelectorAll(".section"):[];
+  function run(){{
+    var q=input.value.trim().toLowerCase();
+    var shown=0,total=cards.length;
+    cards.forEach(function(c){{
+      var text=(c.querySelector("h3").textContent+" "+c.querySelector("p").textContent+" "+(c.querySelector(".cat-tag")||{{}}).textContent||"").toLowerCase();
+      var match=!q||text.indexOf(q)!==-1;
+      c.style.display=match?"":"none";
+      if(match)shown++;
+    }});
+    sections.forEach(function(s){{
+      var grid=s.querySelector(".card-grid");
+      if(!grid)return;
+      var visible=grid.querySelectorAll('.card[style=""], .card:not([style])');
+      var any=0;
+      grid.querySelectorAll(".card").forEach(function(c){{if(c.style.display!=="none")any++;}});
+      s.style.display=any?"":"none";
+    }});
+    counter.textContent=q?shown+" / "+total:"";
+  }}
+  input.addEventListener("input",run);
+}})();
+</script>""".format(total=len(posts), blocks="\n\n".join(blocks))
 
     canon = SITE_URL + "/articles.html"
     ld = """<script type="application/ld+json">
