@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>工具详情 — Learntide 学习潮汐</title>
+<link rel="canonical" href="https://learntide.cc.cd/tool-detail.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/svg+xml" href="assets/learntide-logo.svg">
+<meta name="description" content="AI 工具详情：一句话结论、核心看点、适合谁用、免费与国内可用性，以及直达官网入口。">
+<meta property="og:title" content="AI 工具详情 — Learntide">
+<meta property="og:description" content="一句话结论 + 核心看点 + 直达官网入口。">
+<meta property="og:url" content="https://learntide.cc.cd/tool-detail.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="index.html">首页 <small>Home</small></a>
+      <a href="tools.html">AI 工具 <small>Tools</small></a>
+      <a href="articles.html">全部文章 <small>Articles</small></a>
+      <a href="about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<main id="root">
+  <section class="tool-detail-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="面包屑"><a href="index.html">首页</a><span aria-hidden="true">/</span><a href="tools.html">AI 工具</a><span aria-hidden="true">/</span><span class="current" id="bc-name">工具详情</span></nav>
+      <div id="hero-body">
+        <div class="cat-pill" id="cat-pill">AI 工具</div>
+        <h1 id="tool-name">工具详情</h1>
+        <p class="vendor" id="tool-vendor"></p>
+        <p class="lede" id="tool-lede"></p>
+        <div class="tags" id="tool-tags"></div>
+        <div class="tool-detail-actions">
+          <a class="btn btn--primary btn--lg" id="cta-site" href="#" target="_blank" rel="noopener noreferrer">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            直达官网
+          </a>
+          <a class="btn btn--ghost btn--lg" href="tools.html">返回工具导航</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="tool-detail-layout" id="layout" style="display:none;">
+    <div class="tool-detail-main">
+      <h2>核心看点</h2>
+      <ul class="feature-list" id="feature-list"></ul>
+
+      <h2>适合谁用</h2>
+      <p id="who"></p>
+
+      <h2>免费与国内可用性</h2>
+      <p id="avail"></p>
+
+      <p class="verify-note" id="verify"></p>
+
+      <section class="related" aria-label="相关测评">
+        <h4>相关测评</h4>
+        <ul>
+          <li><a href="articles/chatgpt-alternatives-china.html">国内能直接打开的中文 AI</a> · <a href="articles/chatgpt-plus-worth-it.html">ChatGPT Plus 值得开吗</a></li>
+          <li><a href="articles/free-ai-image-tools-2026.html">免费 AI 做图工具横评</a> · <a href="articles/midjourney-free-alternatives.html">Midjourney 的免费替代品</a></li>
+          <li><a href="articles/cursor-vs-copilot-compare.html">Cursor 和 Copilot 哪个好</a> · <a href="articles/ai-writing-tools-compare.html">按写作类型挑工具</a></li>
+          <li><a href="articles/ai-video-tools-compare.html">AI 视频生成工具哪个好</a> · <a href="articles/ai-ppt-tools-compare.html">AI 生成 PPT 哪个好</a></li>
+          <li><a href="articles/ai-voice-tools-compare.html">AI 配音工具哪个好</a> · <a href="articles/suno-ai-tutorial-cn.html">Suno 中文歌词到成品歌</a> · <a href="articles/jianying-ai-tutorial.html">剪映 AI 怎么用</a></li>
+          <li><a href="articles/free-ai-tools-list.html">12 个不花钱也够用的 AI 工具</a></li>
+        </ul>
+      </section>
+    </div>
+
+    <aside class="tool-aside">
+      <div class="glance-card">
+        <h3>速览</h3>
+        <div class="glance-row"><span class="k">厂商</span><span class="v" id="g-vendor"></span></div>
+        <div class="glance-row"><span class="k">分类</span><span class="v" id="g-cat"></span></div>
+        <div class="glance-row"><span class="k">标签</span><span class="v" id="g-tags"></span></div>
+        <a class="btn btn--primary" id="cta-site-2" href="#" target="_blank" rel="noopener noreferrer">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          直达官网
+        </a>
+      </div>
+      <div class="same-cat" id="same-cat">
+        <h4>同类工具</h4>
+        <ul id="same-cat-list"></ul>
+      </div>
+    </aside>
+  </div>
+
+  <section class="tool-missing" id="missing" style="display:none;">
+    <div class="container">
+      <h1>没有找到这个工具</h1>
+      <p>链接可能已失效，或工具名不匹配。</p>
+      <a class="btn btn--primary" href="tools.html">回到 AI 工具导航</a>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>A content hub for AI tools, tutorials and news</small></span>
+    <a href="about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+
+<script>
+/* 工具数据集：在 tools.html 的 TOOLS 基础上补充官方网址 u。两处数据需保持一致。 */
+const TOOLS = [
+  {n:"ChatGPT",v:"OpenAI",d:"最通用的日常助手，GPT-4o 多模态稳、生态最全。想一个工具打天下先试它。",c:"对话AI",t:["热门"],u:"https://chatgpt.com"},
+  {n:"Claude",v:"Anthropic",d:"长文与代码、严谨中文写作最稳，逻辑清楚。写长稿、读论文优先。",c:"对话AI",t:[],u:"https://claude.ai"},
+  {n:"Gemini",v:"Google",d:"谷歌原生多模态，免费额度大方、长上下文强。重度免费用户友好。",c:"对话AI",t:["免费"],u:"https://gemini.google.com"},
+  {n:"Kimi",v:"月之暗面",d:"中文长上下文强，读百页资料不掉链。国内访问稳、可免费。",c:"对话AI",t:["国内","免费"],u:"https://kimi.moonshot.cn"},
+  {n:"文心一言",v:"百度",d:"百度系中文对话与文生图一体，国内访问稳。要本地化服务选它。",c:"对话AI",t:["国内"],u:"https://yiyan.baidu.com"},
+
+  {n:"Midjourney",v:"Midjourney",d:"艺术感与风格化最强，走 Discord，出海报/概念图质感高。要质感选它。",c:"图像生成",t:["热门"],u:"https://www.midjourney.com"},
+  {n:"Stable Diffusion",v:"开源社区",d:"可本地部署的开源文生图，自由度高、可炼模型。爱折腾、要可控选它。",c:"图像生成",t:[],u:"https://stability.ai"},
+  {n:"DALL·E 3",v:"OpenAI",d:"集成在 ChatGPT 里，理解中文提示词准。随手出图、不想切工具选它。",c:"图像生成",t:[],u:"https://chatgpt.com"},
+  {n:"即梦",v:"字节跳动",d:"字节的中文图像/视频生成，中文提示词友好。国内免费出图优先。",c:"图像生成",t:["国内","NEW"],u:"https://jimeng.jianying.com"},
+  {n:"可灵",v:"快手",d:"图像+视频生成，运动连贯性好。做短视频素材选它。",c:"图像生成",t:["国内","NEW"],u:"https://klingai.com"},
+
+  {n:"GitHub Copilot",v:"GitHub/微软",d:"IDE 内补全与对话最成熟，多语言、生态广。日常编码提速先装。",c:"编程助手",t:["热门"],u:"https://github.com/features/copilot"},
+  {n:"Cursor",v:"Anysphere",d:"AI 原生编辑器，跨文件理解、整段改写强。重构大项目优先。",c:"编程助手",t:["热门"],u:"https://cursor.com"},
+  {n:"Claude Code",v:"Anthropic",d:"终端里的编码 agent，能跑命令、多步改文件。自动化重复改代码选它。",c:"编程助手",t:["NEW"],u:"https://claude.com/claude-code"},
+  {n:"通义灵码",v:"阿里",d:"阿里中文代码助手，IDE 插件、国内可用免费。国内团队友好。",c:"编程助手",t:["国内","免费"],u:"https://tongyi.aliyun.com/lingma"},
+  {n:"Codeium",v:"Codeium",d:"免费代码补全，多编辑器支持。想零成本提速选它。",c:"编程助手",t:["免费"],u:"https://codeium.com"},
+
+  {n:"Notion AI",v:"Notion",d:"文档内写作/总结/问答一体，协作流畅。已在用 Notion 的顺手开。",c:"写作文案",t:[],u:"https://www.notion.so/product/ai"},
+  {n:"秘塔写作猫",v:"秘塔",d:"中文校对、改写、写作辅助，国产好用。改中文稿优先。",c:"写作文案",t:["国内"],u:"https://xiezuocat.com"},
+  {n:"Grammarly",v:"Grammarly",d:"英文语法与语气润色成熟，浏览器插件广。写英文选它。",c:"写作文案",t:[],u:"https://www.grammarly.com"},
+  {n:"Jasper",v:"Jasper",d:"面向营销团队的长文与广告文案，模板多。做投放文案选它。",c:"写作文案",t:[],u:"https://www.jasper.ai"},
+  {n:"火山写作",v:"字节跳动",d:"字节中文写作改写，国内免费稳。日常中文稿顺手用。",c:"写作文案",t:["国内","免费"],u:"https://www.writinglab.ai"},
+
+  {n:"Suno",v:"Suno",d:"文本直接生成带人声的完整歌曲，玩音乐最快。做 Demo 选它。",c:"音视频",t:["热门"],u:"https://suno.com"},
+  {n:"ElevenLabs",v:"ElevenLabs",d:"拟真配音与语音克隆最强，多语种。做有声内容选它。",c:"音视频",t:[],u:"https://elevenlabs.io"},
+  {n:"Runway",v:"Runway",d:"视频生成与智能编辑，Gen 系列强。做 AI 视频选它。",c:"音视频",t:[],u:"https://runwayml.com"},
+  {n:"HeyGen",v:"HeyGen",d:"数字人口播、多语言换脸配音。做讲解视频选它。",c:"音视频",t:[],u:"https://www.heygen.com"},
+  {n:"剪映 AI",v:"字节跳动",d:"剪辑内 AI 字幕/成片/特效，国内免费。短视频后期选它。",c:"音视频",t:["国内","免费"],u:"https://www.capcut.cn"},
+
+  {n:"Perplexity",v:"Perplexity",d:"带引用的 AI 搜索，答案可溯源。做研究、查事实选它。",c:"商业效率",t:["热门"],u:"https://www.perplexity.ai"},
+  {n:"Poe",v:"Quora",d:"聚合多模型对话入口，按需切换。想一个面板用多家选它。",c:"商业效率",t:[],u:"https://poe.com"},
+  {n:"飞书智能伙伴",v:"字节跳动",d:"飞书内的 AI，会议纪要/文档/流程。已在用飞书选它。",c:"商业效率",t:["国内"],u:"https://www.feishu.cn"},
+  {n:"钉钉 AI",v:"阿里",d:"钉钉内办公助理，审批/文档/群聊总结。钉钉团队顺手开。",c:"商业效率",t:["国内","免费"],u:"https://www.dingtalk.com"},
+
+  {n:"通义千问",v:"阿里",d:"阿里开源多模态大模型，API 与对话都可用，中文强。要开源/国内选它。",c:"国内专区",t:["国内","免费"],u:"https://tongyi.aliyun.com"},
+  {n:"腾讯混元",v:"腾讯",d:"腾讯通用与行业大模型，国内企业场景。腾讯系业务优先。",c:"国内专区",t:["国内"],u:"https://hunyuan.tencent.com"},
+  {n:"豆包",v:"字节跳动",d:"字节免费中文助手，App/网页都能用。日常免费聊天选它。",c:"国内专区",t:["国内","免费"],u:"https://www.doubao.com"}
+];
+
+const TAG_CLASS = {"热门":"hot","免费":"free","NEW":"new","国内":"cn"};
+const TAG_INFO = {
+  "热门":{t:"社区热度最高",d:"用户基数大、生态与教程最全，遇到问题容易找到现成答案。"},
+  "免费":{t:"有免费额度",d:"不花钱也能日常使用，适合先试后买、零成本上手。"},
+  "国内":{t:"国内可稳定访问",d:"无需特殊网络环境，打开即用，新手友好。"},
+  "NEW":{t:"近期新晋",d:"刚上线或快速迭代中，值得持续关注。"}
+};
+const CAT_INFO = {
+  "对话AI":"日常问答、写作、学习、头脑风暴一把梭的通用助手，几乎所有人都用得上。",
+  "图像生成":"文生图、风格化出图，做封面、概念图、配图都顺手，设计向需求首选。",
+  "编程助手":"补全、改写、跨文件理解，把重复的编码劳动交给它，提速明显。",
+  "写作文案":"中文校对、改写、长文与营销文案一站搞定，文字工作者常备。",
+  "音视频":"配音、唱歌、视频生成与剪辑，内容创作与短视频制作提速利器。",
+  "商业效率":"搜索、会议纪要、办公自动化，把日常流程跑顺、省下重复操作。",
+  "国内专区":"国产大模型，中文强、国内可稳定访问，合规与企业场景友好。"
+};
+
+function esc(s){return String(s).replace(/[&<>"']/g,ch=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));}
+
+const params = new URLSearchParams(location.search);
+const tool = TOOLS.find(t => t.n === params.get("tool"));
+const root = document.getElementById("root");
+
+if(!tool){
+  document.getElementById("hero-body").style.display = "none";
+  document.getElementById("layout").style.display = "none";
+  document.getElementById("missing").style.display = "block";
+  document.title = "工具未找到 — Learntide 学习潮汐";
+} else {
+  document.getElementById("layout").style.display = "grid";
+
+  // Hero
+  document.getElementById("bc-name").textContent = tool.n;
+  document.getElementById("cat-pill").textContent = tool.c;
+  const h1 = document.getElementById("tool-name");
+  h1.textContent = tool.n;
+  document.getElementById("tool-vendor").textContent = tool.v;
+  document.getElementById("tool-lede").textContent = tool.d;
+  document.getElementById("tool-tags").innerHTML = tool.t.map(x=>`<span class="tag ${TAG_CLASS[x]||""}">${esc(x)}</span>`).join("");
+  document.getElementById("cta-site").href = tool.u;
+  document.getElementById("cta-site-2").href = tool.u;
+
+  // Aside
+  document.getElementById("g-vendor").textContent = tool.v;
+  document.getElementById("g-cat").textContent = tool.c;
+  document.getElementById("g-tags").textContent = tool.t.length ? tool.t.join("、") : "—";
+
+  // 同类工具（同分类，排除自己，最多 5）
+  const same = TOOLS.filter(t => t.c === tool.c && t.n !== tool.n).slice(0,5);
+  document.getElementById("same-cat-list").innerHTML = same.map(t=>
+    `<li><a href="tool-detail.html?tool=${encodeURIComponent(t.n)}">${esc(t.n)}<span class="v">${esc(t.v)}</span></a></li>`
+  ).join("");
+  if(!same.length) document.getElementById("same-cat").style.display = "none";
+
+  // 核心看点
+  const items = [{title:`它属于「${tool.c}」`,desc:CAT_INFO[tool.c]||""}];
+  tool.t.forEach(tag => { if(TAG_INFO[tag]) items.push({title:TAG_INFO[tag].t,desc:TAG_INFO[tag].d}); });
+  const check = `<svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>`;
+  document.getElementById("feature-list").innerHTML = items.map(it=>
+    `<li>${check}<div class="ft-body"><div class="ft-title">${esc(it.title)}</div><div class="ft-desc">${esc(it.desc)}</div></div></li>`
+  ).join("");
+
+  // 适合谁用
+  let who = (CAT_INFO[tool.c]||"") + " ";
+  if(tool.t.includes("国内")) who += "国内网络环境也能稳定打开，新手友好。";
+  if(tool.t.includes("免费")) who += " 有免费额度，先零成本上手最划算。";
+  document.getElementById("who").textContent = who.trim();
+
+  // 免费与国内可用性
+  let avail = "";
+  if(tool.t.includes("免费")) avail += "有免费版可用，先用起来再决定是否升级。";
+  else avail += "以付费为主，具体额度与价格以官网为准。";
+  if(tool.t.includes("国内")) avail += " 国内可稳定直连，无需额外网络配置。";
+  else avail += " 国内访问情况请以官网/实际打开为准，必要时需相应网络环境。";
+  document.getElementById("avail").textContent = avail.trim();
+
+  document.getElementById("verify").textContent = "信息核对：以上结论基于公开资料整理，功能与定价可能随版本变动，最终以官网为准。本页为工具介绍，不含 affiliate 返利链接。";
+
+  // 动态 Meta / 结构化数据
+  document.title = `${tool.n} 是什么 — Learntide 学习潮汐`;
+  const desc = document.querySelector('meta[name="description"]');
+  if(desc) desc.setAttribute("content", `${tool.n}（${tool.v}）：${tool.d} 附核心看点、适合人群与直达官网入口。`);
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  if(ogTitle) ogTitle.setAttribute("content", `${tool.n} — Learntide`);
+
+  const ld = {
+    "@context":"https://schema.org","@type":"SoftwareApplication",
+    "name":tool.n,"applicationCategory":"AIApplication","operatingSystem":"Web",
+    "url":tool.u,"offers":{"@type":"Offer","price":"0","priceCurrency":"CNY"}
+  };
+  const s = document.createElement("script");
+  s.type = "application/ld+json";
+  s.textContent = JSON.stringify(ld);
+  document.head.appendChild(s);
+}
+</script>
+</body>
+</html>

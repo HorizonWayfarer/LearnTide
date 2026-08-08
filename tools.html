@@ -156,12 +156,12 @@ function render(){
     return catOk && qOk;
   });
   grid.innerHTML = list.map(t=>`
-    <div class="tool-card">
+    <a class="tool-card" href="tool-detail.html?tool=${encodeURIComponent(t.n)}">
       <div class="name">${esc(t.n)}</div>
       <div class="vendor">${esc(t.v)}</div>
       <div class="desc">${esc(t.d)}</div>
       <div class="tags">${t.t.map(x=>`<span class="tag ${TAG_CLASS[x] || ""}">${esc(x)}</span>`).join("")}</div>
-    </div>`).join("");
+    </a>`).join("");
   empty.style.display = list.length ? "none" : "block";
 }
 search.addEventListener("input", render);
