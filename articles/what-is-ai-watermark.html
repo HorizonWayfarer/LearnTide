@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 数字水印是什么？怎么查一张图的真实来源 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-ai-watermark.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 数字水印是什么？它分画面上的显式角标和藏在文件里的隐式标识两类，后者转存几次就可能丢失。本文讲清两种水印怎么工作、能查到什么程度，以及肉眼判断的几条线索。">
+<meta property="og:title" content="AI 数字水印是什么？怎么查一张图的真实来源">
+<meta property="og:description" content="AI 数字水印是什么？它分画面上的显式角标和藏在文件里的隐式标识两类，后者转存几次就可能丢失。本文讲清两种水印怎么工作、能查到什么程度，以及肉眼判断的几条线索。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-ai-watermark.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 数字水印是什么？怎么查一张图的真实来源">
+<meta name="twitter:description" content="AI 数字水印是什么？它分画面上的显式角标和藏在文件里的隐式标识两类，后者转存几次就可能丢失。本文讲清两种水印怎么工作、能查到什么程度，以及肉眼判断的几条线索。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 内容水印是什么？怎么查一张图的来源 — Learntide",
+  "description":"AI 数字水印是什么？它分画面上的显式角标和藏在文件里的隐式标识两类，后者转存几次就可能丢失。本文讲清两种水印怎么工作、能查到什么程度，以及肉眼判断的几条线索。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-ai-watermark.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 内容水印是什么？怎么查一张图的来源 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>AI 内容水印是什么？怎么查一张图的来源 — Learntide</h1>
+    <p class="lede">画面角上那行小字一裁就没，真正管用的标记藏在文件深处，可惜也常在转发里被磨掉。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 内容水印是什么？怎么查一张图的来源 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">AI 数字水印是什么：明标和暗标</h2>
+
+<p>AI 数字水印是什么？简单讲，它是给生成内容打的一个来源标记，分明暗两种。明的就是画面角落那行小字或图标，一眼能看见。暗的写在文件内部，肉眼看不到。</p>
+
+<p>ai内容隐式标识说的正是后一类。它可能存在文件的元数据字段里，也可能以极轻微的方式嵌进像素本身，用专门的工具才读得出来。</p>
+
+<p>两种各有短板。明标最容易处理，裁掉一圈就干净了。暗标扛得住普通转发，但也远谈不上牢固。</p>
+
+<p>国内对生成内容的标识已有明确要求，服务方要在文件里加隐式标识，公开发布的内容还要有能看见的提示。两条并行，缺一条都算不到位。</p>
+
+<h2 id="sec-2">隐式标识为什么这么容易丢</h2>
+
+<p>问题出在传播链路上。一张图从生成到你手机上，中间要经过若干次压缩和转码。</p>
+
+<p>平台上传时会重新编码，为省流量还会剥掉大部分元数据。截图更彻底，直接把原文件换成了一张新图，什么都不剩。</p>
+
+<pre><code>查看图片附带的元数据（装了 exiftool 之后）
+exiftool sample.jpg
+
+重点看这几行：
+  Software / Creator Tool   生成或编辑用的软件
+  Digital Source Type       是否标为合成内容
+  Credit / Source           来源署名
+  Create Date               原始创建时间</code></pre>
+
+<p>字段空着不代表就是真人拍的，只能说明这条线索断了。</p>
+
+<p>还有一类是主动去除。把图丢进修图软件重新导出，或者过一遍放大、裁切、加滤镜，元数据基本就没了。技术上防不住，这是这类标识的先天弱点。</p>
+
+<h2 id="sec-3">C2PA 想解决的是溯源</h2>
+
+<p>c2pa是什么？它是一套内容来源与编辑履历的技术规范，思路是给文件附一份带签名的记录：谁生成的、用什么工具、后来被谁改过。</p>
+
+<p>签名的意义在于可验证。有人中途改了内容却没更新记录，校验就通不过。理想状态下，你点开一张图就能看到它的完整来路。</p>
+
+<p>现实没这么顺。要整条链上的相机、软件、平台都支持才成立，眼下覆盖还很有限。它更像一个正在铺的地基。</p>
+
+<h2 id="sec-4">怎么识别 AI 生成的图片</h2>
+
+<p>没有一招通吃的办法，只能几条线索一起看。</p>
+
+<p>先看细节。手指数量、耳环是否成对、眼镜腿有没有接上、背景文字是否是真字，这些位置最容易露馅。</p>
+
+<p>再看质感。皮肤过分均匀、发丝边缘发糊、光影方向互相打架，都值得怀疑。</p>
+
+<p>然后反向搜图。找得到更早的版本和原始出处，基本能定性。找不到任何来源的高清大图，反而可疑。</p>
+
+<p>最后看平台标注。不少平台已经会自动给生成内容加提示，这条最省事。音视频同理，口型和呼吸声都是查点。</p>
+
+<h2 id="sec-5">别把检测结果当成定论</h2>
+
+<p>市面上的 AI 检测工具准确率参差，误判很常见。真人拍的照片被判成生成的，精修过的图更是重灾区。</p>
+
+<p>拿一个分数去公开指认别人，风险不小。真有争议，应该找原始文件、拍摄记录和更早的发布时间点，而不是依赖一个概率值。</p>
+
+<p>反过来，自己发布生成内容时，该标就标，别嫌麻烦。弄懂 ai数字水印是什么，一半是为了看清别人，另一半是为了把自己那份说明留清楚。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-content-labeling-rules.html">AI 内容标识规定</a></li>
+      <li><a href="what-is-aigc-explained.html">什么是 AIGC</a></li>
+      <li><a href="ai-deepfake-scam-protection.html">防范 AI 换脸诈骗</a></li>
+      <li><a href="ai-content-copyright-cn.html">AI 内容版权怎么算</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 数字水印是什么：明标和暗标</a></li>
+      <li><a href="#sec-2">隐式标识为什么这么容易丢</a></li>
+      <li><a href="#sec-3">C2PA 想解决的是溯源</a></li>
+      <li><a href="#sec-4">怎么识别 AI 生成的图片</a></li>
+      <li><a href="#sec-5">别把检测结果当成定论</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

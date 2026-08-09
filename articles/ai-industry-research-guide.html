@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 做行业调研：信息源分层与交叉验证方法 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-industry-research-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai做行业调研，快的是搜集，险的是采信。本文给出问题清单写法、信息源三层分层法、交叉验证的三条硬规则和报告框架模板，帮你把模型产出的素材变成能拿出手的结论。">
+<meta property="og:title" content="用 AI 做行业调研：信息源分层与交叉验证方法">
+<meta property="og:description" content="ai做行业调研，快的是搜集，险的是采信。本文给出问题清单写法、信息源三层分层法、交叉验证的三条硬规则和报告框架模板，帮你把模型产出的素材变成能拿出手的结论。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-industry-research-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 做行业调研：信息源分层与交叉验证方法">
+<meta name="twitter:description" content="ai做行业调研，快的是搜集，险的是采信。本文给出问题清单写法、信息源三层分层法、交叉验证的三条硬规则和报告框架模板，帮你把模型产出的素材变成能拿出手的结论。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做行业调研？信息源与交叉验证方法 — Learntide",
+  "description":"ai做行业调研，快的是搜集，险的是采信。本文给出问题清单写法、信息源三层分层法、交叉验证的三条硬规则和报告框架模板，帮你把模型产出的素材变成能拿出手的结论。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-industry-research-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做行业调研？信息源与交叉验证方法 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 做行业调研？信息源与交叉验证方法 — Learntide</h1>
+    <p class="lede">模型十分钟能给你一份看着完整的行业分析，可里面的数字有几个经得起追问，这才是关键。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做行业调研？信息源与交叉验证方法 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai做行业调研：先把问题列成清单</h2>
+
+<p>ai做行业调研最容易犯的错，是上来就问「帮我分析一下这个行业」。这种问法拿到的永远是通用模板，换个行业名字照样成立。</p>
+
+<p>动手前先写问题清单。市场有多大、增速靠什么驱动、玩家怎么分层、钱从哪里赚、门槛在哪、政策有没有变量。六到八个问题足够，每个问题都要能用一句话回答。</p>
+
+<p>清单的作用是把调研切成可验收的小块。有了它，你才知道模型给的哪段有用、哪段是凑字数。市场调研用ai怎么做，起点就在这张清单上。</p>
+
+<h2 id="sec-2">信息源分层：一手、二手和模型直答</h2>
+
+<p>把信息源分成三层，采信度依次递减。</p>
+
+<p>第一层是一手材料：上市公司年报、招股书、行业协会年鉴、监管部门公开数据。这层的数字有披露责任，出错代价高，最值得信。</p>
+
+<p>第二层是二手加工品：券商研报、行业媒体报道、咨询机构白皮书。有价值，但要看清口径是谁定的、样本怎么取的。</p>
+
+<p>第三层是模型直接回答。它没有实时数据源时会用训练里的旧印象填空，年份和数值都可能错位。这层只能当线索，不能当证据。ai搜集行业信息的正确姿势，是让模型指路，你自己去一手层取数。</p>
+
+<p>带联网检索的问答工具介于二三层之间，好处是给出处，具体表现可以看 Perplexity 搜索测评那篇。</p>
+
+<h2 id="sec-3">交叉验证的三条硬规则</h2>
+
+<p>规则很简单，难的是每次都执行。</p>
+
+<p>一，同一个数字至少要有两个互相独立的来源。两篇都引自同一份研报，那只算一个来源。</p>
+
+<p>二，口径和年份必须跟着数字走。「市场规模」是按出货量算还是按收入算，差出一倍很常见。</p>
+
+<p>三，模型给的数字一律回溯原文。找不到原文就删掉，宁可留空。</p>
+
+<p>落到操作上，做一张核对表逐条过：</p>
+
+<pre><code>| 结论 | 数字 | 口径定义 | 年份 | 来源A | 来源B | 是否互相独立 | 状态 |
+|------|------|----------|------|-------|-------|--------------|------|
+| 行业增速 |  |  |  |  |  | 是/否 | 已核 / 存疑 / 删除 |
+
+填表规则：
+1 来源A与来源B同源时，「是否互相独立」填否，状态降为存疑
+2 口径定义写不出来的，一律标存疑，不许进报告正文
+3 状态为删除的行保留在表里，写清删除原因，便于复盘</code></pre>
+
+<h2 id="sec-4">从素材到报告框架</h2>
+
+<p>素材齐了再动笔。行业调研报告怎么写，框架其实很固定：结论先行、市场概况、竞争格局、驱动因素与风险、机会判断。</p>
+
+<p>让模型按这个框架把核对表里状态为已核的内容填进去，存疑的单独放附录。这样正文的每句话背后都有据可查，评审提问时你翻得到。</p>
+
+<p>调研素材建议沉进知识库，下次做相邻行业能复用一半，具体做法在搭建个人知识库那篇里。</p>
+
+<h2 id="sec-5">常见误区与提醒</h2>
+
+<p>别把模型的流畅当成可靠。它写得越顺，你越容易放过里面的空洞判断，幻觉的识别技巧可以看避免 AI 幻觉那篇。</p>
+
+<p>也别只看头部玩家。行业里真正的变化常常发生在腰部，而公开报道对腰部覆盖很少，这块得靠访谈补。</p>
+
+<p>最后一句实在话：工具能从工具导航里慢慢挑，但ai做行业调研的成色，取决于你愿不愿意为每个数字回一次原文。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-personal-knowledge-base.html">AI 搭建个人知识库</a></li>
+      <li><a href="perplexity-ai-search-review.html">Perplexity 搜索测评</a></li>
+      <li><a href="avoid-ai-hallucination-tips.html">避免 AI 幻觉</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai做行业调研：先把问题列成清单</a></li>
+      <li><a href="#sec-2">信息源分层：一手、二手和模型直答</a></li>
+      <li><a href="#sec-3">交叉验证的三条硬规则</a></li>
+      <li><a href="#sec-4">从素材到报告框架</a></li>
+      <li><a href="#sec-5">常见误区与提醒</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

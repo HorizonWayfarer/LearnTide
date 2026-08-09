@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本地大模型够用吗？和在线大模型真实差距的实测对比与选型建议</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/local-model-good-enough.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="本地大模型够用吗？和在线大模型比，差距主要在速度、上下文长度和多模态。本文讲清本地部署能做什么、做不了什么，帮你判断值不值得折腾，也谈性价比，别盲目跟风上硬件。">
+<meta property="og:title" content="本地大模型够用吗？和在线大模型真实差距的实测对比与选型建议">
+<meta property="og:description" content="本地大模型够用吗？和在线大模型比，差距主要在速度、上下文长度和多模态。本文讲清本地部署能做什么、做不了什么，帮你判断值不值得折腾，也谈性价比，别盲目跟风上硬件。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/local-model-good-enough.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="本地大模型够用吗？和在线大模型真实差距的实测对比与选型建议">
+<meta name="twitter:description" content="本地大模型够用吗？和在线大模型比，差距主要在速度、上下文长度和多模态。本文讲清本地部署能做什么、做不了什么，帮你判断值不值得折腾，也谈性价比，别盲目跟风上硬件。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"本地大模型够用吗？和在线大模型的真实差距 — Learntide",
+  "description":"本地大模型够用吗？和在线大模型比，差距主要在速度、上下文长度和多模态。本文讲清本地部署能做什么、做不了什么，帮你判断值不值得折腾，也谈性价比，别盲目跟风上硬件。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"工具测评",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/local-model-good-enough.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"工具测评","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"本地大模型够用吗？和在线大模型的真实差距 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">工具测评</span>
+    <h1>本地大模型够用吗？和在线大模型的真实差距 — Learntide</h1>
+    <p class="lede">本地部署听着很酷，但它和在线大模型到底差多少，这篇用大白话讲清楚。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">工具测评</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">本地大模型够用吗？和在线大模型的真实差距 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">本地大模型够用吗</h2>
+
+<p>本地大模型够用吗？先说结论：应付日常问答、写稿、整理文档够用，但遇到超长上下文、复杂推理和图像视频，和在线旗舰模型还差一截。关键不是能不能跑，而是你愿不愿意为那点差距付出硬件和时间。下面把差距拆开讲，你对照自己的活儿判断，别一上来就花大钱买显卡，先想清楚再用。很多人是被离线可用这点吸引，但省下的订阅费未必抵得过一张显卡的开销。这笔账得自己算清楚，别凭感觉就下单。</p>
+
+<h2 id="sec-2">速度差多少</h2>
+
+<p>同样一个问题，在线模型靠机房显卡秒回，本地 7B 在普通电脑上可能要等十几秒。模型越大越慢，14B、32B 在小显存机器上会卡成幻灯片，回答一个长问题够你去喝杯茶。如果你每天高频对话，等待感会很磨人；只是偶尔用，这点慢能忍。量化到 Q4 能提速，但回答质量也会往下掉一点，别指望又快又好，两者要取舍。真要讲究响应速度，把模型放云端反而更现实。</p>
+
+<h2 id="sec-3">能力边界在哪</h2>
+
+<p>本地模型的中文闲聊、摘要、翻译基本能打，但长文档归纳、数学推理、写代码常常翻车，给的数字和引用还经常编。在线模型能一次吃下几十页资料，本地小模型读到一半就忘，上下文一超就开始胡说。多模态更别指望，大多数本地开源模型只处理文字，看图听声得另装专门模型，效果也一般，不如直接用在线工具省事。需要可靠输出时，本地模型最好只当草稿助手，定稿再人工核对一遍。</p>
+
+<pre><code>ollama pull qwen2.5:7b-q4_K_M</code></pre>
+
+<h2 id="sec-4">什么时候真够用</h2>
+
+<p>做个人知识库、本地笔记问答、脱敏文档处理，本地模型反而更合适，数据不出电脑最省心，也不用担心上传敏感材料。写周报、改文案、跑固定模板，它也完全胜任，每天那点重复活儿交给它很划算。只有当你需要最新知识、超长上下文或稳定的高质量输出时，才该交给在线模型，两边搭配最划算，不必非二选一。企业内网或离线环境里，本地部署的优势会更明显。</p>
+
+<h2 id="sec-5">值不值得折腾</h2>
+
+<p>给你一句判断：轻度使用、在意隐私，本地部署值得；重度创作、要稳定质量，还是在线更稳。别看别人晒本地跑模型就跟风，先想清楚自己每天到底用它干什么，再决定要不要折腾。本地大模型够用吗，答案在你手上的任务里，不在参数表的数字里，够用就好别硬追满血，把预算花在刀刃上。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="open-vs-closed-source-llm.html">开源与闭源大模型区别</a></li>
+      <li><a href="what-is-on-device-ai.html">端侧 AI 是什么</a></li>
+      <li><a href="local-llm-hardware-guide.html">本地跑大模型配置要求</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">本地大模型够用吗</a></li>
+      <li><a href="#sec-2">速度差多少</a></li>
+      <li><a href="#sec-3">能力边界在哪</a></li>
+      <li><a href="#sec-4">什么时候真够用</a></li>
+      <li><a href="#sec-5">值不值得折腾</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

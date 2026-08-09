@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 做视频降噪？人声增强与音量统一的做法 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-audio-cleanup-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai视频降噪，先区分风声、电流声、环境杂音，再用剪辑软件一键处理，人声增强后统一各段音量。本文给降噪、增强、响度匹配步骤，讲清配乐与人声平衡，新手也能做出干净声音。">
+<meta property="og:title" content="用 AI 做视频降噪？人声增强与音量统一的做法">
+<meta property="og:description" content="ai视频降噪，先区分风声、电流声、环境杂音，再用剪辑软件一键处理，人声增强后统一各段音量。本文给降噪、增强、响度匹配步骤，讲清配乐与人声平衡，新手也能做出干净声音。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-audio-cleanup-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 做视频降噪？人声增强与音量统一的做法">
+<meta name="twitter:description" content="ai视频降噪，先区分风声、电流声、环境杂音，再用剪辑软件一键处理，人声增强后统一各段音量。本文给降噪、增强、响度匹配步骤，讲清配乐与人声平衡，新手也能做出干净声音。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 处理视频声音？降噪与音量统一做法 — Learntide",
+  "description":"ai视频降噪，先区分风声、电流声、环境杂音，再用剪辑软件一键处理，人声增强后统一各段音量。本文给降噪、增强、响度匹配步骤，讲清配乐与人声平衡，新手也能做出干净声音。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-audio-cleanup-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 处理视频声音？降噪与音量统一做法 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 处理视频声音？降噪与音量统一做法 — Learntide</h1>
+    <p class="lede">视频声音发闷有杂音？先用工具把噪声压下去，再把人声提上来，听感立刻干净。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 处理视频声音？降噪与音量统一做法 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai视频降噪适合处理哪些噪声</h2>
+
+<p>ai视频降噪，先认噪声类型。风声是低频呼呼，电流声是稳定嗡嗡，环境杂音是路人键盘。类型不同，处理方法不同，别一股脑全拉满。</p>
+
+<p>先听一遍原片。标出噪声最重的时间段，后面单独处理。全片统一强度，干净处会被误伤，人声也发干。带耳机的音箱听，笔记本喇叭听不出细节。</p>
+
+<p>噪声重灾区先记下来。户外风声多在开头，电流声常全程在。定位准，处理才省事。先修最脏的段，其余轻点就好。</p>
+
+<p>录制的习惯最省钱。户外用防风毛，室内关空调。前期少噪，后期省力。降噪是补救，不是万能。</p>
+
+<h2 id="sec-2">用剪辑软件一键降噪</h2>
+
+<p>多数剪辑软件带「降噪」开关。先开中档，试听再调。强度过高会吃掉人声细节，像蒙了层布。</p>
+
+<p>处理前备份原音轨。降噪不可逆，调坏了能重来。同一段存两个强度版本，挑听得最自然的。先处理最脏的片段，干净片段轻点就好。</p>
+
+<pre><code>常见降噪参数：
+1 降噪强度设 40% 到 60%
+2 保留人声频段 200Hz 到 4kHz
+3 风声单独用低频切除
+4 导出前试听对比原片</code></pre>
+
+<p>参数别照抄。房间混响重的片，保人声频段要窄一点。试听是唯一的裁判，耳朵比数字可靠。每段都过一遍，不偷懒。</p>
+
+<p>批量片先定模板。参数存预设，十段片一套参数，效率翻倍。</p>
+
+<h2 id="sec-3">人声增强与音量统一</h2>
+
+<p>噪声压下去，人声还发虚，就开「人声增强」。它把说话频段提亮，口播更清楚。别开太狠，齿音会刺耳。</p>
+
+<p>各段音量要统一。开头小声、中间爆音，观众得一直调音量。用响度匹配把整片拉到同一水平，听感才稳。访谈切换机位，音量跳变最明显，重点校。</p>
+
+<p>响度标准有参考值。多数平台建议负十四 LUFS 左右。导出前看一眼表，别凭感觉。达标了，手机外放也不炸。</p>
+
+<p>备份成品再发。导出后原工程留着，改字幕不用重来。工程文件占地方，但省下次重来。</p>
+
+<h2 id="sec-4">背景音乐别盖过人声</h2>
+
+<p>配乐是陪衬，不是主角。人声说话时，背景乐压到负二十分贝上下。留气口，别全程铺满。</p>
+
+<p>淡入淡出让配乐不突兀。片头尾各做两秒渐变，转场更顺。配乐怎么挑，可以看同簇的 ai做背景音乐 思路。人声一进来，配乐就退，这个节奏最稳。</p>
+
+<p>配乐音量也纳入响度管理。别让它拉高整片均值，否则人声被迫压低。整体平衡，才干净。先定人声，再塞配乐。</p>
+
+<h2 id="sec-5">导出参数与避坑</h2>
+
+<p>导出选常见音频格式，码率够用就行。采样率四十四点一或四十八千赫，平台和播放器都认。</p>
+
+<p>ai视频降噪最怕三件事：强度拉满、配乐压人声、响度不齐。每步都戴耳机试听，成品才干净。功能边界，以官网当前说明为准。</p>
+
+<p>最后提醒：别指望一键降噪就完事，人声处一定要复听。把噪声认准，ai视频降噪才真管用。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-background-music-guide.html">ai做背景音乐</a></li>
+      <li><a href="how-ai-tts-works.html">ai怎么念出声音</a></li>
+      <li><a href="ai-podcast-production-guide.html">ai做播客</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="ai-logo-design-guide.html">ai设计logo</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai视频降噪适合处理哪些噪声</a></li>
+      <li><a href="#sec-2">用剪辑软件一键降噪</a></li>
+      <li><a href="#sec-3">人声增强与音量统一</a></li>
+      <li><a href="#sec-4">背景音乐别盖过人声</a></li>
+      <li><a href="#sec-5">导出参数与避坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

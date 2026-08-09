@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 做公众号封面图：尺寸与风格统一做法 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-wechat-cover-image.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai做公众号封面，先把比例和栏目调性定死，再让模型按统一模板出图。本文给可直接套用的提示词模板、首图与次图区分、标题排布、保持一个号视觉一致的小技巧，帮运营省事。">
+<meta property="og:title" content="用 AI 做公众号封面图：尺寸与风格统一做法">
+<meta property="og:description" content="ai做公众号封面，先把比例和栏目调性定死，再让模型按统一模板出图。本文给可直接套用的提示词模板、首图与次图区分、标题排布、保持一个号视觉一致的小技巧，帮运营省事。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-wechat-cover-image.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 做公众号封面图：尺寸与风格统一做法">
+<meta name="twitter:description" content="ai做公众号封面，先把比例和栏目调性定死，再让模型按统一模板出图。本文给可直接套用的提示词模板、首图与次图区分、标题排布、保持一个号视觉一致的小技巧，帮运营省事。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做公众号封面图？尺寸与风格统一 — Learntide",
+  "description":"ai做公众号封面，先把比例和栏目调性定死，再让模型按统一模板出图。本文给可直接套用的提示词模板、首图与次图区分、标题排布、保持一个号视觉一致的小技巧，帮运营省事。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-wechat-cover-image.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做公众号封面图？尺寸与风格统一 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 做公众号封面图？尺寸与风格统一 — Learntide</h1>
+    <p class="lede">封面图别张张现想。先把比例、底色和栏目感觉定成一套模板，再批量出图。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做公众号封面图？尺寸与风格统一 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai做公众号封面：先把比例和调性定死</h2>
+
+<p>ai做公众号封面最容易乱的，是每期风格各唱各的。今天冷灰明天亮粉，读者刷到根本不像一个号。</p>
+
+<p>动手前先定一套规范。比例用 2.35:1 的封面尺寸，底色选一两支品牌色，栏目各有固定角标。规范写下来，后面期期照着来。</p>
+
+<p>栏目调性要分开。干货文偏冷静，活动文偏热闹，但同栏目的封面得长得像一家，靠角标和底色区分就够了。</p>
+
+<p>比例别凭记忆。去后台量一遍真实显示区，上下会被裁掉一截，关键信息要留在中间安全带。</p>
+
+<p>规范也别锁死。每季度看一眼数据，哪类封面点击高就多偏，死守旧模板反而掉量。</p>
+
+<h2 id="sec-2">给模型一段能用的提示词</h2>
+
+<p>规范有了，提示词就稳了。把尺寸和调性写进每条要求。</p>
+
+<pre><code>你是公众号封面设计师。请生成一张文章封面。
+
+栏目：产品干货
+尺寸：900 x 383，横版
+调性：冷蓝底、留白多、细线条
+元素：左侧大留白放标题，右侧一枚简洁图标
+限制：不要人脸、不要渐变、不要花哨装饰
+输出：构图说明 + 可生图提示词</code></pre>
+
+<p>出图后先看裁切。封面在列表里只露中间一条，两边再好看也被切掉，主体必须居中。</p>
+
+<p>同一栏目多跑几张。挑构图最稳的那张，别被惊艳但危险的图带偏，安全比出挑重要。</p>
+
+<p>提示词也别太长。把「高级」「大气」这种空词去掉，换成可执行的限制，模型才不跑偏。</p>
+
+<h2 id="sec-3">首图和次图要分开对待</h2>
+
+<p>封面分首图和次图，待遇不同。首图在文章顶部最大，次图只在转发卡片露一小块。</p>
+
+<p>次图更要耐裁。字体大一点，主体满一点，缩成小图还能认，才是合格的次图。</p>
+
+<p>标题别压满。留两成空白给视觉呼吸，密密麻麻的字读者懒得点，留白反而显高级。</p>
+
+<p>首图可以有一点景深。浅景深让主体跳出来，但别虚到看不清，否则手机上更糊。</p>
+
+<h2 id="sec-4">保持一个号的视觉一致</h2>
+
+<p>想长期统一，就建一套模板。每期只换标题和图标，底子和角标不动，号才像号。</p>
+
+<p>配色锁死两支。主色加辅助色够用，今天换明天的色，积累下来就是杂乱。</p>
+
+<p>别让模型每期自由发挥。也别在封面上堆三个重点，读者扫一眼只记得住一个。</p>
+
+<p>模板也要留版本。v1 v2 记清楚，哪版数据好就回退，别凭印象乱改。</p>
+
+<p>角标也别乱换。每栏目固定一个图标，读者看角标就知道栏目，换来换去反而费解。</p>
+
+<h2 id="sec-5">封面上的标题怎么排</h2>
+
+<p>标题字别太小。封面在信息流里就指甲大，字小了根本读不到，白白浪费位置。</p>
+
+<p>字数要收。一行别超八个字，两行封顶，太长就断成短句，扫读才顺。</p>
+
+<p>颜色要和底图拉开。浅底深字或深底浅字，对比够才清楚，灰蒙蒙的一团最糟。</p>
+
+<p>别让模型写标题文案。它爱写口号，你自己的标题才贴文章，这话只能你自己定。</p>
+
+<p>工具从工具导航里挑一个顺手的就行，ai做公众号封面真正省下的，是从零构思封面的那半小时。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="how-ai-image-generation-works.html">AI 图像生成原理</a></li>
+      <li><a href="what-is-diffusion-model.html">扩散模型是什么</a></li>
+      <li><a href="ai-mindmap-guide.html">AI 做思维导图</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai做公众号封面：先把比例和调性定死</a></li>
+      <li><a href="#sec-2">给模型一段能用的提示词</a></li>
+      <li><a href="#sec-3">首图和次图要分开对待</a></li>
+      <li><a href="#sec-4">保持一个号的视觉一致</a></li>
+      <li><a href="#sec-5">封面上的标题怎么排</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

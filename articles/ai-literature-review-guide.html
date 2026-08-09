@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 整理文献：找、读、记三步的具体做法与模板 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-literature-review-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai整理文献不是让模型代读，而是把找、读、记三步拆开各自提速。本文给检索式写法、论文结构化拆解提示词和可复用的文献卡片模板，也说清引用为什么必须回原文核对。">
+<meta property="og:title" content="用 AI 整理文献：找、读、记三步的具体做法与模板">
+<meta property="og:description" content="ai整理文献不是让模型代读，而是把找、读、记三步拆开各自提速。本文给检索式写法、论文结构化拆解提示词和可复用的文献卡片模板，也说清引用为什么必须回原文核对。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-literature-review-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 整理文献：找、读、记三步的具体做法与模板">
+<meta name="twitter:description" content="ai整理文献不是让模型代读，而是把找、读、记三步拆开各自提速。本文给检索式写法、论文结构化拆解提示词和可复用的文献卡片模板，也说清引用为什么必须回原文核对。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 整理文献？找、读、记三步的具体做法 — Learntide",
+  "description":"ai整理文献不是让模型代读，而是把找、读、记三步拆开各自提速。本文给检索式写法、论文结构化拆解提示词和可复用的文献卡片模板，也说清引用为什么必须回原文核对。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-literature-review-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 整理文献？找、读、记三步的具体做法 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 整理文献？找、读、记三步的具体做法 — Learntide</h1>
+    <p class="lede">把论文丢给模型让它总结，读完还是记不住。真正省时间的是拆解和归档这两步。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 整理文献？找、读、记三步的具体做法 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai整理文献：三步各管一件事</h2>
+
+<p>ai整理文献这件事，真正能提速的只有三段：找、读、记。三段解决的问题完全不同，混着做就会一团乱。</p>
+
+<p>找，解决的是范围。读，解决的是理解深度。记，解决的是三个月后还能不能调出来。多数人只做了中间那段，让模型总结一篇看一篇，看完照样什么都没留下。</p>
+
+<p>还有个前提得说清楚。模型可以帮你筛、帮你拆、帮你排版，但不能替你判断一篇论文靠不靠谱。这个判断权交出去，后面全盘皆输。</p>
+
+<h2 id="sec-2">找：先写检索式，再谈筛选</h2>
+
+<p>直接问模型「有哪些关于这个主题的论文」，风险很高，它可能给你不存在的标题。稳妥的路子是让它帮你写检索式，你拿去数据库里跑。</p>
+
+<p>告诉它你的研究问题、时间范围、学科领域，让它输出三到五组同义词和上位词的组合。检索式跑出结果后，再把标题和摘要批量喂回去做初筛。</p>
+
+<p>初筛标准要自己定死。比如只要实证研究、样本量写明、近八年发表。标准写进提示词，模型才能按你的尺子量，而不是按它的偏好挑。</p>
+
+<h2 id="sec-3">读：把一篇论文拆成六个格子</h2>
+
+<p>ai读论文的方法，核心是结构化。散着读容易被作者的叙述带走，拆成固定格子就能横向比较。</p>
+
+<pre><code>请按下面六个格子拆解这篇论文，每格不超过 60 字，用原文依据回答。
+
+1 研究问题：作者想回答什么
+2 方法：设计、样本、数据来源
+3 关键结论：最多 3 条，每条标出对应章节
+4 局限：作者自己承认的，和你看出来的分开写
+5 与我的关系：能支撑还是反驳我的论点
+6 存疑处：数据或推论中你觉得站不住的地方
+
+原文中找不到依据的，直接写「原文未提及」，不要推测。
+
+【粘贴论文正文或章节】</code></pre>
+
+<p>第四格和第六格最值钱。多数总结只给结论，不给边界，而综述里真正要写的往往就是这些边界。跑完记得抽两条结论回原文核对，模型改写数字这种事并不罕见。</p>
+
+<h2 id="sec-4">记：卡片模板决定复用效率</h2>
+
+<p>拆完不归档，等于白拆。文献管理用什么ai工具其实是次要问题，模板统一才是关键。</p>
+
+<p>一张卡片固定七个字段：作者与年份、期刊、研究问题、方法、结论、局限、我的批注。字段顺序永远一致，以后做表格对比才拼得起来。</p>
+
+<p>批注那栏必须手写。模型给的是内容摘要，你写的是判断，比如这篇适合放引言还是放讨论。这些卡片沉到你的知识库里，检索时按方法或按结论捞都行，具体入库方式可以参考搭建个人知识库那套流程。</p>
+
+<h2 id="sec-5">综述的边界与几个提醒</h2>
+
+<p>ai文献综述怎么写，答案是让它起草结构，不让它落笔。先自己定好脉络：按时间、按流派还是按方法。脉络定了，再让模型把卡片填进去成段。</p>
+
+<p>引用必须回原文核对，一条都不能省。页码、年份、作者姓名，这三样是幻觉高发区，相关坑点在避免 AI 幻觉那篇里写得更细。</p>
+
+<p>别把模型输出直接贴进正文。也别为了凑数把只读过摘要的文献列进参考文献，答辩时被追问一句就穿帮。工具选型可以从工具导航里挑几款试。说到底，ai整理文献省下的是搬运时间，不是你自己读和判断的那部分。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-personal-knowledge-base.html">AI 搭建个人知识库</a></li>
+      <li><a href="ai-thesis-writing-guide.html">AI 写论文指南</a></li>
+      <li><a href="avoid-ai-hallucination-tips.html">避免 AI 幻觉</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai整理文献：三步各管一件事</a></li>
+      <li><a href="#sec-2">找：先写检索式，再谈筛选</a></li>
+      <li><a href="#sec-3">读：把一篇论文拆成六个格子</a></li>
+      <li><a href="#sec-4">记：卡片模板决定复用效率</a></li>
+      <li><a href="#sec-5">综述的边界与几个提醒</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

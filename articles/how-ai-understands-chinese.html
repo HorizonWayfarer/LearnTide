@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 怎么理解中文？分词、词表和额度一次讲清楚 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/how-ai-understands-chinese.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 怎么理解中文？模型不认汉字，先按词表把句子切成片段再编号处理。本文讲清切分和词表怎么运作、中文为什么比英文更费额度，以及生僻字和错别字为何容易被读歪。">
+<meta property="og:title" content="AI 怎么理解中文？分词、词表和额度一次讲清楚">
+<meta property="og:description" content="AI 怎么理解中文？模型不认汉字，先按词表把句子切成片段再编号处理。本文讲清切分和词表怎么运作、中文为什么比英文更费额度，以及生僻字和错别字为何容易被读歪。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/how-ai-understands-chinese.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 怎么理解中文？分词、词表和额度一次讲清楚">
+<meta name="twitter:description" content="AI 怎么理解中文？模型不认汉字，先按词表把句子切成片段再编号处理。本文讲清切分和词表怎么运作、中文为什么比英文更费额度，以及生僻字和错别字为何容易被读歪。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 是怎么读懂中文的？分词和词表讲清楚 — Learntide",
+  "description":"AI 怎么理解中文？模型不认汉字，先按词表把句子切成片段再编号处理。本文讲清切分和词表怎么运作、中文为什么比英文更费额度，以及生僻字和错别字为何容易被读歪。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/how-ai-understands-chinese.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 是怎么读懂中文的？分词和词表讲清楚 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>AI 是怎么读懂中文的？分词和词表讲清楚 — Learntide</h1>
+    <p class="lede">句子进模型前会被剁成小块再编号，中文剁得比英文碎。这一步没走好，后面理解就跟着歪。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 是怎么读懂中文的？分词和词表讲清楚 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">AI 怎么理解中文：先切块，再编号</h2>
+
+<p>AI 怎么理解中文，第一步和理解英文没什么两样：把句子切成一段段小片段，每段查表换成一个编号，再把这串编号交给模型算。</p>
+
+<p>模型里没有汉字，也没有字母，只有数字。ai处理中文的方式，本质上就是这套切分加编号的流水线。</p>
+
+<p>负责切分的组件叫分词器。它不按语法断句，也不管词性，只认自己那张词表里有哪些片段，然后尽量用少的片段把句子拼出来。</p>
+
+<h2 id="sec-2">词表是怎么定下来的</h2>
+
+<p>中文tokenizer是什么，看它的词表怎么造出来最清楚。</p>
+
+<p>做法是拿海量语料统计：哪些字符组合频繁地连在一起出现，就把它们合并成一个片段收进表里。反复合并若干轮，得到几万到十几万条。</p>
+
+<pre><code>同一句话的切分对比（示意）
+
+英文：I want to book a flight tomorrow
+      → I / want / to / book / a / flight / tomorrow      7 段
+
+中文：我想订一张明天的机票
+      → 我 / 想 / 订 / 一张 / 明天 / 的 / 机票             7 段
+      但汉字只有 10 个，平均一段还不到 1.5 个字</code></pre>
+
+<p>大模型分词的原理就在这里：高频组合合并成一段，低频内容退回到更小的单位。词表是训练时定死的，用的时候改不了。</p>
+
+<p>不同厂商的词表差别不小。同一句中文，换个模型切出来的段数可能差两成。所以跨平台比较消耗时，别拿一家的计数结果去套另一家。</p>
+
+<h2 id="sec-3">中文为什么更费额度</h2>
+
+<p>英文里一个常见单词往往就是一段。中文常常一两个字就占一段，同样信息量，切出来的段数更多。</p>
+
+<p>所以按段数计费的服务，中文内容通常吃亏。同一篇稿子中英对照，中文那一侧的消耗一般更高。</p>
+
+<p>反过来，中文信息密度高，同样意思用的字更少。两边一抵，实际差距没看上去那么夸张。</p>
+
+<p>这也影响一次能处理的长度。上限是按段数算的，不是按字数算的，所以「能读多少万字」这种说法只是个粗略换算。</p>
+
+<p>粗估的话，中文可以按一个字接近一段来算，留点余量。真要精确，用官方计数工具跑一遍最稳。</p>
+
+<h2 id="sec-4">生僻字、错别字和火星文</h2>
+
+<p>词表里没有的内容，会被拆成更碎的单位，甚至退到字节级别。一个生僻字可能占掉两三段。</p>
+
+<p>这不只是费额度的问题。切得越碎，语义信息越分散，模型越容易理解偏。人名里的罕见字被读成别的字，就是这么来的。</p>
+
+<p>错别字、繁简混排、拼音缩写、颜文字，都会造成同样的效果。夹杂大量特殊符号的文本，效果下滑最明显。</p>
+
+<p>对应的做法很朴素：正文用规范汉字，专有名词写全称，第一次出现时补一句解释。</p>
+
+<h2 id="sec-5">别只按字数估算长度</h2>
+
+<p>很多人拿字符数直接当额度用，结果不是超了就是留了太多冗余。中英混排、代码片段、表格符号，换算比例都不一样。</p>
+
+<p>也别以为分词决定了理解。切分只负责把文本变成编号，真正表达含义的是后面那层向量。切分错了会带偏，切分对了也不保证答得准。</p>
+
+<p>最后一条提醒：涉及关键人名、编号、金额的内容，别指望模型自动纠错。想弄明白 ai怎么理解中文，先记住它读的从来不是字，是片段。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-token-ai.html">token 是什么意思</a></li>
+      <li><a href="what-is-embedding-explained.html">什么是 Embedding</a></li>
+      <li><a href="how-ai-tts-works.html">AI 语音合成原理</a></li>
+      <li><a href="what-is-llm-explained.html">大模型是什么</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 怎么理解中文：先切块，再编号</a></li>
+      <li><a href="#sec-2">词表是怎么定下来的</a></li>
+      <li><a href="#sec-3">中文为什么更费额度</a></li>
+      <li><a href="#sec-4">生僻字、错别字和火星文</a></li>
+      <li><a href="#sec-5">别只按字数估算长度</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

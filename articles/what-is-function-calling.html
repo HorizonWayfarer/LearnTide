@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>什么是 function calling？AI 怎么学会用外部工具 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-function-calling.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="什么是 function calling？模型判断该用哪个外部功能、该填什么参数，真正执行的是程序。本文讲清这套机制怎么跑一圈、和联网搜索的关系，以及它最常在哪里翻车。">
+<meta property="og:title" content="什么是 function calling？AI 怎么学会用外部工具">
+<meta property="og:description" content="什么是 function calling？模型判断该用哪个外部功能、该填什么参数，真正执行的是程序。本文讲清这套机制怎么跑一圈、和联网搜索的关系，以及它最常在哪里翻车。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-function-calling.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="什么是 function calling？AI 怎么学会用外部工具">
+<meta name="twitter:description" content="什么是 function calling？模型判断该用哪个外部功能、该填什么参数，真正执行的是程序。本文讲清这套机制怎么跑一圈、和联网搜索的关系，以及它最常在哪里翻车。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"什么是工具调用？AI 怎么学会用外部工具 — Learntide",
+  "description":"什么是 function calling？模型判断该用哪个外部功能、该填什么参数，真正执行的是程序。本文讲清这套机制怎么跑一圈、和联网搜索的关系，以及它最常在哪里翻车。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-function-calling.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"什么是工具调用？AI 怎么学会用外部工具 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>什么是工具调用？AI 怎么学会用外部工具 — Learntide</h1>
+    <p class="lede">模型自己不会查天气，也不会发邮件。它只会写一张单子交出去，剩下的活由程序接手完成。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">什么是工具调用？AI 怎么学会用外部工具 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">什么是 function calling：模型只负责下单</h2>
+
+<p>什么是 function calling？中文一般译成函数调用或者工具调用。它指的是模型判断这句话该用哪个外部功能、该填什么参数，然后把这份意图交给程序去执行。</p>
+
+<p>关键在于分工。模型出意图，程序动手。它不亲自联网，也不亲自读文件，它只会说：请调用查天气这个功能，城市填杭州。</p>
+
+<h2 id="sec-2">一次完整的调用长什么样</h2>
+
+<p>流程分四步。开发者先把可用工具告诉模型，包括名字、用途和参数格式。用户提问后，模型判断要不要用工具、用哪一个。</p>
+
+<p>程序拿到这份意图去真正执行，把结果回喂给模型。模型再把结果翻译成人话讲给你听。</p>
+
+<pre><code>{
+  &quot;name&quot;: &quot;get_weather&quot;,
+  &quot;arguments&quot;: { &quot;city&quot;: &quot;杭州&quot;, &quot;date&quot;: &quot;2026-08-08&quot; }
+}</code></pre>
+
+<p>这段就是模型吐出来的那张单子。它本身不是答案，只是一张待执行的凭据。执行成功与否、数据准不准，跟模型没关系。</p>
+
+<p>值得留意的是第四步。结果回喂之后，模型可能判断信息还不够，于是再下一张单子。这一来一回可以重复好几轮，直到它认为能收尾了为止。</p>
+
+<h2 id="sec-3">函数调用是什么意思，和联网搜索的关系</h2>
+
+<p>你在对话框里看到的联网搜索，多数就是这套机制的一种包装。搜索被写成一个工具，模型觉得需要就调，不需要就直接答。</p>
+
+<p>同理还有画图、跑代码、读取文档。表面上功能各不相同，底下都是同一套「声明工具、模型挑、程序跑、结果回喂」。</p>
+
+<p>理解这一层，不少现象就说得通了。比如模型明明开着联网却不去搜，那多半是它判断这题不必搜。</p>
+
+<p>还有一种情况容易混。检索资料走的是另一条路，系统先把相关段落查出来拼进提问里，模型全程并不知道自己用了工具。两者能配合，机制却不一样。</p>
+
+<h2 id="sec-4">工具调用和插件的关系</h2>
+
+<p>插件是这套能力的产品化外壳。平台把一组功能打包，配上说明和权限开关，用户点一下就能启用，看不到底层那张单子。</p>
+
+<p>三者的层次可以这么排：函数调用是底层机制，插件是给普通用户的封装，智能体则在上面再加一层自主决策，让模型自己决定连续调几次、什么时候收工。</p>
+
+<p>没有这层能力，模型就只能说话，干不了活。它能不能真正替你办事，分水岭就在这里。</p>
+
+<h2 id="sec-5">别指望它永远选对工具</h2>
+
+<p>常见的翻车有三类。一是该调不调，模型凭记忆自信作答；二是不该调乱调，一句闲聊也去搜一圈，慢且费钱；三是参数填错，日期差一天、单位对不上、城市写成了拼音。</p>
+
+<p>工具描述写得含糊，这三类都更容易发生。名字、用途、参数说明写清楚，比在提示词里反复叮嘱管用得多。</p>
+
+<p>还有一条：工具执行失败时，要给模型一条明确的错误信息。收到空结果它容易顺着往下编，看起来还挺像回事。</p>
+
+<p>别让它对着空结果自由发挥，这是弄懂什么是 function calling 之后最该守住的一条。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-mcp-protocol.html">MCP 协议是什么</a></li>
+      <li><a href="what-is-ai-agent.html">什么是 AI 智能体</a></li>
+      <li><a href="what-is-ai-workflow.html">AI 工作流是什么</a></li>
+      <li><a href="what-is-rag-explained.html">什么是 RAG</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">什么是 function calling：模型只负责下单</a></li>
+      <li><a href="#sec-2">一次完整的调用长什么样</a></li>
+      <li><a href="#sec-3">函数调用是什么意思，和联网搜索的关系</a></li>
+      <li><a href="#sec-4">工具调用和插件的关系</a></li>
+      <li><a href="#sec-5">别指望它永远选对工具</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

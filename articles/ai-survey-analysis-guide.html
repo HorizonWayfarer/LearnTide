@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 分析问卷：开放题也能自动归类的做法 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-survey-analysis-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai分析问卷，选择题好算，开放题也能自动归类。本文给清洗数据的清单、给开放题打标签的提示词、把结果汇成报告的步骤，以及最易被忽略的一点：先抽看几十份原文再信它。">
+<meta property="og:title" content="用 AI 分析问卷：开放题也能自动归类的做法">
+<meta property="og:description" content="ai分析问卷，选择题好算，开放题也能自动归类。本文给清洗数据的清单、给开放题打标签的提示词、把结果汇成报告的步骤，以及最易被忽略的一点：先抽看几十份原文再信它。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-survey-analysis-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 分析问卷：开放题也能自动归类的做法">
+<meta name="twitter:description" content="ai分析问卷，选择题好算，开放题也能自动归类。本文给清洗数据的清单、给开放题打标签的提示词、把结果汇成报告的步骤，以及最易被忽略的一点：先抽看几十份原文再信它。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 分析问卷？开放题也能自动归类 — Learntide",
+  "description":"ai分析问卷，选择题好算，开放题也能自动归类。本文给清洗数据的清单、给开放题打标签的提示词、把结果汇成报告的步骤，以及最易被忽略的一点：先抽看几十份原文再信它。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-survey-analysis-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 分析问卷？开放题也能自动归类 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 分析问卷？开放题也能自动归类 — Learntide</h1>
+    <p class="lede">收上来几百份问卷，选择题好办，往往真正让人头疼的是那一堆写完就再没动过的开放题。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 分析问卷？开放题也能自动归类 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai分析问卷：选择题好算开放题靠归类</h2>
+
+<p>ai分析问卷，选择题那是模型的强项，计数、交叉、画图都快。真正费劲的是开放题，一堆自由发挥的文字，靠人手读不完。</p>
+
+<p>开放题的解法不是逐条精读，而是先归类。让模型把相似回答归到同一标签下，你再看每个标签有多少人，趋势就出来了。</p>
+
+<p>不少人卡在「开放题太多读不动」就跳过。跳过等于扔掉最值钱的意见。用归类替代通读，几百条也能半小时内看出门道。</p>
+
+<p>样本量小就别硬分。只有三十份还拆八组，每组三四人，结论没有意义。工具先小试。丢二十份看它归类稳不稳，再上全量省得返工。</p>
+
+<h2 id="sec-2">清洗数据再做分析</h2>
+
+<p>先删无效卷。填秒完的、整页选同一个选项的、开放题留白的，先挑出来。脏样本不去掉，结论会被拉偏。</p>
+
+<p>选项编码要统一。同一道题「满意」有的写「很满意」，模型可能当两种。先归成一套标准词再喂。</p>
+
+<p>抽样先读几十份。你亲手看过的原文，是后面判断模型归类准不准的标尺。没这步，你根本不知道它归得对不对。</p>
+
+<p>时间字段统一。有的填日期有的填「上周」，模型分桶会乱，先归成一种。开放题也先去重。同一人复制粘贴的多条，留一条，否则占比被注水。</p>
+
+<h2 id="sec-3">给开放题打标签的提示词</h2>
+
+<p>把开放题文本贴进下面这段：</p>
+
+<pre><code>你是问卷分析助手。请给以下开放题回答打标签：
+【粘贴回答，一行一条】
+要求：
+1 先归纳出 5 到 8 个高频主题，作为标签
+2 每条回答标一个主标签，可加一个副标签
+3 输出表格：原句、主标签、副标签
+4 末尾给每个标签的人数占比
+5 不要合并语义不同的回答，宁可多留标签</code></pre>
+
+<p>跑完抽十条回看。标签和原文对得上，说明归得稳。对不上就让它把标签定义写细。</p>
+
+<p>标签太碎就合并。二十个标签看花眼，让模型归成五六个大类的更顺手。</p>
+
+<h2 id="sec-4">把结果汇成一份报告</h2>
+
+<p>选择题直接出图。占比、均值、交叉表，让模型生成表格和简短结论，你贴进汇报就行。</p>
+
+<p>开放题挑代表句。每个标签下选两三条原话当证据，比干巴巴的数字更有说服力。读者信原话胜过信你的总结。</p>
+
+<p>最后给一句总判断。数据说清楚「用户最在意什么、最不满什么」，这一句才是汇报里被记住的。</p>
+
+<p>报告开头写限制。说清样本量和回收率，读者才不会把结论当真理。图表别太多。三张讲清主线的，胜过十张没人看的。</p>
+
+<h2 id="sec-5">收尾提醒与常见坑</h2>
+
+<p>别全信模型的归类。它有时会按字面硬凑标签，把其实不同的回答塞一起。你过一遍标签定义就现形。</p>
+
+<p>也别只报好评。开放题里的抱怨往往最该上报，模型倾向挑顺的写。你主动让它把负面标签也列全。</p>
+
+<p>敏感题单独处理。涉及收入的开放题，汇报前先脱敏再引用原话。结论要可行动。光说「大家不满意」没用，补一句「优先修登录」才值钱。</p>
+
+<p>最后一步最该做：先抽看几十份原文再信它。别把 ai分析问卷 当黑盒，归类跑偏你比模型更早发现。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="ai-data-analysis-report.html">用 AI 做数据分析</a></li>
+      <li><a href="ai-pdf-processing-guide.html">用 AI 处理 PDF</a></li>
+      <li><a href="ai-data-analysis-tools-compare.html">AI 数据分析工具对比</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai分析问卷：选择题好算开放题靠归类</a></li>
+      <li><a href="#sec-2">清洗数据再做分析</a></li>
+      <li><a href="#sec-3">给开放题打标签的提示词</a></li>
+      <li><a href="#sec-4">把结果汇成一份报告</a></li>
+      <li><a href="#sec-5">收尾提醒与常见坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

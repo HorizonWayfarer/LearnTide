@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dify 怎么用？搭一个能查资料的问答机器人（附做法） — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/dify-beginner-tutorial.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="Dify 怎么用？本文以搭一个查内部资料的问答机器人为例，走通建应用、传文档、配检索、接模型、测效果这条链路，并说清分段大小和召回数量调不好会出什么问题。">
+<meta property="og:title" content="Dify 怎么用？搭一个能查资料的问答机器人（附做法）">
+<meta property="og:description" content="Dify 怎么用？本文以搭一个查内部资料的问答机器人为例，走通建应用、传文档、配检索、接模型、测效果这条链路，并说清分段大小和召回数量调不好会出什么问题。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/dify-beginner-tutorial.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dify 怎么用？搭一个能查资料的问答机器人（附做法）">
+<meta name="twitter:description" content="Dify 怎么用？本文以搭一个查内部资料的问答机器人为例，走通建应用、传文档、配检索、接模型、测效果这条链路，并说清分段大小和召回数量调不好会出什么问题。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"Dify 怎么用？搭一个能查资料的问答机器人 — Learntide",
+  "description":"Dify 怎么用？本文以搭一个查内部资料的问答机器人为例，走通建应用、传文档、配检索、接模型、测效果这条链路，并说清分段大小和召回数量调不好会出什么问题。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/dify-beginner-tutorial.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"Dify 怎么用？搭一个能查资料的问答机器人 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>Dify 怎么用？搭一个能查资料的问答机器人 — Learntide</h1>
+    <p class="lede">界面点几下就能建好应用，真正决定答得准不准的，是文档分段和召回数量这两个参数。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">Dify 怎么用？搭一个能查资料的问答机器人 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">dify怎么用：先搞清它擅长的那件事</h2>
+
+<p>dify怎么用？它是一个把大模型、知识库和流程编排拼在一起的应用搭建平台。不写代码也能做出一个能查资料的问答机器人，这是它最常被用到的场景。</p>
+
+<p>和直接在对话框里提问不同，这里的答案来自你上传的文档。模型只负责组织语言，事实由资料提供。</p>
+
+<p>下面就以「查内部制度的问答机器人」为例，把整条链路走一遍。</p>
+
+<h2 id="sec-2">建应用：类型选对能省一半事</h2>
+
+<p>新建应用时有几种类型。做问答机器人选聊天助手就够；需要固定步骤的批量任务，才用得上编排。dify工作流怎么用，等你的需求真出现分支判断时再研究不迟。</p>
+
+<p>建好后先别急着传文档，把提示词写清楚：只依据检索到的资料回答，资料里没有就直说没有，末尾附上来源标题。</p>
+
+<p>这几句约束是防编造的第一道闸，比后面调参数都重要。</p>
+
+<p>还有一点：先拿三五个文件跑通全流程，再往里堆资料。一上来就传几百份，出了问题你根本不知道该怪哪一层。</p>
+
+<h2 id="sec-3">传文档：分段大小别拍脑袋</h2>
+
+<p>dify怎么搭知识库？在知识库模块新建，上传文件，然后设置分段。这一步基本决定了后面答得准不准。</p>
+
+<p>切得太碎，一句话被拦腰截断，检索到了也读不懂。切得太大，一段里混着好几个主题，模型抓不住重点。</p>
+
+<p>规则清晰的制度文档，按标题或空行分段最省事。段落长短不齐的会议纪要，用固定长度加一点重叠更稳。</p>
+
+<pre><code>分段方式：自定义分隔符
+分隔符：\n\n
+分段最大长度：500
+分段重叠：50
+索引方式：高质量
+检索设置：混合检索，Top K = 4</code></pre>
+
+<p>这组值适合中文制度类文档，可以先照着填，再按实测结果调。</p>
+
+<p>传完记得抽查一下分段结果。界面里能逐段翻，重点看有没有把一条完整规则劈成两半。</p>
+
+<h2 id="sec-4">配检索和模型：召回数量是关键</h2>
+
+<p>Top K 指每次取回几段资料。取一段容易漏，取十段又会把无关内容一起塞过去，反而干扰判断。多数场景三到五段够用。</p>
+
+<p>检索方式建议选混合，关键词和语义各补各的短。制度里的条款编号、专有名称这类精确词，纯语义检索经常抓不到。</p>
+
+<p>召回数量和分段长度是一对。段切得短就多召回几段，段切得长就少召回几段，总量别把一次请求撑爆。</p>
+
+<p>模型这一档，问答场景对响应速度更敏感。先用快的试，效果不够再往上换，别一上来就挑最贵的。</p>
+
+<h2 id="sec-5">测效果：不要只试你想得到的问题</h2>
+
+<p>找五到十个同事，让他们用自己的说法提问。你写文档时的用词，和别人提问时的用词，差得比想象中远。</p>
+
+<p>答错时先看它引用了哪几段。引对了却答错，是提示词的问题；引错了，回头调分段和召回数量。</p>
+
+<p>顺手记一张问题清单。每次改完参数都跑同一批题，才分得清是真的变好，还是这次碰巧答对。</p>
+
+<p>最后一句提醒：知识库里别放没脱敏的资料。先想清楚谁能访问这个应用，再决定 dify怎么用来承接内部文档。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-rag-explained.html">什么是 RAG</a></li>
+      <li><a href="what-is-vector-database.html">什么是向量数据库</a></li>
+      <li><a href="coze-vs-dify-compare.html">扣子和 Dify 哪个好</a></li>
+      <li><a href="feed-documents-to-ai.html">怎么把文档喂给 AI</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">dify怎么用：先搞清它擅长的那件事</a></li>
+      <li><a href="#sec-2">建应用：类型选对能省一半事</a></li>
+      <li><a href="#sec-3">传文档：分段大小别拍脑袋</a></li>
+      <li><a href="#sec-4">配检索和模型：召回数量是关键</a></li>
+      <li><a href="#sec-5">测效果：不要只试你想得到的问题</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

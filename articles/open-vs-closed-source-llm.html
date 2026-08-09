@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>开源和闭源大模型区别：可控性成本与隐私怎么选 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/open-vs-closed-source-llm.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="开源模型和闭源模型区别在哪？闭源如商业大模型只给接口，开源把权重放开让你自托管。本文讲清两者在可控性、成本、隐私、上手难度上的取舍，帮你按实际场景做选择。">
+<meta property="og:title" content="开源和闭源大模型区别：可控性成本与隐私怎么选">
+<meta property="og:description" content="开源模型和闭源模型区别在哪？闭源如商业大模型只给接口，开源把权重放开让你自托管。本文讲清两者在可控性、成本、隐私、上手难度上的取舍，帮你按实际场景做选择。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/open-vs-closed-source-llm.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="开源和闭源大模型区别：可控性成本与隐私怎么选">
+<meta name="twitter:description" content="开源模型和闭源模型区别在哪？闭源如商业大模型只给接口，开源把权重放开让你自托管。本文讲清两者在可控性、成本、隐私、上手难度上的取舍，帮你按实际场景做选择。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"开源和闭源大模型：到底差在哪 — Learntide",
+  "description":"开源模型和闭源模型区别在哪？闭源如商业大模型只给接口，开源把权重放开让你自托管。本文讲清两者在可控性、成本、隐私、上手难度上的取舍，帮你按实际场景做选择。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/open-vs-closed-source-llm.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"开源和闭源大模型：到底差在哪 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>开源和闭源大模型：到底差在哪 — Learntide</h1>
+    <p class="lede">闭源模型像租来的精装房，开源模型像买下的毛坯，自由度和麻烦都一起交给你。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">开源和闭源大模型：到底差在哪 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">开源模型和闭源模型区别：先用一句话说清</h2>
+
+<p>开源模型和闭源模型区别在哪？关键只看一件事：权重开不开放。闭源只给你一个接口，参数握在厂商手里。开源把权重公开，你能下载、能自己跑、能改。前者是买服务，后者是把东西搬回家自己折腾。</p>
+
+<p>这条线一划，后面所有差异都跟着来。谁掌握数据、谁承担算力、谁能动模型本身。想先补底层概念，看 <a href="what-is-llm-explained.html">大模型是什么</a> 更省事。</p>
+
+<h2 id="sec-2">权重开不开，决定了你能做什么</h2>
+
+<p>闭源模型能调温度参数、能写系统提示词，但改不动内部。厂商升级一版，你的输出效果就跟着变。好坏都得接着。</p>
+
+<p>开源模型的空间大得多。可以本地部署，可以量化压缩塞进小显卡，也可以做 <a href="what-is-fine-tuning.html">微调是什么</a> 里讲的那种定向再训练。想把模型装进硬件产品里随货交付，也只有开源能干。代价是这些活全归你。</p>
+
+<pre><code>闭源：调接口 → 免运维 / 版本跟着厂商走 / 数据出内网
+开源：拿权重 → 自运维 / 版本自己锁定 / 数据留内网</code></pre>
+
+<p>顺带说一句，「开源」本身也分程度。有的放出权重却限制商用规模，有的连训练数据都不公开。下载前先把许可协议读完。</p>
+
+<h2 id="sec-3">可控性、隐私与合规的取舍</h2>
+
+<p>闭源省心。打开就能用，算力、扩容、更新都归厂商管。代价是提示词和资料要发到外部，敏感行业往往过不了内部审查。</p>
+
+<p>开源能把数据锁在内网。医疗、金融、政务这类场景，这一条常常是硬指标，谈不上加分。麻烦在于安全补丁、访问控制、日志留存，全得自己扛。</p>
+
+<ul><li>数据不敏感、要快上线：闭源</li><li>资料一步都不能出内网：开源</li><li>要改模型行为、要锁版本：开源</li><li>团队没有运维、没有显卡：闭源</li></ul>
+
+<h2 id="sec-4">成本账该怎么算</h2>
+
+<p>闭源按调用量计费。用量小的时候很便宜，量一大就开始心疼。开源前期投入重，服务器、显卡、人力都要摊进去，之后边际成本很低。</p>
+
+<p>别只比单价。真正该算的是两三年的总账：调用量增长曲线、人力工资、机器折旧、模型迭代带来的重复投入。不少团队算完发现，中等规模下两条路花的钱差不多。</p>
+
+<p>还有一笔隐性成本容易漏。开源要自己盯社区更新、自己做安全加固、自己解决兼容问题。这些活不出现在报价单上，却会实打实占掉工程师的时间。国内可选的底座越来越多，<a href="china-llm-landscape-2026.html">国产大模型有哪些</a> 能帮你缩小选型范围。</p>
+
+<h2 id="sec-5">按场景选，别按榜单排名选</h2>
+
+<p>常见做法是两头都用。闭源做原型，快速验证需求成不成立。跑通之后再评估，值不值得迁到开源自托管。</p>
+
+<p>也别默认开源就更省钱。小团队一整年的调用量，可能还抵不上一张显卡的价格。反过来同样成立，别默认闭源就不安全，正规厂商大多提供企业级隔离方案。</p>
+
+<p>榜单先放一边。分数高不等于适合你的业务，测评题目和真实任务经常对不上。真正该盯的是开源模型和闭源模型区别里那几条取舍：数据去哪、谁来运维、这笔账三年后怎么算。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-llm-explained.html">大模型是什么</a></li>
+      <li><a href="china-llm-landscape-2026.html">国产大模型有哪些</a></li>
+      <li><a href="what-is-fine-tuning.html">微调是什么</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="what-is-knowledge-cutoff.html">知识截止日期是什么</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">开源模型和闭源模型区别：先用一句话说清</a></li>
+      <li><a href="#sec-2">权重开不开，决定了你能做什么</a></li>
+      <li><a href="#sec-3">可控性、隐私与合规的取舍</a></li>
+      <li><a href="#sec-4">成本账该怎么算</a></li>
+      <li><a href="#sec-5">按场景选，别按榜单排名选</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

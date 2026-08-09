@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 做海报：从需求到成图的步骤与提示词 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-poster-design-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai做海报，先把尺寸、用途和风格讲清楚，再给模型一段能用的提示词。本文给可直接套用的提示词模板、初稿修改思路、文字排布与导出尺寸注意，帮小团队省下外包设计费。">
+<meta property="og:title" content="用 AI 做海报：从需求到成图的步骤与提示词">
+<meta property="og:description" content="ai做海报，先把尺寸、用途和风格讲清楚，再给模型一段能用的提示词。本文给可直接套用的提示词模板、初稿修改思路、文字排布与导出尺寸注意，帮小团队省下外包设计费。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-poster-design-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 做海报：从需求到成图的步骤与提示词">
+<meta name="twitter:description" content="ai做海报，先把尺寸、用途和风格讲清楚，再给模型一段能用的提示词。本文给可直接套用的提示词模板、初稿修改思路、文字排布与导出尺寸注意，帮小团队省下外包设计费。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做海报？从需求到成图的完整步骤 — Learntide",
+  "description":"ai做海报，先把尺寸、用途和风格讲清楚，再给模型一段能用的提示词。本文给可直接套用的提示词模板、初稿修改思路、文字排布与导出尺寸注意，帮小团队省下外包设计费。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-poster-design-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做海报？从需求到成图的完整步骤 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 做海报？从需求到成图的完整步骤 — Learntide</h1>
+    <p class="lede">别急着让模型出图。先把海报要贴在哪、给谁看、放什么字这三件事想明白。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做海报？从需求到成图的完整步骤 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai做海报：先把需求和用途写清楚</h2>
+
+<p>ai做海报之所以常出废片，是因为开口就喊「来张海报」。模型不知道贴在哪儿，只能按默认审美堆元素，出来多半没法直接用。</p>
+
+<p>动手前先定三件事。第一，投放位置：朋友圈竖图、公众号头图、还是线下易拉宝，比例完全不同。第二，核心信息：主标题几个字，要不要留二维码和落款。第三，风格参照：给一两张你喜欢的图当样例，比写一堆形容词管用。</p>
+
+<p>位置拿不准就去量。打开要投放的页面，截一屏看看别人怎么排，比凭感觉猜准得多。这一步花的几分钟，后面会省下反复改图的时间。</p>
+
+<p>风格词要换成可执行的指令。别说「高级感」，改成「低饱和、大留白、细线条」。模型对具体参数比形容词敏感得多。</p>
+
+<h2 id="sec-2">给模型一段能用的提示词</h2>
+
+<p>三件事写清楚，提示词就好写了。别只写「科技风海报」，那等于没说。</p>
+
+<pre><code>你是平面设计助手。请生成一张宣传海报的描述供图像模型使用。
+
+画面要求：
+- 主题：周末读书分享会
+- 主标题：「把读过的书聊出来」
+- 副信息：8 月 20 日 / 城市书房
+- 风格：暖色、手绘质感、留白多
+- 比例：竖版 3:4，留顶部 1/5 给标题
+- 不要出现具体人名和二维码
+
+请输出：画面构图说明 + 一段可直接粘贴的生图提示词。</code></pre>
+
+<p>拿到生图提示词后，先看比例对不对。模型爱塞满画面，可实际海报要留呼吸位。这一步要你自己把比例和留白写死。</p>
+
+<p>提示词要分两轮写。第一轮定主体和构图，第二轮再补质感和光影。一次塞太多要求，模型会顾此失彼，哪个都没做好。</p>
+
+<h2 id="sec-3">把初稿改成能用的成品</h2>
+
+<p>第一版几乎一定别扭。常见问题是字太小、配色太艳、主体不突出。</p>
+
+<p>改图时一次只动一处。先调字号，再调对比，最后换配色，别全一起改，否则看不出哪步生效。主体不够突出就加暗角或留白，把视线引过去。</p>
+
+<p>配色别超过三种。主色、辅助色、点缀色各司其职，再多就乱。拿不准就先转成灰度看层次，能分清前后再上色。</p>
+
+<h2 id="sec-4">文字和二维码要自己排</h2>
+
+<p>图像模型出的字经常缺笔少划。海报上的标题和日期必须自己排，用设计工具叠上去最稳。</p>
+
+<p>二维码也别让模型画。它生成的是花花绿绿的假码，扫出来是空的。真二维码用专门工具生成，再贴到留好的位置。</p>
+
+<p>文字层级要拉开。主标题最大，副信息小一号，落款最小。读者扫一眼就知道先看哪行，信息才传得出去。</p>
+
+<h2 id="sec-5">导出尺寸与排版注意</h2>
+
+<p>成图后别直接发。先按投放位导出正确尺寸，朋友圈和公众号的头图比例不一样，压错就糊。</p>
+
+<p>导出选 RGB 和足够像素，印刷用途再转 CMYK。文件留一份可编辑源文件，下回改字不重画。</p>
+
+<p>缩略图也要测。发到群里看一眼，在手机小图上还能不能认，认不出就再调构图。</p>
+
+<p>别把第一版当终稿。也别让模型替你定主标题，那是你最该自己拍板的部分。工具从工具导航里挑一个顺手的就行，ai做海报真正省下的，是从空白到第一稿那段最费神的时间。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="how-ai-image-generation-works.html">AI 图像生成原理</a></li>
+      <li><a href="what-is-diffusion-model.html">扩散模型是什么</a></li>
+      <li><a href="ai-mindmap-guide.html">AI 做思维导图</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai做海报：先把需求和用途写清楚</a></li>
+      <li><a href="#sec-2">给模型一段能用的提示词</a></li>
+      <li><a href="#sec-3">把初稿改成能用的成品</a></li>
+      <li><a href="#sec-4">文字和二维码要自己排</a></li>
+      <li><a href="#sec-5">导出尺寸与排版注意</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

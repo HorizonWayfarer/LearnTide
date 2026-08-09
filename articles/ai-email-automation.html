@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 自动整理收件箱？邮件分流与草稿（建议收藏） — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-email-automation.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai自动整理邮件最实用的是分流和起草：先按内容打标签分进不同文件夹，再对高频类型自动写草稿等你确认。本文给规则设计思路、可复用提示词和绝不能放手的几类信。">
+<meta property="og:title" content="用 AI 自动整理收件箱？邮件分流与草稿（建议收藏）">
+<meta property="og:description" content="ai自动整理邮件最实用的是分流和起草：先按内容打标签分进不同文件夹，再对高频类型自动写草稿等你确认。本文给规则设计思路、可复用提示词和绝不能放手的几类信。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-email-automation.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 自动整理收件箱？邮件分流与草稿（建议收藏）">
+<meta name="twitter:description" content="ai自动整理邮件最实用的是分流和起草：先按内容打标签分进不同文件夹，再对高频类型自动写草稿等你确认。本文给规则设计思路、可复用提示词和绝不能放手的几类信。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 自动整理收件箱？邮件分流与草稿 — Learntide",
+  "description":"ai自动整理邮件最实用的是分流和起草：先按内容打标签分进不同文件夹，再对高频类型自动写草稿等你确认。本文给规则设计思路、可复用提示词和绝不能放手的几类信。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-email-automation.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 自动整理收件箱？邮件分流与草稿 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 自动整理收件箱？邮件分流与草稿 — Learntide</h1>
+    <p class="lede">收件箱里真正要动脑的信不到两成。剩下那些例行通知，规则加模型基本能替你先过一遍。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 自动整理收件箱？邮件分流与草稿 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai自动整理邮件：先做分流，再做草稿</h2>
+
+<p>ai自动整理邮件说到底就两件事：把信分好类，再对高频类型先写一版草稿。顺序别反过来。分流没做好，草稿写得再顺也是白费力气。</p>
+
+<p>多数人的收件箱结构其实很像：一堆系统通知、一堆抄送、一小撮真正要回的信。前两类靠规则能处理掉大半。</p>
+
+<p>先把八成的噪音挡在外面，剩下两成才值得你亲自看。</p>
+
+<p>工具其实不用换。多数邮箱自带过滤规则，模型那部分找个现成的自动化平台接一下就行。</p>
+
+<h2 id="sec-2">邮件自动分类怎么做</h2>
+
+<p>第一步不是配工具，是把你自己的分类标准写下来。列五到八个文件夹，每个写清楚什么信该进来。</p>
+
+<p>标签别设太多。超过八个，你自己都记不住哪个装什么。</p>
+
+<p>能靠发件人域名、主题关键词判断的，一律交给邮箱自带的过滤规则。规则免费、即时、不会看走眼，没必要叫模型出场。</p>
+
+<p>剩下那些必须读正文才能判断的，才交给模型打标签。</p>
+
+<pre><code>你是邮件分流助手。读下面这封邮件，只输出一行结果。
+可选标签：待我处理 / 需我知晓 / 客户询价 / 账单发票 / 可忽略
+判断依据：正文有没有明确要求我做某件事，以及有没有截止时间。
+输出格式：标签|一句话理由|截止日期（没有就写无）
+邮件正文：{{content}}</code></pre>
+
+<p>让它把理由一起输出，你抽查时一眼就能看出是不是判歪了。</p>
+
+<p>跑满两周再回头看一次。分错最多的那一类，问题通常出在标签定义写得含糊。</p>
+
+<h2 id="sec-3">让 AI 起草回复，人来按发送</h2>
+
+<p>只有高频类型才值得配草稿模板，比如询价答复、会议改期、材料收到确认。一年遇上两回的信，自己写更快。</p>
+
+<p>草稿提示词里要交代三样：你的身份、这封信要达成什么、语气分寸。少一样，出来的就是那种客气但没用的空话。</p>
+
+<p>还有个小技巧。把你过去写过的三封同类回信贴进提示词，语气会立刻像你本人。</p>
+
+<p>生成的草稿一律存进草稿箱，不直接发出去。ai处理邮件的方法有很多种，这一条是底线。</p>
+
+<h2 id="sec-4">邮件自动回复怎么设才不出事</h2>
+
+<p>自动回复只适合两类场景：休假期间的告知，以及收到即回的确认。内容固定、不含判断，才算安全。</p>
+
+<p>设置时记得加触发限制，同一个发件人一天只回一次。否则两台自动机能互相客气到天亮。</p>
+
+<p>范围要写死。白名单之外的信，一律不触发。</p>
+
+<p>带报价、带时间承诺、带附件的信，一律不进自动回复的白名单。这类信让对方多等两小时，好过发错一句收不回。</p>
+
+<h2 id="sec-5">哪几类信别交给它</h2>
+
+<p>涉及金额、合同条款、人事安排的邮件，别让模型独立处理。它写得很像那么回事，代价却由你来担。</p>
+
+<p>再就是隐私。把整封邮件贴给第三方服务之前，先想清楚里面有没有客户身份信息、内部数据和未公开的安排。</p>
+
+<p>最后是心态。自动化的目的是让你少花时间在不用动脑的信上，不是把整个收件箱交出去。真正要紧的那几封，还得自己读一遍。</p>
+
+<p>按分流、草稿、人工确认这个顺序搭，ai自动整理邮件才是真省事，而不是给自己添一摊新麻烦。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-email-writing-guide.html">用 AI 写邮件</a></li>
+      <li><a href="what-is-ai-workflow.html">AI 工作流是什么</a></li>
+      <li><a href="coze-beginner-tutorial.html">扣子 Coze 入门教程</a></li>
+      <li><a href="ai-privacy-data-safety.html">用 AI 时的数据安全</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai自动整理邮件：先做分流，再做草稿</a></li>
+      <li><a href="#sec-2">邮件自动分类怎么做</a></li>
+      <li><a href="#sec-3">让 AI 起草回复，人来按发送</a></li>
+      <li><a href="#sec-4">邮件自动回复怎么设才不出事</a></li>
+      <li><a href="#sec-5">哪几类信别交给它</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

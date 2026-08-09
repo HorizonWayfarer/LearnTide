@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>什么是算力？训练和推理的钱各花在哪里（速通版） — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-ai-compute.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="算力就是芯片单位时间能做多少次计算。训练是一次性砸进去的巨额投入，推理是每次提问都要付的零钱。本文讲清两者差别、算力单位怎么看，以及这笔账最后怎么落到你账单上。">
+<meta property="og:title" content="什么是算力？训练和推理的钱各花在哪里（速通版）">
+<meta property="og:description" content="算力就是芯片单位时间能做多少次计算。训练是一次性砸进去的巨额投入，推理是每次提问都要付的零钱。本文讲清两者差别、算力单位怎么看，以及这笔账最后怎么落到你账单上。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-ai-compute.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="什么是算力？训练和推理的钱各花在哪里（速通版）">
+<meta name="twitter:description" content="算力就是芯片单位时间能做多少次计算。训练是一次性砸进去的巨额投入，推理是每次提问都要付的零钱。本文讲清两者差别、算力单位怎么看，以及这笔账最后怎么落到你账单上。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"什么是算力？训练和推理的钱各花在哪里 — Learntide",
+  "description":"算力就是芯片单位时间能做多少次计算。训练是一次性砸进去的巨额投入，推理是每次提问都要付的零钱。本文讲清两者差别、算力单位怎么看，以及这笔账最后怎么落到你账单上。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-ai-compute.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"什么是算力？训练和推理的钱各花在哪里 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>什么是算力？训练和推理的钱各花在哪里 — Learntide</h1>
+    <p class="lede">训练是一次性砸进去的钱，推理是你每次提问都在付的零钱。弄懂这两笔账的差别，很多定价疑问就通了。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">什么是算力？训练和推理的钱各花在哪里 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">什么是算力？先把这个词还原成一句话</h2>
+
+<p>什么是算力？说白了，就是芯片在单位时间里能做多少次计算。AI 算力是什么意思，问的也是同一件事，只不过大模型算的主要是矩阵乘法这类重复运算。</p>
+
+<p>它不神秘。它是一种能按量计价的资源，和电费、带宽是一类东西。你用大模型时付的每一笔钱，往下拆两层，最后都落在这上面。</p>
+
+<h2 id="sec-2">算力单位怎么看：三个层级别混</h2>
+
+<p>算力单位怎么看，先分清三个层级。</p>
+
+<p>最底层是每秒能做多少次浮点运算，缩写常见的是 FLOPS。往上一层是卡时，也就是一张加速卡跑一小时。再往上是集群规模，多少张卡连在一起跑多久。</p>
+
+<pre><code>单次运算  → FLOPS：每秒浮点运算次数，衡量芯片快慢
+一张卡    → 卡时：1 张卡 × 1 小时，云上按这个计费
+一个集群  → 卡时 × 卡数 × 天数，训练报价常用这个口径</code></pre>
+
+<p>看新闻时留个心眼。同样说「算力」，有人指峰值理论值，有人指实际跑出来的有效值。两者能差出一大截，因为数据搬运、通信等待都会吃掉时间。</p>
+
+<h2 id="sec-3">训练和推理算力的区别，是一次性和长期的区别</h2>
+
+<p>训练和推理算力的区别，最好懂的比喻是盖楼和用电。</p>
+
+<p>训练是盖楼。把海量文本喂进去反复调参数，几千张卡连轴跑几周甚至几个月。这笔钱一次性砸下去，砸完就有了一个模型。它是沉没成本，跟你后面用不用没关系。</p>
+
+<p>推理是用电。你每问一句，模型就要把参数过一遍算出答案。这笔钱按次数产生，用得越多花得越多。</p>
+
+<p>所以两边的成本曲线完全不同。训练的账在发布之前就结清了，推理的账则会一直跟着用户量往上涨。一个模型如果用的人多，长期看，推理花的钱会远超训练。</p>
+
+<h2 id="sec-4">为什么回答越长，算得越多</h2>
+
+<p>这里是最多人搞错的地方。</p>
+
+<p>模型生成文字是一个字一个字往外蹦的。每蹦一个，都要把前面所有内容重新过一遍再决定下一个是什么。所以输出翻一倍，计算量不是翻一倍，而是更多。</p>
+
+<p>输入也一样。你贴进去一份两万字的报告，模型得先把这两万字全读进来编码，这一步同样烧算力。这就是为什么长文档摘要比闲聊贵得多。</p>
+
+<pre><code>短问答：输入 50 字   + 输出 100 字 → 计算量基准
+长摘要：输入 20000 字 + 输出 800 字 → 计算量高出两个量级</code></pre>
+
+<p>平台按输入和输出分别计价，就是这个道理。</p>
+
+<h2 id="sec-5">算力紧张时，你能做的其实不多</h2>
+
+<p>订阅制看着是固定月费，其实平台在后台按你的使用量摊算力。用得凶的账号被限速、被降档，多半就是这个原因。</p>
+
+<p>个人能做的调整有限，但也不是没有。同一个任务，先想清楚要不要开深度思考模式；贴资料时只贴相关段落；批量任务改成一次提交多条。这几件事省下的都是实打实的计算量。</p>
+
+<p>别被「算力越大越强」这类说法带着走。对使用者来说，值得关心的是响应速度、稳定性和这个月的账单，不是机房里堆了多少张卡。搞清楚什么是算力，你就知道自己那笔钱到底买了什么。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-token-ai.html">token 是什么意思</a></li>
+      <li><a href="llm-api-cost-saving.html">大模型 API 怎么省钱</a></li>
+      <li><a href="what-is-moe-model.html">MoE 混合专家模型</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">什么是算力？先把这个词还原成一句话</a></li>
+      <li><a href="#sec-2">算力单位怎么看：三个层级别混</a></li>
+      <li><a href="#sec-3">训练和推理算力的区别，是一次性和长期的区别</a></li>
+      <li><a href="#sec-4">为什么回答越长，算得越多</a></li>
+      <li><a href="#sec-5">算力紧张时，你能做的其实不多</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

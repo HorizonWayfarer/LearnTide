@@ -19,8 +19,8 @@ reports/_*.py
 reports/_*.txt
 reports/*.json
 
-# === research/ 下原始数据快照（非报告文档） ===
-research/*.json
+# === research/ 内部资料（选题简报/原始数据，不进公开仓库与站点） ===
+research/
 
 # === 内部运营 / 百度引流自动化（不进公开仓库与站点） ===
 marketing/

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MCP 协议是什么？给 AI 装上万能插口这件事（一次说清） — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-mcp-protocol.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="MCP 协议是什么？它是一套让 AI 应用连接外部数据和工具的通用接口约定，接一次到处能用。本文讲清它解决什么麻烦、和插件的区别，以及配置时该守住的授权边界。">
+<meta property="og:title" content="MCP 协议是什么？给 AI 装上万能插口这件事（一次说清）">
+<meta property="og:description" content="MCP 协议是什么？它是一套让 AI 应用连接外部数据和工具的通用接口约定，接一次到处能用。本文讲清它解决什么麻烦、和插件的区别，以及配置时该守住的授权边界。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-mcp-protocol.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MCP 协议是什么？给 AI 装上万能插口这件事（一次说清）">
+<meta name="twitter:description" content="MCP 协议是什么？它是一套让 AI 应用连接外部数据和工具的通用接口约定，接一次到处能用。本文讲清它解决什么麻烦、和插件的区别，以及配置时该守住的授权边界。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"MCP 协议是什么？给 AI 装上万能插口这件事 — Learntide",
+  "description":"MCP 协议是什么？它是一套让 AI 应用连接外部数据和工具的通用接口约定，接一次到处能用。本文讲清它解决什么麻烦、和插件的区别，以及配置时该守住的授权边界。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-mcp-protocol.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"MCP 协议是什么？给 AI 装上万能插口这件事 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>MCP 协议是什么？给 AI 装上万能插口这件事 — Learntide</h1>
+    <p class="lede">以前每个客户端都要单独适配一遍工具，现在换成同一种插口。省事之外，权限该收窄的地方一点不能松。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">MCP 协议是什么？给 AI 装上万能插口这件事 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">mcp协议是什么：给 AI 应用统一插口</h2>
+
+<p>mcp协议是什么？它是一套让 AI 应用连接外部数据和工具的通用接口约定，英文全称 model context protocol。一个工具只要按这套标准写一次，支持它的客户端都能接上。</p>
+
+<p>打个比方。以前每台设备配一根专用线，抽屉里塞满了对不上的接头。现在统一成同一种插口，线还是那根线，来回折腾的次数少了。</p>
+
+<h2 id="sec-2">它到底解决了哪个麻烦</h2>
+
+<p>在这套约定出现之前，每个 AI 客户端有自己的一套扩展方式。想让助手读你的本地笔记，得为这个客户端单独写一遍；换一个客户端，再写一遍。</p>
+
+<p>对开发者，这是重复劳动。对普通用户，后果是能用的工具永远不够多，好东西被锁在别家产品里。</p>
+
+<p>MCP 把这层关系拆成两边。一边是提供数据和能力的服务端，一边是发起请求的客户端，中间用同一套消息格式对话。</p>
+
+<pre><code>{
+  &quot;mcpServers&quot;: {
+    &quot;notes&quot;: {
+      &quot;command&quot;: &quot;npx&quot;,
+      &quot;args&quot;: [&quot;-y&quot;, &quot;@modelcontextprotocol/server-filesystem&quot;, &quot;D:/notes&quot;]
+    }
+  }
+}</code></pre>
+
+<p>这是客户端里常见的配置写法：声明一个服务、指定启动命令、把可访问的范围限定在某个文件夹。改这几行，助手就多了一双读本地笔记的眼睛。</p>
+
+<h2 id="sec-3">mcp是什么意思，和插件差在哪</h2>
+
+<p>插件通常绑在某个平台上。平台定规则、管审核、决定上下架，你写的插件也只能在这家用。</p>
+
+<p>MCP 反过来。标准公开，谁都能实现。同一个服务，今天接这个客户端，明天接那个，改改配置就行。</p>
+
+<p>另一个差别在运行位置。不少 MCP 服务直接跑在你自己的机器上，数据不必先上传到别人服务器再绕回来。处理敏感资料时，这一点比功能多少更要紧。</p>
+
+<h2 id="sec-4">普通用户什么时候会碰到它</h2>
+
+<p>如果你只在网页里聊天，短期内基本碰不到。它主要出现在桌面客户端和开发工具里。</p>
+
+<p>常见用法有这么几类：让助手读写本机文件、查本地数据库、连公司内部系统、驱动浏览器做重复操作。共同点是「模型要用到你这边的东西」，而不只是聊天。</p>
+
+<p>上手门槛也在降。多数客户端已经把它做成配置文件里加几行，或者界面上点一个开关，不再需要自己写代码。</p>
+
+<h2 id="sec-5">别把授权范围开得太大</h2>
+
+<p>方便的另一面是权限。一个服务能读整块硬盘，和只能读一个文件夹，风险完全是两回事。配置时把路径收到最窄，能只读就别给写权限。</p>
+
+<p>来源同样要看。第三方服务端本质上是跑在你机器上的一段程序，来路不明的就别装，装之前扫一眼它的开源仓库和更新记录。</p>
+
+<p>还有一条容易忽略：模型看到的内容会随请求一起传出去。接内部系统前，先确认哪些字段可以出门。</p>
+
+<p>把范围和来源这两件事想清楚，mcp协议是什么带来的便利才不会反过来变成隐患。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-function-calling.html">什么是工具调用</a></li>
+      <li><a href="what-is-ai-agent.html">什么是 AI 智能体</a></li>
+      <li><a href="what-is-ai-workflow.html">AI 工作流是什么</a></li>
+      <li><a href="ai-privacy-data-safety.html">用 AI 时的数据安全</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">mcp协议是什么：给 AI 应用统一插口</a></li>
+      <li><a href="#sec-2">它到底解决了哪个麻烦</a></li>
+      <li><a href="#sec-3">mcp是什么意思，和插件差在哪</a></li>
+      <li><a href="#sec-4">普通用户什么时候会碰到它</a></li>
+      <li><a href="#sec-5">别把授权范围开得太大</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 修复老照片：清晰度和上色强度怎么调 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-old-photo-restore.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai修复老照片，先去噪补清晰，再决定是否上色。本文给可直接套用的处理步骤、清晰度与色彩强度参数、人脸修复注意，以及避免把老人修成塑料人的实用提醒，帮家庭留好旧照。">
+<meta property="og:title" content="用 AI 修复老照片：清晰度和上色强度怎么调">
+<meta property="og:description" content="ai修复老照片，先去噪补清晰，再决定是否上色。本文给可直接套用的处理步骤、清晰度与色彩强度参数、人脸修复注意，以及避免把老人修成塑料人的实用提醒，帮家庭留好旧照。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-old-photo-restore.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 修复老照片：清晰度和上色强度怎么调">
+<meta name="twitter:description" content="ai修复老照片，先去噪补清晰，再决定是否上色。本文给可直接套用的处理步骤、清晰度与色彩强度参数、人脸修复注意，以及避免把老人修成塑料人的实用提醒，帮家庭留好旧照。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 修复老照片？清晰度和上色怎么调 — Learntide",
+  "description":"ai修复老照片，先去噪补清晰，再决定是否上色。本文给可直接套用的处理步骤、清晰度与色彩强度参数、人脸修复注意，以及避免把老人修成塑料人的实用提醒，帮家庭留好旧照。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-old-photo-restore.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 修复老照片？清晰度和上色怎么调 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 修复老照片？清晰度和上色怎么调 — Learntide</h1>
+    <p class="lede">翻出泛黄旧照先别急着一键美颜。先把去噪、补清晰、上色这三步的顺序排好。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 修复老照片？清晰度和上色怎么调 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai修复老照片：先排好三步顺序</h2>
+
+<p>ai修复老照片第一步别急着上色。很多工具一键下去又补清晰又上色，结果颜色糊一脸，细节反而没了。</p>
+
+<p>正确顺序是先修后色。第一步去噪点和划痕，把底子弄干净。第二步补清晰度，把糊掉的五官拉回来。第三步才考虑上色。</p>
+
+<p>底子差的照片先扫描。手机翻拍会有反光和变形，扫描件干净，模型才好发力，成品率高很多。</p>
+
+<p>顺序乱了就返工。先上色再补清晰，颜色会被擦花，等于白做一遍，不如一开始就排好。</p>
+
+<p>严重破损的先拼回。缺角缺块先补形，再谈清晰，否则模型往洞里乱填，越修越怪。</p>
+
+<p>彩照也能修。不是只有黑白才要修，褪色泛黄的彩照同样能拉回，别以为只能处理旧黑白。</p>
+
+<h2 id="sec-2">调清晰度和降噪的参数</h2>
+
+<p>补清晰不是越强越好。强度拉满，皮肤变成塑料，头发糊成一团，老人反而不像自己。</p>
+
+<pre><code>请修复这张老照片，分三步输出：
+
+1 去噪：轻度，保留皮肤纹理，不要磨平
+2 补清晰：面部中度，背景轻度，避免锐化噪点
+3 上色：仅当原图确为黑白时开启，饱和度保守
+
+输出：修复后的图，并标注每一步用到的强度。</code></pre>
+
+<p>降噪要留纹理。脸不能光滑得像假人，保留一点颗粒，才像真人不是雕塑。</p>
+
+<p>背景和脸分开调。脸要清楚，背景轻度即可，背景太清楚会抢主角，主次就乱了。</p>
+
+<p>强度也别一刀切。皱纹多的脸降噪轻一点，光滑的可以重一点，按图调才自然。</p>
+
+<h2 id="sec-3">上色要克制，别用力过猛</h2>
+
+<p>上色最怕饱和度拉满。大红大绿往脸上一抹，怀旧感全无，还显得廉价。</p>
+
+<p>颜色拿不准就保守。先低饱和试一张，看着顺眼再微调，别一上来就鲜亮。</p>
+
+<p>有些照片本就不该上色。本身有褪色但还能看，强加上色反而假，不如保留旧色温更有味道。</p>
+
+<p>肤色别调成统一橘。老人肤色偏黄偏暗才真实，通通调成网红橘，亲人都认不出。</p>
+
+<p>上色前先问长辈。老人家对当年衣服颜色有记忆，问一句比瞎猜准，也更有温度。</p>
+
+<h2 id="sec-4">人脸修复与最终导出</h2>
+
+<p>人脸是重点。眼睛和嘴角清楚了，整张照片就活了，这部分强度可以比背景高一点。</p>
+
+<p>多人合照逐个看。模型常顾中间丢两边，边上的长辈容易糊，挨个检查才稳。</p>
+
+<p>导出存一份原图备份。修复图另存，原片永远留着，哪天想重做还有底。</p>
+
+<p>文件格式选无损。存 png 别压成高压 jpg，反复存会掉细节，原质才保得住。</p>
+
+<h2 id="sec-5">修复完先备份再分享</h2>
+
+<p>修好先备份再发出去。云端和硬盘各留一份，原片丢了就再也回不来。</p>
+
+<p>分享前问家人。有些旧照涉及长辈隐私，发出去前打个招呼，免得惹不快。</p>
+
+<p>别让模型替你定上色深浅。也别一键套最高强度的美颜，把老人修成塑料人最可惜。工具从工具导航里挑一个顺手的就行，ai修复老照片真正有价值的，是让家人重新看清那张熟悉的脸。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="how-ai-image-generation-works.html">AI 图像生成原理</a></li>
+      <li><a href="what-is-diffusion-model.html">扩散模型是什么</a></li>
+      <li><a href="what-is-embedding-explained.html">嵌入是什么</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai修复老照片：先排好三步顺序</a></li>
+      <li><a href="#sec-2">调清晰度和降噪的参数</a></li>
+      <li><a href="#sec-3">上色要克制，别用力过猛</a></li>
+      <li><a href="#sec-4">人脸修复与最终导出</a></li>
+      <li><a href="#sec-5">修复完先备份再分享</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

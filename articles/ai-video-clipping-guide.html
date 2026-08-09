@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 把长视频切片？选段与成片的完整思路 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-video-clipping-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai长视频切片，先按完播率挑高光时刻，再精修选段边界，加字幕和封面提升完播。本文给自动找高光、手动卡点、批量导出步骤，讲清时长画幅坑位，新手也能稳定产出短视频。">
+<meta property="og:title" content="用 AI 把长视频切片？选段与成片的完整思路">
+<meta property="og:description" content="ai长视频切片，先按完播率挑高光时刻，再精修选段边界，加字幕和封面提升完播。本文给自动找高光、手动卡点、批量导出步骤，讲清时长画幅坑位，新手也能稳定产出短视频。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-video-clipping-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 把长视频切片？选段与成片的完整思路">
+<meta name="twitter:description" content="ai长视频切片，先按完播率挑高光时刻，再精修选段边界，加字幕和封面提升完播。本文给自动找高光、手动卡点、批量导出步骤，讲清时长画幅坑位，新手也能稳定产出短视频。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 把长视频切成短视频？选段与成片 — Learntide",
+  "description":"ai长视频切片，先按完播率挑高光时刻，再精修选段边界，加字幕和封面提升完播。本文给自动找高光、手动卡点、批量导出步骤，讲清时长画幅坑位，新手也能稳定产出短视频。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-video-clipping-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 把长视频切成短视频？选段与成片 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 把长视频切成短视频？选段与成片 — Learntide</h1>
+    <p class="lede">长视频不想整段发？挑出最抓人的几十秒，加字幕和封面，一条短视频就成型。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 把长视频切成短视频？选段与成片 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai长视频切片先定选段标准</h2>
+
+<p>ai长视频切片，第一步不是动手剪，而是想清楚要哪类片段。教程讲知识点，拆成一条一个技巧。vlog 讲情绪，挑笑点和反转。标准先定，后面不返工。</p>
+
+<p>完播率是最实在的尺子。前三秒没钩子，观众就划走。选段把最亮的那句话放开头，完播率才上得去。一条片只讲一件事，贪多必垮。</p>
+
+<p>长度也有讲究。短视频平台偏短，三十秒到一分钟最稳。太长容易中途划走，太短讲不透。先按平台习惯定长，再选段。标准写下来，每次照着挑。</p>
+
+<p>竖屏是默认。多数平台九比十六，横片要裁。裁时保人脸，别把主角切出去。构图先定，再选段。</p>
+
+<h2 id="sec-2">用工具自动找高光时刻</h2>
+
+<p>很多剪辑软件带「智能选段」，能按语音能量和画面变化标出高光。先让它跑一遍，拿到候选区间。它是粗筛，不是定稿，别全信。</p>
+
+<p>把候选区间导出来逐个看。能量高不一定是好内容，可能是背景噪音。人工过一遍，留下真有信息量的。同类片子多积累，你越来越会挑。</p>
+
+<pre><code>智能选段常用参数：
+1 片段时长设 20 到 45 秒
+2 高光灵敏度调中档
+3 输出候选区间清单
+4 逐条人工复核</code></pre>
+
+<p>也可以看评论区。观众反复问的点，就是高光候选。用户用脚投票，比算法更准。评论区还是选题库，攒着下次用。</p>
+
+<p>节奏快慢也要看。快剪适合炫技，慢叙适合知识。同一素材两种剪法都试，平台偏好会变。</p>
+
+<h2 id="sec-3">手动精修选段边界</h2>
+
+<p>自动区间往往掐在句子中间。手动把开头移到一句话之前，结尾落在停顿处。切口干净，观感才顺。</p>
+
+<p>卡点要准。音乐鼓点或画面转场处下刀，节奏更舒服。同一段多存几个版本，发布时测哪个数据好。留白也是节奏，别把每帧都塞满。切口试看三遍，确认不跳。</p>
+
+<p>字幕位置别压脸。放下方安全区，手机全屏也不挡。</p>
+
+<h2 id="sec-4">加字幕与封面提升完播</h2>
+
+<p>切片要加字幕。手机端多数静音刷，没字幕就流失。字幕用大字号、高对比，别和画面混。</p>
+
+<p>封面决定点击。挑选段里最准的一帧，叠一句钩子文案。封面和开头呼应，点击率更稳。标题写痛点，别写概括。字幕颜色随画面变，浅色画面用深字。</p>
+
+<h2 id="sec-5">批量导出与发布避坑</h2>
+
+<p>同一条长视频能切出多条。按主题分组，错峰发布，别一天全发。发布前统一画幅和码率，平台不二次压缩。</p>
+
+<p>ai长视频切片最怕三件事：切口生硬、字幕挡脸、画幅不符。每条都先小流量试发，数据说话。系列片做个模板，封面格式、字幕样式固定，效率翻倍。想给片子换语言，可以看同簇的 ai翻译视频 思路。</p>
+
+<p>数据回看别省。哪条完播高，复制它的结构。切片是手艺，也是数据活，越做越准。</p>
+
+<p>最后一句提醒：别把自动选段直接当成品发，先人工过一遍。把标准定死，ai长视频切片才能稳定出片。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-video-translation-guide.html">ai翻译视频</a></li>
+      <li><a href="how-ai-video-generation-works.html">ai怎么生成视频</a></li>
+      <li><a href="ai-podcast-production-guide.html">ai做播客</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai长视频切片先定选段标准</a></li>
+      <li><a href="#sec-2">用工具自动找高光时刻</a></li>
+      <li><a href="#sec-3">手动精修选段边界</a></li>
+      <li><a href="#sec-4">加字幕与封面提升完播</a></li>
+      <li><a href="#sec-5">批量导出与发布避坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

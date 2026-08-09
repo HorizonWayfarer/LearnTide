@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 扩图改尺寸：一张图适配多平台的实操教程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-image-outpainting-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai扩图能帮你把图片延展到更大画幅，适配朋友圈、公众号、电商主图等不同比例。本文讲清扩图的原理、操作步骤、常用提示词，以及边缘接缝、人物畸变等常见坑点的处理方法。">
+<meta property="og:title" content="用 AI 扩图改尺寸：一张图适配多平台的实操教程">
+<meta property="og:description" content="ai扩图能帮你把图片延展到更大画幅，适配朋友圈、公众号、电商主图等不同比例。本文讲清扩图的原理、操作步骤、常用提示词，以及边缘接缝、人物畸变等常见坑点的处理方法。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-image-outpainting-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 扩图改尺寸：一张图适配多平台的实操教程">
+<meta name="twitter:description" content="ai扩图能帮你把图片延展到更大画幅，适配朋友圈、公众号、电商主图等不同比例。本文讲清扩图的原理、操作步骤、常用提示词，以及边缘接缝、人物畸变等常见坑点的处理方法。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 扩图改尺寸？一张图适配多个平台 — Learntide",
+  "description":"ai扩图能帮你把图片延展到更大画幅，适配朋友圈、公众号、电商主图等不同比例。本文讲清扩图的原理、操作步骤、常用提示词，以及边缘接缝、人物畸变等常见坑点的处理方法。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-image-outpainting-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 扩图改尺寸？一张图适配多个平台 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 扩图改尺寸？一张图适配多个平台 — Learntide</h1>
+    <p class="lede">一张图要凑齐好几种平台比例，反复重拍太折腾，让工具把画幅延展补齐更省事。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 扩图改尺寸？一张图适配多个平台 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai扩图是什么：把图撑大而非硬拉</h2>
+
+<p>ai扩图，是让模型先读懂画面，再向外补出合理的延伸内容。一张竖拍人像，左右各补一块背景，就变成横构图。核心是多出那部分要接得上，不能硬凑。</p>
+
+<p>传统改尺寸只会拉伸或裁切。拉伸让主体变形。裁切丢掉信息。ai扩图走另一条路：保留主体，向外生长。这正是它适合多平台分发的原因。</p>
+
+<p>扩图也有边界。画面边缘信息太少时，模型只能凭空编。原图要有可延续的纹理，效果才稳。</p>
+
+<h2 id="sec-2">哪些场景真的用得上</h2>
+
+<p>发朋友圈要竖图。发公众号封面要横图。发电商要方图。同一张产品照，三种比例三种裁法，主体常被切掉。用扩图把画幅补齐，比反复重拍省事。</p>
+
+<p>做海报底图也常用。素材偏小时，向外延展能拿到更协调的背景，文字区域也更好排。旅游照、建筑照延展效果最稳，因为纹理规律，好接边。</p>
+
+<p>人像要谨慎。头发、手指、饰品这些细节，模型容易补歪。先扩背景，后做局部修复，比一次性大改更可控。</p>
+
+<p>电商主图最受益。一套商品拍一次，靠扩图变出横版、竖版、方版三套物料。价格标签区要留白，别让模型擅自填字。</p>
+
+<h2 id="sec-3">一步步操作：扩图工作流</h2>
+
+<p>大多数工具流程相似。先上传原图。再框选要延展的方向和范围。最后给一句约束提示词。下面是一段可直接用的指令：</p>
+
+<pre><code>任务：对下方图片做 ai扩图（outpainting）。
+延展方向：左右各 +40%，上下各 +15%
+补充内容：保持现有背景风格，延伸地面、墙面与天空，不要出现新人物
+主体保护：中间人物与商品完全不动，边缘不得裁切
+输出：单张 PNG，分辨率不低于原图
+风格：延续原图光线与色调，接缝处自然过渡</code></pre>
+
+<p>填好后发给支持扩图的工具即可。不同产品的按钮名字不一样，但「选方向、定范围、写约束」这三步通用。</p>
+
+<p>上传前先整理原图。背景越干净，延展越自然。主体别贴边拍，留点余量，模型才好接着画。</p>
+
+<h2 id="sec-4">提示词怎么写才不翻车</h2>
+
+<p>约束要写「不做什么」。比如「不要加文字」「不要出现动物」「保持原色调」。只说「帮我扩图」太松，模型容易自作主张。</p>
+
+<p>方向和比例要写死。写「左右各延展 30%」比「稍微扩一点」稳。比例偏差会让后续排版对不齐。</p>
+
+<p>给参考也很重要。若想接某类背景，附一句「类似清晨街道的冷色调」能拉回风格。细节越多，翻车越少。</p>
+
+<p>颜色也要点名。写明「暖光」「低饱和」，比说「好看点」有效。模型只能照字面执行。</p>
+
+<h2 id="sec-5">常见坑点与收尾建议</h2>
+
+<p>接缝是最常出的问题。延伸区和原图光线不一致，会出现一条亮带。把提示词里的「光线延续」写明确，或扩完用修补工具压一下接缝。</p>
+
+<p>人物畸变要返工。发现手或脸变形。别将就。缩小延展范围，只补背景，再单独修人物，通常更顺。</p>
+
+<p>文字类图片别交给它。海报上的字，模型多半会写歪，这类需求另有专门做法。导出前放大检查。瑕疵在缩略图里看不见，放大就露馅。</p>
+
+<p>ai扩图只管画面延伸，别指望它顺手把字排正。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="how-ai-image-generation-works.html">AI 图片生成原理</a></li>
+      <li><a href="what-is-diffusion-model.html">扩散模型是什么</a></li>
+      <li><a href="ai-chinese-text-in-image.html">AI 生成中文海报</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai扩图是什么：把图撑大而非硬拉</a></li>
+      <li><a href="#sec-2">哪些场景真的用得上</a></li>
+      <li><a href="#sec-3">一步步操作：扩图工作流</a></li>
+      <li><a href="#sec-4">提示词怎么写才不翻车</a></li>
+      <li><a href="#sec-5">常见坑点与收尾建议</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

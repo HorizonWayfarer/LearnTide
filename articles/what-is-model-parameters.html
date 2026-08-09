@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7B、70B 是什么意思？模型参数量到底该怎么读懂 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-model-parameters.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="模型参数量是什么意思？7B 的 B 指十亿，说的是模型规模。参数越多通常越聪明，也更吃显存、更慢、更贵。本文讲清参数量和实际效果的关系，以及挑模型时到底该看哪几项。">
+<meta property="og:title" content="7B、70B 是什么意思？模型参数量到底该怎么读懂">
+<meta property="og:description" content="模型参数量是什么意思？7B 的 B 指十亿，说的是模型规模。参数越多通常越聪明，也更吃显存、更慢、更贵。本文讲清参数量和实际效果的关系，以及挑模型时到底该看哪几项。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-model-parameters.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="7B、70B 是什么意思？模型参数量到底该怎么读懂">
+<meta name="twitter:description" content="模型参数量是什么意思？7B 的 B 指十亿，说的是模型规模。参数越多通常越聪明，也更吃显存、更慢、更贵。本文讲清参数量和实际效果的关系，以及挑模型时到底该看哪几项。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"7B、70B 是什么意思？模型参数量该怎么读懂 — Learntide",
+  "description":"模型参数量是什么意思？7B 的 B 指十亿，说的是模型规模。参数越多通常越聪明，也更吃显存、更慢、更贵。本文讲清参数量和实际效果的关系，以及挑模型时到底该看哪几项。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-model-parameters.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"7B、70B 是什么意思？模型参数量该怎么读懂 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>7B、70B 是什么意思？模型参数量该怎么读懂 — Learntide</h1>
+    <p class="lede">B 就是十亿，7B 即七十亿个参数。数字大通常更强，但吃显存也更狠。挑模型别只盯着这一个数看。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">7B、70B 是什么意思？模型参数量该怎么读懂 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">模型参数量是什么意思：B 就是十亿这个单位</h2>
+
+<p>模型参数量是什么意思？7B 里的 B 是英文 billion，十亿的意思。7B 就是七十亿个参数，70B 是七百亿。参数是模型内部那些可调的数值，训练时被一点点改出来。</p>
+
+<p>可以把参数想成一台机器上的旋钮。旋钮越多，能拟合的花样越多，容量上限越高。它是规模的粗标尺，不是能力证书。</p>
+
+<h2 id="sec-2">参数量决定什么，又不决定什么</h2>
+
+<p>参数多了，能记住的细节更多，处理复杂任务更从容。这点是真的。</p>
+
+<p>但它管的只是上限。同一档参数，训练语料干不干净、指令训练做得细不细，差别能拉得很开。有些七十亿的模型在中文任务上比几百亿的还稳，就是这个原因。想知道这些差别从哪一步来，可以回头看训练流程那篇。</p>
+
+<p>还有一类情况容易看走眼。混合专家架构会标一个很大的总参数，实际每次只激活其中一小部分。看到几千亿的标称值，先分清是总量还是激活量。</p>
+
+<h2 id="sec-3">参数量怎么换算成显存和速度</h2>
+
+<p>想本地跑，最直接的问题是显存够不够。有个很糙但够用的算法：显存需求约等于参数量乘以每个参数占的字节数，再留三成余量给对话内容和系统开销。</p>
+
+<pre><code>显存(GB) ≈ 参数量(B) × 每参数字节数 × 1.3
+
+FP16  每参数 2 字节：  7B × 2   × 1.3 ≈ 18 GB
+INT8  每参数 1 字节：  7B × 1   × 1.3 ≈ 9  GB
+INT4  每参数 0.5 字节：7B × 0.5 × 1.3 ≈ 5  GB</code></pre>
+
+<p>速度也跟着参数走。参数越多，每生成一个字要过的计算量越大，回答就越慢。云端调用把这层挡住了，但账单会替你感受到。</p>
+
+<h2 id="sec-4">同样是 7B，差距可能很大</h2>
+
+<p>两个都标 7B 的模型，实际体验可能差一个档次。差别来自三处：训练语料的质量和语种配比、指令数据的打磨程度、有没有针对性做过推理增强。</p>
+
+<p>参数量还和量化档位绑在一起。同一个 70B，跑在四位精度下和跑在半精度下，占的显存差好几倍，回答质量也会有肉眼可见的落差。看模型卡时，参数量和精度要一起看。</p>
+
+<p>蒸馏出来的小模型是另一条路。用大模型的输出去教小模型，参数少很多，特定任务上却能接近大的水平。所以看到一个小体积模型跑分很高，先看它是不是被这么教出来的。</p>
+
+<h2 id="sec-5">怎么挑：先说清用途，别先看数字</h2>
+
+<p>挑模型的顺序应该反过来：先想清楚要它干什么，再回头看哪一档够用。</p>
+
+<p>日常问答、改错别字、整理格式，几十亿参数这一档在本机就跑得动，响应也快。要写长文、做多步推理、处理专业材料，就得往上走一两档，或者干脆用云端服务。</p>
+
+<p>预算和硬件是硬约束。显存不够硬塞大模型，结果是慢到没法用，还不如选小一档再配好提示词。</p>
+
+<p>最后提醒一句，别把参数量当成排行榜名次。厂商愿意公布这个数，是因为它好懂又好比。真正影响体验的东西，很多都写不进这一个数字里。搞懂模型参数量是什么意思，是为了不被它牵着走。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-moe-model.html">MoE 混合专家模型</a></li>
+      <li><a href="what-is-model-quantization.html">什么是模型量化</a></li>
+      <li><a href="what-is-model-distillation.html">模型蒸馏是什么</a></li>
+      <li><a href="how-llm-is-trained.html">大模型怎么训练出来的</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">模型参数量是什么意思：B 就是十亿这个单位</a></li>
+      <li><a href="#sec-2">参数量决定什么，又不决定什么</a></li>
+      <li><a href="#sec-3">参数量怎么换算成显存和速度</a></li>
+      <li><a href="#sec-4">同样是 7B，差距可能很大</a></li>
+      <li><a href="#sec-5">怎么挑：先说清用途，别先看数字</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

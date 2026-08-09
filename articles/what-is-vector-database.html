@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>向量数据库是什么：AI 按意思检索的记忆仓库详解 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-vector-database.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="向量数据库是什么？它把文字、图片变成一串数字存起来，意思相近数字也相近，让 AI 能按语义找资料。本文讲清它和普通数据库的区别、为何大模型离不开它、以及典型用法。">
+<meta property="og:title" content="向量数据库是什么：AI 按意思检索的记忆仓库详解">
+<meta property="og:description" content="向量数据库是什么？它把文字、图片变成一串数字存起来，意思相近数字也相近，让 AI 能按语义找资料。本文讲清它和普通数据库的区别、为何大模型离不开它、以及典型用法。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-vector-database.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="向量数据库是什么：AI 按意思检索的记忆仓库详解">
+<meta name="twitter:description" content="向量数据库是什么？它把文字、图片变成一串数字存起来，意思相近数字也相近，让 AI 能按语义找资料。本文讲清它和普通数据库的区别、为何大模型离不开它、以及典型用法。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"向量数据库是什么：AI 的记忆仓库 — Learntide",
+  "description":"向量数据库是什么？它把文字、图片变成一串数字存起来，意思相近数字也相近，让 AI 能按语义找资料。本文讲清它和普通数据库的区别、为何大模型离不开它、以及典型用法。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-vector-database.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"向量数据库是什么：AI 的记忆仓库 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>向量数据库是什么：AI 的记忆仓库 — Learntide</h1>
+    <p class="lede">普通数据库按「字面」去找，向量数据库按「意思」来找，这正是它能喂饱大模型的关键。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">向量数据库是什么：AI 的记忆仓库 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">向量数据库是什么：存的是意思</h2>
+
+<p>向量数据库是什么？一句话，它把一段文字、一张图或一段音频，转成一长串数字，这串数字叫向量。意思相近的内容，数字也彼此靠近。检索时不比字面，比的是这串数字在空间里的距离。</p>
+
+<p>举个例子。你搜「水果公司」，普通搜索大概率一无所获。向量库却能把讲苹果、讲 iPhone 的段落捞出来，因为在数字空间里，它们离得很近。</p>
+
+<h2 id="sec-2">它和普通数据库差在哪</h2>
+
+<p>普通数据库擅长精确匹配。你查订单号，它一条不差地给你。你查「苹果」，只找带这两个字的行。规则清楚，结果可复现。</p>
+
+<p>向量库擅长模糊匹配。你问得再绕，只要意思对得上，它就能捞到相关段落。代价是结果没有绝对的对错，只有相似度高低。</p>
+
+<pre><code>关键词检索：输入「苹果」    → 命中含「苹果」二字的记录
+向量检索：  输入「水果公司」→ 命中讲苹果、讲 iPhone 的段落</code></pre>
+
+<p>还有个直观差别。普通数据库能告诉你「找到 3 条」，向量库返回的永远是「最像的前 5 条」。哪怕库里没有对得上的内容，它也会给你 5 条。这点容易让人误判。</p>
+
+<p>两者并不冲突。真实系统里常常一起上：先用关键词圈定范围，再用向量排序，准确率往往比单用一种更高。</p>
+
+<h2 id="sec-3">为什么大模型离不开它</h2>
+
+<p>模型的训练数据里没有你公司的合同，也没有你去年的会议纪要。你直接问，它只能编。这类边界，可以对照 <a href="what-is-llm-explained.html">大模型是什么</a> 一起看。</p>
+
+<p>把这些文档切成小段，逐段转成向量存进库里。用户提问时，先拿问题去库里捞出最相关的几段，再连同问题一起交给模型作答。这整套流程，就是 <a href="what-is-rag-explained.html">RAG 是什么</a> 的骨架，向量库负责其中管记忆的那一半。</p>
+
+<p>这也是为什么很多产品能「读」你上传的文件。文件没进模型的脑子，只进了一个库，用时现查。模型能读懂捞回来的段落，靠的是 <a href="what-is-emergent-ability.html">涌现是什么</a> 那类能力。</p>
+
+<p>还有个好处常被忽略：资料更新只要重新入库，不用重训模型。两者成本差好几个量级。</p>
+
+<h2 id="sec-4">常见用法和踩坑点</h2>
+
+<p>企业知识库问答、个人笔记检索、客服调历史工单、代码库搜索，都是常见去处。</p>
+
+<p>坑也集中在几处。切段太长，捞回来的内容夹着大量噪声。切段太短，上下文断裂，模型看不懂。资料过期或前后打架，检索再准也没用，模型会照着错的说。最容易翻车的一点：入库和检索用的向量模型必须是同一个，换了就对不上。</p>
+
+<p>选型上不用一上来就上重型方案。数据量小时，一个轻量库甚至一个本地文件就够用。等规模真涨起来，再换也不迟。</p>
+
+<h2 id="sec-5">别以为模型什么都知道</h2>
+
+<p>一个接了向量库的助手看起来很懂你，其实它只是查得快。库里没有的东西，它照样答不上来，或者干脆猜一个给你。</p>
+
+<p>所以别把它当成无所不知的专家，也别把资料一股脑倒进去了事。它能不能答准你的私活，关键看向量数据库是什么、以及你喂进去的那批资料干不干净、新不新。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-rag-explained.html">RAG 是什么</a></li>
+      <li><a href="what-is-llm-explained.html">大模型是什么</a></li>
+      <li><a href="what-is-emergent-ability.html">涌现是什么</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">向量数据库是什么：存的是意思</a></li>
+      <li><a href="#sec-2">它和普通数据库差在哪</a></li>
+      <li><a href="#sec-3">为什么大模型离不开它</a></li>
+      <li><a href="#sec-4">常见用法和踩坑点</a></li>
+      <li><a href="#sec-5">别以为模型什么都知道</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

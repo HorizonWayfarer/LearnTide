@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 做播客：没有搭档也能轻松开播的完整流程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-podcast-production-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai做播客，不用租 studio、不用找搭档。让模型写提纲和脚本，再用配音工具生成人声，一个人就能产出像样的音频节目。本文给可直接复制的提示词、配音与剪辑步骤。">
+<meta property="og:title" content="用 AI 做播客：没有搭档也能轻松开播的完整流程">
+<meta property="og:description" content="ai做播客，不用租 studio、不用找搭档。让模型写提纲和脚本，再用配音工具生成人声，一个人就能产出像样的音频节目。本文给可直接复制的提示词、配音与剪辑步骤。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-podcast-production-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 做播客：没有搭档也能轻松开播的完整流程">
+<meta name="twitter:description" content="ai做播客，不用租 studio、不用找搭档。让模型写提纲和脚本，再用配音工具生成人声，一个人就能产出像样的音频节目。本文给可直接复制的提示词、配音与剪辑步骤。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做播客：没有搭档也能轻松开播的完整流程 — Learntide",
+  "description":"ai做播客，不用租 studio、不用找搭档。让模型写提纲和脚本，再用配音工具生成人声，一个人就能产出像样的音频节目。本文给可直接复制的提示词、配音与剪辑步骤。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-podcast-production-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做播客：没有搭档也能轻松开播的完整流程 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 做播客：没有搭档也能轻松开播的完整流程 — Learntide</h1>
+    <p class="lede">想做播客又怕没搭档、不会录音？让模型先把写稿这道坎替你跨过去，配音再交给工具。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做播客：没有搭档也能轻松开播的完整流程 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai做播客：先把稿子和声音搞定</h2>
+
+<p>ai做播客，卡人的一直是两件事：说什么，谁来说。模型能把提纲和口播稿写出来，配音工具能把稿子变成人声。你负责定选题、审稿、拍板。一个人也能把节目做起来。</p>
+
+<p>先说清能力边界。AI 给得了结构和初稿，节奏和观点还得你自己把关。它写出来的东西平均水准不差，但缺个人味儿，原样发出去容易显得空。</p>
+
+<p>还有一点要认。播客拼的是听感，文采排在后面。稿子写得再漂亮，念出来绕口就白搭。每一步都要拿耳朵验收。</p>
+
+<h2 id="sec-2">完整流程拆成四步</h2>
+
+<ul><li>定选题：一期只讲一个问题，标题就写成那个问题。</li><li>出脚本：先让模型写提纲，确认后再逐段扩成口播稿。</li><li>生成人声：挑音色、调语速，分段合成再拼接。</li><li>剪辑成片：加片头、转场、结尾，导出音频文件。</li></ul>
+
+<p>单集控制在 8 到 15 分钟。太短讲不透，太长听不完。口播稿按每分钟 200 字左右估算，8 分钟大概是 1600 字。</p>
+
+<p>更新频率比单集质量更值得优先。每周一期、连做十期，比憋三个月做一期精品有用。开头几期糙一点，没关系。</p>
+
+<h2 id="sec-3">可直接复制的脚本提示词</h2>
+
+<p>把主题和听众换掉，整段发给模型：</p>
+
+<pre><code>我要做一期 8 分钟的单人播客，主题是【你的主题】，听众是【你的听众】。
+请输出：
+1 开场钩子，30 秒内讲一个具体场景或反常识数据，不要说「大家好欢迎收听」
+2 三段式提纲：3 个核心观点，每个配 1 个例子或数据
+3 逐段口播稿，口语化，句子短，总字数约 1600
+4 两处转场提示，标明可以插入音乐的位置
+5 结尾给听众一个当天就能做的小行动
+注意：不要用书面语，不要堆形容词，专有名词第一次出现时用一句话解释</code></pre>
+
+<p>拿到稿子先出声念一遍。拗口的地方直接改，别指望模型第一版就能上口。稿子偏书面，就补一句「按跟朋友聊天的语气重写」，多来一轮通常就顺了。</p>
+
+<h2 id="sec-4">配音、剪辑与导出</h2>
+
+<p>配音先试音色。同一段稿子拿三个音色各生成一遍，戴耳机对比，选那个听着不像机器念的。语速调慢一点点，信息密度高的段落更需要留白。工具怎么挑，<a href="ai-voice-tools-compare.html">ai配音工具哪个好</a> 里做了横向对比。</p>
+
+<p>分段合成还有个好处。某一段念错，重生成那一段就行。另外留意数字和英文缩写，不少配音工具会读错，提前在稿子里改成中文写法更保险。</p>
+
+<p>剪辑不必复杂。片头音乐五秒，人声进来后把背景压低，段落之间留半秒空白。片头曲想自己做，可以看看 <a href="suno-ai-music-review.html">suno写歌怎么样</a> 那篇的思路。</p>
+
+<p>导出选常见音频格式，码率够用就行。文件名带上期数和日期，后面归档省事。同一套流程稍作调整就能做长音频，<a href="ai-audiobook-guide.html">ai做有声书</a> 里写了差别在哪。</p>
+
+<h2 id="sec-5">什么主题适合一个人做</h2>
+
+<p>知识复盘、行业观察、读书分享，这几类一个人讲也成立。有观点、有信息量，听众本来就不指望现场互动。</p>
+
+<p>选题上还有个判断标准。你能不能一口气讲十分钟而不看稿？能，说明这个题你真有存量。不能，先补功课再开录。</p>
+
+<p>访谈类还是找真人。合成语音接不住自然对谈里的停顿、插话和笑声，硬做会很假。情绪起伏大的叙事类也吃力，机器念悬念，味道总差一层。</p>
+
+<p>发布前留一道人工关。整集听完，检查有没有读错的专有名词、有没有事实性错误。别把一键生成的成品直接推上线，这一步偷懒，就是拿 ai做播客的口碑去冒险。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-audiobook-guide.html">ai做有声书</a></li>
+      <li><a href="suno-ai-music-review.html">suno写歌怎么样</a></li>
+      <li><a href="ai-voice-tools-compare.html">ai配音工具哪个好</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai做播客：先把稿子和声音搞定</a></li>
+      <li><a href="#sec-2">完整流程拆成四步</a></li>
+      <li><a href="#sec-3">可直接复制的脚本提示词</a></li>
+      <li><a href="#sec-4">配音、剪辑与导出</a></li>
+      <li><a href="#sec-5">什么主题适合一个人做</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

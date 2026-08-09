@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>多智能体协作是什么？一个 AI 变一个团队（一文讲懂） — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-multi-agent.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="多智能体协作是什么？把一个复杂任务拆给几个各管一摊的 AI，有查资料的、有动笔的、有挑毛病的。本文讲清三种常见分工、消息怎么传，以及环节变多之后的真实代价。">
+<meta property="og:title" content="多智能体协作是什么？一个 AI 变一个团队（一文讲懂）">
+<meta property="og:description" content="多智能体协作是什么？把一个复杂任务拆给几个各管一摊的 AI，有查资料的、有动笔的、有挑毛病的。本文讲清三种常见分工、消息怎么传，以及环节变多之后的真实代价。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-multi-agent.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="多智能体协作是什么？一个 AI 变一个团队（一文讲懂）">
+<meta name="twitter:description" content="多智能体协作是什么？把一个复杂任务拆给几个各管一摊的 AI，有查资料的、有动笔的、有挑毛病的。本文讲清三种常见分工、消息怎么传，以及环节变多之后的真实代价。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"多智能体协作是什么？一个 AI 变一个团队 — Learntide",
+  "description":"多智能体协作是什么？把一个复杂任务拆给几个各管一摊的 AI，有查资料的、有动笔的、有挑毛病的。本文讲清三种常见分工、消息怎么传，以及环节变多之后的真实代价。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-multi-agent.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"多智能体协作是什么？一个 AI 变一个团队 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>多智能体协作是什么？一个 AI 变一个团队 — Learntide</h1>
+    <p class="lede">与其让一个模型从头扛到尾，不如拆成几个角色各管一摊。效果会好一些，慢和贵也一起跟着来。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">多智能体协作是什么？一个 AI 变一个团队 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">多智能体协作是什么：把活拆给几个 AI</h2>
+
+<p>多智能体协作是什么？说白了，就是不让一个模型从头干到尾，而是拆成几个角色，各自管一摊。有的负责查资料，有的负责动笔，有的专门挑毛病，再有一个统筹进度。</p>
+
+<p>这几个角色背后可能是同一个模型，只是提示词不同、能用的工具不同。分的不是模型，是职责。</p>
+
+<h2 id="sec-2">multi-agent是什么，常见的三种分工</h2>
+
+<p>第一种是流水线。资料员查完交给写手，写手写完交给审校，一环接一环，方向单一，最好理解。</p>
+
+<p>第二种是主管带下属。一个总控角色负责拆任务、派活、验收，下面的角色只管自己那一块。任务边界不清楚时，这种更好使。</p>
+
+<p>第三种是互评。两三个角色对同一个问题各写各的，再互相挑错，最后合并成一版。适合结论要经得起推敲的场合。</p>
+
+<pre><code>roles:
+  - name: 资料员
+    tools: [search, read_url]
+    job: 只找事实和出处，不下结论
+  - name: 撰写
+    tools: []
+    job: 依据资料员给的材料成文，缺材料就回退
+  - name: 审校
+    tools: []
+    job: 逐条核对引用，标出没有出处的句子
+max_rounds: 3</code></pre>
+
+<p>这段配置里最要紧的是 job 那一行。职责写得越窄，角色之间越不容易互相越界。</p>
+
+<h2 id="sec-3">智能体之间怎么分工，话又怎么传下去</h2>
+
+<p>角色之间靠消息传递，本质上就是把上一个角色的输出，塞进下一个角色的输入里。</p>
+
+<p>麻烦也在这里。传的内容越长，后面每一步的读取成本越高；传得太少，接手的角色又缺依据，只能自己脑补。多数框架的做法是只传结论和关键材料，中间的推演过程丢掉。</p>
+
+<p>另一个常被忽略的是终止条件。没有轮次上限，几个角色能来回客气很多轮，额度耗光了还没交付。上面配置里那行 max_rounds 就是干这个用的。</p>
+
+<p>还有一种更省事的传法：几个角色共用一块公共记录，各写各的那一段。谁需要什么自己去翻，不用一层层往下递。</p>
+
+<h2 id="sec-4">什么样的活值得这么折腾</h2>
+
+<p>判断标准其实就一条：这个任务是不是天然分阶段，而且每个阶段的评判标准不一样。</p>
+
+<p>写一份调研报告算典型。查证要的是准，成文要的是顺，挑刺要的是狠，三种要求本来就打架。分开做，质量确实更稳。</p>
+
+<p>第二个判断点是有没有人能验收。角色再多，最后总得有个标准说这一版行不行。标准说不清楚，加多少角色都收敛不了。</p>
+
+<p>反过来，改错别字、翻译一段话、写条朋友圈，单个模型一次就完事。拆成三个角色只会更慢、更贵，还多出两处可能出错的接口。</p>
+
+<h2 id="sec-5">别为了热闹堆角色</h2>
+
+<p>角色越多，出错的地方越多。资料员搞错一个数字，后面两位只会把它抄得更工整，没人回头质疑。错误在链条里是会被放大的，不是被纠正的。</p>
+
+<p>成本涨得也快。每多一轮传递，就多一次完整的读取和生成，账单是按环节数往上翻的。</p>
+
+<p>务实的做法是先用单个角色跑通，卡在哪一步再往哪里加人手。多智能体协作是什么这个问题的答案，从来不该是「角色越多越好」。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-ai-agent.html">什么是 AI 智能体</a></li>
+      <li><a href="what-is-ai-workflow.html">AI 工作流是什么</a></li>
+      <li><a href="coze-beginner-tutorial.html">扣子 Coze 入门教程</a></li>
+      <li><a href="dify-beginner-tutorial.html">Dify 入门教程</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">多智能体协作是什么：把活拆给几个 AI</a></li>
+      <li><a href="#sec-2">multi-agent是什么，常见的三种分工</a></li>
+      <li><a href="#sec-3">智能体之间怎么分工，话又怎么传下去</a></li>
+      <li><a href="#sec-4">什么样的活值得这么折腾</a></li>
+      <li><a href="#sec-5">别为了热闹堆角色</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

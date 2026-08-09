@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>什么是扩散模型？从一团噪点到成图的全过程详解 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/what-is-diffusion-model.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="什么是扩散模型？它先学会把清晰图片一步步加噪成雪花，再倒过来执行去噪。本文讲清正向加噪与反向还原的关系，说明采样步数在调什么，以及它和 GAN 的实际差别。">
+<meta property="og:title" content="什么是扩散模型？从一团噪点到成图的全过程详解">
+<meta property="og:description" content="什么是扩散模型？它先学会把清晰图片一步步加噪成雪花，再倒过来执行去噪。本文讲清正向加噪与反向还原的关系，说明采样步数在调什么，以及它和 GAN 的实际差别。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/what-is-diffusion-model.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="什么是扩散模型？从一团噪点到成图的全过程详解">
+<meta name="twitter:description" content="什么是扩散模型？它先学会把清晰图片一步步加噪成雪花，再倒过来执行去噪。本文讲清正向加噪与反向还原的关系，说明采样步数在调什么，以及它和 GAN 的实际差别。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"什么是扩散模型？从一团噪点到成图的过程 — Learntide",
+  "description":"什么是扩散模型？它先学会把清晰图片一步步加噪成雪花，再倒过来执行去噪。本文讲清正向加噪与反向还原的关系，说明采样步数在调什么，以及它和 GAN 的实际差别。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/what-is-diffusion-model.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"什么是扩散模型？从一团噪点到成图的过程 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>什么是扩散模型？从一团噪点到成图的过程 — Learntide</h1>
+    <p class="lede">先教机器怎么把一张照片糊成雪花，再让它把这套动作倒着做一遍，画面就凭空长出来了。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">什么是扩散模型？从一团噪点到成图的过程 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">什么是扩散模型：先学弄脏，再学擦净</h2>
+
+<p>什么是扩散模型？它是目前主流生图工具背后的那套方法。思路有点绕：想让机器学会画画，先教它怎么把画毁掉，再让它把这个过程倒着走一遍。</p>
+
+<p>毁掉的方式叫加噪。往一张清晰照片上撒一层随机噪点，撒一次糊一点，撒几百次就成了一屏雪花。这一步不需要任何智能，纯粹是加干扰。</p>
+
+<p>真正要学的是反过来那一半：给一张半糊的图，猜出这一层噪声长什么样，然后减掉它。</p>
+
+<h2 id="sec-2">正向加噪其实是在出练习题</h2>
+
+<p>diffusion模型是什么，扩散模型原理的一半就在这批练习题里。</p>
+
+<p>正向过程的价值在这儿。它自动造出海量带标准答案的样本。每张原图配上不同强度的噪声，就得到一组「问题」和「答案」：问题是加噪后的图，答案是加进去的那层噪声。</p>
+
+<pre><code>原图 → 加噪10% → 加噪40% → 加噪80% → 纯噪点
+                  ↑
+        训练时随机抽一档，让模型猜这一档加了多少噪</code></pre>
+
+<p>数据不用人工标注，这是它能吃下海量素材的原因。训练目标也很单纯：把这层噪声估准。估得越准，反向还原时走得越稳。</p>
+
+<h2 id="sec-3">反向去噪：几十步走完一张图</h2>
+
+<p>推理时从纯噪点起步。模型看一眼当前画面，估出该减的噪声，减掉一点，得到稍微清晰一些的图。然后重复。</p>
+
+<p>文字提示词在这里起指路作用。每一步的估计都会参考它，所以画面会朝你描述的方向收敛。</p>
+
+<p>采样步数就是这个循环跑几轮。步数少，图擦不干净，边缘和细节发糊。步数多到一定程度，画面几乎不再变化，只是更费时间。</p>
+
+<p>同一句提示词每次出图都不同，因为起点那团噪点每次重抽。想复现，就把随机种子记下来。</p>
+
+<p>各家工具的默认档位通常够用。真要调，先固定随机种子，再单独动步数，才看得出差别。</p>
+
+<h2 id="sec-4">和 GAN 的区别在哪里</h2>
+
+<p>扩散模型和 GAN 的区别，是不少人容易搞混的一处。</p>
+
+<p>上一代主流方法是 GAN，靠生成器和判别器互相对抗。它一步出图，速度快，但训练容易崩，生成结果的多样性也偏弱。</p>
+
+<p>扩散模型走的是多步迭代路线。慢是真慢。好处是训练稳定、覆盖面广。中间每一步都能插手干预。局部重绘、参考图控制、结构约束这些玩法，都建立在「可以中途介入」这个特性上。</p>
+
+<p>现在两条路线并没有谁完全取代谁。追求实时出图的场景，仍有蒸馏后的少步方案在用。</p>
+
+<h2 id="sec-5">别把步数和质量画等号</h2>
+
+<p>新手最爱干的事，是把采样步数拉到很高，以为图就会更好看。可过了收敛点，画面变化微乎其微。等待时间却直线上涨。</p>
+
+<p>真正影响成片的，是提示词写得清不清楚、模型选得对不对、分辨率和构图有没有配好。参数是最后微调的旋钮，不是主菜。</p>
+
+<p>另外别把工具界面上的每个滑块都当成必须动的。默认值是团队反复试出来的，先在默认档跑通流程，再回头理解什么是扩散模型里各个参数的位置，调起来才不会瞎撞。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="how-ai-image-generation-works.html">AI 画图原理</a></li>
+      <li><a href="how-ai-video-generation-works.html">AI 生成视频原理</a></li>
+      <li><a href="stable-diffusion-beginner-worth.html">Stable Diffusion 值不值得学</a></li>
+      <li><a href="midjourney-prompt-tips.html">Midjourney 提示词技巧</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">什么是扩散模型：先学弄脏，再学擦净</a></li>
+      <li><a href="#sec-2">正向加噪其实是在出练习题</a></li>
+      <li><a href="#sec-3">反向去噪：几十步走完一张图</a></li>
+      <li><a href="#sec-4">和 GAN 的区别在哪里</a></li>
+      <li><a href="#sec-5">别把步数和质量画等号</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

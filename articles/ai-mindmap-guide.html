@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 做思维导图：从一团乱的笔记到一眼清的结构 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-mindmap-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai做思维导图，不用自己从头画。把零散想法或一篇长文丢给模型，让它先拆出层级再导出结构，几分钟就理清主干。本文给可直接复制的提示词、导入成图与导出步骤。">
+<meta property="og:title" content="用 AI 做思维导图：从一团乱的笔记到一眼清的结构">
+<meta property="og:description" content="ai做思维导图，不用自己从头画。把零散想法或一篇长文丢给模型，让它先拆出层级再导出结构，几分钟就理清主干。本文给可直接复制的提示词、导入成图与导出步骤。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-mindmap-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 做思维导图：从一团乱的笔记到一眼清的结构">
+<meta name="twitter:description" content="ai做思维导图，不用自己从头画。把零散想法或一篇长文丢给模型，让它先拆出层级再导出结构，几分钟就理清主干。本文给可直接复制的提示词、导入成图与导出步骤。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做思维导图：从一团乱的笔记到一眼清的结构 — Learntide",
+  "description":"ai做思维导图，不用自己从头画。把零散想法或一篇长文丢给模型，让它先拆出层级再导出结构，几分钟就理清主干。本文给可直接复制的提示词、导入成图与导出步骤。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-mindmap-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做思维导图：从一团乱的笔记到一眼清的结构 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 做思维导图：从一团乱的笔记到一眼清的结构 — Learntide</h1>
+    <p class="lede">脑子里一团乱的时候，最省事的办法是先让模型把层级拆出来，你只负责删减和排版。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做思维导图：从一团乱的笔记到一眼清的结构 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai做思维导图：值钱的一步是理结构</h2>
+
+<p>ai做思维导图，费脑子的从来是理结构，画图反倒容易。你把一堆素材丢过去，模型负责抽出主干、支线和叶子节点。你只做减法：留哪些、删哪些、谁该往上提一层。</p>
+
+<p>很多人卡在空白画布前，半小时挤不出三个分支。让模型先出一版粗结构，哪怕只对六成，也比从零开始快。改比写省力，这是它最实在的价值。</p>
+
+<p>举个具体点的例子。一篇八千字的行业报告，人读完再画图，起码一小时。丢给模型出大纲，两分钟拿到骨架，你再花十分钟改。省下的时间够你多读两篇。</p>
+
+<h2 id="sec-2">三步走完整流程</h2>
+
+<p>整个流程就三步，不复杂。</p>
+
+<ol><li>备料。把笔记、会议记录、文章原文整理进一个文档，别只丢标题过去。</li><li>生成大纲。让模型输出 Markdown 多级列表，这是最通用的中转格式。</li><li>导入成图。粘进支持大纲导入的工具，节点自动生成，再手动调布局。</li></ol>
+
+<p>关键在第二步的约束怎么写。写得含糊，它就长出十几个平级枝杈。把层数、数量上限、节点字数都写死，结构立刻规整。</p>
+
+<p>还有个小技巧。素材超过一万字就分批喂，一次给太多，模型容易只抓开头和结尾。分两三批出大纲，最后让它合并去重，效果更稳。</p>
+
+<h2 id="sec-3">一条可直接复制的提示词</h2>
+
+<p>把主题和素材换成你自己的，整段发过去：</p>
+
+<pre><code>请把以下内容整理成思维导图大纲，用 Markdown 多级列表输出。
+【粘贴你的笔记 / 文章 / 会议记录】
+要求：
+1 一级主题只留 3-5 个，同层之间不要交叉重复
+2 每个一级下挂 2-4 个二级，必要时再展开一层三级
+3 节点用名词短语，控制在 12 字以内，不要写成整句
+4 层级用两个空格缩进表示，不要加编号和符号
+5 末尾单独列出「最该优先做的 1 件事」，并说明理由</code></pre>
+
+<p>觉得结果跑偏，就补一句受众和用途，比如「给不懂技术的同事看」。提示词的写法门道，<a href="how-to-write-ai-prompts.html">ai提示词怎么写</a> 里讲得更细。</p>
+
+<h2 id="sec-4">从大纲到成图：导入与排版</h2>
+
+<p>拿到列表先自己读一遍。删掉重复项，把同类节点的说法统一，再动手导入。</p>
+
+<p>多数思维导图工具支持文本大纲导入，缩进会自动转成层级。导入后做三件事：把最重要的分支挪到显眼位置、给同类节点上同一种颜色、折叠掉暂时用不到的三级节点。</p>
+
+<p>有个细节容易忽略。模型给的缩进有时用的是全角空格或者制表符，导入前统一替换成半角空格，否则层级会塌成一层。</p>
+
+<p>导出按用途选格式。汇报用图片，协作用工具原生链接，存档用 PDF。要接着写文档，直接把大纲复制走就行，<a href="ai-content-creation-guide.html">AI 内容创作</a> 里有配套的写作流程。</p>
+
+<h2 id="sec-5">什么场景最适合，以及几个提醒</h2>
+
+<p>读长论文、整理会议纪要、拆项目排期，这三类最见效。共同点是信息多、结构不明、你又急着看全貌。梳理知识体系也合适，可以对着 <a href="ai-learning-path-guide.html">AI 学习路径</a> 排一版自己的进度图。</p>
+
+<p>也有不适合的。需要严密因果推理的内容，导图会把逻辑链切碎。创意发散的最早阶段也别急着上工具，手写乱涂反而更容易蹦出新东西。</p>
+
+<p>别把生成的结构当标准答案。模型只按字面归类，它并不知道你真正在意什么。图梳得顺不顺，说到底还是看 ai做思维导图时你有没有把素材和层级约束交代清楚。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="how-to-write-ai-prompts.html">ai提示词怎么写</a></li>
+      <li><a href="ai-content-creation-guide.html">AI 内容创作</a></li>
+      <li><a href="ai-learning-path-guide.html">AI 学习路径</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai做思维导图：值钱的一步是理结构</a></li>
+      <li><a href="#sec-2">三步走完整流程</a></li>
+      <li><a href="#sec-3">一条可直接复制的提示词</a></li>
+      <li><a href="#sec-4">从大纲到成图：导入与排版</a></li>
+      <li><a href="#sec-5">什么场景最适合，以及几个提醒</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

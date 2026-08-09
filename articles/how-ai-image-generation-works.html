@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 画图原理是什么？从噪点到成图讲清全过程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/how-ai-image-generation-works.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 画图原理其实不神秘：先把文字编码成一串数字，再从随机噪点里一步步去噪，最后解码成图。本文按流程拆开讲，顺带说清它为什么写不好中文、也画不准手指。">
+<meta property="og:title" content="AI 画图原理是什么？从噪点到成图讲清全过程">
+<meta property="og:description" content="AI 画图原理其实不神秘：先把文字编码成一串数字，再从随机噪点里一步步去噪，最后解码成图。本文按流程拆开讲，顺带说清它为什么写不好中文、也画不准手指。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/how-ai-image-generation-works.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 画图原理是什么？从噪点到成图讲清全过程">
+<meta name="twitter:description" content="AI 画图原理其实不神秘：先把文字编码成一串数字，再从随机噪点里一步步去噪，最后解码成图。本文按流程拆开讲，顺带说清它为什么写不好中文、也画不准手指。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 画图的原理是什么？大白话讲清整个过程 — Learntide",
+  "description":"AI 画图原理其实不神秘：先把文字编码成一串数字，再从随机噪点里一步步去噪，最后解码成图。本文按流程拆开讲，顺带说清它为什么写不好中文、也画不准手指。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"资讯科普",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/how-ai-image-generation-works.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"资讯科普","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 画图的原理是什么？大白话讲清整个过程 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">资讯科普</span>
+    <h1>AI 画图的原理是什么？大白话讲清整个过程 — Learntide</h1>
+    <p class="lede">机器不是照着草稿描线，而是盯着一屏雪花，按你给的词把画面擦出来。搞懂这条链路，出图就不靠碰运气。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">资讯科普</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 画图的原理是什么？大白话讲清整个过程 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">AI 画图原理：从一团噪点讲起</h2>
+
+<p>AI 画图原理说穿了就一句话：从一屏随机噪点出发，按你给的文字一步步擦掉噪声，最后擦出画面。它不在空白画布上描线，也不去图库里翻旧图拼贴。</p>
+
+<p>头一次听会觉得反直觉。换个说法就好懂。你盯着墙上的霉斑看久了，会看出人脸，看出动物。模型干的事差不多，只是它每一步都有文字在旁边指挥方向。</p>
+
+<p>所以文生图原理讲解绕来绕去，核心就三件事：把话变成数字，把噪点擦干净，把结果还原成像素。</p>
+
+<h2 id="sec-2">文字是怎么变成指挥棒的</h2>
+
+<p>你敲进去的提示词，先被切成一个个小片段，再换成一串数字。这串数字带着语义，意思接近的词，数字也彼此靠得近。</p>
+
+<p>这一步很要紧。模型读不懂「傍晚的海边」这五个字，它只认那串数字。提示词含糊，数字跟着含糊，出图自然飘。</p>
+
+<pre><code>提示词结构（越靠前权重越高）
+主体：一只橘猫，趴在木窗台上
+风格：胶片颗粒，柔和逆光
+构图：中景，浅景深，主体偏左
+画质：毛发细节清晰，色彩自然
+负面词：多余手指，五官变形，水印文字</code></pre>
+
+<p>顺序有讲究。多数模型对靠前的词更敏感。把最不能丢的东西写在最前面，比堆一长串形容词管用。同一句话换个语序，出图能差不少。</p>
+
+<h2 id="sec-3">去噪那几十步在干什么</h2>
+
+<p>模型拿到的是一团彻底的雪花。它不会一口气把图变出来，而是分成几十步，每步只判断一件事：哪些像素属于噪声，该减掉多少。</p>
+
+<p>减完一轮，画面清晰一点点。再对着文字那串数字比一比，方向偏了就往回拉。来回几十轮，形状、颜色、光影就从雪花里浮出来了。</p>
+
+<p>采样步数调的就是这个回合数。步数太少，图没擦干净，细节发糊。步数堆太高，收益越来越小，时间倒是成倍涨。</p>
+
+<p>重绘幅度也是同一个道理。幅度小，等于从半干净的原图接着擦；拉满就退回全噪点，跟重画没区别。</p>
+
+<h2 id="sec-4">为什么中文和手指最容易翻车</h2>
+
+<p>ai绘画的原理是什么，答案里就藏着这两个老毛病的根源。</p>
+
+<p>模型是按图形规律还原画面的。汉字在它眼里是一堆笔画拼出来的图案，没有固定结构可言。少一横多一撇，从图形上看差别不大，认字上就是错字。海报里的中文常常缺笔、粘连，甚至造出根本不存在的字。</p>
+
+<p>手的问题类似。训练素材里的手，姿态、角度、遮挡千变万化，模型很难总结出「一只手五根指头」这条硬规则。它学到的更接近「这个位置大概有几根条状物」。</p>
+
+<h2 id="sec-5">别把提示词当成咒语</h2>
+
+<p>网上流传的万能咒语，多半只在某个模型的某个版本上灵。换一家工具照抄，效果经常对不上。</p>
+
+<p>真正稳的做法是按结构写：先说清主体和场景，再补风格和画质，最后用负面词挡掉你最怕出现的东西。一次只改一处，看它往哪边动。</p>
+
+<p>中文和手部目前都没有彻底解法。文字最好图归图、字归字，留到排版环节再加；手部靠局部重绘慢慢修。别指望换个提示词就一次到位。真想少走弯路，先把 ai画图原理这条链路记牢，比背一百句咒语管用。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-diffusion-model.html">扩散模型是什么</a></li>
+      <li><a href="what-is-embedding-explained.html">Embedding 是什么</a></li>
+      <li><a href="fix-ai-hands-generation.html">AI 画手崩坏怎么修</a></li>
+      <li><a href="midjourney-prompt-tips.html">Midjourney 提示词技巧</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 画图原理：从一团噪点讲起</a></li>
+      <li><a href="#sec-2">文字是怎么变成指挥棒的</a></li>
+      <li><a href="#sec-3">去噪那几十步在干什么</a></li>
+      <li><a href="#sec-4">为什么中文和手指最容易翻车</a></li>
+      <li><a href="#sec-5">别把提示词当成咒语</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

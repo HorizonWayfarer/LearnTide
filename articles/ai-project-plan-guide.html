@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 排项目计划：拆任务与做进度表的做法 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-project-plan-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai做项目计划，好用的关键是先拆细任务、再排清依赖。本文给拆任务的提示词、排进度与责任人的模板、识别关键路径的做法，以及一条提醒：别让模型把工期估死，留缓冲更稳。">
+<meta property="og:title" content="用 AI 排项目计划：拆任务与做进度表的做法">
+<meta property="og:description" content="ai做项目计划，好用的关键是先拆细任务、再排清依赖。本文给拆任务的提示词、排进度与责任人的模板、识别关键路径的做法，以及一条提醒：别让模型把工期估死，留缓冲更稳。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-project-plan-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 排项目计划：拆任务与做进度表的做法">
+<meta name="twitter:description" content="ai做项目计划，好用的关键是先拆细任务、再排清依赖。本文给拆任务的提示词、排进度与责任人的模板、识别关键路径的做法，以及一条提醒：别让模型把工期估死，留缓冲更稳。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 排项目计划？拆任务与做进度表 — Learntide",
+  "description":"ai做项目计划，好用的关键是先拆细任务、再排清依赖。本文给拆任务的提示词、排进度与责任人的模板、识别关键路径的做法，以及一条提醒：别让模型把工期估死，留缓冲更稳。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-project-plan-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 排项目计划？拆任务与做进度表 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 排项目计划？拆任务与做进度表 — Learntide</h1>
+    <p class="lede">计划写在第一行就卡住的人，多半不是不想做，而是没把任务拆到能直接动手的那一层。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 排项目计划？拆任务与做进度表 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai做项目计划：先拆任务再排时间</h2>
+
+<p>ai做项目计划，好用的地方不是替你想全局，而是把你脑子里那团事摊开，变成一列能勾的清单。你定方向，它帮你铺步骤。</p>
+
+<p>先有目标再开写。目标是「月底上线购物车」，不是「做个项目」。目标清楚，拆出来的任务才不漂。</p>
+
+<p>很多人一开头就让模型给完整排期。它没有你的资源信息，给的时间都是空数。正确顺序是先拆任务，再谈工期。</p>
+
+<p>工具只是载体。Excel 也行，专门软件也行，关键是你真去更新它。先写三句话也行。目标、范围、不做啥，三行定调，模型才好接。</p>
+
+<h2 id="sec-2">把任务拆到能动手的那一层</h2>
+
+<p>一层任务要小到「谁都能直接干」。「做市场调研」太大，「本周约三家供应商电话聊」就够具体。拆到这一步，进度才好跟踪。</p>
+
+<p>每个任务补三样：产出是什么、归谁、卡在谁前面。缺了任意一样，排期表就是花架子。</p>
+
+<p>拆分时让模型多给几版。你挑顺眼的那版改，比从零想省力。它漏掉的依赖，你一眼就能补上。</p>
+
+<p>别贪多一个版本。给模型三个方案你挑，比它给一个你推翻重来快。估工期留证据。写「按上次类似任务三天」，比拍脑袋准，也方便复盘。</p>
+
+<h2 id="sec-3">一条可直接复制的排期提示词</h2>
+
+<p>把目标贴进下面这段：</p>
+
+<pre><code>你是项目管理助手。请基于以下目标排任务：
+目标：两个月内上线小程序下单功能
+要求：
+1 拆成 8 到 12 个任务，每个能在 3 天内完成
+2 标出每个任务的前置依赖
+3 给出建议责任人角色，不要写具体人名
+4 输出表格：任务、依赖、角色、预计天数
+5 最后标出一条关键路径，说明哪里最不能拖</code></pre>
+
+<p>拿到表先砍重叠。模型常把一件事拆成三件，你合并掉重复的，排期立刻清爽。</p>
+
+<p>里程碑要单独标。比日常任务更该盯，到了没到一眼能看，不用翻整张表。</p>
+
+<h2 id="sec-4">责任人与关键路径怎么定</h2>
+
+<p>责任人按角色填，别急着写真人。等任务定了，再按谁有空谁擅长去分。这样后面换人不至于重排。</p>
+
+<p>关键路径是最长那条链。它上的任务一天都拖不得，资源优先压这里。非关键任务偶发延迟，整体还能扛。</p>
+
+<p>让模型把缓冲也标出来。它常把工期估得刚好，现实里必留余量。你手动给关键任务加一两天空档。</p>
+
+<p>风险任务提前备替补。关键人请假，预案在手里，整体不会被卡死。依赖画成箭头最清楚。谁等谁一眼可见，模型给的文字链容易看漏。</p>
+
+<h2 id="sec-5">收尾提醒与几个坑</h2>
+
+<p>别让模型把工期估死。它不知道你的团队今天还在救火，给的数偏理想。你按经验再砍一刀更稳。</p>
+
+<p>也别一次排满两个月。环境变太快，排太细反而很快作废。先排近两周，跑着再补。</p>
+
+<p>周会拿排期对进度。哪块红了当场说，别等月底才发现全偏了。计划是活的。环境一变就改，死守初版反而误事。</p>
+
+<p>最后一步最该做：计划写完好歹跟团队对一遍。别把 ai做项目计划 当定稿发群，没人认的排期只是一张图。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="ai-mindmap-guide.html">AI 做思维导图</a></li>
+      <li><a href="ai-survey-analysis-guide.html">用 AI 分析问卷</a></li>
+      <li><a href="trae-ide-review.html">Trae IDE 测评</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai做项目计划：先拆任务再排时间</a></li>
+      <li><a href="#sec-2">把任务拆到能动手的那一层</a></li>
+      <li><a href="#sec-3">一条可直接复制的排期提示词</a></li>
+      <li><a href="#sec-4">责任人与关键路径怎么定</a></li>
+      <li><a href="#sec-5">收尾提醒与几个坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

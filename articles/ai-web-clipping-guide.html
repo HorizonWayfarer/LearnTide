@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 整理网页收藏：剪藏与再检索的具体做法 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-web-clipping-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai整理网页收藏，重点不在存得多快，而在半年后还找得回来。本文讲剪藏时该补哪三行元信息、怎么让模型批量生成摘要和标签，以及再检索的三条路径与清理节奏。">
+<meta property="og:title" content="用 AI 整理网页收藏：剪藏与再检索的具体做法">
+<meta property="og:description" content="ai整理网页收藏，重点不在存得多快，而在半年后还找得回来。本文讲剪藏时该补哪三行元信息、怎么让模型批量生成摘要和标签，以及再检索的三条路径与清理节奏。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-web-clipping-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 整理网页收藏：剪藏与再检索的具体做法">
+<meta name="twitter:description" content="ai整理网页收藏，重点不在存得多快，而在半年后还找得回来。本文讲剪藏时该补哪三行元信息、怎么让模型批量生成摘要和标签，以及再检索的三条路径与清理节奏。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 整理网页收藏？剪藏与再检索的做法 — Learntide",
+  "description":"ai整理网页收藏，重点不在存得多快，而在半年后还找得回来。本文讲剪藏时该补哪三行元信息、怎么让模型批量生成摘要和标签，以及再检索的三条路径与清理节奏。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-web-clipping-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 整理网页收藏？剪藏与再检索的做法 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 整理网页收藏？剪藏与再检索的做法 — Learntide</h1>
+    <p class="lede">收藏夹里躺着上千条链接，真正被再次点开的可能不到十条，剩下的都在替你保管焦虑。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 整理网页收藏？剪藏与再检索的做法 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai整理网页收藏：先弄清收藏夹为什么会烂</h2>
+
+<p>ai整理网页收藏之前，得先承认一件事：收藏夹变成坟场，是设计使然，不是你懒。</p>
+
+<p>存的动作只要一次点击，成本接近于零。找的动作却要你回忆当时看了什么、大概什么时候看的、用了什么词。两边成本严重不对等，坟场是必然结果。</p>
+
+<p>所以解法只有一条：把一部分成本从「找」挪到「存」。存的时候多付二十秒，后面才有得赚。收藏夹怎么整理这个问题，答案不在分类法里，在入口那一步。</p>
+
+<h2 id="sec-2">剪藏时补三行元信息</h2>
+
+<p>剪藏工具装了不少人都有，问题是大家只存正文。正文机器能读，可它读不出你当时的意图。</p>
+
+<p>进门补三行就够：</p>
+
+<p>一是「为什么存」，写你打算拿它干什么，比如写季度复盘要引。二是一句话摘要，二十五字以内，用自己的话写。三是标签，最多三个，从你固定的标签表里选。</p>
+
+<p>这三行里最关键的是第一行。半年后你搜「季度复盘」，它就出来了，而原文里根本没有这四个字。网页剪藏工具推荐哪一款其实次要，能不能顺手补上这三行才要紧。</p>
+
+<p>有人担心每条都写太累。其实只有真打算用的才需要补全，纯粹好奇点进去的，标个待读就行。一天认真存三条，比一天囤三十条有用得多。</p>
+
+<h2 id="sec-3">让模型批量补摘要和标签</h2>
+
+<p>存量太多补不动，就交给模型。浏览器书签能导出 HTML 或 JSON，剪藏工具一般也支持导出清单，整批喂过去跑一遍。</p>
+
+<pre><code>你是我的收藏整理助手。下面是我的书签导出清单，逐条处理。
+
+固定标签表（只能从中选，不许新造）：
+工作 学习 工具 行业 灵感 教程 待读 归档
+
+每条输出一行，用竖线分隔：
+原标题 | 一句话摘要（不超过 25 字，写它解决什么问题）| 标签（最多 3 个）| 建议动作
+
+建议动作只能填三种之一：保留 / 待读 / 删除
+判断依据：
+1 内容已过时或链接类型为营销页 → 删除
+2 三个月内用得上 → 保留
+3 其余 → 待读
+
+标题信息不足以判断的，摘要写「信息不足」，动作填待读。
+
+【粘贴导出的书签清单】</code></pre>
+
+<p>跑完先看「删除」那批。大胆删，一千条里砍掉四成很正常，留下的才是你真会用的。</p>
+
+<p>要让模型读全文再总结，得把网页正文抓下来一起喂，这块可以参考把文档喂给 AI 那篇的做法。</p>
+
+<h2 id="sec-4">再检索的三条路径</h2>
+
+<p>第一条是关键词搜索，前提是你记得原文用词，命中率其实不高。</p>
+
+<p>第二条是语义搜索。你描述场景，工具按意思匹配。「上次那篇讲小团队怎么排期的」这种模糊线索也能捞出来。</p>
+
+<p>第三条是按用途反查，靠的正是你补的「为什么存」那一行。收藏的文章怎么找回来，这条最稳。</p>
+
+<p>三条路径最好都保留，各有各的场合。关键词适合找确定的标题，语义搜索适合找模糊印象，用途反查适合赶稿时救急。</p>
+
+<p>把收藏并进统一的知识库里，检索面会大很多，具体流程在搭建个人知识库那篇里讲过。</p>
+
+<h2 id="sec-5">清理节奏与几个提醒</h2>
+
+<p>每月留十分钟过一遍待读。两个月没动的，要么读掉，要么归档，别让它们一直挂着。</p>
+
+<p>别装三个剪藏工具。入口越多，资料越散，最后哪个都不敢信。也别把收藏当成学习，存下来不等于读过，真要吸收还得写笔记，方法可以看 AI 读书笔记那篇。工具从工具导航里挑一款用顺手就好。ai整理网页收藏这件事，赢在存的那二十秒，不在事后的大扫除。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-personal-knowledge-base.html">AI 搭建个人知识库</a></li>
+      <li><a href="ai-reading-notes-method.html">AI 读书笔记方法</a></li>
+      <li><a href="feed-documents-to-ai.html">把文档喂给 AI</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai整理网页收藏：先弄清收藏夹为什么会烂</a></li>
+      <li><a href="#sec-2">剪藏时补三行元信息</a></li>
+      <li><a href="#sec-3">让模型批量补摘要和标签</a></li>
+      <li><a href="#sec-4">再检索的三条路径</a></li>
+      <li><a href="#sec-5">清理节奏与几个提醒</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

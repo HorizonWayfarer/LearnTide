@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>用 AI 调试代码：把报错讲清楚的提问模板与验证步骤 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-debug-code-guide.html">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="ai调试代码答得准不准，取决于你把现场描述得够不够清楚。本文给出最小复现、完整报错栈与环境信息的提问模板，讲怎么让模型先给假设再给补丁，怎么二分定位、验证修复。">
+<meta property="og:title" content="用 AI 调试代码：把报错讲清楚的提问模板与验证步骤">
+<meta property="og:description" content="ai调试代码答得准不准，取决于你把现场描述得够不够清楚。本文给出最小复现、完整报错栈与环境信息的提问模板，讲怎么让模型先给假设再给补丁，怎么二分定位、验证修复。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-debug-code-guide.html">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="用 AI 调试代码：把报错讲清楚的提问模板与验证步骤">
+<meta name="twitter:description" content="ai调试代码答得准不准，取决于你把现场描述得够不够清楚。本文给出最小复现、完整报错栈与环境信息的提问模板，讲怎么让模型先给假设再给补丁，怎么二分定位、验证修复。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 调试代码？把报错讲清楚的提问方式 — Learntide",
+  "description":"ai调试代码答得准不准，取决于你把现场描述得够不够清楚。本文给出最小复现、完整报错栈与环境信息的提问模板，讲怎么让模型先给假设再给补丁，怎么二分定位、验证修复。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-08","dateModified":"2026-08-08",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-debug-code-guide.html"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 调试代码？把报错讲清楚的提问方式 — Learntide"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 调试代码？把报错讲清楚的提问方式 — Learntide</h1>
+    <p class="lede">同样一个报错，有人两轮就定位，有人来回问十次还在原地打转，差别常常在描述现场的那几句话。</p>
+    <div class="article-meta">更新于 2026-08-08</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 调试代码？把报错讲清楚的提问方式 — Learntide</span>
+  </nav>
+
+<h2 id="sec-1">ai调试代码前，先把现场讲清楚</h2>
+
+<p>ai调试代码卡壳，多半不是模型笨，而是你给的信息不够。一句「这段代码报错了帮我看看」，它只能猜。猜出来的改法，通常只动了表面。</p>
+
+<p>调试的本质是缩小范围。范围缩得越小，命中率越高。</p>
+
+<p>动手前补齐五样东西：最小可复现片段、完整报错栈、期望行为、实际行为、运行环境。少一样，来回就多两轮。</p>
+
+<p>报错栈别截断。很多人只贴最后一行，可线索常常藏在中间那几层调用里。</p>
+
+<p>最小可复现片段也有讲究。把无关的业务逻辑删干净，只留能触发报错的那十几行。删的过程本身就是排查，不少人删着删着自己就找到原因了。</p>
+
+<h2 id="sec-2">一份能直接抄的提问模板</h2>
+
+<p>把这五样固定成模板，每次填空即可。</p>
+
+<pre><code>【环境】Python 3.11 / macOS 14 / pandas 2.2.2 / 虚拟环境 venv
+【目标】读 CSV 后按用户 ID 分组求和，输出到新表
+【最小复现】
+import pandas as pd
+df = pd.read_csv(&quot;orders.csv&quot;)
+print(df.groupby(&quot;user_id&quot;)[&quot;amount&quot;].sum())
+【实际结果】完整报错栈，从第一行贴到最后一行，中间层不要省略
+KeyError: &#x27;user_id&#x27;
+【期望结果】返回每个用户的金额合计
+【已排除】文件路径正确；打印 df.columns 发现列名前后带空格
+【请你做】先列 3 个可能原因，按可能性排序，逐条说明怎么验证</code></pre>
+
+<p>最后一行最关键。你要的是排查方向，而不是一段贴上去就跑的补丁。</p>
+
+<h2 id="sec-3">让模型先给假设，再动手改</h2>
+
+<p>直接索要修复，模型会递给你一个看着合理的改法。它可能改对，也可能只是让报错换了个位置。</p>
+
+<p>稳一点的做法分两步。先让它列假设，再由你去验证。</p>
+
+<p>验证靠二分。把可疑区间对半砍，打印中间变量，看哪一半出问题。砍上两三轮，位置基本就浮出来了。</p>
+
+<p>打印比断点更适合配合模型。你把每一步的输入输出贴回去，它能顺着数据流往回推。断点里的信息留在你脑子里，模型看不见。</p>
+
+<p>碰到并发、死锁、偶发性能抖动这类绕的问题，可以换推理型模型多想一步，区别在推理模型是什么那篇里讲过。</p>
+
+<h2 id="sec-4">修复要验证，别照单全收</h2>
+
+<p>补丁先读懂再合入。读不懂就追问，让它逐行解释。</p>
+
+<p>三个验证动作：原场景重跑一次、边界输入试一次、相邻功能回归一次。</p>
+
+<p>顺手补条测试用例更划算。下次同样的坑，不用再人肉复现。</p>
+
+<p>还要盯副作用。有些改法是把异常吞掉，日志干干净净，问题接着往下游跑。</p>
+
+<p>改动范围也得看住。一处小修被顺手扩成大重构，出了岔子连回滚都费劲。让它只动必要的那几行，其余保持原样。</p>
+
+<h2 id="sec-5">提问时容易踩的坑</h2>
+
+<p>别把整个仓库糊上去。信息越多噪声越大，重点反而被淹没。</p>
+
+<p>别贴带密钥、身份证号、真实用户数据的日志。脱敏再贴，换成假值就行。</p>
+
+<p>也别一路死追同一个错。三轮没进展就回头查前提：版本对不对，依赖装没装，跑的是不是你以为的那份代码。</p>
+
+<p>追问要带新信息。把上一轮验证的结果告诉它，哪个假设排除了，打印出来的值是多少。什么都不补就重问一遍，它多半只是换个说法再猜一次。</p>
+
+<p>排查过的坑随手记一条，攒成自己的排错库，做法看 AI 搭建个人知识库那篇；顺手的工具从 AI 工具导航里挑。说到底，ai调试代码拼的是你把现场描述得多准，提示词花样帮不上什么忙。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="what-is-reasoning-model.html">推理模型是什么</a></li>
+      <li><a href="ai-personal-knowledge-base.html">AI 搭建个人知识库</a></li>
+      <li><a href="ai-email-automation.html">ai自动整理邮件</a></li>
+      <li><a href="ai-wechat-cover-image.html">ai做公众号封面</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">ai调试代码前，先把现场讲清楚</a></li>
+      <li><a href="#sec-2">一份能直接抄的提问模板</a></li>
+      <li><a href="#sec-3">让模型先给假设，再动手改</a></li>
+      <li><a href="#sec-4">修复要验证，别照单全收</a></li>
+      <li><a href="#sec-5">提问时容易踩的坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>
