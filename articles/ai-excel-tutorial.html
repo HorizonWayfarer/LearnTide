@@ -78,7 +78,11 @@
     <span class="current">用 AI 处理 Excel：写公式与数据清洗</span>
   </nav>
 
+<p class="article-img"><img src="../assets/article-imgs/ai-excel-tutorial/01-data-safety.jpg" alt="数据安全优先：先想清楚要不要交出原始数据。不交原始数据免费安全 / 随意上传数据隐私风险" loading="lazy"></p>
+
 <h2 id="sec-1">用 AI 处理 Excel 前，先选你的那条路线</h2>
+
+<p class="article-img"><img src="../assets/article-imgs/ai-excel-tutorial/02-route-compare.jpg" alt="三路线对比：通用大模型不传数据免费生成公式 / 表格内置AI数据上云订阅制边聊边改 / 专用表格工具上传文件付费批量清洗" loading="lazy"></p>
 
 <p>用 AI 处理 Excel 有三条路。区别不在谁更聪明，在于你要不要把原始数据交出去。</p>
 
@@ -94,6 +98,8 @@
 
 <p>做电商的小周第一次只写「帮我做个匹配」，模型给的 VLOOKUP 碰上重复订单号就崩；第二次贴了表头、补「取日期最新的一条」，一遍就对。</p>
 
+<p class="article-img"><img src="../assets/article-imgs/ai-excel-tutorial/03-formula-template.jpg" alt="AI写公式套这个模板就够了：我的表结构+我想要+边界情况" loading="lazy"></p>
+
 <pre><code>我的表结构：
 Sheet1 A列=订单号 B列=客户名 C列=金额 D列=下单日期
 Sheet2 A列=订单号 B列=物流状态
@@ -107,6 +113,8 @@ Sheet2 A列=订单号 B列=物流状态
 <h2 id="sec-3">数据清洗：一条指令干掉六种脏数据</h2>
 
 <p>脏数据的花样翻来覆去就那几种。与其一个个问，不如一次列全。</p>
+
+<p class="article-img"><img src="../assets/article-imgs/ai-excel-tutorial/04-data-clean.jpg" alt="数据清洗六步走：去空格、统一手机号、统一日期、金额转数值、按手机号去重、去市字" loading="lazy"></p>
 
 <pre><code>以下是一份 3000 行的客户表，列为：姓名、手机号、金额、注册日期、城市。
 请给出清洗步骤和对应公式（不要 VBA）：
@@ -124,6 +132,8 @@ Sheet2 A列=订单号 B列=物流状态
 
 <p>这一节比前面两节都重要。模型给的公式看着专业，错起来也很安静。</p>
 
+<p class="article-img"><img src="../assets/article-imgs/ai-excel-tutorial/05-verify-formula.jpg" alt="公式验证三招：抽三行手工核对 / 测试边界值 / IFERROR兜底防报错" loading="lazy"></p>
+
 <p><strong>第一招，抽三行手工对。</strong> 挑第一行、中间一行、最后一行，用计算器或者肉眼核一遍。</p>
 
 <p><strong>第二招，故意喂边界值。</strong> 空单元格、0、负数、重复项、缺失项，各造一个塞进去，看公式会不会报错或者算歪。</p>
@@ -133,6 +143,8 @@ Sheet2 A列=订单号 B列=物流状态
 <p>只做第一招不够，真正咬人的错误几乎都躲在边界值里。模型编公式和编事实是同一个毛病，<a href="avoid-ai-hallucination-tips.html">怎么防 AI 一本正经胡说</a>里那套核对办法，换到表格上一样管用。</p>
 
 <h2 id="sec-5">哪些表不能传，AI 又做不到什么</h2>
+
+<p class="article-img"><img src="../assets/article-imgs/ai-excel-tutorial/06-safety-summary.jpg" alt="安全底线：客户隐私表、金额成本表、涉密文件不要上传；只传表头加假数据让AI写公式数据留在自己手里" loading="lazy"></p>
 
 <p>三条底线：含姓名和手机号的客户表不整份上传；含金额、成本、合同条款的表不整份上传；公司标了密级的文件不上传。</p>
 
