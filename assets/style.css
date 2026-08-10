@@ -66,6 +66,10 @@ a:hover{text-decoration:underline;}
 img{max-width:100%;display:block;}
 svg{flex:none;}
 
+/* 文章内嵌信息图（build_articles.py md_to_html 输出 .article-img） */
+.article .article-img{margin:var(--space-6) 0 var(--space-8);}
+.article .article-img img{border-radius:var(--radius-sm);box-shadow:0 2px 12px rgba(0,0,0,.06);width:100%;height:auto;}
+
 /* layout */
 .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
 

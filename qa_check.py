@@ -193,6 +193,8 @@ for s in FILES:
     text = open(fp, encoding="utf-8").read()
     fm, body = text.split("---", 2)[1], text.split("---", 2)[2]
     nocode = re.sub(r"```.*?```", "", body, flags=re.S)
+    # 2026-08-10：排除图片语法 `![alt](path)` 的 alt 文本，避免图片 alt 算进正文字数
+    nocode = re.sub(r"!\[[^\]]*\]\([^)]+\)", "", nocode)
     cjk = len(re.findall(r"[\u4e00-\u9fff]", nocode))
     h2s = re.findall(r"^## (.+)$", body, flags=re.M)
     code = len(re.findall(r"^```", body, flags=re.M)) // 2
@@ -241,7 +243,8 @@ for s in FILES:
         if b.lower() in body.lower() and b.lower() not in kw_lower:
             issues.append("禁词" + b)
     # 正文内链：从「一律禁止」改为「校验目标存在」，保留死链防护
-    for _anchor, href in re.findall(r"\[([^]]+)\]\(([^)]+)\)", nocode):
+    # 2026-08-10：排除图片语法 `![alt](path)`，避免图片 src 被误判为内链目标
+    for _anchor, href in re.findall(r"(?<!!)\[([^]]+)\]\(([^)]+)\)", nocode):
         tgt = href.split("#")[0].split("?")[0].strip()
         if tgt.startswith(("http://", "https://")):
             continue                              # 外链另有规范

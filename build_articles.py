@@ -219,6 +219,17 @@ def md_to_html(body):
             i += 1
             continue
 
+        # 图片（独立一行的 markdown 图片语法）—— 必须在最前，否则会被段落吞
+        m = re.match(r"^!\[([^\]]*)\]\(([^)\s]+)\)\s*$", s)
+        if m:
+            alt, src = m.group(1), m.group(2)
+            out.append(
+                '<p class="article-img"><img src="%s" alt="%s" loading="lazy"></p>'
+                % (esc(src), esc(alt))
+            )
+            i += 1
+            continue
+
         # 围栏代码块
         if s.startswith("```"):
             i += 1
