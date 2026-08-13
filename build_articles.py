@@ -386,6 +386,7 @@ def page_shell(prefix, active, title, description, head_extra, body,
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{og_image}">
 <meta name="robots" content="index,follow">
+<script src="{prefix}assets/js/img-cache.js"></script>
 {head_extra}</head>
 <body>
 <header class="site-header">
@@ -481,7 +482,7 @@ def render_article(meta, body_html, sections, slug_index):
             "免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>\n" % esc(verified)
         )
 
-    canon = "%s/articles/%s.html" % (SITE_URL, slug)
+    canon = "%s/articles/%s" % (SITE_URL, slug)
     mod = meta.get("verified") or pub  # dateModified 反映真实修订日期
 
     ld = """<script type="application/ld+json">
@@ -741,7 +742,7 @@ def update_sitemap(posts, dry_run=False):
     ]
     for p in sorted(posts, key=lambda x: x["slug"]):
         rows.append(
-            '  <url><loc>%s/articles/%s.html</loc><lastmod>%s</lastmod>'
+            '  <url><loc>%s/articles/%s</loc><lastmod>%s</lastmod>'
             "<changefreq>monthly</changefreq><priority>0.7</priority></url>"
             % (SITE_URL, p["slug"], p["date"])
         )
