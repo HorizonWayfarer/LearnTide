@@ -369,9 +369,6 @@ def page_shell(prefix, active, title, description, head_extra, body,
 <title>{title}</title>
 <link rel="canonical" href="{canon}">
 <link rel="stylesheet" href="{prefix}assets/style.css">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link rel="icon" type="image/svg+xml" href="{prefix}assets/learntide-logo.svg">
 <meta name="description" content="{desc}">
 <meta property="og:title" content="{og_title}">

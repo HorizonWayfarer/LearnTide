@@ -1,5 +1,5 @@
 # Cloudflare Pages 缓存策略
-# 仅缓存图片，其他资源不缓存（实时验证）
+# 仅缓存图片/字体，其他资源不缓存（实时验证）
 # ──────────────────────────────────────────────────
 
 # ── 图片：1 年不变 ──
@@ -8,4 +8,8 @@
 /assets/covers/*.webp
   Cache-Control: public, max-age=31536000, immutable
 /assets/figures/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# ── 字体：1 年不变 ──
+/assets/fonts/*.woff2
   Cache-Control: public, max-age=31536000, immutable
