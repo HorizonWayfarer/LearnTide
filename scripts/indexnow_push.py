@@ -14,11 +14,46 @@ import argparse
 import json
 import os
 import secrets
+import socket
 import sys
 import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
+
+# ── 网络配置（走 FlClash 代理 + IPv4-only）────────────────────────────
+# FlClash 默认端口 7890，可在此修改
+_FLCLASH_PROXY = os.environ.get("FLCLASH_PROXY", "http://127.0.0.1:7890")
+
+
+def _set_flclash_proxy():
+    """设置代理环境变量，让 urllib 走 FlClash。"""
+    for k in ("HTTP_PROXY", "HTTPS_PROXY", "http_proxy", "https_proxy",
+              "ALL_PROXY", "all_proxy"):
+        os.environ[k.upper()] = _FLCLASH_PROXY
+
+
+def _force_ipv4_getaddrinfo(original):
+    """返回一个只返回 IPv4 结果的 getaddrinfo 包装，绕过 DNS 优先返回 IPv6 的问题。"""
+    def _wrapper(host, port, family=0, socktype=0, proto=0, flags=0):
+        results = original(host, port, socket.AF_INET, socktype, proto, flags)
+        return results
+    return _wrapper
+
+
+def _with_ipv4_only(fn):
+    """装饰器：在 fn 执行期间将 socket.getaddrinfo 替换为只返 IPv4 的版本。"""
+    import functools
+    @functools.wraps(fn)
+    def _inner(*args, **kwargs):
+        orig = socket.getaddrinfo
+        try:
+            socket.getaddrinfo = _force_ipv4_getaddrinfo(orig)
+            return fn(*args, **kwargs)
+        finally:
+            socket.getaddrinfo = orig
+    return _inner
+
 
 # ── 常量 ───────────────────────────────────────────────────────────────
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -94,7 +129,7 @@ def extract_urls_from_sitemap():
 def push_urls(urls, cfg):
     """
     向 IndexNow API 推送 URL 列表
-    
+
     返回 (success_count, error_list)
     """
     api_key = cfg["api_key"]
@@ -120,6 +155,9 @@ def push_urls(urls, cfg):
         }
 
         data = json.dumps(payload).encode("utf-8")
+        # 清代理 + 强制 IPv4，避免 DNS 返 IPv6 导致 SSL EOF
+        _set_flclash_proxy()
+
         req = urllib.request.Request(
             INDEXNOW_ENDPOINT,
             data=data,
@@ -130,7 +168,7 @@ def push_urls(urls, cfg):
         )
 
         try:
-            with urllib.request.urlopen(req, timeout=30) as resp:
+            with _with_ipv4_only(urllib.request.urlopen)(req, timeout=30) as resp:
                 status = resp.getcode()
                 print(f"  HTTP {status}: {'URL 已接收' if status in (200, 202) else resp.read().decode()}")
                 if status in (200, 202):

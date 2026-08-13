@@ -5,6 +5,13 @@
    图标全部为内联 SVG，禁用 emoji。缓动用标准 ease，禁用弹跳曲线。
    ========================================================================== */
 
+/* 全局正文字体：霞鹜文楷 Lite（中文手写风）。src 相对本 CSS 文件解析 → assets/fonts/ */
+@font-face{
+  font-family:"LXGW WenKai Lite";
+  src:url("fonts/LXGWWenKaiLite-Medium.woff2") format("woff2");
+  font-display:swap;
+}
+
 :root{
   /* 品牌核心色（水木精修） */
   --water:#2E6FB5; --water-dark:#255C97; --water-light:#EAF2F9;
@@ -38,6 +45,8 @@
   /* 代码块底色 */
   --code-bg:#F6F8FA;
   --font-mono:"JetBrains Mono","Fira Code","Consolas",monospace;
+  /* 全局正文字体栈：霞鹜文楷优先，缺字回退 Outfit / 系统无衬线 */
+  --font-body:"LXGW WenKai Lite","LXGW WenKai","Outfit","Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
   /* 标签色（全部 token 化；国内标签归入木绿系） */
   --tag-hot-bg:var(--wood-light); --tag-hot-text:var(--wood-dark);
   --tag-free-bg:var(--wood-light); --tag-free-text:var(--wood-dark);
@@ -51,7 +60,7 @@
 html{scroll-behavior:smooth;}
 body{
   margin:0;
-  font-family:"Outfit","Noto Sans SC",-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+  font-family:var(--font-body);
   background:var(--bg);
   color:var(--ink);
   line-height:var(--leading-base);
@@ -101,23 +110,23 @@ svg{flex:none;}
 .nav a small{
   font-size:11px;color:var(--meta);font-weight:400;
   margin-left:4px;opacity:.7;display:inline;
-  font-family:'Outfit',system-ui,sans-serif;
+  font-family:var(--font-body);
 }
 
 .site-footer small{
   display:block;font-size:12px;color:var(--meta);
   margin-top:4px;opacity:.7;
-  font-family:'Outfit',system-ui,sans-serif;
+  font-family:var(--font-body);
 }
 .eyebrow small{
   font-size:12px;color:var(--meta);font-weight:400;
   margin-left:6px;opacity:.7;display:inline;
-  font-family:'Outfit',system-ui,sans-serif;
+  font-family:var(--font-body);
 }
 .btn small{
   display:block;font-size:12px;font-weight:400;
   margin-top:2px;opacity:.7;
-  font-family:'Outfit',system-ui,sans-serif;
+  font-family:var(--font-body);
 }
 
 /* ---------- 通用区块 ---------- */

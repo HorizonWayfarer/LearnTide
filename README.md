@@ -16,12 +16,19 @@ Learntide/
 ├── index.html                       # 首页：简介 + 最新文章 + 栏目入口
 ├── tools.html                       # AI 工具导航页（数据驱动，见下）
 ├── about.html                       # 关于页
-├── articles/                        # 文章页目录（子目录，跨页链接需用 ../ 回退根目录）
-│   └── ai-weekly-report-guide.html  # 示例教程：用 AI 写周报
+├── articles/                        # 文章页目录（跨页链接需用 ../ 回退根目录）
 ├── assets/
-│   └── style.css                    # 全局设计系统（40+ CSS 变量 Token，统一接管颜色/字号/间距/圆角/阴影）
+│   ├── style.css                    # 全局设计系统（40+ CSS 变量 Token）
+│   ├── covers/                      # 文章封面图（jpg / webp）
+│   ├── figures/                     # 文章正文配图（jpg / webp）
+│   └── fonts/                       # 站点 Web 字体（LXGW WenKai，须提交，否则线上字体 404）
+├── scripts/                         # 构建 / QA / 推送等脚本（scripts/autopublish/ 已忽略）
 ├── sitemap.xml                      # 站点地图（新增页面需同步更新）
 ├── robots.txt                       # 爬虫规则
+├── _headers                         # Cloudflare Pages 缓存策略
+├── _redirects                      # Cloudflare Pages 重定向
+├── build_articles.py               # 文章构建脚本（md → html）
+├── qa_check.py                      # 内容质量检查
 ├── serve.py                         # 本地静态预览服务器（由你本机启动）
 └── learntide-brief.md               # 项目简报（含命理底子与完整策划）
 ```
@@ -65,13 +72,16 @@ python serve.py --root ./articles  # 只服务某个子目录
 > git 写操作（init / add / commit / push 等）由你本机执行（本项目 AI 只产出文件、不执行 git 写操作）。
 
 ```bash
-cd A:\LearnTide
-git init                                # 若尚未初始化
-git add .
-git commit -m "v2: 美化与代码优化，token 化，去 AI 模板味"
+# 首次初始化（仅一次）
+cd /d A:\LearnTide
+git init
 git branch -M main
 git remote add origin https://github.com/HorizonWayfarer/LearnTide.git
-git push -u origin main
+
+# 日常更新：绝不 git add . / git add -A，按文件提交
+git add articles/ articles.html index.html sitemap.xml assets/ robots.txt _headers _redirects .gitignore README.md
+git commit -m "feat: 内容重建 + 仓库清理（字体/忽略规则）"
+git push
 ```
 
 然后在 Cloudflare Pages：
