@@ -1,38 +1,11 @@
 # Cloudflare Pages 缓存策略
-# 语法：<路径模式>（支持 * 通配符）
-#       <Header名>: <值>
+# 仅缓存图片，其他资源不缓存（实时验证）
 # ──────────────────────────────────────────────────
 
-# ── 静态资源（图片 / CSS / Logo）：1 年不变 ──
+# ── 图片：1 年不变 ──
 /assets/covers/*.jpg
   Cache-Control: public, max-age=31536000, immutable
 /assets/covers/*.webp
   Cache-Control: public, max-age=31536000, immutable
 /assets/figures/*
   Cache-Control: public, max-age=31536000, immutable
-/assets/style.css
-  Cache-Control: public, max-age=31536000, immutable
-/assets/learntide-logo.svg
-  Cache-Control: public, max-age=31536000, immutable
-
-# ── HTML 页面：1 小时缓存，回源验证 ──
-/articles/*
-  Cache-Control: public, max-age=3600, must-revalidate
-/index.html
-  Cache-Control: public, max-age=3600, must-revalidate
-/articles.html
-  Cache-Control: public, max-age=3600, must-revalidate
-/tools.html
-  Cache-Control: public, max-age=3600, must-revalidate
-/about.html
-  Cache-Control: public, max-age=3600, must-revalidate
-
-# ── 站点元数据 ──
-/sitemap.xml
-  Cache-Control: public, max-age=3600, must-revalidate
-/robots.txt
-  Cache-Control: public, max-age=86400, must-revalidate
-
-# ── 错误页面：不缓存 ──
-/404.html
-  Cache-Control: no-cache, no-store, must-revalidate
