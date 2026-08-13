@@ -583,7 +583,7 @@ def render_archive(posts):
         items.sort(key=lambda x: (x["date"], x["title"]), reverse=True)
         cards = "\n".join(
             """      <a class="card" href="articles/{s}.html">
-        <div class="card-thumb"><img src="{i}" alt="{t}" loading="lazy"></div>
+        <div class="card-thumb"><picture><source srcset="{i_w}" type="image/webp"><img src="{i}" alt="{t}" loading="lazy"></picture></div>
         <div class="card-body">
         <h3>{t}</h3>
         <div class="meta"><span class="cat-tag">{c}</span> · {d}</div>
@@ -592,6 +592,7 @@ def render_archive(posts):
       </a>""".format(
                 s=esc(x["slug"]),
                 i=esc(cover_for_slug(x["slug"], x["category"])),
+                i_w=esc(cover_for_slug(x["slug"], x["category"]).rsplit(".", 1)[0] + ".webp"),
                 t=esc(x["title"]),
                 c=esc(x["category"]),
                 d=esc(x["date"]),
@@ -705,7 +706,7 @@ def update_homepage(posts, dry_run=False):
     latest = sorted(posts, key=lambda x: (x["date"], x["slug"]), reverse=True)[:6]
     cards = "\n".join(
         """      <a class="card" href="articles/{s}.html">
-        <div class="card-thumb"><img src="{i}" alt="{t}" loading="lazy"></div>
+        <div class="card-thumb"><picture><source srcset="{i_w}" type="image/webp"><img src="{i}" alt="{t}" loading="lazy"></picture></div>
         <div class="card-body">
         <h3>{t}</h3>
         <div class="meta"><span class="cat-tag">{c}</span> · {d}</div>
@@ -715,6 +716,7 @@ def update_homepage(posts, dry_run=False):
             s=esc(x["slug"]), t=esc(x["title"]), c=esc(x["category"]),
             d=esc(x["date"]), p=esc(x["summary"]),
             i=esc(cover_for_slug(x["slug"], x["category"])),
+            i_w=esc(cover_for_slug(x["slug"], x["category"]).rsplit(".", 1)[0] + ".webp"),
         )
         for x in latest
     )
