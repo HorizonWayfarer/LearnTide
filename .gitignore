@@ -26,5 +26,10 @@ research/
 marketing/
 scripts/autopublish/
 scripts/autopublish.py
+# 含 Agnes API key 的批量封面脚本，禁止提交到公开仓库
+scripts/batch_generate_covers.py
 # === 文章源稿 drafts（已构建产物在 articles/，源稿不需公开） ===
 drafts/
+
+# === 失败方案 / 实验草稿归档（不进版本库） ===
+scratch/

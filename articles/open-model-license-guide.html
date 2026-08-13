@@ -80,6 +80,8 @@
 
 <h2 id="sec-1">开源模型能商用吗：先分清开源和开放权重</h2>
 
+<p class="article-img"><img src="../assets/figures/open-model-license-guide/01-open-model-license-guide.jpg" alt="配图1开源与开放权重的区别" loading="lazy"></p>
+
 <p>开源模型能商用吗？多数情况可以，但「开源」这两个字在模型圈被用得很松，不能直接等同于随便用。</p>
 
 <p>传统软件的开源有严格定义：任何人可以任意使用、修改、再分发，不限用途。模型这边不一样。很多标着开源的模型，实际只是把权重文件公开下载，附带一份自定义协议，里面写满了条件。业内更准确的叫法是「开放权重」。</p>
@@ -87,6 +89,8 @@
 <p>所以看到能免费下载，别就当成能商用。协议那一栏才是答案。</p>
 
 <h2 id="sec-2">常见许可证分哪几档</h2>
+
+<p class="article-img"><img src="../assets/figures/open-model-license-guide/02-open-model-license-guide.jpg" alt="配图2常见许可证分三档" loading="lazy"></p>
 
 <p>大致三档，风险由低到高。</p>
 
@@ -106,6 +110,8 @@ curl -s https://huggingface.co/api/models/&lt;org&gt;/&lt;model&gt; \
 
 <h2 id="sec-3">商用前要盯死的六行字</h2>
 
+<p class="article-img"><img src="../assets/figures/open-model-license-guide/03-open-model-license-guide.jpg" alt="配图3商用前必查的六项条款" loading="lazy"></p>
+
 <p>拿到协议别通读，直接搜这几处。</p>
 
 <p>用途限制：有没有 non-commercial、research only 这类词。规模阈值：月活或收入到多少要另行申请。署名要求：产品界面或文档里要不要标模型名称。再分发：微调后的权重能不能公开发布，发的时候要不要沿用同一份协议。输出归属：模型生成的内容算谁的，能不能拿去训练别的模型。衍生命名：有些协议要求改出来的模型仍带原厂前缀。</p>
@@ -113,6 +119,8 @@ curl -s https://huggingface.co/api/models/&lt;org&gt;/&lt;model&gt; \
 <p>这六条查完，大部分风险就排掉了。</p>
 
 <h2 id="sec-4">容易踩的三个坑</h2>
+
+<p class="article-img"><img src="../assets/figures/open-model-license-guide/04-open-model-license-guide.jpg" alt="配图4容易踩的三个坑" loading="lazy"></p>
 
 <p>第一个坑，代码和权重是两份协议。仓库里的推理代码可能是 Apache 2.0，权重却挂着限制性协议。只看根目录那个 LICENSE 会看漏。</p>
 
@@ -129,6 +137,8 @@ curl -s https://huggingface.co/api/models/&lt;org&gt;/&lt;model&gt; \
 <p>条款会随版本变动，上线或掏钱前去模型主页再确认一次最新说明。</p>
 
 <p>真要落地，别在这一步图省事。花半小时搞清开源模型能商用吗，成本远低于产品跑起来之后被叫停。</p>
+
+<p class="article-img"><img src="../assets/figures/open-model-license-guide/05-open-model-license-guide.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

@@ -80,6 +80,8 @@
 
 <h2 id="sec-1">ai翻译视频的两种实现思路</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-video-translation-guide/01-ai-video-translation-guide.jpg" alt="配图1识别并导出原文字幕" loading="lazy"></p>
+
 <p>ai翻译视频，核心是两件事：把原话变成文字，再把文字变成另一种语言的声音。字幕和配音一起做，观感才完整。新手最容易卡在第一步，识别不准，后面全歪。</p>
 
 <p>先把目标想清楚。你要硬字幕烧进画面，还是软字幕单独导出？前者适合发短视频，后者方便别人二次翻译。这一步决定工具怎么选。还要想受众：给同事看，还是给海外粉丝看，语气差很多。</p>
@@ -87,6 +89,8 @@
 <p>语言对也别贪多。先做好一种目标语言，跑通流程再扩。一次翻五种语言，每个都糙，不如一种做精。原片质量决定上限，先拍清楚再谈翻译。</p>
 
 <h2 id="sec-2">第一步：识别并导出原文字幕</h2>
+
+<p class="article-img"><img src="../assets/figures/ai-video-translation-guide/02-ai-video-translation-guide.jpg" alt="配图2翻译模型与术语约束" loading="lazy"></p>
 
 <p>打开剪辑软件，导入视频，用「识别字幕」功能。普通话稳定，方言要校对。识别完导出 SRT，这是后面翻译的原材料。</p>
 
@@ -102,6 +106,8 @@
 
 <h2 id="sec-3">第二步：用翻译模型处理字幕</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-video-translation-guide/03-ai-video-translation-guide.jpg" alt="配图3配音生成与音轨对齐" loading="lazy"></p>
+
 <p>把 SRT 文本喂给翻译模型。一次别塞太多，按段落分批更稳。给模型一段提示词，约束术语和语气：</p>
 
 <pre><code>请把以下视频字幕翻译成英文，保持口语化：
@@ -116,6 +122,8 @@
 
 <h2 id="sec-4">第三步：配音换声与音轨对齐</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-video-translation-guide/04-ai-video-translation-guide.jpg" alt="配图4合成导出与人工校对" loading="lazy"></p>
+
 <p>字幕译好，该换声音了。用配音工具按译文生成语音，选靠近原说话人的音色。语速调慢一点，信息密的段落留白。</p>
 
 <p>音轨对齐是细活。新配音要和画面口型、停顿对上。长句拆短，分段合成，哪段不对重生成哪段。别一次性合成整段，错了难改。情绪重的段落，让配音多一点起伏。</p>
@@ -129,6 +137,8 @@
 <p>ai翻译视频最怕三件事：识别错字、术语乱译、声画错位。每步都留人工校对，成品才站得住。免费额度和功能边界，以官网当前说明为准。涉密内容别传在线工具。想做切片成片，可以看同簇的 ai长视频切片 思路。</p>
 
 <p>最后提醒一句：别把一键生成的成品直接发布，先小范围试看。把流程走顺，ai翻译视频也能做出能看的成品。</p>
+
+<p class="article-img"><img src="../assets/figures/ai-video-translation-guide/05-ai-video-translation-guide.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

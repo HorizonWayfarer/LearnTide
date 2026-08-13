@@ -80,6 +80,8 @@
 
 <h2 id="sec-1">AI 画图原理：从一团噪点讲起</h2>
 
+<p class="article-img"><img src="../assets/figures/how-ai-image-generation-works/01-how-ai-image-generation-works.jpg" alt="配图 1提示词的结构化拆解" loading="lazy"></p>
+
 <p>AI 画图原理说穿了就一句话：从一屏随机噪点出发，按你给的文字一步步擦掉噪声，最后擦出画面。它不在空白画布上描线，也不去图库里翻旧图拼贴。</p>
 
 <p>头一次听会觉得反直觉。换个说法就好懂。你盯着墙上的霉斑看久了，会看出人脸，看出动物。模型干的事差不多，只是它每一步都有文字在旁边指挥方向。</p>
@@ -87,6 +89,8 @@
 <p>所以文生图原理讲解绕来绕去，核心就三件事：把话变成数字，把噪点擦干净，把结果还原成像素。</p>
 
 <h2 id="sec-2">文字是怎么变成指挥棒的</h2>
+
+<p class="article-img"><img src="../assets/figures/how-ai-image-generation-works/02-how-ai-image-generation-works.jpg" alt="配图 2去噪过程的迭代示意" loading="lazy"></p>
 
 <p>你敲进去的提示词，先被切成一个个小片段，再换成一串数字。这串数字带着语义，意思接近的词，数字也彼此靠得近。</p>
 
@@ -102,6 +106,8 @@
 <p>顺序有讲究。多数模型对靠前的词更敏感。把最不能丢的东西写在最前面，比堆一长串形容词管用。同一句话换个语序，出图能差不少。</p>
 
 <h2 id="sec-3">去噪那几十步在干什么</h2>
+
+<p class="article-img"><img src="../assets/figures/how-ai-image-generation-works/03-how-ai-image-generation-works.jpg" alt="配图 3中文与手部的生成难点" loading="lazy"></p>
 
 <p>模型拿到的是一团彻底的雪花。它不会一口气把图变出来，而是分成几十步，每步只判断一件事：哪些像素属于噪声，该减掉多少。</p>
 
@@ -126,6 +132,8 @@
 <p>真正稳的做法是按结构写：先说清主体和场景，再补风格和画质，最后用负面词挡掉你最怕出现的东西。一次只改一处，看它往哪边动。</p>
 
 <p>中文和手部目前都没有彻底解法。文字最好图归图、字归字，留到排版环节再加；手部靠局部重绘慢慢修。别指望换个提示词就一次到位。真想少走弯路，先把 ai画图原理这条链路记牢，比背一百句咒语管用。</p>
+
+<p class="article-img"><img src="../assets/figures/how-ai-image-generation-works/04-how-ai-image-generation-works.jpg" alt="尾图核心工作流回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

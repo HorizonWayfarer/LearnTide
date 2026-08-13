@@ -80,6 +80,8 @@
 
 <h2 id="sec-1">ai分析问卷：选择题好算开放题靠归类</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-survey-analysis-guide/01-ai-survey-analysis-guide.jpg" alt="配图1开放题归类与数据清洗" loading="lazy"></p>
+
 <p>ai分析问卷，选择题那是模型的强项，计数、交叉、画图都快。真正费劲的是开放题，一堆自由发挥的文字，靠人手读不完。</p>
 
 <p>开放题的解法不是逐条精读，而是先归类。让模型把相似回答归到同一标签下，你再看每个标签有多少人，趋势就出来了。</p>
@@ -90,6 +92,8 @@
 
 <h2 id="sec-2">清洗数据再做分析</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-survey-analysis-guide/02-ai-survey-analysis-guide.jpg" alt="配图2AI 提示词与标签生成" loading="lazy"></p>
+
 <p>先删无效卷。填秒完的、整页选同一个选项的、开放题留白的，先挑出来。脏样本不去掉，结论会被拉偏。</p>
 
 <p>选项编码要统一。同一道题「满意」有的写「很满意」，模型可能当两种。先归成一套标准词再喂。</p>
@@ -99,6 +103,8 @@
 <p>时间字段统一。有的填日期有的填「上周」，模型分桶会乱，先归成一种。开放题也先去重。同一人复制粘贴的多条，留一条，否则占比被注水。</p>
 
 <h2 id="sec-3">给开放题打标签的提示词</h2>
+
+<p class="article-img"><img src="../assets/figures/ai-survey-analysis-guide/03-ai-survey-analysis-guide.jpg" alt="配图3报告汇总与代表句提炼" loading="lazy"></p>
 
 <p>把开放题文本贴进下面这段：</p>
 
@@ -134,6 +140,8 @@
 <p>敏感题单独处理。涉及收入的开放题，汇报前先脱敏再引用原话。结论要可行动。光说「大家不满意」没用，补一句「优先修登录」才值钱。</p>
 
 <p>最后一步最该做：先抽看几十份原文再信它。别把 ai分析问卷 当黑盒，归类跑偏你比模型更早发现。</p>
+
+<p class="article-img"><img src="../assets/figures/ai-survey-analysis-guide/04-ai-survey-analysis-guide.jpg" alt="尾图核心要点与避坑回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

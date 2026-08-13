@@ -80,11 +80,15 @@
 
 <h2 id="sec-1">moe架构是什么：让专家分工干活</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-moe-model/01-what-is-moe-model.jpg" alt="配图1调度器与专家分工" loading="lazy"></p>
+
 <p>moe架构是什么？全称叫「混合专家」。做法是把一个大模型内部拆成许多个小网络，每个小网络叫一位「专家」。前面还站着一个调度器，负责判断当前这段话该请哪几位专家出场。绝大多数专家，在大多数时候都闲着。</p>
 
 <p>所以它做到了一件看起来矛盾的事：总参数量堆得很大，每次真正参与计算的却只有一小块。</p>
 
 <h2 id="sec-2">它到底怎么省下算力</h2>
+
+<p class="article-img"><img src="../assets/figures/what-is-moe-model/02-what-is-moe-model.jpg" alt="配图2稠密 vs MoE 算力对比" loading="lazy"></p>
 
 <p>先看普通的稠密模型。它每吐一个字，全部参数都要过一遍，像全公司一起加班，不管这活跟谁有关系。</p>
 
@@ -98,6 +102,8 @@ MoE 模型：4000 亿参数，每次只激活 300 亿 → 容量更大，单次�
 <p>打个比方。稠密模型像一家所有人开大会的公司，每件小事全员到场。MoE 更像有分工的公司，前台先分诊，只叫相关部门。人数很多，每次动的是少数。</p>
 
 <h2 id="sec-3">为什么这两年突然火起来</h2>
+
+<p class="article-img"><img src="../assets/figures/what-is-moe-model/03-what-is-moe-model.jpg" alt="配图3推理成本与代价" loading="lazy"></p>
 
 <p>原因很现实：推理成本。训练贵是一次性的，推理贵是天天要付的。用户每问一句，厂商就按 <a href="what-is-token-ai.html">token 是什么意思</a> 结算一次电费和算力。</p>
 
@@ -122,6 +128,8 @@ MoE 模型：4000 亿参数，每次只激活 300 亿 → 容量更大，单次�
 <p>看到「万亿参数」四个字，先别急着换算成能力。这个数字说的是模型有多大，跟它每次用了多少是两回事。稠密的一千亿和 MoE 的一万亿，实际计算开销可能差不多。</p>
 
 <p>厂商愿意公布总参数，是因为这个数好看。你真正该关心的是激活参数、上下文长度和实际表现。选模型时别只盯着一个数，关键还是看 moe架构是什么带来的激活规模，以及它在你的任务上答得准不准。</p>
+
+<p class="article-img"><img src="../assets/figures/what-is-moe-model/04-what-is-moe-model.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

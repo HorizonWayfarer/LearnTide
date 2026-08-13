@@ -80,6 +80,8 @@
 
 <h2 id="sec-1">ai做数据分析：先想清楚要回答什么</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-data-analysis-report/01-ai-data-analysis-report.jpg" alt="配图1明确业务问题" loading="lazy"></p>
+
 <p>ai做数据分析，第一件事不是打开工具，而是把要回答的问题写下来。问题越具体，模型给的结论越能用。很多人一上来就把整张表丢过去，结果拿到一堆图表，却答不上老板那句「所以呢」。</p>
 
 <p>先把业务问题翻成数据问题。比如「上月哪类客户流失最多」比「帮我看看数据」强太多。你给的范围越窄，模型越不容易胡编。列成清单也行：要算什么指标、按什么维度拆、输出给谁看。</p>
@@ -87,6 +89,8 @@
 <p>模型的强项是整理和归纳，不是替你做业务判断。它算出「华东退货率最高」，合理解释仍要你拍板。把这一步留给真人，反而更稳。</p>
 
 <h2 id="sec-2">原始表格先整理成能喂的样子</h2>
+
+<p class="article-img"><img src="../assets/figures/ai-data-analysis-report/02-ai-data-analysis-report.jpg" alt="配图2原始表格清洗" loading="lazy"></p>
 
 <p>脏数据会直接带偏结论。上传前先把几件事做掉：表头要唯一、不要合并单元格、同一列单位要一致、空值要么填「无」要么整行删掉。</p>
 
@@ -97,6 +101,8 @@
 <p>列名也别用缩写。模型看到「amt」「qty」要猜含义，猜错结论就歪。改成「金额」「数量」这种直白写法，沟通成本最低。</p>
 
 <h2 id="sec-3">一条可直接复制的分析提示词</h2>
+
+<p class="article-img"><img src="../assets/figures/ai-data-analysis-report/03-ai-data-analysis-report.jpg" alt="配图3结构化提示词" loading="lazy"></p>
 
 <p>把表格内容贴进下面这段，按你的字段改括号里的词：</p>
 
@@ -112,6 +118,8 @@
 <p>跑完别急着复制。先读它给的「口径说明」，确认和你理解的一致。口径对不上，后面的图表再漂亮也没用。</p>
 
 <h2 id="sec-4">让结论能落地的几个检查</h2>
+
+<p class="article-img"><img src="../assets/figures/ai-data-analysis-report/04-ai-data-analysis-report.jpg" alt="配图4结论校验与落地" loading="lazy"></p>
 
 <p>拿到结果做三件事。第一，抽查一个数字，拿计算器或透视表手算一遍，确认模型没算错。第二，看它有没有把异常值当常态，比如某天销量是平时十倍，它有没有单独拎出来。</p>
 
@@ -130,6 +138,8 @@
 <p>给老板看时，先给结论再给图。他没空猜你想说啥，你把关键数字放最前面最省事。</p>
 
 <p>最后一步最该做：让模型把计算过程写给你看。看不懂的地方当场问，别把 ai做数据分析 当成黑盒直接交差。</p>
+
+<p class="article-img"><img src="../assets/figures/ai-data-analysis-report/05-ai-data-analysis-report.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

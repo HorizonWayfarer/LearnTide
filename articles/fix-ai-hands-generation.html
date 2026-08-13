@@ -84,9 +84,13 @@
 
 <h2 id="sec-1">AI 画手指崩坏怎么解决？先试第一层</h2>
 
+<p class="article-img"><img src="../assets/figures/fix-ai-hands-generation/01-fix-ai-hands-generation.jpg" alt="配图1负面提示词过滤" loading="lazy"></p>
+
 <p>AI 画手指崩坏怎么解决？很多人的答案是从负面提示词开始。这一层不花钱，不装插件，改一行字就行。先把最简单的试完，再谈换模型和局部重绘。四层方案逐层升级，别跳级。修手是个概率游戏，每一层只是提高成功率，不是保证百分百成功。所以先试成本最低的，成功率够了就不用往下走。</p>
 
 <h2 id="sec-2">第一层：加负面提示词——最简单但最有效</h2>
+
+<p class="article-img"><img src="../assets/figures/fix-ai-hands-generation/02-fix-ai-hands-generation.jpg" alt="配图2切换基础模型" loading="lazy"></p>
 
 <p>负面提示词就是告诉 AI 不要画什么。加一行，效果立竿见影。示例：</p>
 
@@ -97,9 +101,13 @@ malformed limbs, crossed fingers, mutated hands</code></pre>
 
 <h2 id="sec-3">第二层：换模型——有些模型天生手画得好</h2>
 
+<p class="article-img"><img src="../assets/figures/fix-ai-hands-generation/03-fix-ai-hands-generation.jpg" alt="配图3局部重绘遮罩" loading="lazy"></p>
+
 <p>负面提示词不够，就换模型。Juggernaut XL、DreamShaper XL 这类模型，手部表现更稳定。不用改提示词，模型本身对手指结构理解更好。AI 画手指崩坏怎么解决，换模型是第二步。下载时看模型主页的示例图，挑手部干净的那款。换模型成本也不高，多数模型免费下载，只是占硬盘空间。先备份现在用的模型，试完不满意再换回来。</p>
 
 <h2 id="sec-4">第三层：局部重绘（Inpainting）——重塑手部区域</h2>
+
+<p class="article-img"><img src="../assets/figures/fix-ai-hands-generation/04-fix-ai-hands-generation.jpg" alt="配图4专业插件与取舍" loading="lazy"></p>
 
 <p>局部重绘只改手部区域，不动整张图。操作分四步：遮罩手部、单独重绘、保持风格一致、反复抽卡。AI 画手指崩坏怎么解决，这层最可控。在 Stable Diffusion WebUI 里，用画笔涂住手部，重新生成一次。遮罩要盖住整只手，别只涂手指，边缘留一点余量，重绘出来的衔接才自然。实现细节可参考 <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui" target="_blank" rel="noopener">AUTOMATIC1111 WebUI</a>{:target=&quot;_blank&quot;}。</p>
 
@@ -112,6 +120,8 @@ malformed limbs, crossed fingers, mutated hands</code></pre>
 <p>不过先想清楚：手部不是画面重点，别修了。整体构图已经满意，裁剪或重新生成，比修手更快。想看更多出图思路，可以看免费 AI 做图工具横评、<a href="midjourney-prompt-tips.html">Midjourney 提示词怎么写</a>和<a href="jimeng-prompt-tips.html">即梦 AI 提示词技巧</a>，找工具回 <a href="../tools.html">AI 工具导航</a>。</p>
 
 <p>AI 画手指崩坏怎么解决？四层按顺序试，别一上来就上最难的。</p>
+
+<p class="article-img"><img src="../assets/figures/fix-ai-hands-generation/05-fix-ai-hands-generation.jpg" alt="尾图四层修复路径回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-06。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

@@ -80,6 +80,8 @@
 
 <h2 id="sec-1">ai处理pdf：先分清你要做的是哪件事</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-pdf-processing-guide/01-ai-pdf-processing-guide.jpg" alt="配图1拆分与文本识别基础" loading="lazy"></p>
+
 <p>ai处理pdf，最常做的就三件：拆分、提取、问答。动手前先想清楚你要的是哪一种，别一股脑把整本文件丢进去。</p>
 
 <p>拆分是把厚文件按章节或页码切成小份。提取是把里面的文字、表格、图片单独抠出来。问答是拿着全文问问题，让它替你找答案。</p>
@@ -90,6 +92,8 @@
 
 <h2 id="sec-2">提取文本与拆分页面的做法</h2>
 
+<p class="article-img"><img src="../assets/figures/ai-pdf-processing-guide/02-ai-pdf-processing-guide.jpg" alt="配图2结构化提取提示词" loading="lazy"></p>
+
 <p>先确认 PDF 是不是文字版。文字版能直接选中复制，扫描版看到的是图片，得先转成可搜文字，否则模型读不到内容。</p>
 
 <p>拆分用页码最稳。你说「第 3 到 12 页单独存一份」，工具按页切，不会把段落拦腰截断。按标题拆容易切歪，除非你确认每章都有统一前缀。</p>
@@ -99,6 +103,8 @@
 <p>提取完顺手数一下页数。原文件二十页，只提出来十八页，说明有两页它跳过了。</p>
 
 <h2 id="sec-3">一条可直接复制的提取提示词</h2>
+
+<p class="article-img"><img src="../assets/figures/ai-pdf-processing-guide/03-ai-pdf-processing-guide.jpg" alt="配图3长文档精准问答" loading="lazy"></p>
 
 <p>把下面这段和你的文件一起发过去：</p>
 
@@ -115,6 +121,8 @@
 <p>多页表格易被拦腰切断。告诉它「跨页表格合并到同一张」，能少很多手工拼回的活。</p>
 
 <h2 id="sec-4">长文档问答怎么不跑题</h2>
+
+<p class="article-img"><img src="../assets/figures/ai-pdf-processing-guide/04-ai-pdf-processing-guide.jpg" alt="配图4隐私脱敏与结果核对" loading="lazy"></p>
 
 <p>问具体比问笼统好。「第三章讲了哪三个风险」比「这文件说什么」强太多。范围越窄，它越不容易编。</p>
 
@@ -133,6 +141,8 @@
 <p>也别把整本扫描件直接喂问答。先提取关键页，再针对这几页问，答案更准也更省。</p>
 
 <p>最后一步最该做：拿到结果回原文件对一遍。别把 ai处理pdf 当全自动流水线，漏一页你就少一块信息。</p>
+
+<p class="article-img"><img src="../assets/figures/ai-pdf-processing-guide/05-ai-pdf-processing-guide.jpg" alt="尾图核心工作流回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

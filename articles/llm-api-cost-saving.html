@@ -80,6 +80,8 @@
 
 <h2 id="sec-1">大模型 API 怎么省钱：先搞清钱花在哪</h2>
 
+<p class="article-img"><img src="../assets/figures/llm-api-cost-saving/01-llm-api-cost-saving.jpg" alt="配图1先搞清钱花在哪" loading="lazy"></p>
+
 <p>大模型 API 怎么省钱，得先知道账单是怎么长出来的。API 调用成本怎么降，答案不在找更便宜的供应商，而在改自己的调用方式。</p>
 
 <p>钱主要吃在三处：输入太长、输出太啰嗦、同样的请求反复发。三处都能压，而且压下来的幅度往往比换供应商大。</p>
@@ -87,6 +89,8 @@
 <p>先做一件事：把最近一周的调用日志导出来，按输入长度和输出长度各排一次序。排完你大概率会发现，一小撮请求吃掉了大半预算。</p>
 
 <h2 id="sec-2">第一招：按任务分档选模型</h2>
+
+<p class="article-img"><img src="../assets/figures/llm-api-cost-saving/02-llm-api-cost-saving.jpg" alt="配图2按任务分档选模型" loading="lazy"></p>
 
 <p>同一套业务里，不是每个环节都需要最强的模型。</p>
 
@@ -105,6 +109,8 @@
 
 <h2 id="sec-3">第二招：把喂进去的内容压下来</h2>
 
+<p class="article-img"><img src="../assets/figures/llm-api-cost-saving/03-llm-api-cost-saving.jpg" alt="配图3把喂进去的内容压下来" loading="lazy"></p>
+
 <p>大模型 token 怎么省，重点在输入侧。多数人省的是输出，其实输入才是大头。</p>
 
 <p>三个具体做法。第一，别把整份文档塞进去，先检索出相关段落再喂。第二，多轮对话别每次都带全量历史，保留最近几轮加一段摘要就够。第三，提示词里的说明写一次，别在每条示例前重复。</p>
@@ -112,6 +118,8 @@
 <p>系统提示词也要瘦身。写了两千字的角色设定，每次调用都在为这两千字付钱。留下真正影响输出的部分，其余删掉。</p>
 
 <h2 id="sec-4">第三招：管住输出长度</h2>
+
+<p class="article-img"><img src="../assets/figures/llm-api-cost-saving/04-llm-api-cost-saving.jpg" alt="配图4管住输出长度" loading="lazy"></p>
 
 <p>输出通常比输入贵，所以这一刀切下去最见效。</p>
 
@@ -129,6 +137,8 @@
 
 <h2 id="sec-5">第四招：复用缓存，别省过头</h2>
 
+<p class="article-img"><img src="../assets/figures/llm-api-cost-saving/05-llm-api-cost-saving.jpg" alt="配图5复用缓存，别省过头" loading="lazy"></p>
+
 <p>同样的请求反复发，是最冤枉的开销。</p>
 
 <p>常见的两层缓存：一层在你自己这边，把问题和答案存起来，命中就不发请求；一层在供应商那边，相同的前缀会按更低的价格计费，所以要把固定内容放在提示词最前面，变动的部分放后面。</p>
@@ -138,6 +148,8 @@
 [变动] 用户这次的问题             ← 放后面</code></pre>
 
 <p>API 费用优化方法讲完了，最后说反面。别为了省钱把该给的资料删掉，模型少了关键信息就会瞎猜，返工一次比省下的贵。也别把所有环节都换成最小的模型，质量掉下去，人工兜底的时间成本远高于那点差价。省钱的前提是活儿还能干好，这才是大模型 API 怎么省钱的正确答案。</p>
+
+<p class="article-img"><img src="../assets/figures/llm-api-cost-saving/06-llm-api-cost-saving.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

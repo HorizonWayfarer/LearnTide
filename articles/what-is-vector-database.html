@@ -80,11 +80,15 @@
 
 <h2 id="sec-1">向量数据库是什么：存的是意思</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-vector-database/01-what-is-vector-database.jpg" alt="配图1存的是意思" loading="lazy"></p>
+
 <p>向量数据库是什么？一句话，它把一段文字、一张图或一段音频，转成一长串数字，这串数字叫向量。意思相近的内容，数字也彼此靠近。检索时不比字面，比的是这串数字在空间里的距离。</p>
 
 <p>举个例子。你搜「水果公司」，普通搜索大概率一无所获。向量库却能把讲苹果、讲 iPhone 的段落捞出来，因为在数字空间里，它们离得很近。</p>
 
 <h2 id="sec-2">它和普通数据库差在哪</h2>
+
+<p class="article-img"><img src="../assets/figures/what-is-vector-database/02-what-is-vector-database.jpg" alt="配图2它和普通数据库差在哪" loading="lazy"></p>
 
 <p>普通数据库擅长精确匹配。你查订单号，它一条不差地给你。你查「苹果」，只找带这两个字的行。规则清楚，结果可复现。</p>
 
@@ -99,6 +103,8 @@
 
 <h2 id="sec-3">为什么大模型离不开它</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-vector-database/03-what-is-vector-database.jpg" alt="配图3为什么大模型离不开它" loading="lazy"></p>
+
 <p>模型的训练数据里没有你公司的合同，也没有你去年的会议纪要。你直接问，它只能编。这类边界，可以对照 <a href="what-is-llm-explained.html">大模型是什么</a> 一起看。</p>
 
 <p>把这些文档切成小段，逐段转成向量存进库里。用户提问时，先拿问题去库里捞出最相关的几段，再连同问题一起交给模型作答。这整套流程，就是 <a href="what-is-rag-explained.html">RAG 是什么</a> 的骨架，向量库负责其中管记忆的那一半。</p>
@@ -109,6 +115,8 @@
 
 <h2 id="sec-4">常见用法和踩坑点</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-vector-database/04-what-is-vector-database.jpg" alt="配图4常见用法和踩坑点" loading="lazy"></p>
+
 <p>企业知识库问答、个人笔记检索、客服调历史工单、代码库搜索，都是常见去处。</p>
 
 <p>坑也集中在几处。切段太长，捞回来的内容夹着大量噪声。切段太短，上下文断裂，模型看不懂。资料过期或前后打架，检索再准也没用，模型会照着错的说。最容易翻车的一点：入库和检索用的向量模型必须是同一个，换了就对不上。</p>
@@ -117,9 +125,13 @@
 
 <h2 id="sec-5">别以为模型什么都知道</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-vector-database/05-what-is-vector-database.jpg" alt="配图5别以为模型什么都知道" loading="lazy"></p>
+
 <p>一个接了向量库的助手看起来很懂你，其实它只是查得快。库里没有的东西，它照样答不上来，或者干脆猜一个给你。</p>
 
 <p>所以别把它当成无所不知的专家，也别把资料一股脑倒进去了事。它能不能答准你的私活，关键看向量数据库是什么、以及你喂进去的那批资料干不干净、新不新。</p>
+
+<p class="article-img"><img src="../assets/figures/what-is-vector-database/06-what-is-vector-database.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

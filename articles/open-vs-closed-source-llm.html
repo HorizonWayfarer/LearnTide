@@ -80,11 +80,15 @@
 
 <h2 id="sec-1">开源模型和闭源模型区别：先用一句话说清</h2>
 
+<p class="article-img"><img src="../assets/figures/open-vs-closed-source-llm/01-open-vs-closed-source-llm.jpg" alt="配图1权重开不开，决定你能做什么" loading="lazy"></p>
+
 <p>开源模型和闭源模型区别在哪？关键只看一件事：权重开不开放。闭源只给你一个接口，参数握在厂商手里。开源把权重公开，你能下载、能自己跑、能改。前者是买服务，后者是把东西搬回家自己折腾。</p>
 
 <p>这条线一划，后面所有差异都跟着来。谁掌握数据、谁承担算力、谁能动模型本身。想先补底层概念，看 <a href="what-is-llm-explained.html">大模型是什么</a> 更省事。</p>
 
 <h2 id="sec-2">权重开不开，决定了你能做什么</h2>
+
+<p class="article-img"><img src="../assets/figures/open-vs-closed-source-llm/02-open-vs-closed-source-llm.jpg" alt="配图2可控性、隐私与合规的取舍" loading="lazy"></p>
 
 <p>闭源模型能调温度参数、能写系统提示词，但改不动内部。厂商升级一版，你的输出效果就跟着变。好坏都得接着。</p>
 
@@ -97,6 +101,8 @@
 
 <h2 id="sec-3">可控性、隐私与合规的取舍</h2>
 
+<p class="article-img"><img src="../assets/figures/open-vs-closed-source-llm/03-open-vs-closed-source-llm.jpg" alt="配图3成本账该怎么算" loading="lazy"></p>
+
 <p>闭源省心。打开就能用，算力、扩容、更新都归厂商管。代价是提示词和资料要发到外部，敏感行业往往过不了内部审查。</p>
 
 <p>开源能把数据锁在内网。医疗、金融、政务这类场景，这一条常常是硬指标，谈不上加分。麻烦在于安全补丁、访问控制、日志留存，全得自己扛。</p>
@@ -104,6 +110,8 @@
 <ul><li>数据不敏感、要快上线：闭源</li><li>资料一步都不能出内网：开源</li><li>要改模型行为、要锁版本：开源</li><li>团队没有运维、没有显卡：闭源</li></ul>
 
 <h2 id="sec-4">成本账该怎么算</h2>
+
+<p class="article-img"><img src="../assets/figures/open-vs-closed-source-llm/04-open-vs-closed-source-llm.jpg" alt="配图4按场景选，别按榜单排名选" loading="lazy"></p>
 
 <p>闭源按调用量计费。用量小的时候很便宜，量一大就开始心疼。开源前期投入重，服务器、显卡、人力都要摊进去，之后边际成本很低。</p>
 
@@ -118,6 +126,8 @@
 <p>也别默认开源就更省钱。小团队一整年的调用量，可能还抵不上一张显卡的价格。反过来同样成立，别默认闭源就不安全，正规厂商大多提供企业级隔离方案。</p>
 
 <p>榜单先放一边。分数高不等于适合你的业务，测评题目和真实任务经常对不上。真正该盯的是开源模型和闭源模型区别里那几条取舍：数据去哪、谁来运维、这笔账三年后怎么算。</p>
+
+<p class="article-img"><img src="../assets/figures/open-vs-closed-source-llm/05-open-vs-closed-source-llm.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

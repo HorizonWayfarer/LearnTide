@@ -80,11 +80,15 @@
 
 <h2 id="sec-1">什么是 function calling：模型只负责下单</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/01-what-is-function-calling.jpg" alt="配图1模型只负责下单" loading="lazy"></p>
+
 <p>什么是 function calling？中文一般译成函数调用或者工具调用。它指的是模型判断这句话该用哪个外部功能、该填什么参数，然后把这份意图交给程序去执行。</p>
 
 <p>关键在于分工。模型出意图，程序动手。它不亲自联网，也不亲自读文件，它只会说：请调用查天气这个功能，城市填杭州。</p>
 
 <h2 id="sec-2">一次完整的调用长什么样</h2>
+
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/02-what-is-function-calling.jpg" alt="配图2一次完整调用流程" loading="lazy"></p>
 
 <p>流程分四步。开发者先把可用工具告诉模型，包括名字、用途和参数格式。用户提问后，模型判断要不要用工具、用哪一个。</p>
 
@@ -101,6 +105,8 @@
 
 <h2 id="sec-3">函数调用是什么意思，和联网搜索的关系</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/03-what-is-function-calling.jpg" alt="配图3联网搜索与工具调用" loading="lazy"></p>
+
 <p>你在对话框里看到的联网搜索，多数就是这套机制的一种包装。搜索被写成一个工具，模型觉得需要就调，不需要就直接答。</p>
 
 <p>同理还有画图、跑代码、读取文档。表面上功能各不相同，底下都是同一套「声明工具、模型挑、程序跑、结果回喂」。</p>
@@ -111,6 +117,8 @@
 
 <h2 id="sec-4">工具调用和插件的关系</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/04-what-is-function-calling.jpg" alt="配图4工具调用与插件的关系" loading="lazy"></p>
+
 <p>插件是这套能力的产品化外壳。平台把一组功能打包，配上说明和权限开关，用户点一下就能启用，看不到底层那张单子。</p>
 
 <p>三者的层次可以这么排：函数调用是底层机制，插件是给普通用户的封装，智能体则在上面再加一层自主决策，让模型自己决定连续调几次、什么时候收工。</p>
@@ -119,6 +127,8 @@
 
 <h2 id="sec-5">别指望它永远选对工具</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/05-what-is-function-calling.jpg" alt="配图5常见翻车场景" loading="lazy"></p>
+
 <p>常见的翻车有三类。一是该调不调，模型凭记忆自信作答；二是不该调乱调，一句闲聊也去搜一圈，慢且费钱；三是参数填错，日期差一天、单位对不上、城市写成了拼音。</p>
 
 <p>工具描述写得含糊，这三类都更容易发生。名字、用途、参数说明写清楚，比在提示词里反复叮嘱管用得多。</p>
@@ -126,6 +136,8 @@
 <p>还有一条：工具执行失败时，要给模型一条明确的错误信息。收到空结果它容易顺着往下编，看起来还挺像回事。</p>
 
 <p>别让它对着空结果自由发挥，这是弄懂什么是 function calling 之后最该守住的一条。</p>
+
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/06-what-is-function-calling.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

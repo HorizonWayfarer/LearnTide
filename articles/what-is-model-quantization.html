@@ -80,11 +80,15 @@
 
 <h2 id="sec-1">什么是模型量化：把参数从高精度压到低精度</h2>
 
+<p class="article-img"><img src="../assets/figures/what-is-model-quantization/01-what-is-model-quantization.jpg" alt="配图1高精度变低精度" loading="lazy"></p>
+
 <p>什么是模型量化？简单讲，就是把模型里的参数换一种更省地方的方式记下来。原来一个参数用两个字节存。压到四位之后只要半个字节，文件体积直接缩到四分之一。量化不改变模型结构，只改变数值的存法。</p>
 
 <p>这就是普通电脑能跑开源模型的关键。没有量化，一个七十亿参数的模型要十几 GB 显存起步；量化到四位，五六 GB 的显卡也能带得动。</p>
 
 <h2 id="sec-2">为什么压完还能用</h2>
+
+<p class="article-img"><img src="../assets/figures/what-is-model-quantization/02-what-is-model-quantization.jpg" alt="配图2精度容忍度" loading="lazy"></p>
 
 <p>听起来像有损压缩，事实也差不多。但模型对精度的容忍度比想象中高。</p>
 
@@ -93,6 +97,8 @@
 <p>还有一层是计算。有的方案只压存储，算的时候再还原成高精度；有的连计算也用低精度做，速度收益更大，风险也更大。</p>
 
 <h2 id="sec-3">常见档位怎么选</h2>
+
+<p class="article-img"><img src="../assets/figures/what-is-model-quantization/03-what-is-model-quantization.jpg" alt="配图3常见档位选择" loading="lazy"></p>
 
 <p>同一个模型往往会放出好几个量化版本，名字里带着 Q4、Q8 这类标记。挑的时候盯两件事：你的显存有多大，任务对准确度有多敏感。</p>
 
@@ -103,6 +109,8 @@ INT4    4 位整数   7B 约  4 GB   损失可感知，胜在跑得起来</code>
 <p>经验上，八位是安全档，日常闲聊、改写、翻译基本看不出区别。四位是性价比档。显存紧张时的默认选择。再往下压到三位、两位，退化就明显了，只适合尝鲜。</p>
 
 <h2 id="sec-4">效果会掉多少</h2>
+
+<p class="article-img"><img src="../assets/figures/what-is-model-quantization/04-what-is-model-quantization.jpg" alt="配图4效果差异" loading="lazy"></p>
 
 <p>这是最多人关心的问题。答案分任务看。</p>
 
@@ -119,6 +127,8 @@ INT4    4 位整数   7B 约  4 GB   损失可感知，胜在跑得起来</code>
 <p>第三，显存刚好卡在边缘时别硬上。系统和对话内容也要占地方。留不出余量的话，跑着跑着就会变得极慢。宁可退一档。</p>
 
 <p>手机和轻薄本上跑的端侧模型，几乎都做过量化处理，这是它们能装进设备的前提。不要因为看到「压缩」两个字就先入为主地否定它。搞清楚什么是模型量化，你才知道自己那台机器到底能跑到哪一档。</p>
+
+<p class="article-img"><img src="../assets/figures/what-is-model-quantization/05-what-is-model-quantization.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 
