@@ -80,7 +80,7 @@
 
 <h2 id="sec-1">大模型怎么训练出来的：三步走完的一条流水线</h2>
 
-<p class="article-img"><img src="../assets/figures/how-llm-is-trained/01-how-llm-is-trained.jpg" alt="配图1预训练：猜下一个字" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-llm-is-trained/01-how-llm-is-trained.jpg" alt="配图1预训练：猜下一个字" loading="lazy" fetchpriority="high" decoding="async"></p>
 
 <p>大模型怎么训练出来的？说白了是一条三步流水线。先预训练，再微调，最后对齐。三步用的数据不同，教给模型的东西也不同。</p>
 
@@ -88,7 +88,7 @@
 
 <h2 id="sec-2">第一步预训练：把语言规律读出来</h2>
 
-<p class="article-img"><img src="../assets/figures/how-llm-is-trained/02-how-llm-is-trained.jpg" alt="配图2指令微调：学会作答" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-llm-is-trained/02-how-llm-is-trained.jpg" alt="配图2指令微调：学会作答" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>预训练是最费钱的一段。模型要读进海量文本，网页、书籍、代码都有。它做的事只有一件：看着前面的字，猜下一个字是什么。猜错了就调一点内部的数值。然后再猜。</p>
 
@@ -98,7 +98,7 @@
 
 <h2 id="sec-3">第二步微调：学会听懂人话</h2>
 
-<p class="article-img"><img src="../assets/figures/how-llm-is-trained/03-how-llm-is-trained.jpg" alt="配图3对齐训练：知道该说什么" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-llm-is-trained/03-how-llm-is-trained.jpg" alt="配图3对齐训练：知道该说什么" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>接下来是指令微调。人工写好一批「问题—标准回答」的样本，让模型照着学。样本量比预训练小得多。几万到几十万条就够。</p>
 
@@ -126,7 +126,7 @@
 
 <p>所以别把模型当成一本随时更新的百科。它更接近一个读过很多书、又被训练过说话方式的人。知道大模型怎么训练出来的，你就不会再对它的错误感到意外。</p>
 
-<p class="article-img"><img src="../assets/figures/how-llm-is-trained/04-how-llm-is-trained.jpg" alt="尾图三步总结" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-llm-is-trained/04-how-llm-is-trained.jpg" alt="尾图三步总结" loading="lazy" fetchpriority="low" decoding="async"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

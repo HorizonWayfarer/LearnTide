@@ -89,6 +89,26 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
+def picture_tag(src_jpg, alt, extra_attrs=""):
+    """生成 <picture> 标签：WebP 优先，JPEG 兜底。
+
+    当 src_jpg 以 .jpg/.jpeg 结尾时，生成 <source type="image/webp"> + <img fallback>；
+    否则直接返回裸 <img>（已经是 WebP 等非 JPEG 格式，无需转换）。
+    extra_attrs: 附加到 <img> 上的属性字符串。
+    """
+    low = src_jpg.lower()
+    if low.endswith((".jpg", ".jpeg")):
+        webp_src = src_jpg.rsplit(".", 1)[0] + ".webp"
+        return (
+            '<picture>'
+            '<source srcset="%s" type="image/webp">'
+            '<img src="%s" alt="%s" %s>'
+            '</picture>'
+            % (esc(webp_src), esc(src_jpg), esc(alt), extra_attrs)
+        )
+    return '<img src="%s" alt="%s" %s>' % (esc(src_jpg), esc(alt), extra_attrs)
+
+
 def cjk_count(text):
     """统计中文字数——字数达标校验用。"""
     return len(CJK_RE.findall(text))
@@ -210,6 +230,7 @@ def md_to_html(body):
     lines = body.split("\n")
     out, sections = [], []
     i, n = 0, len(lines)
+    img_count = 0  # 文章内图片计数器
 
     while i < n:
         s = lines[i].strip()
@@ -223,9 +244,12 @@ def md_to_html(body):
         m = re.match(r"^!\[([^\]]*)\]\(([^)\s]+)\)\s*$", s)
         if m:
             alt, src = m.group(1), m.group(2)
+            img_count += 1
+            # 第一张图（封面）高优先级，其余低优先级
+            priority = "high" if img_count == 1 else "low"
             out.append(
-                '<p class="article-img"><img src="%s" alt="%s" loading="lazy"></p>'
-                % (esc(src), esc(alt))
+                '<p class="article-img">%s</p>'
+                % picture_tag(src, alt, 'loading="lazy" fetchpriority="%s" decoding="async"' % priority)
             )
             i += 1
             continue

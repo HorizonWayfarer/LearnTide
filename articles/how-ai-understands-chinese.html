@@ -80,7 +80,7 @@
 
 <h2 id="sec-1">AI 怎么理解中文：先切块，再编号</h2>
 
-<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/01-how-ai-understands-chinese.jpg" alt="配图1句子切块与编号" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/01-how-ai-understands-chinese.jpg" alt="配图1句子切块与编号" loading="lazy" fetchpriority="high" decoding="async"></p>
 
 <p>AI 怎么理解中文，第一步和理解英文没什么两样：把句子切成一段段小片段，每段查表换成一个编号，再把这串编号交给模型算。</p>
 
@@ -90,7 +90,7 @@
 
 <h2 id="sec-2">词表是怎么定下来的</h2>
 
-<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/02-how-ai-understands-chinese.jpg" alt="配图2词表构建与切分对比" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/02-how-ai-understands-chinese.jpg" alt="配图2词表构建与切分对比" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>中文tokenizer是什么，看它的词表怎么造出来最清楚。</p>
 
@@ -111,7 +111,7 @@
 
 <h2 id="sec-3">中文为什么更费额度</h2>
 
-<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/03-how-ai-understands-chinese.jpg" alt="配图3中文费额度对比" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/03-how-ai-understands-chinese.jpg" alt="配图3中文费额度对比" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>英文里一个常见单词往往就是一段。中文常常一两个字就占一段，同样信息量，切出来的段数更多。</p>
 
@@ -125,7 +125,7 @@
 
 <h2 id="sec-4">生僻字、错别字和火星文</h2>
 
-<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/04-how-ai-understands-chinese.jpg" alt="配图4生僻字与火星文的影响" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/04-how-ai-understands-chinese.jpg" alt="配图4生僻字与火星文的影响" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>词表里没有的内容，会被拆成更碎的单位，甚至退到字节级别。一个生僻字可能占掉两三段。</p>
 
@@ -137,7 +137,7 @@
 
 <h2 id="sec-5">别只按字数估算长度</h2>
 
-<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/05-how-ai-understands-chinese.jpg" alt="配图5字数与段数估算提示" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/05-how-ai-understands-chinese.jpg" alt="配图5字数与段数估算提示" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>很多人拿字符数直接当额度用，结果不是超了就是留了太多冗余。中英混排、代码片段、表格符号，换算比例都不一样。</p>
 
@@ -145,7 +145,7 @@
 
 <p>最后一条提醒：涉及关键人名、编号、金额的内容，别指望模型自动纠错。想弄明白 ai怎么理解中文，先记住它读的从来不是字，是片段。</p>
 
-<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/06-how-ai-understands-chinese.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/how-ai-understands-chinese/06-how-ai-understands-chinese.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

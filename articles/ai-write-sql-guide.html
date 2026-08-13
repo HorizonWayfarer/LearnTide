@@ -80,7 +80,7 @@
 
 <h2 id="sec-1">ai写sql：先把想要的结果说清楚</h2>
 
-<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/01-ai-write-sql-guide.jpg" alt="配图1明确查询三要素" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/01-ai-write-sql-guide.jpg" alt="配图1明确查询三要素" loading="lazy" fetchpriority="high" decoding="async"></p>
 
 <p>ai写sql，不会写代码也能从数据库里把数取出来。关键不是让模型替你想业务逻辑，而是你把想要的结果讲清楚，它负责翻成查询语句。</p>
 
@@ -92,7 +92,7 @@
 
 <h2 id="sec-2">给模型的自然语言怎么写</h2>
 
-<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/02-ai-write-sql-guide.jpg" alt="配图2自然语言转提示词" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/02-ai-write-sql-guide.jpg" alt="配图2自然语言转提示词" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>把需求写成「主语 + 条件 + 动作」。比如「从订单表取上月、状态为已付款、按城市分组算总额」。这种写法模型几乎一次就能翻对。</p>
 
@@ -104,7 +104,7 @@
 
 <h2 id="sec-3">一条可直接复制的取数提示词</h2>
 
-<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/03-ai-write-sql-guide.jpg" alt="配图3结果校验与抽样" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/03-ai-write-sql-guide.jpg" alt="配图3结果校验与抽样" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>把下面这段发给模型，替换括号里的内容：</p>
 
@@ -123,7 +123,7 @@
 
 <h2 id="sec-4">结果对不对的几个检查</h2>
 
-<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/04-ai-write-sql-guide.jpg" alt="配图4排错与最终交付" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/04-ai-write-sql-guide.jpg" alt="配图4排错与最终交付" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>第一招是 LIMIT 先看几行。先别跑全量，加一句 LIMIT 20，肉眼确认字段和数值像不像那么回事。</p>
 
@@ -143,7 +143,7 @@
 
 <p>最后一步最该做：结果出来先手算抽查，再决定能不能直接交。别把 ai写sql 当成免检通道，数错了背锅的是你。</p>
 
-<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/05-ai-write-sql-guide.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/ai-write-sql-guide/05-ai-write-sql-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

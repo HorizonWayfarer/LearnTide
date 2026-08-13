@@ -80,7 +80,7 @@
 
 <h2 id="sec-1">知识截止日期是什么：模型的记忆停在那一天</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/01-what-is-knowledge-cutoff.jpg" alt="配图1模型训练的数据冻结" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/01-what-is-knowledge-cutoff.jpg" alt="配图1模型训练的数据冻结" loading="lazy" fetchpriority="high" decoding="async"></p>
 
 <p>知识截止日期是什么？它指的是模型训练时用的资料，最晚收集到哪一天。这一天之后发生的事，模型没读过，也就无从知道。</p>
 
@@ -88,7 +88,7 @@
 
 <h2 id="sec-2">它为什么会存在</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/02-what-is-knowledge-cutoff.jpg" alt="配图2自信编造的错误答案" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/02-what-is-knowledge-cutoff.jpg" alt="配图2自信编造的错误答案" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>根子在训练方式上。一个大模型要先把海量文本读一遍，把语言规律压进参数里，这个过程动辄几个月。开训之前，语料得先冻结，不然边训边变根本没法收敛。</p>
 
@@ -98,7 +98,7 @@
 
 <h2 id="sec-3">比不知道更麻烦的是自信地编</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/03-what-is-knowledge-cutoff.jpg" alt="配图3三个绕开办法" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/03-what-is-knowledge-cutoff.jpg" alt="配图3三个绕开办法" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>如果它老老实实说不知道，倒也省事。麻烦在于，模型的本能是接着往下写。碰到没见过的事，它会按语言规律拼出一个看着像模像样的答案。</p>
 
@@ -108,7 +108,7 @@
 
 <h2 id="sec-4">三个绕开它的办法</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/04-what-is-knowledge-cutoff.jpg" alt="配图4联网搜索的局限" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/04-what-is-knowledge-cutoff.jpg" alt="配图4联网搜索的局限" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>第一个是开联网搜索。模型先去查，再基于查到的内容作答，还会附上出处。这是目前最省事的做法。</p>
 
@@ -133,7 +133,7 @@
 
 <p>把这条边界记在心里，你就不会再指望它天然懂最新的事。知识截止日期是什么，说到底是提醒你：新信息得由你来递。</p>
 
-<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/05-what-is-knowledge-cutoff.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-knowledge-cutoff/05-what-is-knowledge-cutoff.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

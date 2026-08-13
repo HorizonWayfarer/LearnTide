@@ -80,7 +80,7 @@
 
 <h2 id="sec-1">什么是 function calling：模型只负责下单</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-function-calling/01-what-is-function-calling.jpg" alt="配图1模型只负责下单" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/01-what-is-function-calling.jpg" alt="配图1模型只负责下单" loading="lazy" fetchpriority="high" decoding="async"></p>
 
 <p>什么是 function calling？中文一般译成函数调用或者工具调用。它指的是模型判断这句话该用哪个外部功能、该填什么参数，然后把这份意图交给程序去执行。</p>
 
@@ -88,7 +88,7 @@
 
 <h2 id="sec-2">一次完整的调用长什么样</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-function-calling/02-what-is-function-calling.jpg" alt="配图2一次完整调用流程" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/02-what-is-function-calling.jpg" alt="配图2一次完整调用流程" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>流程分四步。开发者先把可用工具告诉模型，包括名字、用途和参数格式。用户提问后，模型判断要不要用工具、用哪一个。</p>
 
@@ -105,7 +105,7 @@
 
 <h2 id="sec-3">函数调用是什么意思，和联网搜索的关系</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-function-calling/03-what-is-function-calling.jpg" alt="配图3联网搜索与工具调用" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/03-what-is-function-calling.jpg" alt="配图3联网搜索与工具调用" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>你在对话框里看到的联网搜索，多数就是这套机制的一种包装。搜索被写成一个工具，模型觉得需要就调，不需要就直接答。</p>
 
@@ -117,7 +117,7 @@
 
 <h2 id="sec-4">工具调用和插件的关系</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-function-calling/04-what-is-function-calling.jpg" alt="配图4工具调用与插件的关系" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/04-what-is-function-calling.jpg" alt="配图4工具调用与插件的关系" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>插件是这套能力的产品化外壳。平台把一组功能打包，配上说明和权限开关，用户点一下就能启用，看不到底层那张单子。</p>
 
@@ -127,7 +127,7 @@
 
 <h2 id="sec-5">别指望它永远选对工具</h2>
 
-<p class="article-img"><img src="../assets/figures/what-is-function-calling/05-what-is-function-calling.jpg" alt="配图5常见翻车场景" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/05-what-is-function-calling.jpg" alt="配图5常见翻车场景" loading="lazy" fetchpriority="low" decoding="async"></p>
 
 <p>常见的翻车有三类。一是该调不调，模型凭记忆自信作答；二是不该调乱调，一句闲聊也去搜一圈，慢且费钱；三是参数填错，日期差一天、单位对不上、城市写成了拼音。</p>
 
@@ -137,7 +137,7 @@
 
 <p>别让它对着空结果自由发挥，这是弄懂什么是 function calling 之后最该守住的一条。</p>
 
-<p class="article-img"><img src="../assets/figures/what-is-function-calling/06-what-is-function-calling.jpg" alt="尾图核心要点回顾" loading="lazy"></p>
+<p class="article-img"><img src="../assets/figures/what-is-function-calling/06-what-is-function-calling.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 
