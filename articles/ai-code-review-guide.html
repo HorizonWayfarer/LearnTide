@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 代码审查怎么用？让模型替你挑隐患与坏味道 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-code-review-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 代码审查，把改动丢给模型，它帮你找空指针、资源泄漏和坏味道。本文讲清该喂什么上下文、怎么让它按团队规范评、哪些问题它看不准，以及团队怎么把它接进日常流程。">
+<meta property="og:title" content="AI 代码审查怎么用？让模型替你挑隐患与坏味道">
+<meta property="og:description" content="AI 代码审查，把改动丢给模型，它帮你找空指针、资源泄漏和坏味道。本文讲清该喂什么上下文、怎么让它按团队规范评、哪些问题它看不准，以及团队怎么把它接进日常流程。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-code-review-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 代码审查怎么用？让模型替你挑隐患与坏味道">
+<meta name="twitter:description" content="AI 代码审查，把改动丢给模型，它帮你找空指针、资源泄漏和坏味道。本文讲清该喂什么上下文、怎么让它按团队规范评、哪些问题它看不准，以及团队怎么把它接进日常流程。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做代码审查：让模型替你挑毛病",
+  "description":"AI 代码审查，把改动丢给模型，它帮你找空指针、资源泄漏和坏味道。本文讲清该喂什么上下文、怎么让它按团队规范评、哪些问题它看不准，以及团队怎么把它接进日常流程。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-14","dateModified":"2026-08-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-code-review-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做代码审查：让模型替你挑毛病"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 做代码审查：让模型替你挑毛病</h1>
+    <p class="lede">提交前让 AI 先扫一遍代码，空指针、资源没关、命名混乱都能被它点出来，比人眼快得多。</p>
+    <div class="article-meta">更新于 2026-08-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做代码审查：让模型替你挑毛病</span>
+  </nav>
+
+<h2 id="sec-1">AI 代码审查是什么：一句话解释</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/01-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/01-ai-code-review-guide.jpg" alt="配图1AI 代码审查：模型替你读改动" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 代码审查，就是把你刚写的改动贴给大模型，让它像经验丰富的同事那样挑问题。空指针、资源没释放、异常处理缺失、命名混乱，这些它都能较快点出来。</p>
+
+<p>它和<a href="ai-debug-code-guide.html">AI 调试代码</a>互补：调试是出了问题去查，审查是出问题前去防。审查做得好，后面返工少。现在<a href="free-ai-code-completion-tools.html">免费 AI 补全工具</a>很多，审查也大多免费档就够用。</p>
+
+<h2 id="sec-2">该喂给它的三样上下文</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/02-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/02-ai-code-review-guide.jpg" alt="配图2要喂的三样：改动/背景/规范" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一样是改动本身。把新增和修改的函数完整贴出来，别只贴片段，片段会让它误判上下文。</p>
+
+<p>第二样是背景。这段代码服务于哪个功能、调用方是谁、有没有性能要求。背景越清楚，它提的建议越贴地。</p>
+
+<p>第三样是规范。你们团队的命名习惯、禁止的用法、必须处理的错误码。没有规范，它容易按自己的口味挑刺。</p>
+
+<pre><code>请你以资深后端工程师身份审查以下改动：
+1 指出可能的空指针、资源泄漏、并发问题
+2 检查异常处理是否完整
+3 按我们的规范：变量用驼峰，禁止吞掉异常
+只列问题并给修改建议，不要重写全部代码。</code></pre>
+
+<h2 id="sec-3">让它按你们的规范来评</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/03-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/03-ai-code-review-guide.jpg" alt="配图3按规范打分而非凭口味" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>把审查意见按严重度排序，先处理会出事故的，再管风格与命名，节奏才不会乱。</p>
+
+<p>光说「帮我看看」会得到一堆泛泛而谈。把规范写进去，它就从「挑口味」变成「按标准查」，输出才有可操作性。</p>
+
+<p>在<a href="cursor-beginner-tutorial.html">Cursor 入门教程</a>里也能把审查步骤接进编辑器，保存时自动跑一轮。团队可以把规范存成固定提示词，每次复用。</p>
+
+<p>记住一点：它的建议是参考，不是命令。你觉得不对，就跳过。审查的目的是多一双眼睛，不是让模型替你拍板。</p>
+
+<h2 id="sec-4">哪些问题它看不准</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.jpg" alt="配图4它看不准的：业务/并发/安全" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>业务正确性它常看走眼。它不知道你们这条优惠规则的特殊边界，逻辑对不对还得你判断。</p>
+
+<p>并发和竞态它也难稳。单看一段代码发现不了多线程下的时序问题，这类要靠测试和评审。</p>
+
+<p>安全漏洞更不能全信它。它或许能指出明显的注入点，但深度审计得靠专业工具。<a href="github-copilot-worth-buying.html">GitHub Copilot 值不值</a>里也提到，补全和审查都只是辅助。</p>
+
+<h2 id="sec-5">团队怎么把它接进流程</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.jpg" alt="配图5接进流程：预提交/PR/记录" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>最轻量的接法是预提交钩子。每次提交前本地跑一轮，把明显问题拦在出门前，不占用别人时间。</p>
+
+<p>进阶是接进拉取请求。它自动对改动发评论， reviewer 先看 AI 标红处，省掉重复劳动。</p>
+
+<p>记得把误报记下来。哪些它总误报，就写进规范黑名单，下次自动忽略，审查才越用越准。</p>
+
+<p>还有一个常见误用：把 AI 的标红直接当结论贴进评审系统。它给的是线索不是定论，你逐条人眼确认，对的采纳、错的驳回并记一笔，团队经验才越攒越厚。报告里最好标「置信度」，哪些它很确定、哪些只是猜测，分得清， reviewer 才不浪费时间。</p>
+
+<p>别把 AI 的审查结论当成免检章。AI 代码审查帮你省下重复劳动，但代码能不能上线，最终签字的人还是你。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/06-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/06-ai-code-review-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-debug-code-guide.html">AI 调试代码</a></li>
+      <li><a href="free-ai-code-completion-tools.html">免费 AI 补全工具</a></li>
+      <li><a href="cursor-beginner-tutorial.html">Cursor 入门教程</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="github-copilot-worth-buying.html">GitHub Copilot 值不值</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 代码审查是什么：一句话解释</a></li>
+      <li><a href="#sec-2">该喂给它的三样上下文</a></li>
+      <li><a href="#sec-3">让它按你们的规范来评</a></li>
+      <li><a href="#sec-4">哪些问题它看不准</a></li>
+      <li><a href="#sec-5">团队怎么把它接进流程</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

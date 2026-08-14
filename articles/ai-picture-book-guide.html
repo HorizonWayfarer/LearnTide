@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 做绘本怎么做？从故事文案到插图一次成型 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-picture-book-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 做绘本，给出故事大纲，模型帮你写分镜文案并配统一风格的插图。本文讲清怎么定画风、控角色一致、内容把关别省，以及导出与打印时要注意的实用要点，做更放心的读物。">
+<meta property="og:title" content="AI 做绘本怎么做？从故事文案到插图一次成型">
+<meta property="og:description" content="AI 做绘本，给出故事大纲，模型帮你写分镜文案并配统一风格的插图。本文讲清怎么定画风、控角色一致、内容把关别省，以及导出与打印时要注意的实用要点，做更放心的读物。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-picture-book-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 做绘本怎么做？从故事文案到插图一次成型">
+<meta name="twitter:description" content="AI 做绘本，给出故事大纲，模型帮你写分镜文案并配统一风格的插图。本文讲清怎么定画风、控角色一致、内容把关别省，以及导出与打印时要注意的实用要点，做更放心的读物。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 做绘本：从故事到插图一次成型",
+  "description":"AI 做绘本，给出故事大纲，模型帮你写分镜文案并配统一风格的插图。本文讲清怎么定画风、控角色一致、内容把关别省，以及导出与打印时要注意的实用要点，做更放心的读物。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-14","dateModified":"2026-08-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-picture-book-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 做绘本：从故事到插图一次成型"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 做绘本：从故事到插图一次成型</h1>
+    <p class="lede">想给孩子做一本专属绘本？用 AI 做绘本，给个故事大纲，它连文案带插图一起出。</p>
+    <div class="article-meta">更新于 2026-08-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 做绘本：从故事到插图一次成型</span>
+  </nav>
+
+<h2 id="sec-1">AI 做绘本是什么：一句话解释</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-picture-book-guide/01-ai-picture-book-guide.webp" type="image/webp"><img src="../assets/figures/ai-picture-book-guide/01-ai-picture-book-guide.jpg" alt="配图1AI 做绘本：故事变图文" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 做绘本，就是给你一个故事大纲，大模型帮你把故事拆成一页页分镜文案，再给每页配上插图。你拿到的是一本有文有图的半成品，而不是空白画布。</p>
+
+<p>它建立在<a href="how-ai-image-generation-works.html">AI 图像生成原理</a>之上，但多了「前后风格统一」的要求。和<a href="ai-poster-design-guide.html">AI 海报设计</a>相比，绘本难在角色要每页都长一样。</p>
+
+<h2 id="sec-2">先定画风与角色卡</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-picture-book-guide/02-ai-picture-book-guide.webp" type="image/webp"><img src="../assets/figures/ai-picture-book-guide/02-ai-picture-book-guide.jpg" alt="配图2画风与角色卡设定" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>画风先钉死。水彩、蜡笔、扁平、绘本风，选一种写进每次提示词，否则这页萌系那页写实，书就散了。</p>
+
+<p>做一张角色卡。把主角的发型、衣服颜色、标志特征写成固定描述，每页都带上，它才认得这是同一个人。</p>
+
+<p>参考<a href="ai-content-creation-guide.html">AI 内容创作指南</a>的节奏，先出一页定调，满意了再批量铺其余页。</p>
+
+<pre><code>角色卡（每页提示词都附上）：
+小熊豆豆，棕色短毛，穿蓝色背带裤，左耳有一撮白毛，
+圆眼睛，绘本水彩风格，暖色调。
+请据此画第 3 页：豆豆在树下发现一颗发光的种子。</code></pre>
+
+<h2 id="sec-3">分镜与文案怎么拆</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-picture-book-guide/03-ai-picture-book-guide.webp" type="image/webp"><img src="../assets/figures/ai-picture-book-guide/03-ai-picture-book-guide.jpg" alt="配图3分镜拆分与文案节奏" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>每页文字别超过两行，孩子翻得快，注意力才留得住。</p>
+
+<p>先给主角定一张参考图，后面每页都拿它比对，角色才不会一会儿圆脸一会儿尖脸。</p>
+
+<p>一页一件事。别把三个情节塞一页，孩子翻页没节奏，图也乱。一页一个动作最稳。</p>
+
+<p>文案留白多。绘本字少图大，每页两三句就够，给画面留呼吸感，也方便念给孩子听。</p>
+
+<p>页数先定再生成。八页还是十二页，开头规划好，免得中途加页破坏角色一致性。</p>
+
+<p>图上要加字就用<a href="ai-chinese-text-in-image.html">AI 图里加中文</a>的办法，标题和页码尽量后期排版，别让模型现写容易乱码。</p>
+
+<h2 id="sec-4">内容把关别省</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-picture-book-guide/04-ai-picture-book-guide.webp" type="image/webp"><img src="../assets/figures/ai-picture-book-guide/04-ai-picture-book-guide.jpg" alt="配图4内容把关：年龄/价值观/图文一致" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>看适龄。它写的情节偶尔偏成人化或带吓人元素，给孩子看前你务必逐页过。</p>
+
+<p>看价值观。主角怎么待人、怎么面对失败，这些潜移默化，别让模型随手编出歪的导向。</p>
+
+<p>看图文一致。它常画出和文案对不上的细节，比如文案说「红色气球」图里变蓝，这种要你改。</p>
+
+<h2 id="sec-5">导出与打印注意</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-picture-book-guide/05-ai-picture-book-guide.webp" type="image/webp"><img src="../assets/figures/ai-picture-book-guide/05-ai-picture-book-guide.jpg" alt="配图5导出与打印：分辨率/装订/版权" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>分辨率要够。打印至少 300 DPI，它默认出的图常偏小，放大打印会糊，导出时调高。</p>
+
+<p>排版留出血。页面边缘别放重要图案，装订和裁切会吃掉，留白更保险。</p>
+
+<p>版权自己留底。商用或送人前确认工具授权，原创故事归你，但生成图的权属要看平台条款。</p>
+
+<p>还有一点是节奏控制。孩子听故事耐心有限，每页停留两三秒刚好，文案写太长念着累、听进去也少。可以故意在每页结尾留个小悬念，比如「豆豆刚伸手，草丛里却……」，翻页的欲望就来了。图画也别塞太满，留白多些，注意力才落在主角身上。成稿后自己念一遍计时，单页超二十秒就砍，短比长更抓人。</p>
+
+<p>别把 AI 出的第一版直接念给孩子。AI 做绘本只是把你想讲的故事快速可视化，故事里的分寸和温度，还得你这个讲故事的人把关。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-picture-book-guide/06-ai-picture-book-guide.webp" type="image/webp"><img src="../assets/figures/ai-picture-book-guide/06-ai-picture-book-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="how-ai-image-generation-works.html">AI 图像生成原理</a></li>
+      <li><a href="ai-poster-design-guide.html">AI 海报设计</a></li>
+      <li><a href="ai-content-creation-guide.html">AI 内容创作指南</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="ai-chinese-text-in-image.html">AI 图里加中文</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 做绘本是什么：一句话解释</a></li>
+      <li><a href="#sec-2">先定画风与角色卡</a></li>
+      <li><a href="#sec-3">分镜与文案怎么拆</a></li>
+      <li><a href="#sec-4">内容把关别省</a></li>
+      <li><a href="#sec-5">导出与打印注意</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

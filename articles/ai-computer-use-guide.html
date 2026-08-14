@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 操控电脑是什么？让模型替你点鼠标干活的全流程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-computer-use-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 操控电脑，就是让大模型看懂屏幕、自己移动鼠标和键盘。本文讲清它适合替你做什么、上线前必设的三道安全闸，以及第一次让它操作电脑的具体步骤与边界。">
+<meta property="og:title" content="AI 操控电脑是什么？让模型替你点鼠标干活的全流程">
+<meta property="og:description" content="AI 操控电脑，就是让大模型看懂屏幕、自己移动鼠标和键盘。本文讲清它适合替你做什么、上线前必设的三道安全闸，以及第一次让它操作电脑的具体步骤与边界。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-computer-use-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 操控电脑是什么？让模型替你点鼠标干活的全流程">
+<meta name="twitter:description" content="AI 操控电脑，就是让大模型看懂屏幕、自己移动鼠标和键盘。本文讲清它适合替你做什么、上线前必设的三道安全闸，以及第一次让它操作电脑的具体步骤与边界。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 怎么操控电脑？让模型替你点鼠标",
+  "description":"AI 操控电脑，就是让大模型看懂屏幕、自己移动鼠标和键盘。本文讲清它适合替你做什么、上线前必设的三道安全闸，以及第一次让它操作电脑的具体步骤与边界。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-14","dateModified":"2026-08-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-computer-use-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 怎么操控电脑？让模型替你点鼠标"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 怎么操控电脑？让模型替你点鼠标</h1>
+    <p class="lede">想让 AI 替你点鼠标、填表单、进后台导数据？这不再是科幻，大模型已经能看懂屏幕并自己操作。</p>
+    <div class="article-meta">更新于 2026-08-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 怎么操控电脑？让模型替你点鼠标</span>
+  </nav>
+
+<h2 id="sec-1">AI 操控电脑是什么：一句话解释</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-computer-use-guide/01-ai-computer-use-guide.webp" type="image/webp"><img src="../assets/figures/ai-computer-use-guide/01-ai-computer-use-guide.jpg" alt="配图1AI 操控电脑：模型看懂屏幕自己点鼠标" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 操控电脑，就是让大模型像人一样操作你的鼠标和键盘，自己打开软件、点按钮、填表单。它先截图看懂当前画面，再决定下一步点哪里。整个过程你能在屏幕上实时看着。</p>
+
+<p>这类能力常被称为「计算机使用」（computer use）。它和普通的对话式 AI 不同：对话 AI 只给文字建议，操控电脑的 AI 会真正去动你的系统。想了解它会动到哪些部件，可以看<a href="what-is-ai-agent.html">AI 智能体是什么</a>。它底层往往依赖<a href="what-is-mcp-protocol.html">MCP 协议是什么</a>来对接各种软件。</p>
+
+<h2 id="sec-2">它能替你做什么：三类典型任务</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-computer-use-guide/02-ai-computer-use-guide.webp" type="image/webp"><img src="../assets/figures/ai-computer-use-guide/02-ai-computer-use-guide.jpg" alt="配图2三类适合交给 AI 的电脑操作" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一，重复性的后台操作。比如每天登录后台、导出一张报表、重命名一批文件。这些步骤固定，最适合交给它。</p>
+
+<p>第二，跨软件的搬运。把 A 系统的数据复制到 B 系统，中间要切换好几个窗口，人工做容易错，AI 按步骤走反而稳。</p>
+
+<p>第三，带界面的查询。让它打开某个网页，读出上面的数字，整理成表格发给你。它不靠接口，靠「看屏幕」就能办。</p>
+
+<pre><code>任务：打开浏览器，进入内部后台，导出自昨天的订单报表，
+      保存到桌面「订单」文件夹。
+约束：只在当前窗口操作；遇到登录失效立刻停下等我；
+      不要关闭任何其他程序。</code></pre>
+
+<h2 id="sec-3">上手前先设好三道安全闸</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-computer-use-guide/03-ai-computer-use-guide.webp" type="image/webp"><img src="../assets/figures/ai-computer-use-guide/03-ai-computer-use-guide.jpg" alt="配图3三道安全闸：权限/沙箱/人工确认" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一道闸是账号权限。别用管理员账号去跑它。给它一个权限最小、动不了核心数据的普通账号，出事也伤不到要害。</p>
+
+<p>第二道闸是隔离环境。能在虚拟机或备用电脑上跑，就别用日常主力机。真要跑在主力机，至少把银行、聊天、公司机密软件先关掉。关于数据边界，见<a href="ai-privacy-data-safety.html">AI 与数据隐私</a>。</p>
+
+<p>第三道闸是人工确认。关键动作设成「做完一步问一次」。它每点一下重要按钮前先等你点头，错了能立刻叫停。</p>
+
+<h2 id="sec-4">第一次让它点鼠标的实操步骤</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-computer-use-guide/04-ai-computer-use-guide.webp" type="image/webp"><img src="../assets/figures/ai-computer-use-guide/04-ai-computer-use-guide.jpg" alt="配图4第一次实操：截图-决策-执行闭环" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>先把任务写具体。别只说「帮我整理文件」，要说清文件在哪、按什么规则改名、放到哪个目录。指令越具体，它越不容易跑偏。</p>
+
+<p>再让它从小活开始。第一单就让它导出一张报表，看着它一步步操作。确认它理解正确，再慢慢加难度。</p>
+
+<p>最后留好退路。操作前先截图存档，万一它点错，你能对照还原。更多上手场景可以参考<a href="ai-daily-life-uses.html">AI 日常用法</a>，挑最省心的那类先试。</p>
+
+<h2 id="sec-5">哪些活它其实干不好</h2>
+
+<p>验证码和人机校验它常卡住。遇到滑动拼图、短信验证，它要么过不了，要么要你接手，这时候它反而拖慢你。</p>
+
+<p>需要强判断的活它也勉强。比如「挑出这堆邮件里最紧急的三封」，它分不清轻重，还是你来看更快。</p>
+
+<p>界面一变它就懵。网站改版、弹窗位置移动，它按旧坐标点会点空。所以把它用在界面稳定、步骤固定的流程上最值。</p>
+
+<p>别把账号密码写进任务里让它自己登录，也别让它碰涉及钱的页面。AI 操控电脑只是帮你省力的工具，真正要守住的底线，还是你手里的权限和确认键。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-computer-use-guide/05-ai-computer-use-guide.webp" type="image/webp"><img src="../assets/figures/ai-computer-use-guide/05-ai-computer-use-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-ai-agent.html">AI 智能体是什么</a></li>
+      <li><a href="what-is-mcp-protocol.html">MCP 协议是什么</a></li>
+      <li><a href="ai-privacy-data-safety.html">AI 与数据隐私</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="ai-daily-life-uses.html">AI 日常用法</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 操控电脑是什么：一句话解释</a></li>
+      <li><a href="#sec-2">它能替你做什么：三类典型任务</a></li>
+      <li><a href="#sec-3">上手前先设好三道安全闸</a></li>
+      <li><a href="#sec-4">第一次让它点鼠标的实操步骤</a></li>
+      <li><a href="#sec-5">哪些活它其实干不好</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 生成 3D 模型怎么做？文字出图再出模型的全流程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-3d-model-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 生成 3D 模型，输入一句话或一张图就能拿到可旋转、可打印的三维文件。本文讲清主流路线、适用场景、第一次出模型的步骤，以及新手最容易踩的坑和它与建模软件怎么配合。">
+<meta property="og:title" content="AI 生成 3D 模型怎么做？文字出图再出模型的全流程">
+<meta property="og:description" content="AI 生成 3D 模型，输入一句话或一张图就能拿到可旋转、可打印的三维文件。本文讲清主流路线、适用场景、第一次出模型的步骤，以及新手最容易踩的坑和它与建模软件怎么配合。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-3d-model-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 生成 3D 模型怎么做？文字出图再出模型的全流程">
+<meta name="twitter:description" content="AI 生成 3D 模型，输入一句话或一张图就能拿到可旋转、可打印的三维文件。本文讲清主流路线、适用场景、第一次出模型的步骤，以及新手最容易踩的坑和它与建模软件怎么配合。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 生成 3D 模型：从一句话到可打印",
+  "description":"AI 生成 3D 模型，输入一句话或一张图就能拿到可旋转、可打印的三维文件。本文讲清主流路线、适用场景、第一次出模型的步骤，以及新手最容易踩的坑和它与建模软件怎么配合。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-14","dateModified":"2026-08-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-3d-model-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 生成 3D 模型：从一句话到可打印"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 生成 3D 模型：从一句话到可打印</h1>
+    <p class="lede">想做个三维模型却不会建模？现在输入一句话或一张图，AI 就能给你转出可旋转的三维文件。</p>
+    <div class="article-meta">更新于 2026-08-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 生成 3D 模型：从一句话到可打印</span>
+  </nav>
+
+<h2 id="sec-1">AI 生成 3D 模型是什么：一句话解释</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-3d-model-guide/01-ai-3d-model-guide.webp" type="image/webp"><img src="../assets/figures/ai-3d-model-guide/01-ai-3d-model-guide.jpg" alt="配图1文字转三维文件" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 生成 3D 模型，就是输入一段文字或一张图片，模型直接产出带立体结构的三维文件。你拿到的是一个能旋转、能放大看细节、能导入建模软件继续改的物体，而不只是一张平面图。</p>
+
+<p>它和<a href="how-ai-image-generation-works.html">AI 图像生成原理</a>是亲戚，底层都离不开<a href="what-is-diffusion-model.html">扩散模型是什么</a>。区别在于图像只生成一个视角，三维模型要同时保证前后左右都对得上，技术难度更高。</p>
+
+<h2 id="sec-2">两条主流路线：文生模型与图生模型</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-3d-model-guide/02-ai-3d-model-guide.webp" type="image/webp"><img src="../assets/figures/ai-3d-model-guide/02-ai-3d-model-guide.jpg" alt="配图2文生与图生模型对比" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>文生模型最省事。你写「一个圆润的陶瓷马克杯，米白色，把手在右侧」，它就出模型。适合脑子里有想法、但没参考图的情况。</p>
+
+<p>图生模型更可控。你给一张产品照片或手绘图，它照着还原成三维。做电商或工业设计时，这条路线还原度更高，和<a href="ai-product-photo-guide.html">AI 商品图拍摄</a>能接上。</p>
+
+<p>两条路线都能导出通用格式。常见的是 GLB、OBJ、STL。要 3D 打印选 STL，要放网页或游戏里选 GLB。</p>
+
+<pre><code>提示词示例：
+一个低多边形的小房子，尖屋顶，木色外墙，
+门前有三级台阶，整体卡通风格，适合做游戏素材。
+输出格式：GLB，面数尽量低。</code></pre>
+
+<h2 id="sec-3">第一次出模型的实操步骤</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-3d-model-guide/03-ai-3d-model-guide.webp" type="image/webp"><img src="../assets/figures/ai-3d-model-guide/03-ai-3d-model-guide.jpg" alt="配图3第一次出模型的四步流程" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>先想清楚用途。是打印出来、做动画、还是当游戏素材？用途决定格式和面数，别等生成完才发现不对。</p>
+
+<p>再把描述写细。形状、材质、颜色、风格各写一句。描述越具体，模型越贴近你想要的样子。</p>
+
+<p>然后看预览再下载。多数工具会先给一个可旋转的预览，你转一圈确认没破面、没缺块，再导出文件。</p>
+
+<p>最后导入软件验收。用免费查看器打开，检查结构是否闭合。要和<a href="ai-poster-design-guide.html">AI 海报设计</a>那样，先小样再定稿。</p>
+
+<h2 id="sec-4">新手最容易踩的三个坑</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-3d-model-guide/04-ai-3d-model-guide.webp" type="image/webp"><img src="../assets/figures/ai-3d-model-guide/04-ai-3d-model-guide.jpg" alt="配图4三坑：破面/比例错/版权不清" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一坑是破面和洞。模型表面没闭合，打印会失败、渲染会穿帮。生成后一定转一圈看有没有缺口。</p>
+
+<p>第二坑是比例失真。它常把「高脚杯」做成矮胖杯。关键尺寸要在提示词里写明，或者后期在建模软件里手动拉。</p>
+
+<p>第三坑是版权不清。商用前确认工具的授权范围，有些模型禁止转售。具体权益去官网会员页看，别凭印象就上架。</p>
+
+<h2 id="sec-5">它和建模软件怎么配合</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-3d-model-guide/05-ai-3d-model-guide.webp" type="image/webp"><img src="../assets/figures/ai-3d-model-guide/05-ai-3d-model-guide.jpg" alt="配图5AI 出形加软件修细节" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>把 AI 当出形工具最划算。它几秒给你一个大致形态，省掉从零拉线的苦力，剩下的精修交给 blender 这类软件。</p>
+
+<p>复杂结构它常偷懒。比如机械零件的螺纹、卡扣，AI 容易糊成一团，这种细节你在软件里补更稳。</p>
+
+<p>材质和贴图也建议后期做。AI 给的默认材质偏塑料感，想要金属、磨砂、透光，去软件里调参数更真。</p>
+
+<p>别把 AI 出的第一个模型直接拿去打印或卖。AI 生成 3D 模型只是帮你跳过从零建形的苦力活，真正决定成品质量的，还是你事后的检查和修模。记住先打样确认小样再决定量产，别急着一把梭哈，省得返工反而更费时间。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-3d-model-guide/06-ai-3d-model-guide.webp" type="image/webp"><img src="../assets/figures/ai-3d-model-guide/06-ai-3d-model-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="how-ai-image-generation-works.html">AI 图像生成原理</a></li>
+      <li><a href="what-is-diffusion-model.html">扩散模型是什么</a></li>
+      <li><a href="ai-product-photo-guide.html">AI 商品图拍摄</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="ai-poster-design-guide.html">AI 海报设计</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 生成 3D 模型是什么：一句话解释</a></li>
+      <li><a href="#sec-2">两条主流路线：文生模型与图生模型</a></li>
+      <li><a href="#sec-3">第一次出模型的实操步骤</a></li>
+      <li><a href="#sec-4">新手最容易踩的三个坑</a></li>
+      <li><a href="#sec-5">它和建模软件怎么配合</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

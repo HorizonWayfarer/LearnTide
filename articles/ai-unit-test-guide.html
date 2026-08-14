@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 写单元测试怎么写？让模型补用例又补覆盖 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-unit-test-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 写单元测试，把函数和已有代码丢给模型，它帮你补测试用例、造假数据、算边界。本文讲清该喂什么、怎么审它生成的断言、覆盖率怎么看才不被骗，以及哪些逻辑它容易测错。">
+<meta property="og:title" content="AI 写单元测试怎么写？让模型补用例又补覆盖">
+<meta property="og:description" content="AI 写单元测试，把函数和已有代码丢给模型，它帮你补测试用例、造假数据、算边界。本文讲清该喂什么、怎么审它生成的断言、覆盖率怎么看才不被骗，以及哪些逻辑它容易测错。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-unit-test-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 写单元测试怎么写？让模型补用例又补覆盖">
+<meta name="twitter:description" content="AI 写单元测试，把函数和已有代码丢给模型，它帮你补测试用例、造假数据、算边界。本文讲清该喂什么、怎么审它生成的断言、覆盖率怎么看才不被骗，以及哪些逻辑它容易测错。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"用 AI 写单元测试：把用例交给模型补",
+  "description":"AI 写单元测试，把函数和已有代码丢给模型，它帮你补测试用例、造假数据、算边界。本文讲清该喂什么、怎么审它生成的断言、覆盖率怎么看才不被骗，以及哪些逻辑它容易测错。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-14","dateModified":"2026-08-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-unit-test-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"用 AI 写单元测试：把用例交给模型补"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>用 AI 写单元测试：把用例交给模型补</h1>
+    <p class="lede">补单元测试最枯燥？把函数和上下文丢给 AI，它能帮你把正常、边界、异常三类用例一次铺开。</p>
+    <div class="article-meta">更新于 2026-08-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">用 AI 写单元测试：把用例交给模型补</span>
+  </nav>
+
+<h2 id="sec-1">AI 写单元测试是什么：一句话解释</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/01-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/01-ai-unit-test-guide.jpg" alt="配图1AI 写单元测试：函数变用例" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 写单元测试，就是把你写好的函数连同它的上下文一起丢给大模型，让它补全测试用例。正常输入、边界值、异常分支，它都能一次铺开，省掉最枯燥的手工劳动。</p>
+
+<p>它和<a href="ai-debug-code-guide.html">AI 调试代码</a>是一条流水线上的两环：调试在出错后查，测试在出错前防。配合<a href="ai-code-review-guide.html">AI 代码审查</a>，基本能覆盖大部分低级 bug。</p>
+
+<h2 id="sec-2">该喂给它的上下文</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/02-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/02-ai-unit-test-guide.jpg" alt="配图2要喂的三样：函数/依赖/框架" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一样是函数本体。把完整实现贴出来，别只给签名，它看不到逻辑就只会写空壳断言。</p>
+
+<p>第二样是依赖和桩。这个函数调了数据库或网络？告诉它，让它用 mock 替掉，测试才跑得起来。</p>
+
+<p>第三样是测试框架。你用 pytest 还是 JUnit，写清楚，生成的代码才能直接跑。</p>
+
+<pre><code>请为下面这个函数写 pytest 单元测试：
+函数：def divide(a, b): return a / b
+要求：覆盖正常值、b=0 抛异常、a 和 b 为字符串报错三种情况，
+      用 pytest.raises 断言异常，每条用例写一句注释说明测什么。</code></pre>
+
+<h2 id="sec-3">怎么审它生成的断言</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/03-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/03-ai-unit-test-guide.jpg" alt="配图3审断言三看：真假/边界/命名" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>把这些测试接进提交钩子，每次改完代码自动跑，省得写完就忘、最后全靠手点。</p>
+
+<p>断言写具体，别只写「不为空」；能点出名和边界，测试才真在帮你挡 bug。</p>
+
+<p>看断言是不是真的在验。它有时会写「assert result is not None」这种永远通过的废话，等于没测。</p>
+
+<p>看边界有没有覆盖。除零、空字符串、极大值、负数，这些最容易漏，要逐条核对。</p>
+
+<p>看命名能不能读懂。好用例名一眼知道测什么，<a href="free-ai-code-completion-tools.html">免费 AI 补全工具</a>生成的命名常很随意，你顺手改清楚。</p>
+
+<p>在<a href="cursor-beginner-tutorial.html">Cursor 入门教程</a>里可以把生成测试接成保存即跑，红了的立刻改，循环很快。</p>
+
+<h2 id="sec-4">覆盖率怎么看才不被骗</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/04-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/04-ai-unit-test-guide.jpg" alt="配图4覆盖率陷阱：行覆盖≠逻辑覆盖" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>行覆盖高不代表测得透。它写的用例可能只走了 if 没走 else，覆盖率数字好看，分支却漏了。</p>
+
+<p>要看分支和边界覆盖。条件真假两边都要有用例，才算真盖上，别被总行数糊弄。</p>
+
+<p>别为凑数字加无效用例。为了覆盖率硬写「assert True」式测试，除了涨数字毫无意义。</p>
+
+<h2 id="sec-5">它容易测错的地方</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/05-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/05-ai-unit-test-guide.jpg" alt="配图5易错：浮点/并发/随机" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>浮点比较它常写错。两个小数相减再直接相等，多数情况会挂，得用误差范围去比。</p>
+
+<p>并发和随机它难稳。带时间戳、随机数的函数，它写的用例时灵时不灵，要你手动固定种子。</p>
+
+<p>业务规则它看不全。它不知道你们那条特殊计费边界，用例漏了很正常。这类得你补。</p>
+
+<p>实际项目里更稳的做法是让 AI 先补测试、你再补边界。它铺开的骨架覆盖常见路径，你专门补那些它想不到的刁钻输入，效率最高。把团队的边界用例沉淀成清单，下次直接喂给模型当参考，生成的测试会越来越贴你们的业务。测试文件名和函数名也顺手统一，日后谁接手都能一眼看懂哪段逻辑被哪条用例守着。</p>
+
+<p>别把 AI 生成的测试当成覆盖率达标证明。AI 写单元测试帮你把骨架搭起来，真正决定测没测透的，还是你对业务的理解。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/06-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/06-ai-unit-test-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-debug-code-guide.html">AI 调试代码</a></li>
+      <li><a href="ai-code-review-guide.html">AI 代码审查</a></li>
+      <li><a href="free-ai-code-completion-tools.html">免费 AI 补全工具</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+      <li><a href="cursor-beginner-tutorial.html">Cursor 入门教程</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 写单元测试是什么：一句话解释</a></li>
+      <li><a href="#sec-2">该喂给它的上下文</a></li>
+      <li><a href="#sec-3">怎么审它生成的断言</a></li>
+      <li><a href="#sec-4">覆盖率怎么看才不被骗</a></li>
+      <li><a href="#sec-5">它容易测错的地方</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>
