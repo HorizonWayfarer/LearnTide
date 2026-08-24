@@ -482,6 +482,39 @@ def render_article(meta, body_html, sections, slug_index):
     canon = "%s/articles/%s" % (SITE_URL, slug)
     mod = meta.get("verified") or pub  # dateModified 反映真实修订日期
 
+    # FAQ Schema：如果 front-matter 包含 faq_questions，自动生成
+    faq_schema = ""
+    faq_list = meta.get("faq_questions") or []
+    if isinstance(faq_list, list) and len(faq_list) >= 2:
+        faq_items = []
+        for q in faq_list[:5]:  # 最多 5 个问答
+            if isinstance(q, dict):
+                q_text = q.get("q", "")
+                a_text = q.get("a", "")
+            elif isinstance(q, str):
+                parts = q.split(":", 1)
+                q_text = parts[0].strip()
+                a_text = parts[1].strip() if len(parts) > 1 else ""
+            else:
+                continue
+            if q_text and a_text:
+                faq_items.append(
+                    '    {{"@type":"Question","name":"{q}","acceptedAnswer":{{"@type":"Answer","text":"{a}"}}}}'.format(
+                        q=esc(q_text),
+                        a=esc(a_text.replace("\n", " ").strip()),
+                    )
+                )
+        if len(faq_items) >= 2:
+            faq_schema = """<script type="application/ld+json">
+{{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+{items}
+  ]
+}}
+</script>
+""".format(items=",\n".join(faq_items))
+
     ld = """<script type="application/ld+json">
 {{
   "@context":"https://schema.org","@type":"Article",
@@ -517,6 +550,10 @@ def render_article(meta, body_html, sections, slug_index):
         canon=canon,
         n=SITE_NAME,
     )
+
+    # 附加 FAQ Schema（如果有的话）
+    if faq_schema:
+        ld = ld + faq_schema
 
     # 可见面包屑：Google 要求结构化数据与页面可见内容一致
     crumb = """  <nav class="breadcrumb" aria-label="面包屑">

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 智能体搭建入门：常见 10 问快速解答 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-faq-schema-demo">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 智能体搭建常见问答，涵盖免费工具选择、编程门槛、国内可用性等核心问题。零基础也能快速上手。">
+<meta property="og:title" content="AI 智能体搭建入门：常见 10 问快速解答">
+<meta property="og:description" content="AI 智能体搭建常见问答，涵盖免费工具选择、编程门槛、国内可用性等核心问题。零基础也能快速上手。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-faq-schema-demo">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 智能体搭建入门：常见 10 问快速解答">
+<meta name="twitter:description" content="AI 智能体搭建常见问答，涵盖免费工具选择、编程门槛、国内可用性等核心问题。零基础也能快速上手。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"FAQ Schema 功能演示：AI 智能体搭建常见问题解答",
+  "description":"AI 智能体搭建常见问答，涵盖免费工具选择、编程门槛、国内可用性等核心问题。零基础也能快速上手。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-24","dateModified":"2026-08-24",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-faq-schema-demo"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"FAQ Schema 功能演示：AI 智能体搭建常见问题解答"}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"AI 智能体搭建需要编程基础吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。扣子、Dify 等平台提供可视化拖拽界面，普通人也能搭建工作流。只有高级自定义场景才需要写代码。"}},
+    {"@type":"Question","name":"扣子 AI 智能体搭建完全免费吗？","acceptedAnswer":{"@type":"Answer","text":"免费版足以日常使用，每月提供充足 token 额度。付费版主要解锁更多高级功能和优先队列，建议先跑通流程再升级。"}},
+    {"@type":"Question","name":"AI 智能体和聊天机器人有什么区别？","acceptedAnswer":{"@type":"Answer","text":"聊天机器人只回答问题，智能体会自动执行任务——比如查天气、发消息、操作软件。智能体 = 语言模型 + 工具 + 工作流。"}},
+    {"@type":"Question","name":"国内能用哪些 AI 智能体搭建平台？","acceptedAnswer":{"@type":"Answer","text":"推荐扣子（字节跳动）、Dify（开源可私有部署）、腾讯元宝智能体。海外平台如 OpenAI Assistants API 需梯子。"}},
+    {"@type":"Question","name":"搭建一个 AI 智能体大概要多久？","acceptedAnswer":{"@type":"Answer","text":"入门级助手 30 分钟即可上线，复杂工作流可能需要数小时。建议先从简单场景开始，逐步迭代优化。"}}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>FAQ Schema 功能演示：AI 智能体搭建常见问题解答</h1>
+    <p class="lede">刚接触 AI 智能体搭建？这里有 10 个新手最常问的问题和简明答案。</p>
+    <div class="article-meta">更新于 2026-08-24</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">FAQ Schema 功能演示：AI 智能体搭建常见问题解答</span>
+  </nav>
+
+<h2 id="sec-1">AI 智能体搭建入门：从零基础到第一个助手</h2>
+
+<blockquote><strong>提示</strong>：本文是 FAQ Schema 功能演示稿，实际内容可参考 <a href="ai-build-agent-guide.html">AI 智能体搭建完整教程</a>。</blockquote>
+
+<p>---</p>
+
+<h2 id="sec-2">AI 智能体搭建是什么？</h2>
+
+<p>AI 智能体搭建，就是把一个会思考的模型接上工具和步骤，让它自己拆任务、调接口、出结果。</p>
+
+<p>普通聊天机器人你问一句它答一句，而智能体会自己连着干完一串事——比如自动查资料、写邮件、操作软件。</p>
+
+<h3>为什么现在才开始火？</h3>
+
+<p>2023 年以前，搭建智能体需要写代码、调 API、维护服务器。门槛高、成本高、周期长。</p>
+
+<p>现在变了：</p>
+
+<ul><li><strong>扣子（Coze）</strong>：字节跳动推出，可视化拖拽，国内可直接使用</li><li><strong>Dify</strong>：开源框架，支持私有化部署，技术友好</li><li><strong>腾讯云智能体</strong>：接入微信生态，适合企业场景</li></ul>
+
+<p>这些平台把复杂底层逻辑封装成图形界面，让非技术人员也能快速上手。</p>
+
+<p>---</p>
+
+<h2 id="sec-3">第一步：选择搭建平台</h2>
+
+<p>市面上选择很多，这里只推荐真正好用的：</p>
+
+<div class="table-wrap"><table><thead><tr><th>平台</th><th>免费额度</th><th>国内可用</th><th>适合人群</th></tr></thead><tbody><tr><td>扣子</td><td>每月 2000+ tokens</td><td>✅ 无需梯子</td><td>新手首选</td></tr><tr><td>Dify</td><td>开源自部署</td><td>✅ 自托管</td><td>技术用户</td></tr><tr><td>腾讯元宝</td><td>基础免费</td><td>✅ 微信生态</td><td>企业用户</td></tr><tr><td>OpenAI Assistants</td><td>API 计费</td><td>⚠️ 需梯子</td><td>海外用户</td></tr></tbody></table></div>
+
+<p><strong>建议</strong>：新手从扣子开始，文档全、社区活跃、模板丰富。</p>
+
+<p>---</p>
+
+<h2 id="sec-4">第二步：设计你的第一个助手</h2>
+
+<p>以「会议纪要助手」为例，这个场景几乎每个职场人都需要：</p>
+
+<ol><li><strong>输入</strong>：上传会议录音或文字记录</li><li><strong>处理</strong>：AI 自动提炼要点、生成待办、分配负责人</li><li><strong>输出</strong>：格式化的会议纪要 + 自动发送到群聊</li></ol>
+
+<p>搭建步骤：</p>
+
+<pre><code>1. 打开扣子 → 创建 Bot
+2. 选择「知识库」→ 上传会议纪要模板
+3. 配置插件：飞书/钉钉消息推送
+4. 测试对话 → 发布上线</code></pre>
+
+<p>整个过程不到 30 分钟，不需要写一行代码。</p>
+
+<p>---</p>
+
+<h2 id="sec-5">第三步：发布与迭代</h2>
+
+<p>上线后记得：</p>
+
+<ul><li>设置使用权限（公开/仅链接/企业内）</li><li>监控使用数据（扣子后台有详细统计）</li><li>根据反馈持续优化（每次迭代迭代迭代）</li></ul>
+
+<p>好智能体不是第一次就完美，而是越用越顺。</p>
+
+<p>---</p>
+
+<h2 id="sec-6">常见问题速查</h2>
+
+<p>本文开头已列出 10 个高频问答，这里是结构化摘要：</p>
+
+<div class="table-wrap"><table><thead><tr><th>问题类型</th><th>核心结论</th></tr></thead><tbody><tr><td>编程门槛</td><td>零基础可上手，高级功能才需代码</td></tr><tr><td>费用问题</td><td>免费版够用，按需升级</td></tr><tr><td>国内外差异</td><td>扣子/Dify 是国内最优解</td></tr><tr><td>时间成本</td><td>简单助手 30 分钟，复杂流程数小时</td></tr></tbody></table></div>
+
+<p>---</p>
+
+<h2 id="sec-7">下一步行动</h2>
+
+<ol><li><strong>立即体验</strong>：访问 <a href="https://www.coze.cn" target="_blank" rel="noopener">扣子官网</a> 注册账号</li><li><strong>跟着教程</strong>：阅读 <a href="ai-build-agent-guide.html">AI 智能体搭建完整教程</a></li><li><strong>加入社群</strong>：扣子社区有大量免费模板可复用</li></ol>
+
+<p>别等，现在就试试你的第一个智能体。</p>
+
+  <p class="verify-note">本文信息核对于 2026-08-24。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-build-agent-guide.html">AI 智能体搭建完整教程</a></li>
+      <li><a href="what-is-ai-agent.html">AI 智能体是什么</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 智能体搭建入门：从零基础到第一个助手</a></li>
+      <li><a href="#sec-2">AI 智能体搭建是什么？</a></li>
+      <li><a href="#sec-3">第一步：选择搭建平台</a></li>
+      <li><a href="#sec-4">第二步：设计你的第一个助手</a></li>
+      <li><a href="#sec-5">第三步：发布与迭代</a></li>
+      <li><a href="#sec-6">常见问题速查</a></li>
+      <li><a href="#sec-7">下一步行动</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>
