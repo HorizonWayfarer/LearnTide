@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 视频配音怎么弄：文字转语音做旁白完整教程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-voice-over-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 视频配音让不会录音的人也能加专业旁白。本文讲清文字转语音和声音克隆的区别，用 TTS 写稿、生成并调自然度的步骤，新手照做就能给视频配上干净解说，少走弯路。">
+<meta property="og:title" content="AI 视频配音怎么弄：文字转语音做旁白完整教程">
+<meta property="og:description" content="AI 视频配音让不会录音的人也能加专业旁白。本文讲清文字转语音和声音克隆的区别，用 TTS 写稿、生成并调自然度的步骤，新手照做就能给视频配上干净解说，少走弯路。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-voice-over-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 视频配音怎么弄：文字转语音做旁白完整教程">
+<meta name="twitter:description" content="AI 视频配音让不会录音的人也能加专业旁白。本文讲清文字转语音和声音克隆的区别，用 TTS 写稿、生成并调自然度的步骤，新手照做就能给视频配上干净解说，少走弯路。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 视频配音教程：用文字转语音做旁白解说",
+  "description":"AI 视频配音让不会录音的人也能加专业旁白。本文讲清文字转语音和声音克隆的区别，用 TTS 写稿、生成并调自然度的步骤，新手照做就能给视频配上干净解说，少走弯路。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-24","dateModified":"2026-08-24",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-voice-over-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 视频配音教程：用文字转语音做旁白解说"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 视频配音教程：用文字转语音做旁白解说</h1>
+    <p class="lede">不想自己录音也能加旁白？用 AI 视频配音，把稿子丢进文字转语音，几分钟拿到一段干净解说。</p>
+    <div class="article-meta">更新于 2026-08-24</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 视频配音教程：用文字转语音做旁白解说</span>
+  </nav>
+
+<h2 id="sec-1">AI 视频配音是什么：把文字变成旁白</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-voice-over-guide/01-ai-voice-over-guide.webp" type="image/webp"><img src="../assets/figures/ai-voice-over-guide/01-ai-voice-over-guide.jpg" alt="配图1选音色" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 视频配音，就是把写好的稿子交给文字转语音模型，生成一段真人感的解说音轨。你不用麦克风、不用录很多遍，改稿比改录音省事太多。它和<a href="how-ai-tts-works.html">AI 文字转语音原理</a>是同一件事，这里侧重怎么接到视频里。</p>
+
+<p>配音分两类。普通 TTS 用平台自带音色，开箱即用。声音克隆拿你几秒样本复刻你的声线，适合做个人品牌，但涉及肖像权要谨慎。新手先用自带音色跑通，再考虑要不要克隆。克隆前先看清平台授权范围，商用和公开传播往往要单独许可。</p>
+
+<h2 id="sec-2">选音色前先想清楚受众</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-voice-over-guide/02-ai-voice-over-guide.webp" type="image/webp"><img src="../assets/figures/ai-voice-over-guide/02-ai-voice-over-guide.jpg" alt="配图2分段生成" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>先定听众和调性。知识科普要稳重，带货要热情，儿童内容要轻快。大多数平台提供几十种音色，试听三段再定，别凭名字猜。音色定错，整条视频气质就歪了。同一音色在不同平台质感不同，正式发布前在目标平台试听。</p>
+
+<p>语速也先选。中文解说一点一到一点三倍速最舒服，太快显急、太慢显拖。定好音色和语速，整条视频才统一。系列视频锁定同一音色，观众才认得出是你，别每期换声线。</p>
+
+<h2 id="sec-3">用 TTS 生成第一段解说</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-voice-over-guide/03-ai-voice-over-guide.webp" type="image/webp"><img src="../assets/figures/ai-voice-over-guide/03-ai-voice-over-guide.jpg" alt="配图3调自然度" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>把稿子拆成短句再生成，比一整篇喂进去更稳。每段别超过二十字，断句自然，模型不容易读破。下面这种分段最省事，也方便后期逐段对齐画面：</p>
+
+<pre><code>配音稿示例（分段，每段一句）：
+第一段：今天聊聊怎么用 AI 给视频加旁白。
+第二段：先把稿子拆短句，每段别超过二十字。
+第三段：生成后拖进剪辑软件对齐画面。</code></pre>
+
+<p>生成后逐段试听，破音或吞字的那段重写，别整段重来。同一段生成两版，挑断句更顺的那版。长稿分段生成还能并行，比一次出整篇快。</p>
+
+<h2 id="sec-4">让语速和停顿更自然</h2>
+
+<p>平淡是机器音的通病。加一点标点控制停顿，逗号短顿、句号长顿。需要强调的词前面加逗号，模型会轻微重读。问句结尾用问号，语气才上扬，陈述句别乱加。长句中间插空格也能制造停顿，比硬加标点自然。</p>
+
+<p>多音色拼接更生动。开头用沉稳音，举例子切轻松音，结尾回沉稳。和<a href="ai-podcast-production-guide.html">AI 播客制作</a>一样，靠分段与音色变化掩盖机械感。不同段落用不同音色要有逻辑，别为了变而变，听感会乱。</p>
+
+<h2 id="sec-5">剪辑对接与避坑</h2>
+
+<p>导出音频拖进剪映，对齐画面卡点。背景音乐压到旁白之下，别抢人声。导出前整段听一遍，破音处剪掉补录。口播类视频建议真人出镜更可信，纯 AI 配音适合知识汇总类。导出前先静音听一遍旁白，破音吞字最毁观感。</p>
+
+<p>别用 cloned 声音冒充他人或商用未授权内容。AI 视频配音是效率工具不是替身，关键口播仍建议你本人出镜更可信。导出格式选无损或高码率，二次剪辑不损音质。别把生成音轨直接当终版，过一遍耳再上线。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-voice-over-guide/04-ai-voice-over-guide.webp" type="image/webp"><img src="../assets/figures/ai-voice-over-guide/04-ai-voice-over-guide.jpg" alt="尾图配音要点" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-24。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="how-ai-tts-works.html">AI 文字转语音原理</a></li>
+      <li><a href="elevenlabs-voice-review.html">ElevenLabs 评测</a></li>
+      <li><a href="ai-voice-cloning-guide.html">AI 声音克隆教程</a></li>
+      <li><a href="ai-podcast-production-guide.html">AI 播客制作</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 视频配音是什么：把文字变成旁白</a></li>
+      <li><a href="#sec-2">选音色前先想清楚受众</a></li>
+      <li><a href="#sec-3">用 TTS 生成第一段解说</a></li>
+      <li><a href="#sec-4">让语速和停顿更自然</a></li>
+      <li><a href="#sec-5">剪辑对接与避坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

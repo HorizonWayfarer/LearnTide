@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 智能体搭建入门：零代码用扣子做第一个助手 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-build-agent-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 智能体搭建让不会编程的人也能把重复工作自动化。本文讲清智能体和聊天机器人的区别，用扣子从注册到上线搭出第一个助手的步骤，新手照做就能跑通，避开常见坑。">
+<meta property="og:title" content="AI 智能体搭建入门：零代码用扣子做第一个助手">
+<meta property="og:description" content="AI 智能体搭建让不会编程的人也能把重复工作自动化。本文讲清智能体和聊天机器人的区别，用扣子从注册到上线搭出第一个助手的步骤，新手照做就能跑通，避开常见坑。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-build-agent-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 智能体搭建入门：零代码用扣子做第一个助手">
+<meta name="twitter:description" content="AI 智能体搭建让不会编程的人也能把重复工作自动化。本文讲清智能体和聊天机器人的区别，用扣子从注册到上线搭出第一个助手的步骤，新手照做就能跑通，避开常见坑。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 智能体搭建：零代码用扣子做第一个工作流助手",
+  "description":"AI 智能体搭建让不会编程的人也能把重复工作自动化。本文讲清智能体和聊天机器人的区别，用扣子从注册到上线搭出第一个助手的步骤，新手照做就能跑通，避开常见坑。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-24","dateModified":"2026-08-24",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-build-agent-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 智能体搭建：零代码用扣子做第一个工作流助手"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 智能体搭建：零代码用扣子做第一个工作流助手</h1>
+    <p class="lede">重复活儿想甩手？现在不用写代码，把模块拖一拖连一连，就能拼出一个会自己干活的 AI 小助手。</p>
+    <div class="article-meta">更新于 2026-08-24</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 智能体搭建：零代码用扣子做第一个工作流助手</span>
+  </nav>
+
+<h2 id="sec-1">AI 智能体搭建是什么：让模型自己跑流程</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-build-agent-guide/01-ai-build-agent-guide.webp" type="image/webp"><img src="../assets/figures/ai-build-agent-guide/01-ai-build-agent-guide.jpg" alt="配图1选平台起步" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 智能体搭建，是把一个会思考的模型接上工具和步骤，让它自己拆任务、调接口、出结果。普通聊天机器人你问一句它答一句，智能体会自己连着干完一串事。和<a href="what-is-ai-agent.html">AI 智能体是什么</a>讲的是同一件事，这里侧重怎么动手做。先把第一个助手跑起来，比一次追求完美更重要。</p>
+
+<p>对普通人最有用的点：不用写代码。平台把流程做成模块，你拖一拖、连一连、改改文字就能成型。会提需求，基本就等于会搭建。它的价值不在多聪明，而在把重复动作固化下来，你只管看结果。</p>
+
+<h2 id="sec-2">选平台：零代码从扣子起步</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-build-agent-guide/02-ai-build-agent-guide.webp" type="image/webp"><img src="../assets/figures/ai-build-agent-guide/02-ai-build-agent-guide.jpg" alt="配图2三步搭助手" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>国内新手直接选扣子（Coze），全中文、模板多、不用科学上网。注册后随便跑一个公开模板，先感受一下「输入到输出」长啥样。别一上来就追求复杂，先跑通一个最小例子，建立手感最重要。</p>
+
+<p>海外还有 Dify、n8n 这类，功能更强但要部署。零基础阶段，扣子够用，等真有需求再换。熟悉一个平台后再看别的，迁移成本很低。和<a href="free-agent-platforms-list.html">免费智能体平台清单</a>对照着挑，别贪多。每个平台逻辑相通，换平台成本不高，先用熟一个。</p>
+
+<h2 id="sec-3">三步搭出第一个助手</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-build-agent-guide/03-ai-build-agent-guide.webp" type="image/webp"><img src="../assets/figures/ai-build-agent-guide/03-ai-build-agent-guide.jpg" alt="配图3知识库喂资料" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>任何智能体都只有三块：用户输入、思考推理、执行工具。先写角色，再写它能调的工具，最后定输出格式。一个会议纪要助手这样描述就清楚了：</p>
+
+<pre><code>智能体设定示例：
+角色：会议纪要助手
+输入：会议录音转写文本
+步骤：提取待办、列出责任人、生成摘要
+输出：清单 + 200 字总结</code></pre>
+
+<p>保存后发一段测试文本，看它有没有抓对待办。不对就调角色和步骤，别改底层代码。先拿一段真实会议记录试，比凭空编例子更能暴露问题。跑顺了再加第二个工具，逐步加复杂度。</p>
+
+<h2 id="sec-4">用知识库喂进你的资料</h2>
+
+<p>知识库是普通人最强的一招。上传你的手册、合同、课程笔记，智能体就变成你的行业专家。不用训练模型，上传等于教会它。资料越聚焦，回答越准，杂七杂八一起传反而稀释重点。</p>
+
+<p>先传三五份最相关的文档，问个具体问题验证它有没有用到。和<a href="ai-meeting-notes-tools.html">AI 会议纪要工具</a>配合，把会议沉淀进知识库，下次直接问。知识库更新后记得重新触发索引，旧文档改了要重传，不然模型还在用旧版。</p>
+
+<h2 id="sec-5">调效果与上线注意</h2>
+
+<p>效果三分靠角色、三分靠规则、四分靠例子。禁止做什么、必须做什么写清楚，输出格式固定，结果就稳。跑通后发布到公众号或飞书，给别人用。上线前用小流量测一周，观察它答偏的地方再补规则。</p>
+
+<p>敏感数据别乱传公共知识库，合同客户资料留本地。AI 智能体搭建是省力杠杆不是甩手掌柜，关键判断仍要你把关。别把没验证的助手直接接重要流程，先小范围跑顺再放大。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-build-agent-guide/04-ai-build-agent-guide.webp" type="image/webp"><img src="../assets/figures/ai-build-agent-guide/04-ai-build-agent-guide.jpg" alt="尾图搭建要点" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-24。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-ai-agent.html">AI 智能体是什么</a></li>
+      <li><a href="what-is-multi-agent.html">多智能体是什么</a></li>
+      <li><a href="free-agent-platforms-list.html">免费智能体平台清单</a></li>
+      <li><a href="ai-meeting-notes-tools.html">AI 会议纪要工具</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 智能体搭建是什么：让模型自己跑流程</a></li>
+      <li><a href="#sec-2">选平台：零代码从扣子起步</a></li>
+      <li><a href="#sec-3">三步搭出第一个助手</a></li>
+      <li><a href="#sec-4">用知识库喂进你的资料</a></li>
+      <li><a href="#sec-5">调效果与上线注意</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

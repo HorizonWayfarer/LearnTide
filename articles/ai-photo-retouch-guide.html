@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 修图怎么用：消除路人、放大模糊照片的完整教程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-photo-retouch-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 修图让普通人也能做专业级后期。本文讲清消除笔去路人、超分辨率放大模糊照片、一键换背景与调色的实操步骤，以及新手最容易踩的坑，帮你用最少时间修出干净照片。">
+<meta property="og:title" content="AI 修图怎么用：消除路人、放大模糊照片的完整教程">
+<meta property="og:description" content="AI 修图让普通人也能做专业级后期。本文讲清消除笔去路人、超分辨率放大模糊照片、一键换背景与调色的实操步骤，以及新手最容易踩的坑，帮你用最少时间修出干净照片。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-photo-retouch-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 修图怎么用：消除路人、放大模糊照片的完整教程">
+<meta name="twitter:description" content="AI 修图让普通人也能做专业级后期。本文讲清消除笔去路人、超分辨率放大模糊照片、一键换背景与调色的实操步骤，以及新手最容易踩的坑，帮你用最少时间修出干净照片。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 修图入门：一键消除路人、放大模糊照片的完整教程",
+  "description":"AI 修图让普通人也能做专业级后期。本文讲清消除笔去路人、超分辨率放大模糊照片、一键换背景与调色的实操步骤，以及新手最容易踩的坑，帮你用最少时间修出干净照片。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-24","dateModified":"2026-08-24",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-photo-retouch-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 修图入门：一键消除路人、放大模糊照片的完整教程"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 修图入门：一键消除路人、放大模糊照片的完整教程</h1>
+    <p class="lede">拍完照才看到背景有人、照片有点糊？用 AI 修图点几下，就能把路人抹掉、把模糊变清晰。</p>
+    <div class="article-meta">更新于 2026-08-24</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 修图入门：一键消除路人、放大模糊照片的完整教程</span>
+  </nav>
+
+<h2 id="sec-1">AI 修图是什么：把麻烦的后期交给模型</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-photo-retouch-guide/01-ai-photo-retouch-guide.webp" type="image/webp"><img src="../assets/figures/ai-photo-retouch-guide/01-ai-photo-retouch-guide.jpg" alt="配图1祛斑与磨皮" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 修图，就是用模型自动完成以前要开 Photoshop 手动抠半天的工作。你框选一处瑕疵，模型根据周围像素把那块补好；你上传一张小图，它推算出更多细节再放大。和<a href="ai-product-photo-guide.html">AI 商品图拍摄</a>一样，它的目标都是让不会设计的人也能拿到能用的图。</p>
+
+<p>过去修一张图要学蒙版、画笔、仿制图章，现在大部分操作变成了「圈一下、点一下」。底层是扩散模型那一类技术，思路是猜出被遮挡或缺失的部分长什么样，再填回去。</p>
+
+<h2 id="sec-2">最常用三类场景：消除、放大、换背景</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-photo-retouch-guide/02-ai-photo-retouch-guide.webp" type="image/webp"><img src="../assets/figures/ai-photo-retouch-guide/02-ai-photo-retouch-guide.jpg" alt="配图2调色与曝光" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>普通人用 AI 修图，八成需求落在三件事上。第一是消除，把游客、电线杆、垃圾桶从画面里拿掉。第二是放大，老照片或截图太糊，拉到能看清。第三是换背景和调色，给证件照换底色，或让灰蒙蒙的风景变通透。</p>
+
+<p>这三类的工具不完全一样。消除和换背景多用在线编辑器，放大偏好本地或专业软件。先想清楚你要哪一种，别一上来就买最贵的会员。免费档大多够日常练手，确定高频再用再开订阅。</p>
+
+<h2 id="sec-3">用消除笔去掉路人和杂物</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-photo-retouch-guide/03-ai-photo-retouch-guide.webp" type="image/webp"><img src="../assets/figures/ai-photo-retouch-guide/03-ai-photo-retouch-guide.jpg" alt="配图3老照片上色" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>消除类工具里，美图秀秀、醒图、Canva 的橡皮擦都够日常用。操作几乎一样：打开照片，选消除或修复笔，在路人和杂物上涂抹，松手等一两秒。模型会参考周边纹理补全，多数时候一次成功。</p>
+
+<p>复杂场景可以加一句文字描述，让结果更可控：</p>
+
+<pre><code>消除笔提示词示例：
+请去掉照片右下角的垃圾桶和远处游客，
+保留原有地面纹理和光影，不要留下修补痕迹。</code></pre>
+
+<p>如果一次没干净，别反复在同一处猛涂，先把强度调低，分两次处理。强度拉太高反而会出现糊斑，宁可慢一点也别图快。</p>
+
+<h2 id="sec-4">把模糊小图放大到清晰</h2>
+
+<p>放大靠的是超分辨率模型，代表是 Topaz Photo AI、Remini、腾讯智影这类。上传后选「放大」或「清晰化」，倍数建议二到四倍。倍数越高越容易凭空长出假细节，人脸尤其容易变怪，老人脸的皱纹可能被抹平或加错。</p>
+
+<p>放大前先裁掉多余边缘，只留主体，速度更快也更准。放大后放大到百分百看一眼眼睛和文字边缘，出现重影就退回低一档倍数重来。和<a href="ai-old-photo-restore.html">AI 老照片修复</a>是同一套思路，只是目标更轻量，不必追求完全复原。</p>
+
+<h2 id="sec-5">换背景调色与新手避坑</h2>
+
+<p>换背景分两步：先让模型把主体抠出来，再放进新底图。Canva、Photoroom 都能一键去背，头发和毛边比早年干净很多。换完背景记得对齐光向，主体受光在左、新背景光源在右，看着就像贴上去的。调色别用满档滤镜，先把曝光和对比拉到舒服，再轻涂一点饱和度。</p>
+
+<p>新手有三个坑。一是强度拉满，消除和磨皮都讲究刚好，过头就假。二是放大倍数贪高，四倍以上的人脸常出错。三是忘记核对边缘，去背后头发丝还连着旧背景，放大才看得见。AI 修图是工具不是魔法，原图太糊或太暗，模型也救不回来。拍的时候尽量端稳、对上焦，后期只做减法。别把 AI 修图当成重拍的借口，前期到位才最省事。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-photo-retouch-guide/04-ai-photo-retouch-guide.webp" type="image/webp"><img src="../assets/figures/ai-photo-retouch-guide/04-ai-photo-retouch-guide.jpg" alt="尾图修图核心要点" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-24。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="how-to-use-ai-photoshop.html">AI 修图 Photoshop 教程</a></li>
+      <li><a href="ai-old-photo-restore.html">AI 老照片修复</a></li>
+      <li><a href="ai-cutout-tools-compare.html">AI 抠图工具对比</a></li>
+      <li><a href="ai-product-photo-guide.html">AI 商品图拍摄</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 修图是什么：把麻烦的后期交给模型</a></li>
+      <li><a href="#sec-2">最常用三类场景：消除、放大、换背景</a></li>
+      <li><a href="#sec-3">用消除笔去掉路人和杂物</a></li>
+      <li><a href="#sec-4">把模糊小图放大到清晰</a></li>
+      <li><a href="#sec-5">换背景调色与新手避坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

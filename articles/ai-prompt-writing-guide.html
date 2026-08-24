@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 提示词怎么写：角色+任务+格式四步法让结果更好 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-prompt-writing-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 提示词写得好坏直接决定输出质量。本文用角色、任务、要求、格式四块结构讲清怎么把结果拉高，列出常见翻车与改写办法，并教你建立可复用提示词库，新手照做就能进阶。">
+<meta property="og:title" content="AI 提示词怎么写：角色+任务+格式四步法让结果更好">
+<meta property="og:description" content="AI 提示词写得好坏直接决定输出质量。本文用角色、任务、要求、格式四块结构讲清怎么把结果拉高，列出常见翻车与改写办法，并教你建立可复用提示词库，新手照做就能进阶。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-prompt-writing-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 提示词怎么写：角色+任务+格式四步法让结果更好">
+<meta name="twitter:description" content="AI 提示词写得好坏直接决定输出质量。本文用角色、任务、要求、格式四块结构讲清怎么把结果拉高，列出常见翻车与改写办法，并教你建立可复用提示词库，新手照做就能进阶。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 提示词怎么写：让结果从凑合到好用的四步法",
+  "description":"AI 提示词写得好坏直接决定输出质量。本文用角色、任务、要求、格式四块结构讲清怎么把结果拉高，列出常见翻车与改写办法，并教你建立可复用提示词库，新手照做就能进阶。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-24","dateModified":"2026-08-24",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-prompt-writing-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 提示词怎么写：让结果从凑合到好用的四步法"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 提示词怎么写：让结果从凑合到好用的四步法</h1>
+    <p class="lede">同样一个 AI，别人用出精品你用出废稿？差别常常就在 AI 提示词写得好不好，结构对了结果立刻不同。</p>
+    <div class="article-meta">更新于 2026-08-24</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 提示词怎么写：让结果从凑合到好用的四步法</span>
+  </nav>
+
+<h2 id="sec-1">AI 提示词是什么：你下指令的方式</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-prompt-writing-guide/01-ai-prompt-writing-guide.webp" type="image/webp"><img src="../assets/figures/ai-prompt-writing-guide/01-ai-prompt-writing-guide.jpg" alt="配图1四块结构" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI 提示词，就是你给模型的那段指令。模型本身能力差不多，差的是你会不会把想要的东西说清楚。和<a href="how-ai-image-generation-works.html">AI 图像生成原理</a>一样，输入越明确，输出越可控。</p>
+
+<p>很多人觉得提示词要背复杂公式，其实不用。记住一件事：把身份、任务、要求和格式写全，结果就比一句话提问强一大截。提示词不是咒语，是把你的需求翻译成模型能懂的语言。写之前先在脑里过一遍：我要它当谁、干什么、给什么、长什么样，四问答完结构就有了。</p>
+
+<h2 id="sec-2">万能结构的四块拼图</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-prompt-writing-guide/02-ai-prompt-writing-guide.webp" type="image/webp"><img src="../assets/figures/ai-prompt-writing-guide/02-ai-prompt-writing-guide.jpg" alt="配图2给例子定调" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>最稳的结构就四块：角色、任务、要求、输出格式。角色决定语气和深度，任务说清要什么，要求限制边界，格式规定长相。四块凑齐，模型才知道你到底要啥，不会自由发挥跑题。</p>
+
+<pre><code>你是一个资深自媒体编辑。
+任务：为「职场新人如何做周报」写一篇 800 字干货。
+要求：口语化、有真实例子、分三点。
+输出格式：标题 + 三段正文。
+例子：参考「周一列三点进展」这种写法。</code></pre>
+
+<p>这四块里例子最容易被忽略，但它最能拉高下限。给一两句范例，模型立刻懂你要的调性。没有例子时，至少给一个「不要怎样」的负面清单，也比空要求强。例子不必长，一两句真实片段就够定调，关键是贴近你要的成品。</p>
+
+<h2 id="sec-3">用角色和例子把结果拉高</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-prompt-writing-guide/03-ai-prompt-writing-guide.webp" type="image/webp"><img src="../assets/figures/ai-prompt-writing-guide/03-ai-prompt-writing-guide.jpg" alt="配图3常见翻车" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>角色不是装饰。说「你是十年经验的法律顾问」和说「你帮我写」，出来的严谨度完全不同。专业任务一定先给角色，再给材料。角色定准，模型才知道用多深的术语、什么立场答。</p>
+
+<p>例子解决「说不清想要啥」的难题。你形容不出风格，就贴一段喜欢的样本让模型模仿。和<a href="ai-coding-assistants-compare.html">AI 编程助手对比</a>里写需求是一个道理：样例比形容词管用。代码任务贴报错片段，写作任务贴喜欢的段落，出活快一倍。</p>
+
+<h2 id="sec-4">常见翻车与改写办法</h2>
+
+<p>翻车第一样是太笼统，「写篇文章」必然空。改成「写给宝妈的育儿避坑文，800 字，三条建议」。第二样是没格式，模型自由发挥你还得重排。第三样是堆要求，一次塞十个限制，模型顾此失彼，结果四不像。还有一种是喂错材料，把过期文档当依据，结论自然偏。</p>
+
+<p>改法就一句：先窄后宽。先要一个最小可用结果，满意了再叠加条件。别指望一次 prompt 解决所有事。跑偏了别重写整段，只改出错的那一块，迭代比推倒重来省时间。</p>
+
+<h2 id="sec-5">建立自己的提示词库</h2>
+
+<p>顺手的提示词存进文档，按场景分类：写作、总结、画图、代码各一栏。下次遇到同类任务直接调，不用现编。和<a href="ai-content-creation-guide.html">AI 内容创作指南</a>配合，把高频动作固化成模板，团队也能复用。</p>
+
+<p>每周回顾一次，把跑偏的改写、好用的保留。提示词库越厚，你用 AI 越省时间。把顺手的 AI 提示词存进库复用才是真效率，别每次从空白重写。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-prompt-writing-guide/04-ai-prompt-writing-guide.webp" type="image/webp"><img src="../assets/figures/ai-prompt-writing-guide/04-ai-prompt-writing-guide.jpg" alt="尾图提示词要点" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-24。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-content-creation-guide.html">AI 内容创作指南</a></li>
+      <li><a href="what-is-diffusion-model.html">扩散模型是什么</a></li>
+      <li><a href="ai-coding-assistants-compare.html">AI 编程助手对比</a></li>
+      <li><a href="how-ai-image-generation-works.html">AI 图像生成原理</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI 提示词是什么：你下指令的方式</a></li>
+      <li><a href="#sec-2">万能结构的四块拼图</a></li>
+      <li><a href="#sec-3">用角色和例子把结果拉高</a></li>
+      <li><a href="#sec-4">常见翻车与改写办法</a></li>
+      <li><a href="#sec-5">建立自己的提示词库</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>
