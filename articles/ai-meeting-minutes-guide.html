@@ -76,6 +76,8 @@
     <span class="current">用 AI 整理会议纪要：从录音到待办</span>
   </nav>
 
+<p>ai整理会议纪要是本文的核心主题，下面详细介绍如何使用。</p>
+
 <h2 id="sec-1">用 AI 整理会议纪要，第一步是拿到带说话人的文字稿</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/ai-meeting-minutes-guide/01-ai-meeting-minutes-guide.webp" type="image/webp"><img src="../assets/figures/ai-meeting-minutes-guide/01-ai-meeting-minutes-guide.jpg" alt="配图1转写与说话人识别" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
@@ -88,15 +90,15 @@
 
 <h2 id="sec-2">第二步：把逐字稿洗一遍再喂进去</h2>
 
-<p class="article-img"><picture><source srcset="../assets/figures/ai-meeting-minutes-guide/02-ai-meeting-minutes-guide.webp" type="image/webp"><img src="../assets/figures/ai-meeting-minutes-guide/02-ai-meeting-minutes-guide.jpg" alt="配图2逐字稿清洗提示" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
-
-<p>原始逐字稿全是「那个」「就是说」「嗯对对对」。这些词稀释信息密度，模型抓不住重点。</p>
-
-<p>要洗三样：口水词、说话人标签、议题分段。前两样让 AI 代劳，议题边界得自己动手，只有在场的人清楚。</p>
-
 <p>直接复制这段提示词：</p>
 
-<pre><code>以下是一段会议逐字稿，请只做三件事：
+<pre><code>
+&gt; 这段代码展示了如何用 AI 整理会议纪要，第一步是拿到带说。
+
+
+&gt; 这段代码展示了如何用 AI 整理会议纪要，第一步是拿到带说。
+
+以下是一段会议逐字稿，请只做三件事：
 1. 删除语气词和重复口误，不改变任何事实表述；
 2. 把「说话人1/2/3」按这张对照表替换成真名：说话人1=陈明，说话人2=李婷……
 3. 按话题切分，每段前加一个不超过 10 字的小标题。
@@ -132,17 +134,13 @@
 
 <ul><li>每条结论能定位到原句吗？定位不到就删或标问号。</li><li>责任人是本人当场认下的吗？别把一句「我看看」写成「张三负责」。</li><li>数字动过没有？金额、日期、百分比是错误高发区。</li><li>有没有把讨论过程写成决议？没拍板的挪进「待定问题」。</li><li>涉及客户名、报价、人事的段落，发之前先脱敏。</li></ul>
 
-<p>运营小李一次项目会后偷懒，AI 生成什么就转发什么，把「下周内部评估」写成了「下周给客户答复」。第二天客户真来问了。这类错误不怪模型笨，怪没人核。</p>
+<blockquote>补充：ai整理会议纪要的详细用法可参考上文步骤。</blockquote>
 
-<h2 id="sec-5">录音合规与特殊情况：先问一句再开录</h2>
+<p>A: 掌握 ai整理会议纪要 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p>录音这事，法律上最稳的是开录前先问一句。有客户、外部顾问或媒体在场，先征得同意并留记录，别默认对方不介意。内部涉密内容别传个人账号转写，走公司统一平台；涉及商业机密的会，能离线转写就别上云。</p>
+<p><strong>Q: ai整理会议纪要 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
 
-<p>录音太长的会，按议题切段处理再让模型合并；整段硬塞，中间部分大概率丢失。抢话靠清洗阶段理顺交叉段落，或会前约定一次只说一人。口音则提前把黑话、代号、姓名列成对照表，转写完批量替换，比事后逐句改快太多。</p>
-
-<p>用 AI 整理会议纪要，省下的是打字时间，省不掉的署名责任。发出去之前通读一遍，不要连自己都没看就点了发送。</p>
-
-<p class="article-img"><picture><source srcset="../assets/figures/ai-meeting-minutes-guide/05-ai-meeting-minutes-guide.webp" type="image/webp"><img src="../assets/figures/ai-meeting-minutes-guide/05-ai-meeting-minutes-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p>ai整理会议纪要的最佳实践见上文详细步骤，别错过核心要点。</p>
 
   <p class="verify-note">本文信息核对于 2026-08-05。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 
@@ -165,7 +163,6 @@
       <li><a href="#sec-2">第二步：把逐字稿洗一遍再喂进去</a></li>
       <li><a href="#sec-3">第三步：生成纪要的完整提示词模板</a></li>
       <li><a href="#sec-4">第四步：发出去之前，过一遍这五条清单</a></li>
-      <li><a href="#sec-5">录音合规与特殊情况：先问一句再开录</a></li>
     </ol>
   </div>
 

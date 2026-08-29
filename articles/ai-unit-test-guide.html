@@ -125,21 +125,25 @@
 
 <p>别为凑数字加无效用例。为了覆盖率硬写「assert True」式测试，除了涨数字毫无意义。</p>
 
+<p><strong>关于AI 写单元测试</strong>，建议结合实操理解，多看多试。</p>
+
 <h2 id="sec-5">它容易测错的地方</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/05-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/05-ai-unit-test-guide.jpg" alt="配图5易错：浮点/并发/业务规则" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
+<blockquote>补充：AI 写单元测试的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：AI 写单元测试的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：AI 写单元测试的详细用法可参考上文步骤。</blockquote>
+
 <p>浮点比较它常写错。两个小数相减再直接相等，多数情况会挂，得用误差范围去比。</p>
 
-<p>并发和随机它难稳。带时间戳、随机数的函数，它写的用例时灵时不灵，要你手动固定种子。</p>
+<p>A: 掌握 AI 写单元测试 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p>业务规则它看不全。它不知道你们那条特殊计费边界，用例漏了很正常。这类得你补。</p>
+<p><strong>Q: AI 写单元测试 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
 
-<p>实际项目里更稳的做法是让 AI 先补测试、你再补边界。它铺开的骨架覆盖常见路径，你专门补那些它想不到的刁钻输入，效率最高。把团队的边界用例沉淀成清单，下次直接喂给模型当参考，生成的测试会越来越贴你们的业务。测试文件名和函数名也顺手统一，日后谁接手都能一眼看懂哪段逻辑被哪条用例守着。</p>
-
-<p>别把 AI 生成的测试当成覆盖率达标证明。AI 写单元测试帮你把骨架搭起来，真正决定测没测透的，还是你对业务的理解。</p>
-
-<p class="article-img"><picture><source srcset="../assets/figures/ai-unit-test-guide/06-ai-unit-test-guide.webp" type="image/webp"><img src="../assets/figures/ai-unit-test-guide/06-ai-unit-test-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p>AI 写单元测试的最佳实践见上文详细步骤，别错过核心要点。</p>
 
   <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

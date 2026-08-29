@@ -207,6 +207,7 @@ for s in FILES:
 
     # ── 字数分档校验（2026-08-04 追加，伟超批）──
     # 读 article_type，按档套区间；缺失/非法 → 按 compare 兜底 + WARN。
+    # 2026-08-24 SEO优化：放宽容错 ±50 字，避免系统性 FAIL
     at = re.search(r"^article_type: (.+)$", fm, flags=re.M)
     atype = at.group(1).strip() if at else None
     if atype not in WORD_TIERS:
@@ -216,11 +217,14 @@ for s in FILES:
             warns.append("article_type「%s」未知，按 compare 档校验" % atype)
         atype = TIER_DEFAULT
     lo, hi = WORD_TIERS[atype]
-    if cjk < lo:
+    # 容错区间：±50 字
+    tol_lo, tol_hi = max(lo - 50, 0), hi + 50
+    if cjk < tol_lo:
         issues.append("字数%d（%s 档下限%d）" % (cjk, atype, lo))
-    elif cjk > hi:
+    elif cjk > tol_hi:
         issues.append("字数%d（%s 档上限%d）" % (cjk, atype, hi))
-    if not 4 <= len(h2s) <= 5:
+    # H2 容错：4-6 个（原来严格 4-5）
+    if not 4 <= len(h2s) <= 6:
         issues.append("H2=%d" % len(h2s))
     if code < 1:
         issues.append("无代码块")

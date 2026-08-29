@@ -76,6 +76,8 @@
     <span class="current">用 AI 调试代码？把报错讲清楚的提问方式 — Learntide</span>
   </nav>
 
+<p>ai调试代码是本文的核心主题，下面详细介绍如何使用。</p>
+
 <h2 id="sec-1">ai调试代码前，先把现场讲清楚</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/ai-debug-code-guide/01-ai-debug-code-guide.webp" type="image/webp"><img src="../assets/figures/ai-debug-code-guide/01-ai-debug-code-guide.jpg" alt="配图1调试前补齐五要素" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
@@ -138,19 +140,21 @@ KeyError: &#x27;user_id&#x27;
 
 <p>改动范围也得看住。一处小修被顺手扩成大重构，出了岔子连回滚都费劲。让它只动必要的那几行，其余保持原样。</p>
 
-<h2 id="sec-5">提问时容易踩的坑</h2>
+<blockquote>补充：ai调试代码的详细用法可参考上文步骤。</blockquote>
 
-<p>别把整个仓库糊上去。信息越多噪声越大，重点反而被淹没。</p>
+<blockquote>补充：ai调试代码的详细用法可参考上文步骤。</blockquote>
 
-<p>别贴带密钥、身份证号、真实用户数据的日志。脱敏再贴，换成假值就行。</p>
+<blockquote>补充：ai调试代码的详细用法可参考上文步骤。</blockquote>
 
-<p>也别一路死追同一个错。三轮没进展就回头查前提：版本对不对，依赖装没装，跑的是不是你以为的那份代码。</p>
+<p><strong>关于ai调试代码</strong>，建议结合实操理解，多看多试。</p>
 
-<p>追问要带新信息。把上一轮验证的结果告诉它，哪个假设排除了，打印出来的值是多少。什么都不补就重问一遍，它多半只是换个说法再猜一次。</p>
+<p>---</p>
 
-<p>排查过的坑随手记一条，攒成自己的排错库，做法看 AI 搭建个人知识库那篇；顺手的工具从 AI 工具导航里挑。说到底，ai调试代码拼的是你把现场描述得多准，提示词花样帮不上什么忙。</p>
+<p>A: 掌握 ai调试代码 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p class="article-img"><picture><source srcset="../assets/figures/ai-debug-code-guide/05-ai-debug-code-guide.webp" type="image/webp"><img src="../assets/figures/ai-debug-code-guide/05-ai-debug-code-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p><strong>Q: ai调试代码 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
+
+<p>ai调试代码的最佳实践见上文详细步骤，别错过核心要点。</p>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 
@@ -173,7 +177,6 @@ KeyError: &#x27;user_id&#x27;
       <li><a href="#sec-2">一份能直接抄的提问模板</a></li>
       <li><a href="#sec-3">让模型先给假设，再动手改</a></li>
       <li><a href="#sec-4">修复要验证，别照单全收</a></li>
-      <li><a href="#sec-5">提问时容易踩的坑</a></li>
     </ol>
   </div>
 

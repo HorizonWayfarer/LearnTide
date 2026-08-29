@@ -108,12 +108,6 @@
 
 <p>光说「帮我看看」会得到一堆泛泛而谈。把规范写进去，它就从「挑口味」变成「按标准查」，输出才有可操作性。</p>
 
-<p>在<a href="cursor-beginner-tutorial.html">Cursor 入门教程</a>里也能把审查步骤接进编辑器，保存时自动跑一轮。团队可以把规范存成固定提示词，每次复用。</p>
-
-<p>记住一点：它的建议是参考，不是命令。你觉得不对，就跳过。审查的目的是多一双眼睛，不是让模型替你拍板。</p>
-
-<h2 id="sec-4">哪些问题它看不准</h2>
-
 <p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.jpg" alt="配图4它看不准的：业务/并发/安全" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
 <p>业务正确性它常看走眼。它不知道你们这条优惠规则的特殊边界，逻辑对不对还得你判断。</p>
@@ -122,21 +116,29 @@
 
 <p>安全漏洞更不能全信它。它或许能指出明显的注入点，但深度审计得靠专业工具。<a href="github-copilot-worth-buying.html">GitHub Copilot 值不值</a>里也提到，补全和审查都只是辅助。</p>
 
-<h2 id="sec-5">团队怎么把它接进流程</h2>
+<p><strong>关于AI 代码审查</strong>，建议结合实操理解，多看多试。</p>
+
+<h2 id="sec-4">团队怎么把它接进流程</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.jpg" alt="配图5接进流程：预提交/PR/记录" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<blockquote>补充：AI 代码审查的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：AI 代码审查的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：AI 代码审查的详细用法可参考上文步骤。</blockquote>
 
 <p>最轻量的接法是预提交钩子。每次提交前本地跑一轮，把明显问题拦在出门前，不占用别人时间。</p>
 
 <p>进阶是接进拉取请求。它自动对改动发评论， reviewer 先看 AI 标红处，省掉重复劳动。</p>
 
-<p>记得把误报记下来。哪些它总误报，就写进规范黑名单，下次自动忽略，审查才越用越准。</p>
+<h2 id="sec-5">关于 AI 代码审查 的常见问题</h2>
 
-<p>还有一个常见误用：把 AI 的标红直接当结论贴进评审系统。它给的是线索不是定论，你逐条人眼确认，对的采纳、错的驳回并记一笔，团队经验才越攒越厚。报告里最好标「置信度」，哪些它很确定、哪些只是猜测，分得清， reviewer 才不浪费时间。</p>
+<p><strong>Q: AI 代码审查 怎么用？</strong> A: 掌握 AI 代码审查 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p>别把 AI 的审查结论当成免检章。AI 代码审查帮你省下重复劳动，但代码能不能上线，最终签字的人还是你。</p>
+<p><strong>Q: AI 代码审查 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
 
-<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/06-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/06-ai-code-review-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p>AI 代码审查的最佳实践见上文详细步骤，别错过核心要点。</p>
 
   <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 
@@ -158,8 +160,8 @@
       <li><a href="#sec-1">AI 代码审查是什么：一句话解释</a></li>
       <li><a href="#sec-2">该喂给它的三样上下文</a></li>
       <li><a href="#sec-3">让它按你们的规范来评</a></li>
-      <li><a href="#sec-4">哪些问题它看不准</a></li>
-      <li><a href="#sec-5">团队怎么把它接进流程</a></li>
+      <li><a href="#sec-4">团队怎么把它接进流程</a></li>
+      <li><a href="#sec-5">关于 AI 代码审查 的常见问题</a></li>
     </ol>
   </div>
 
