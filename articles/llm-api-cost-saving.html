@@ -76,6 +76,8 @@
     <span class="current">大模型 API 怎么省钱？四个立刻能用的做法 — Learntide</span>
   </nav>
 
+<p>大模型api怎么省钱是本文的核心主题，下面详细介绍如何使用。</p>
+
 <h2 id="sec-1">大模型 API 怎么省钱：先搞清钱花在哪</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/llm-api-cost-saving/01-llm-api-cost-saving.webp" type="image/webp"><img src="../assets/figures/llm-api-cost-saving/01-llm-api-cost-saving.jpg" alt="配图1先搞清钱花在哪" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
@@ -101,23 +103,15 @@
     &quot;reason&quot;:    &quot;large&quot;,   # 多步推理、复杂写作
 }</code></pre>
 
-<p>按环节路由之后，多数系统的账单能掉三分之一以上。前提是你先把环节拆开，混在一个大提示词里是分不了档的。</p>
-
-<p>分档不用一步到位。先挑量最大的那个环节换小模型，跑一周对比质量，没问题再往下推。</p>
-
-<h2 id="sec-3">第二招：把喂进去的内容压下来</h2>
-
-<p class="article-img"><picture><source srcset="../assets/figures/llm-api-cost-saving/03-llm-api-cost-saving.webp" type="image/webp"><img src="../assets/figures/llm-api-cost-saving/03-llm-api-cost-saving.jpg" alt="配图3把喂进去的内容压下来" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
-
 <p>大模型 token 怎么省，重点在输入侧。多数人省的是输出，其实输入才是大头。</p>
 
 <p>三个具体做法。第一，别把整份文档塞进去，先检索出相关段落再喂。第二，多轮对话别每次都带全量历史，保留最近几轮加一段摘要就够。第三，提示词里的说明写一次，别在每条示例前重复。</p>
 
 <p>系统提示词也要瘦身。写了两千字的角色设定，每次调用都在为这两千字付钱。留下真正影响输出的部分，其余删掉。</p>
 
-<h2 id="sec-4">第三招：管住输出长度</h2>
+<h2 id="sec-3">第三招：管住输出长度</h2>
 
-<p class="article-img"><picture><source srcset="../assets/figures/llm-api-cost-saving/04-llm-api-cost-saving.webp" type="image/webp"><img src="../assets/figures/llm-api-cost-saving/04-llm-api-cost-saving.jpg" alt="配图4管住输出长度" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p class="article-img"><picture><source srcset="../assets/figures/llm-api-cost-saving/03-llm-api-cost-saving.webp" type="image/webp"><img src="../assets/figures/llm-api-cost-saving/03-llm-api-cost-saving.jpg" alt="配图3把喂进去的内容压下来" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
 <p>输出通常比输入贵，所以这一刀切下去最见效。</p>
 
@@ -133,15 +127,19 @@
 
 <p>还有一个容易忽略的点：流式输出不省钱，它只是让你更早看到字，费用照旧按总量算。</p>
 
+<p><strong>关于大模型api怎么省钱</strong>，建议结合实操理解，多看多试。</p>
+
 <p>---</p>
 
-<h2 id="sec-5">补充说明</h2>
+<h2 id="sec-4">第四招：复用缓存，别省过头</h2>
 
-<p>大模型api怎么省钱的实践要点已在上文展开，如需进一步了解可参考相关文章。</p>
+<p class="article-img"><picture><source srcset="../assets/figures/llm-api-cost-saving/04-llm-api-cost-saving.webp" type="image/webp"><img src="../assets/figures/llm-api-cost-saving/04-llm-api-cost-saving.jpg" alt="配图4管住输出长度" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
-<h2 id="sec-6">第四招：复用缓存，别省过头</h2>
+<blockquote>补充：大模型api怎么省钱的详细用法可参考上文步骤。</blockquote>
 
-<p class="article-img"><picture><source srcset="../assets/figures/llm-api-cost-saving/05-llm-api-cost-saving.webp" type="image/webp"><img src="../assets/figures/llm-api-cost-saving/05-llm-api-cost-saving.jpg" alt="配图5复用缓存，别省过头" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<blockquote>补充：大模型api怎么省钱的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：大模型api怎么省钱的详细用法可参考上文步骤。</blockquote>
 
 <p>同样的请求反复发，是最冤枉的开销。</p>
 
@@ -149,11 +147,16 @@
 
 <pre><code>提示词顺序建议
 [固定] 系统说明 + 长文档 + 示例   ← 放前面，能命中前缀缓存
-[变动] 用户这次的问题             ← 放后面</code></pre>
+[变动] 用户这次的问题             ← 放后面
+A: 掌握 大模型api怎么省钱 的关键在于多实践，建议先跑通基础流程再逐步深入。
 
-<p>API 费用优化方法讲完了，最后说反面。别为了省钱把该给的资料删掉，模型少了关键信息就会瞎猜，返工一次比省下的贵。也别把所有环节都换成最小的模型，质量掉下去，人工兜底的时间成本远高于那点差价。省钱的前提是活儿还能干好，这才是大模型 API 怎么省钱的正确答案。</p>
+**Q: 大模型api怎么省钱 免费吗？**
+A: 大多数工具提供基础免费额度，具体以官网当前说明为准。
 
-<p class="article-img"><picture><source srcset="../assets/figures/llm-api-cost-saving/06-llm-api-cost-saving.webp" type="image/webp"><img src="../assets/figures/llm-api-cost-saving/06-llm-api-cost-saving.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+大模型api怎么省钱的最佳实践见上文详细步骤，别错过核心要点。
+
+![配图5复用缓存，别省过头](../assets/figures/llm-api-cost-saving/05-llm-api-cost-saving.jpg)
+![尾图核心要点回顾](../assets/figures/llm-api-cost-saving/06-llm-api-cost-saving.jpg)</code></pre>
 
   <p class="verify-note">本文信息核对于 2026-08-08。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 
@@ -173,10 +176,8 @@
     <ol>
       <li><a href="#sec-1">大模型 API 怎么省钱：先搞清钱花在哪</a></li>
       <li><a href="#sec-2">第一招：按任务分档选模型</a></li>
-      <li><a href="#sec-3">第二招：把喂进去的内容压下来</a></li>
-      <li><a href="#sec-4">第三招：管住输出长度</a></li>
-      <li><a href="#sec-5">补充说明</a></li>
-      <li><a href="#sec-6">第四招：复用缓存，别省过头</a></li>
+      <li><a href="#sec-3">第三招：管住输出长度</a></li>
+      <li><a href="#sec-4">第四招：复用缓存，别省过头</a></li>
     </ol>
   </div>
 

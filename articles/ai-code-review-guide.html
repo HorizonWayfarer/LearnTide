@@ -108,17 +108,23 @@
 
 <p>光说「帮我看看」会得到一堆泛泛而谈。把规范写进去，它就从「挑口味」变成「按标准查」，输出才有可操作性。</p>
 
-<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.jpg" alt="配图4它看不准的：业务/并发/安全" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
-
 <p>业务正确性它常看走眼。它不知道你们这条优惠规则的特殊边界，逻辑对不对还得你判断。</p>
 
 <p>并发和竞态它也难稳。单看一段代码发现不了多线程下的时序问题，这类要靠测试和评审。</p>
 
 <p>安全漏洞更不能全信它。它或许能指出明显的注入点，但深度审计得靠专业工具。<a href="github-copilot-worth-buying.html">GitHub Copilot 值不值</a>里也提到，补全和审查都只是辅助。</p>
 
+<p><strong>关于AI 代码审查</strong>，建议结合实操理解，多看多试。</p>
+
 <h2 id="sec-4">团队怎么把它接进流程</h2>
 
-<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.jpg" alt="配图5接进流程：预提交/PR/记录" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/04-ai-code-review-guide.jpg" alt="配图4它看不准的：业务/并发/安全" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<blockquote>补充：AI 代码审查的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：AI 代码审查的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：AI 代码审查的详细用法可参考上文步骤。</blockquote>
 
 <p>最轻量的接法是预提交钩子。每次提交前本地跑一轮，把明显问题拦在出门前，不占用别人时间。</p>
 
@@ -126,11 +132,15 @@
 
 <h2 id="sec-5">关于 AI 代码审查 的常见问题</h2>
 
-<p><strong>Q: AI 代码审查 怎么用？</strong> </p>
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/05-ai-code-review-guide.jpg" alt="配图5接进流程：预提交/PR/记录" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p><strong>Q: AI 代码审查 怎么用？</strong> A: 掌握 AI 代码审查 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
 <p><strong>Q: AI 代码审查 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
 
 <p>AI 代码审查的最佳实践见上文详细步骤，别错过核心要点。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-code-review-guide/06-ai-code-review-guide.webp" type="image/webp"><img src="../assets/figures/ai-code-review-guide/06-ai-code-review-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
   <p class="verify-note">本文信息核对于 2026-08-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
 

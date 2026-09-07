@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Runway 新手教程：从零到能剪辑 AI 视频，专业级工具免费用 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-runway-beginner-tutorial">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="Runway新手教程，AI 视频剪辑领域的专业工具。本文从零讲清 Gen-3 Alpha 使用、Motion Brush 运镜、Inpainting 修复、Export 导出全套流程，新手一小时上手。">
+<meta property="og:title" content="Runway 新手教程：从零到能剪辑 AI 视频，专业级工具免费用">
+<meta property="og:description" content="Runway新手教程，AI 视频剪辑领域的专业工具。本文从零讲清 Gen-3 Alpha 使用、Motion Brush 运镜、Inpainting 修复、Export 导出全套流程，新手一小时上手。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-runway-beginner-tutorial">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Runway 新手教程：从零到能剪辑 AI 视频，专业级工具免费用">
+<meta name="twitter:description" content="Runway新手教程，AI 视频剪辑领域的专业工具。本文从零讲清 Gen-3 Alpha 使用、Motion Brush 运镜、Inpainting 修复、Export 导出全套流程，新手一小时上手。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"Runway 新手教程：从零到能剪辑 AI 视频",
+  "description":"Runway新手教程，AI 视频剪辑领域的专业工具。本文从零讲清 Gen-3 Alpha 使用、Motion Brush 运镜、Inpainting 修复、Export 导出全套流程，新手一小时上手。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-09-07","dateModified":"2026-09-07",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-runway-beginner-tutorial"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"Runway 新手教程：从零到能剪辑 AI 视频"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>Runway 新手教程：从零到能剪辑 AI 视频</h1>
+    <p class="lede">Runway 是 AI 视频剪辑领域的专业工具，Gen-3 Alpha 模型质量高，支持运镜控制、局部修复、风格迁移。本文从零讲清怎么用，新手一小时上手。</p>
+    <div class="article-meta">更新于 2026-09-07</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">Runway 新手教程：从零到能剪辑 AI 视频</span>
+  </nav>
+
+<p>Runway新手教程是本文的核心主题。 !<a href="../assets/figures/ai-runway-beginner-tutorial/01-ai-runway-beginner-tutorial.jpg">配图1Runway界面概览</a></p>
+
+<h2 id="sec-1">Runway新手入门：AI 视频剪辑的专业工具</h2>
+
+<p>Runway 是 AI 视频剪辑领域的标杆工具，Gen-3 Alpha 模型支持文生视频、图生视频、视频编辑、风格迁移、局部修复等功能。免费版每月 125 积分，够生成 25 秒视频，适合新手测试流程。</p>
+
+<p>和<a href="runway-ai-video-review.html">Runway AI 视频工具评测</a>里讲的高级功能不同，本文专注新手入门，从注册到出片一步步讲清楚。Runway 的优势是专业级质量、丰富工具链、API 开放，但学习曲线较陡，新手需要耐心。</p>
+
+<h2 id="sec-2">Runway新手入门：注册与界面熟悉</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-runway-beginner-tutorial/02-ai-runway-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-runway-beginner-tutorial/02-ai-runway-beginner-tutorial.jpg" alt="配图2注册与界面介绍" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>打开 runwayml.com，用邮箱或 Google 账号注册。免费版每月 125 积分，足够测试基础功能。界面分三块：左侧项目列表、中间画布区、右侧工具栏。</p>
+
+<p>新手建议先创建一个测试项目，熟悉基本操作。Runway 支持 Web 端和 Desktop 端，Desktop 端性能更好，适合处理长视频。</p>
+
+<h2 id="sec-3">Runway新手入门：文生视频入门</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-runway-beginner-tutorial/03-ai-runway-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-runway-beginner-tutorial/03-ai-runway-beginner-tutorial.jpg" alt="配图3文生视频操作流程" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>文生视频是 Runway 最基础的功能。输入提示词，选择模型（Gen-3 Alpha 质量最高）、时长（5-60秒）、比例（16:9 横屏或 9:16 竖屏），点击生成。</p>
+
+<p>提示词结构参考<a href="ai-text-to-video-tutorial.html">AI 视频生成实操</a>里讲的四要素：主体、动作、环境、镜头。示例：</p>
+
+<pre><code>镜头缓慢推进，一只橘猫趴在窗台晒太阳，午后阳光，电影感，横屏 1080P。</code></pre>
+
+<p>生成后预览，人物别变形、动作别断层就下载。不满意就改提示词重生成，别反复在同一段上烧积分。</p>
+
+<h2 id="sec-4">Runway新手入门：Motion Brush 运镜控制</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-runway-beginner-tutorial/04-ai-runway-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-runway-beginner-tutorial/04-ai-runway-beginner-tutorial.jpg" alt="配图4Motion Brush运镜控制" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>Motion Brush 是 Runway 的运镜控制工具，能在图片上画箭头，指定局部运动方向和幅度。适合做动态插画、产品展示、风景延时等场景。</p>
+
+<p>操作分三步：上传图片、用 Brush 画箭头、调整强度。箭头方向决定运动方向，长度决定运动幅度。新手建议从简单场景开始，比如让水面流动、让树叶飘动，熟练后再做复杂运镜。</p>
+
+<h2 id="sec-5">Runway新手入门：Inpainting 局部修复</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-runway-beginner-tutorial/05-ai-runway-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-runway-beginner-tutorial/05-ai-runway-beginner-tutorial.jpg" alt="配图5Inpainting局部修复" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>Inpainting 是局部修复工具，能擦除视频中不需要的元素，或替换局部内容。适合去水印、去路人、修复破损画面等场景。</p>
+
+<p>操作分三步：选择区域、输入替换描述、生成。新手建议先小范围测试，确认效果满意后再大面积使用。Inpainting 对复杂背景（树叶、水面）处理效果一般，需要多次迭代。</p>
+
+<h2 id="sec-6">Runway新手入门：导出与分享</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-runway-beginner-tutorial/06-ai-runway-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-runway-beginner-tutorial/06-ai-runway-beginner-tutorial.jpg" alt="配图6导出与分享选项" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>Runway 支持导出 MP4、MOV 格式，分辨率最高 1080p。免费版导出的视频带水印，商用场景建议付费档。导出前预览检查，重点看是否有变形、卡顿、音画不同步。</p>
+
+<p>和<a href="ai-video-clipping-guide.html">AI 视频剪辑入门</a>里讲的逻辑一致，导出只是最后一步，前期提示词和参数设置才是质量关键。</p>
+
+<p><strong>关于 Runway 新手教程</strong>，核心经验是「先熟悉，再深挖」。别一上来就挑战复杂项目，先从简单文生视频跑通流程，确认理解交互逻辑后再逐步解锁高级功能。</p>
+
+<p>Runway 新手教程的关键是动手试。别看完就忘，当天就生成第一段视频，让操作成为习惯。用多了自然熟练。掌握 Runway 新手入门的技巧，视频剪辑效率会翻倍。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-runway-beginner-tutorial/07-ai-runway-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-runway-beginner-tutorial/07-ai-runway-beginner-tutorial.jpg" alt="配图7最终成品展示" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-09-07。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="runway-ai-video-review.html">Runway AI 视频工具评测</a></li>
+      <li><a href="ai-text-to-video-tutorial.html">AI 视频生成实操</a></li>
+      <li><a href="ai-video-clipping-guide.html">AI 视频剪辑入门</a></li>
+      <li><a href="kling-ai-tutorial.html">可灵 AI 教程</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">Runway新手入门：AI 视频剪辑的专业工具</a></li>
+      <li><a href="#sec-2">Runway新手入门：注册与界面熟悉</a></li>
+      <li><a href="#sec-3">Runway新手入门：文生视频入门</a></li>
+      <li><a href="#sec-4">Runway新手入门：Motion Brush 运镜控制</a></li>
+      <li><a href="#sec-5">Runway新手入门：Inpainting 局部修复</a></li>
+      <li><a href="#sec-6">Runway新手入门：导出与分享</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

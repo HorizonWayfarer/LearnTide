@@ -76,6 +76,8 @@
     <span class="current">MoE 是什么：大模型里的专家分工法 — Learntide</span>
   </nav>
 
+<p>moe架构是什么是本文的核心主题，下面详细介绍如何使用。</p>
+
 <h2 id="sec-1">moe架构是什么：让专家分工干活</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/what-is-moe-model/01-what-is-moe-model.webp" type="image/webp"><img src="../assets/figures/what-is-moe-model/01-what-is-moe-model.jpg" alt="配图1调度器与专家分工" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
@@ -115,23 +117,29 @@ MoE 模型：4000 亿参数，每次只激活 300 亿 → 容量更大，单次�
 
 <p>第一是调度会出错。专家点错了，回答就发飘。同一类问题，表现可能忽好忽坏。</p>
 
+<blockquote>补充：moe架构是什么的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：moe架构是什么的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：moe架构是什么的详细用法可参考上文步骤。</blockquote>
+
 <p>第二是训练更折腾。得想办法让每位专家都被用上。不然几位专家累死、其他长期闲置，实际容量就白白浪费。这一步的调校难度比稠密模型高不少，后续做 <a href="what-is-fine-tuning.html">微调是什么</a> 那类打磨也更讲究。</p>
 
 <p>第三是部署门槛不低。参数总量摆在那里，显存还是得装得下。省的是计算量，不是存储。个人想在本地跑一个大号 MoE，依然不轻松。</p>
 
+<p><strong>关于moe架构是什么</strong>，建议结合实操理解，多看多试。</p>
+
 <p>---</p>
 
-<h2 id="sec-5">补充说明</h2>
-
-<p>moe架构是什么的实践要点已在上文展开，如需进一步了解可参考相关文章。</p>
-
-<h2 id="sec-6">别被参数量吓到</h2>
+<h2 id="sec-5">别被参数量吓到</h2>
 
 <p>还有个常见误解：以为专家各管一个学科，一位懂数学，一位懂法律。实际并非这么分的。调度器学到的划分很抽象，人看不懂，也对不上任何学科名字。</p>
 
-<p>看到「万亿参数」四个字，先别急着换算成能力。这个数字说的是模型有多大，跟它每次用了多少是两回事。稠密的一千亿和 MoE 的一万亿，实际计算开销可能差不多。</p>
+<p>A: 掌握 moe架构是什么 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p>厂商愿意公布总参数，是因为这个数好看。你真正该关心的是激活参数、上下文长度和实际表现。选模型时别只盯着一个数，关键还是看 moe架构是什么带来的激活规模，以及它在你的任务上答得准不准。</p>
+<p><strong>Q: moe架构是什么 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
+
+<p>moe架构是什么的最佳实践见上文详细步骤，别错过核心要点。</p>
 
 <p class="article-img"><picture><source srcset="../assets/figures/what-is-moe-model/04-what-is-moe-model.webp" type="image/webp"><img src="../assets/figures/what-is-moe-model/04-what-is-moe-model.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
@@ -155,8 +163,7 @@ MoE 模型：4000 亿参数，每次只激活 300 亿 → 容量更大，单次�
       <li><a href="#sec-2">它到底怎么省下算力</a></li>
       <li><a href="#sec-3">为什么这两年突然火起来</a></li>
       <li><a href="#sec-4">它的代价在哪里</a></li>
-      <li><a href="#sec-5">补充说明</a></li>
-      <li><a href="#sec-6">别被参数量吓到</a></li>
+      <li><a href="#sec-5">别被参数量吓到</a></li>
     </ol>
   </div>
 

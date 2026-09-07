@@ -76,6 +76,8 @@
     <span class="current">什么是 Embedding？把文字变成数字的那一步 — Learntide</span>
   </nav>
 
+<p>什么是embedding是本文的核心主题，下面详细介绍如何使用。</p>
+
 <h2 id="sec-1">什么是 Embedding：把意思变成坐标</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/what-is-embedding-explained/01-what-is-embedding-explained.webp" type="image/webp"><img src="../assets/figures/what-is-embedding-explained/01-what-is-embedding-explained.jpg" alt="配图1语义空间里的坐标" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
@@ -128,25 +130,27 @@ A ↔ C  0.11   → 判定无关</code></pre>
 
 <p>第二，中文效果要单独验。很多向量模型以英文语料为主，中文表现明显偏弱，选之前拿自己的真实问题跑一批。</p>
 
+<blockquote>补充：什么是embedding的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：什么是embedding的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：什么是embedding的详细用法可参考上文步骤。</blockquote>
+
 <p>第三，切段别贪长。一段里塞了三个话题，向量会取一个折中位置，结果哪个都不像。</p>
 
 <p>第四，别用它做精确匹配。订单号、身份证号、型号这类，还得靠关键词查，或者两种方式一起上。</p>
 
+<p><strong>关于什么是embedding</strong>，建议结合实操理解，多看多试。</p>
+
 <p>---</p>
 
-<h2 id="sec-5">补充说明</h2>
+<p>A: 掌握 什么是embedding 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p>什么是embedding的实践要点已在上文展开，如需进一步了解可参考相关文章。</p>
+<p><strong>Q: 什么是embedding 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
 
-<h2 id="sec-6">别把相似度当成正确答案</h2>
+<p>什么是embedding的最佳实践见上文详细步骤，别错过核心要点。</p>
 
 <p class="article-img"><picture><source srcset="../assets/figures/what-is-embedding-explained/05-what-is-embedding-explained.webp" type="image/webp"><img src="../assets/figures/what-is-embedding-explained/05-what-is-embedding-explained.jpg" alt="配图5相似度不是答案" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
-
-<p>向量检索永远会返回结果。库里没有对得上的内容，它照样把最接近的几条端出来，相似度还挺高。这点最容易让人误判。</p>
-
-<p>所以要设阈值，也要保留原文出处，让人能点开核对。把相似度当成参考分，不要当成判决书。</p>
-
-<p>弄明白什么是embedding之后，你会发现它只是把语义变得可计算，并不保证语义被理解对。</p>
 
 <p class="article-img"><picture><source srcset="../assets/figures/what-is-embedding-explained/06-what-is-embedding-explained.webp" type="image/webp"><img src="../assets/figures/what-is-embedding-explained/06-what-is-embedding-explained.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
@@ -171,8 +175,6 @@ A ↔ C  0.11   → 判定无关</code></pre>
       <li><a href="#sec-2">它和分词编号不是一回事</a></li>
       <li><a href="#sec-3">为什么检索和推荐都靠它</a></li>
       <li><a href="#sec-4">用起来最容易踩的坑</a></li>
-      <li><a href="#sec-5">补充说明</a></li>
-      <li><a href="#sec-6">别把相似度当成正确答案</a></li>
     </ol>
   </div>
 

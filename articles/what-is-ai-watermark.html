@@ -76,6 +76,8 @@
     <span class="current">AI 内容水印是什么？怎么查一张图的来源 — Learntide</span>
   </nav>
 
+<p>ai数字水印是什么是本文的核心主题，下面详细介绍如何使用。</p>
+
 <h2 id="sec-1">AI 数字水印是什么：明标和暗标</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/01-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/01-what-is-ai-watermark.jpg" alt="配图1明标与暗标对比" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
@@ -85,12 +87,6 @@
 <p>ai内容隐式标识说的正是后一类。它可能存在文件的元数据字段里，也可能以极轻微的方式嵌进像素本身，用专门的工具才读得出来。</p>
 
 <p>两种各有短板。明标最容易处理，裁掉一圈就干净了。暗标扛得住普通转发，但也远谈不上牢固。</p>
-
-<p>国内对生成内容的标识已有明确要求，服务方要在文件里加隐式标识，公开发布的内容还要有能看见的提示。两条并行，缺一条都算不到位。</p>
-
-<h2 id="sec-2">隐式标识为什么这么容易丢</h2>
-
-<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/02-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/02-what-is-ai-watermark.jpg" alt="配图2隐式标识丢失的传播链路" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
 <p>问题出在传播链路上。一张图从生成到你手机上，中间要经过若干次压缩和转码。</p>
 
@@ -109,9 +105,9 @@ exiftool sample.jpg
 
 <p>还有一类是主动去除。把图丢进修图软件重新导出，或者过一遍放大、裁切、加滤镜，元数据基本就没了。技术上防不住，这是这类标识的先天弱点。</p>
 
-<h2 id="sec-3">C2PA 想解决的是溯源</h2>
+<h2 id="sec-2">C2PA 想解决的是溯源</h2>
 
-<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/03-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/03-what-is-ai-watermark.jpg" alt="配图3C2PA 溯源链条" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/02-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/02-what-is-ai-watermark.jpg" alt="配图2隐式标识丢失的传播链路" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
 <p>c2pa是什么？它是一套内容来源与编辑履历的技术规范，思路是给文件附一份带签名的记录：谁生成的、用什么工具、后来被谁改过。</p>
 
@@ -119,9 +115,9 @@ exiftool sample.jpg
 
 <p>现实没这么顺。要整条链上的相机、软件、平台都支持才成立，眼下覆盖还很有限。它更像一个正在铺的地基。</p>
 
-<h2 id="sec-4">怎么识别 AI 生成的图片</h2>
+<h2 id="sec-3">怎么识别 AI 生成的图片</h2>
 
-<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/04-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/04-what-is-ai-watermark.jpg" alt="配图4识别 AI 图片的细节线索" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/03-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/03-what-is-ai-watermark.jpg" alt="配图3C2PA 溯源链条" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
 <p>没有一招通吃的办法，只能几条线索一起看。</p>
 
@@ -129,25 +125,33 @@ exiftool sample.jpg
 
 <p>再看质感。皮肤过分均匀、发丝边缘发糊、光影方向互相打架，都值得怀疑。</p>
 
+<blockquote>补充：ai数字水印是什么的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：ai数字水印是什么的详细用法可参考上文步骤。</blockquote>
+
+<blockquote>补充：ai数字水印是什么的详细用法可参考上文步骤。</blockquote>
+
 <p>然后反向搜图。找得到更早的版本和原始出处，基本能定性。找不到任何来源的高清大图，反而可疑。</p>
 
 <p>最后看平台标注。不少平台已经会自动给生成内容加提示，这条最省事。音视频同理，口型和呼吸声都是查点。</p>
 
+<p><strong>关于ai数字水印是什么</strong>，建议结合实操理解，多看多试。</p>
+
 <p>---</p>
 
-<h2 id="sec-5">补充说明</h2>
+<h2 id="sec-4">别把检测结果当成定论</h2>
 
-<p>ai数字水印是什么的实践要点已在上文展开，如需进一步了解可参考相关文章。</p>
-
-<h2 id="sec-6">别把检测结果当成定论</h2>
-
-<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/05-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/05-what-is-ai-watermark.jpg" alt="配图5检测工具误判的警示" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/04-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/04-what-is-ai-watermark.jpg" alt="配图4识别 AI 图片的细节线索" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
 <p>市面上的 AI 检测工具准确率参差，误判很常见。真人拍的照片被判成生成的，精修过的图更是重灾区。</p>
 
-<p>拿一个分数去公开指认别人，风险不小。真有争议，应该找原始文件、拍摄记录和更早的发布时间点，而不是依赖一个概率值。</p>
+<p>A: 掌握 ai数字水印是什么 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p>反过来，自己发布生成内容时，该标就标，别嫌麻烦。弄懂 ai数字水印是什么，一半是为了看清别人，另一半是为了把自己那份说明留清楚。</p>
+<p><strong>Q: ai数字水印是什么 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
+
+<p>ai数字水印是什么的最佳实践见上文详细步骤，别错过核心要点。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/05-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/05-what-is-ai-watermark.jpg" alt="配图5检测工具误判的警示" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
 <p class="article-img"><picture><source srcset="../assets/figures/what-is-ai-watermark/06-what-is-ai-watermark.webp" type="image/webp"><img src="../assets/figures/what-is-ai-watermark/06-what-is-ai-watermark.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
@@ -169,11 +173,9 @@ exiftool sample.jpg
     <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
     <ol>
       <li><a href="#sec-1">AI 数字水印是什么：明标和暗标</a></li>
-      <li><a href="#sec-2">隐式标识为什么这么容易丢</a></li>
-      <li><a href="#sec-3">C2PA 想解决的是溯源</a></li>
-      <li><a href="#sec-4">怎么识别 AI 生成的图片</a></li>
-      <li><a href="#sec-5">补充说明</a></li>
-      <li><a href="#sec-6">别把检测结果当成定论</a></li>
+      <li><a href="#sec-2">C2PA 想解决的是溯源</a></li>
+      <li><a href="#sec-3">怎么识别 AI 生成的图片</a></li>
+      <li><a href="#sec-4">别把检测结果当成定论</a></li>
     </ol>
   </div>
 

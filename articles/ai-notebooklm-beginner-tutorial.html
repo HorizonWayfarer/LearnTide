@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NotebookLM 新手教程：把文档变成可对话的知识库，Google 出品 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-notebooklm-beginner-tutorial">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="NotebookLM新手教程，Google 出品的文档对话工具。本文从零讲清上传文档、提问、生成摘要、音频摘要全套流程，新手一小时上手 AI 知识管理。">
+<meta property="og:title" content="NotebookLM 新手教程：把文档变成可对话的知识库，Google 出品">
+<meta property="og:description" content="NotebookLM新手教程，Google 出品的文档对话工具。本文从零讲清上传文档、提问、生成摘要、音频摘要全套流程，新手一小时上手 AI 知识管理。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-notebooklm-beginner-tutorial">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="NotebookLM 新手教程：把文档变成可对话的知识库，Google 出品">
+<meta name="twitter:description" content="NotebookLM新手教程，Google 出品的文档对话工具。本文从零讲清上传文档、提问、生成摘要、音频摘要全套流程，新手一小时上手 AI 知识管理。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"NotebookLM 新手教程：把文档变成可对话的知识库",
+  "description":"NotebookLM新手教程，Google 出品的文档对话工具。本文从零讲清上传文档、提问、生成摘要、音频摘要全套流程，新手一小时上手 AI 知识管理。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-09-07","dateModified":"2026-09-07",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-notebooklm-beginner-tutorial"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"NotebookLM 新手教程：把文档变成可对话的知识库"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>NotebookLM 新手教程：把文档变成可对话的知识库</h1>
+    <p class="lede">扔进 PDF、PPT、网页链接，Google 的 NotebookLM 能秒变知识库。本文从零讲清怎么用，新手一小时上手。</p>
+    <div class="article-meta">更新于 2026-09-07</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">NotebookLM 新手教程：把文档变成可对话的知识库</span>
+  </nav>
+
+<p>NotebookLM新手教程是本文的核心主题。 !<a href="../assets/figures/ai-notebooklm-beginner-tutorial/01-ai-notebooklm-beginner-tutorial.jpg">配图1NotebookLM界面概览</a></p>
+
+<h2 id="sec-1">NotebookLM新手入门：Google 的文档对话工具</h2>
+
+<p>NotebookLM 是 Google 出品的 AI 知识管理工具，核心功能是上传文档后变成可对话的知识库。上传 PDF、Word、PPT、网页链接后，它能逐字读取、精准定位、连贯回答。适合研究、学习、资料整理等场景。</p>
+
+<p>和<a href="notebooklm-review-guide.html">NotebookLM 评测</a>里讲的高级功能不同，本文专注新手入门，从上传文档到提问到生成摘要全套流程。NotebookLM 的优势是 Google 生态集成、来源可信、免费可用，但中文支持有待提升。</p>
+
+<h2 id="sec-2">NotebookLM新手入门：注册与界面熟悉</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-notebooklm-beginner-tutorial/02-ai-notebooklm-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-notebooklm-beginner-tutorial/02-ai-notebooklm-beginner-tutorial.jpg" alt="配图2注册与界面介绍" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>打开 notebooklm.google.com，用 Google 账号登录。界面分三块：左侧笔记本列表、中间文档区、右侧对话区。左侧可创建多个笔记本，每个笔记本对应一个研究主题。</p>
+
+<p>新手建议先创建一个测试笔记本，上传一份文档熟悉交互逻辑。NotebookLM 支持 Google Drive 直接导入，也支持本地文件上传，灵活度高。</p>
+
+<h2 id="sec-3">NotebookLM新手入门：上传文档与来源管理</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-notebooklm-beginner-tutorial/03-ai-notebooklm-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-notebooklm-beginner-tutorial/03-ai-notebooklm-beginner-tutorial.jpg" alt="配图3文档上传与来源设置" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>上传文档后，NotebookLM 会自动扫描全文，生成来源索引。每个回答都会标注引用来源，方便验证准确性。支持 PDF、Word、PPT、TXT、网页链接，单次最大 500 页。</p>
+
+<p>文档管理是 NotebookLM 的核心功能。你可以上传多份文档到一个笔记本，AI 会跨文档综合分析。比如上传三份行业报告，问「这三份报告对 AI 趋势的判断有何异同」，NotebookLM 能整合输出结构化对比。</p>
+
+<h2 id="sec-4">NotebookLM新手入门：提问与对话</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-notebooklm-beginner-tutorial/04-ai-notebooklm-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-notebooklm-beginner-tutorial/04-ai-notebooklm-beginner-tutorial.jpg" alt="配图4提问与对话流程" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>提问技巧参考<a href="how-to-write-ai-prompts.html">AI 提示词怎么写</a>里的 C.L.E.A.R. 框架。注意三点：问题要具体、来源要明确、追问要连贯。</p>
+
+<p><strong>具体提问</strong>：「第三章提到的技术方案有什么缺陷」比「这篇文章说了什么」更有效。</p>
+
+<p><strong>来源标注</strong>：每个回答都带引用，点击可跳转到原文位置，方便验证。</p>
+
+<p><strong>连贯追问</strong>：同一话题连续问多个问题，NotebookLM 能保持上下文连贯，效率远高于单轮提问。</p>
+
+<h2 id="sec-5">NotebookLM新手入门：生成摘要与音频摘要</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-notebooklm-beginner-tutorial/05-ai-notebooklm-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-notebooklm-beginner-tutorial/05-ai-notebooklm-beginner-tutorial.jpg" alt="配图5摘要与音频生成功能" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>NotebookLM 能自动生成文档摘要，也可生成音频摘要——AI 用两个虚拟主持人的对话形式总结文档内容，适合通勤、做家务时听。音频摘要生成需要几分钟，但体验新颖，适合碎片化学习。</p>
+
+<p>和<a href="ai-content-creation-guide.html">AI 内容创作指南</a>里讲的逻辑一致，摘要质量取决于文档质量和提问方式。文档结构清晰、内容完整，生成的摘要更准确。</p>
+
+<h2 id="sec-6">NotebookLM新手入门：常见误区与避坑</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-notebooklm-beginner-tutorial/06-ai-notebooklm-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-notebooklm-beginner-tutorial/06-ai-notebooklm-beginner-tutorial.jpg" alt="配图6常见误区与解决方案" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p><strong>误区一：把所有文档都丢进去不分类</strong>笔记本按主题分类，别把所有文档混在一个笔记本里，否则检索效率低。</p>
+
+<p><strong>误区二：不验证 AI 输出的准确性</strong> NotebookLM 会标注来源，但引用可能断章取义。重要信息要二次核实，别直接采信。</p>
+
+<p><strong>误区三：中文文档效果打折扣</strong> NotebookLM 中文支持弱于英文，中文文档建议先用<a href="ai-translate-guide.html">AI 翻译</a>工具转成英文再处理。</p>
+
+<p><strong>关于 NotebookLM 新手教程</strong>，核心逻辑是「文档是基础，提问是技巧，验证是关键」。别指望一键完美，但能快速出初稿，省掉最耗时的整理工作。</p>
+
+<p>NotebookLM 新手教程的关键是动手试。别看完就忘，当天就上传一份文档测试，让操作成为习惯。用多了自然熟练。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-notebooklm-beginner-tutorial/07-ai-notebooklm-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/ai-notebooklm-beginner-tutorial/07-ai-notebooklm-beginner-tutorial.jpg" alt="配图7进阶学习路径" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-09-07。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="notebooklm-review-guide.html">NotebookLM 评测</a></li>
+      <li><a href="ai-personal-knowledge-base.html">AI 个人知识库搭建</a></li>
+      <li><a href="how-to-write-ai-prompts.html">AI 提示词怎么写</a></li>
+      <li><a href="ai-content-creation-guide.html">AI 内容创作指南</a></li>
+      <li><a href="../tools.html">AI 工具导航</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">NotebookLM新手入门：Google 的文档对话工具</a></li>
+      <li><a href="#sec-2">NotebookLM新手入门：注册与界面熟悉</a></li>
+      <li><a href="#sec-3">NotebookLM新手入门：上传文档与来源管理</a></li>
+      <li><a href="#sec-4">NotebookLM新手入门：提问与对话</a></li>
+      <li><a href="#sec-5">NotebookLM新手入门：生成摘要与音频摘要</a></li>
+      <li><a href="#sec-6">NotebookLM新手入门：常见误区与避坑</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

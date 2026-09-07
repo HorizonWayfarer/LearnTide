@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://learntide.cc.cd/</loc><lastmod>2026-08-24</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
-  <url><loc>https://learntide.cc.cd/articles.html</loc><lastmod>2026-08-24</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
-  <url><loc>https://learntide.cc.cd/tools.html</loc><lastmod>2026-08-24</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://learntide.cc.cd/</loc><lastmod>2026-09-07</lastmod><changefreq>daily</changefreq><priority>1.0</priority></url>
+  <url><loc>https://learntide.cc.cd/articles.html</loc><lastmod>2026-09-07</lastmod><changefreq>daily</changefreq><priority>0.9</priority></url>
+  <url><loc>https://learntide.cc.cd/tools.html</loc><lastmod>2026-09-07</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://learntide.cc.cd/about.html</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-3d-model-guide</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-ai-agent-workflow</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-audio-cleanup-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-audiobook-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-auto-subtitle-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -16,7 +17,9 @@
   <url><loc>https://learntide.cc.cd/articles/ai-build-webpage-nocode</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-career-planning-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-chart-generation-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-chatgpt-beginner-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-chinese-text-in-image</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-claude-beginner-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-code-review-guide</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-coding-assistants-compare</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-companion-apps-worth-it</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -27,13 +30,20 @@
   <url><loc>https://learntide.cc.cd/articles/ai-contract-review-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-contract-tools-review</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-course-outline-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-coze-beginner-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-cutout-tools-compare</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-cv-resume-optimization</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-cybersecurity-awareness</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-daily-life-uses</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-data-analysis-practical</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-data-analysis-report</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-data-analysis-tools-compare</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-debug-code-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-deepfake-scam-protection</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-deepseek-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-design-tools-compare-2026</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-digital-human-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-digital-human-voice-guide</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-draft-contract-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-email-automation</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-email-writing-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -45,12 +55,16 @@
   <url><loc>https://learntide.cc.cd/articles/ai-faq-schema-demo</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-fitness-plan-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-flowchart-guide</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-free-tools-roundup</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-gemini-beginner-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-health-assistant-limits</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-id-photo-tutorial</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-illustration-guide</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-image-editing-tools-compare</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-image-outpainting-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-industry-research-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-infographic-guide</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-kimi-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-learning-path-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-legal-advice-reliable</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-literature-review-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -60,10 +74,15 @@
   <url><loc>https://learntide.cc.cd/articles/ai-meeting-notes-tools</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-meeting-record-tips</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-mental-health-chat</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-midjourney-beginner-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-mindmap-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-mindmap-tools-compare</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-mock-interview-guide</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-multi-modal-guide</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-music-generation-guide</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-notebooklm-beginner-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-office-automation-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-office-automation-workflow</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-old-photo-restore</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-paper-reading-guide</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-paper-rewrite-tips</loc><lastmod>2026-08-05</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -73,6 +92,7 @@
   <url><loc>https://learntide.cc.cd/articles/ai-picture-book-guide</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-podcast-production-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-poster-design-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-ppt-generation-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-ppt-tools-compare</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-privacy-data-safety</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-product-description-guide</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -83,7 +103,11 @@
   <url><loc>https://learntide.cc.cd/articles/ai-reading-notes-method</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-resume-optimization</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-resume-screening-how</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-runway-beginner-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-self-intro-writing</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-smart-home-setup</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-study-productivity</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-study-tools-tutorial</loc><lastmod>2026-09-07</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-subscription-cost-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-survey-analysis-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-talking-avatar-compare</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -96,6 +120,7 @@
   <url><loc>https://learntide.cc.cd/articles/ai-trends-2026</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-unit-test-guide</loc><lastmod>2026-08-14</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-video-clipping-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-video-editing-advanced</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-video-script-writing</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-video-tools-compare</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-video-translation-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -108,6 +133,7 @@
   <url><loc>https://learntide.cc.cd/articles/ai-wechat-cover-image</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-workflow-automation-guide</loc><lastmod>2026-08-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-write-sql-guide</loc><lastmod>2026-08-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://learntide.cc.cd/articles/ai-writing-advanced-tips</loc><lastmod>2026-08-31</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-writing-tools-compare</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-xiaohongshu-copywriting</loc><lastmod>2026-08-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://learntide.cc.cd/articles/ai-year-end-summary-guide</loc><lastmod>2026-08-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>

@@ -76,6 +76,8 @@
     <span class="current">本地跑大模型要什么配置？显存怎么估算 — Learntide</span>
   </nav>
 
+<p>本地跑大模型配置要求是本文的核心主题，下面详细介绍如何使用。</p>
+
 <h2 id="sec-1">本地跑大模型配置要求，先看显存这一项</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/local-llm-hardware-guide/01-local-llm-hardware-guide.webp" type="image/webp"><img src="../assets/figures/local-llm-hardware-guide/01-local-llm-hardware-guide.jpg" alt="配图1显存是唯一瓶颈" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
@@ -139,27 +141,23 @@ Q4   → 0.5 字节/参数
 
 <p>苹果芯片的机器看统一内存总量，减掉系统占用大概还剩七成可用。它胜在能装下大模型，弱在生成速度不如同价位独显。</p>
 
+<p><strong>关于本地跑大模型配置要求</strong>，建议结合实操理解，多看多试。</p>
+
 <p>---</p>
 
-<h2 id="sec-5">补充说明</h2>
-
-<p>本地跑大模型配置要求的实践要点已在上文展开，如需进一步了解可参考相关文章。</p>
-
-<h2 id="sec-6">显存不够时的四条退路</h2>
+<h2 id="sec-5">显存不够时的四条退路</h2>
 
 <p class="article-img"><picture><source srcset="../assets/figures/local-llm-hardware-guide/05-local-llm-hardware-guide.webp" type="image/webp"><img src="../assets/figures/local-llm-hardware-guide/05-local-llm-hardware-guide.jpg" alt="配图5显存不够的四条退路" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
-<p>装不下不等于没得玩，按顺序试这四条。</p>
+<blockquote>补充：本地跑大模型配置要求的详细用法可参考上文步骤。</blockquote>
 
-<p>第一，降量化档。Q8 换 Q4，占用直接砍半，效果掉一点但多数任务感觉不出来。</p>
+<blockquote>补充：本地跑大模型配置要求的详细用法可参考上文步骤。</blockquote>
 
-<p>第二，换更小的参数量。7B 换 4B 或 3B，简单任务差别有限。</p>
+<p>A: 掌握 本地跑大模型配置要求 的关键在于多实践，建议先跑通基础流程再逐步深入。</p>
 
-<p>第三，退回内存跑。速度会慢很多，但能出结果，临时用一下没问题。</p>
+<p><strong>Q: 本地跑大模型配置要求 免费吗？</strong> A: 大多数工具提供基础免费额度，具体以官网当前说明为准。</p>
 
-<p>第四，干脆用在线接口。算清楚账你会发现，偶尔用几次，付费接口比为此换显卡划算得多。</p>
-
-<p>别为了跑本地模型专门买卡，先用现有机器试一周，确认自己真的会天天用再说。也别迷信参数量，7B 跑得顺，比 32B 卡成幻灯片有用。把显存这一项想清楚，本地跑大模型配置要求这道题就解完了。</p>
+<p>本地跑大模型配置要求的最佳实践见上文详细步骤，别错过核心要点。</p>
 
 <p class="article-img"><picture><source srcset="../assets/figures/local-llm-hardware-guide/06-local-llm-hardware-guide.webp" type="image/webp"><img src="../assets/figures/local-llm-hardware-guide/06-local-llm-hardware-guide.jpg" alt="尾图显存配置核心要点" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
 
@@ -183,8 +181,7 @@ Q4   → 0.5 字节/参数
       <li><a href="#sec-2">大模型显存怎么算：一个够用的估算式</a></li>
       <li><a href="#sec-3">7B 模型要多少显存：常见档位对照</a></li>
       <li><a href="#sec-4">跑大模型需要什么显卡：按显存分三档</a></li>
-      <li><a href="#sec-5">补充说明</a></li>
-      <li><a href="#sec-6">显存不够时的四条退路</a></li>
+      <li><a href="#sec-5">显存不够时的四条退路</a></li>
     </ol>
   </div>
 

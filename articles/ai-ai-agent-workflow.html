@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 智能体工作流怎么做？从目标拆解到自动执行的入门 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-ai-agent-workflow">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 智能体工作流把一个模糊目标拆成可执行步骤，让模型自动调用工具、判断结果并决定下一步。本文讲清它的运作方式、一个订单示例，以及新手搭第一条工作流最容易踩的坑。">
+<meta property="og:title" content="AI 智能体工作流怎么做？从目标拆解到自动执行的入门">
+<meta property="og:description" content="AI 智能体工作流把一个模糊目标拆成可执行步骤，让模型自动调用工具、判断结果并决定下一步。本文讲清它的运作方式、一个订单示例，以及新手搭第一条工作流最容易踩的坑。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-ai-agent-workflow">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI 智能体工作流怎么做？从目标拆解到自动执行的入门">
+<meta name="twitter:description" content="AI 智能体工作流把一个模糊目标拆成可执行步骤，让模型自动调用工具、判断结果并决定下一步。本文讲清它的运作方式、一个订单示例，以及新手搭第一条工作流最容易踩的坑。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 智能体工作流：让 AI 替你跑完一整条流程",
+  "description":"AI 智能体工作流把一个模糊目标拆成可执行步骤，让模型自动调用工具、判断结果并决定下一步。本文讲清它的运作方式、一个订单示例，以及新手搭第一条工作流最容易踩的坑。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-08-31","dateModified":"2026-08-31",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-ai-agent-workflow"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 智能体工作流：让 AI 替你跑完一整条流程"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 智能体工作流：让 AI 替你跑完一整条流程</h1>
+    <p class="lede">想让 AI 不只会回答问题，而是自己把一整件事从头跑到尾？智能体工作流就是做这个的。</p>
+    <div class="article-meta">更新于 2026-08-31</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 智能体工作流：让 AI 替你跑完一整条流程</span>
+  </nav>
+
+<p>AI智能体工作流的本质，是把一个模糊目标拆成一串可执行的步骤，让模型按序调用工具、判断中间结果、再决定下一步动作。它比单次问答更接近&quot;助手&quot;：你给目标，它自己把流程跑完，中间还能根据返回调整路线。很多团队先用它处理售前答疑、工单分流这类重复活，效果立竿见影，因为步骤固定、又能接外部系统。</p>
+
+<h2 id="sec-1">什么是 AI智能体工作流</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-ai-agent-workflow/01-ai-ai-agent-workflow.webp" type="image/webp"><img src="../assets/figures/ai-ai-agent-workflow/01-ai-ai-agent-workflow.jpg" alt="配图1智能体三大组件" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>AI智能体工作流由三个部分拼起来：一个会推理的模型、一批可调用工具（查资料、发请求、算数）、以及一条控制逻辑。控制逻辑决定&quot;下一步做什么&quot;，可以是一条固定流程，也可以让模型自己判断。和写死脚本不同，智能体在面对意外结果时会重新规划，而不是卡死。它适合目标清楚、但中间步骤多、需要反复调用外部能力的任务，比如&quot;收集本周数据、比对异常、生成日报&quot;这种跨系统的活。</p>
+
+<h2 id="sec-2">一个能落地的订单处理例子</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-ai-agent-workflow/02-ai-ai-agent-workflow.webp" type="image/webp"><img src="../assets/figures/ai-ai-agent-workflow/02-ai-ai-agent-workflow.jpg" alt="配图2订单处理工作流示例" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>下面这段伪代码展示了一条最小工作流：收到订单后先判断是否高风险，再决定走人工还是自动。真实业务里，判断前还要拉用户历史、核对库存，把这些也包成工具即可。</p>
+
+<pre><code>def handle_order(order):
+    risk = model.judge(&quot;这笔订单是否高风险？&quot; + order.text)
+    if risk == &quot;高&quot;:
+        return &quot;转人工审核&quot;
+    else:
+        pay(order)
+        return &quot;已自动发货&quot;</code></pre>
+
+<p>把判断交给模型，流程本身保持简单，是新手最稳的起步方式。等跑顺了，再让模型决定调用哪些工具，而不是你写死顺序，灵活度会高很多。</p>
+
+<h2 id="sec-3">工作流和单次对话差在哪</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-ai-agent-workflow/03-ai-ai-agent-workflow.webp" type="image/webp"><img src="../assets/figures/ai-ai-agent-workflow/03-ai-ai-agent-workflow.jpg" alt="配图3工作流与单次对话对比" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>单次对话是&quot;你问一句我答一句&quot;，上下文随窗口走。AI智能体工作流多了&quot;状态&quot;和&quot;动作&quot;：它会记住上一步的结果，调用外部工具改变现实世界（发消息、写文件），并循环执行直到目标达成。这正是它能替你跑完整件事的原因。代价是调试更麻烦，因为每一步都可能调用真实接口，出错要能回滚，不能像聊天那样随手重说一句。</p>
+
+<h2 id="sec-4">新手常踩的三个坑</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-ai-agent-workflow/04-ai-ai-agent-workflow.webp" type="image/webp"><img src="../assets/figures/ai-ai-agent-workflow/04-ai-ai-agent-workflow.jpg" alt="配图4新手三大常见陷阱" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一，把关键判断全交给模型，出错难追溯。第二，工具权限开太大，模型可能误删数据。第三，没有兜底分支，遇到异常就无限循环。先把范围收紧，再慢慢放开，比一开始追求全自动更稳。建议给每条工作流加一个&quot;超时转人工&quot;的保险，避免半夜卡死没人管，小错酿成大事故。</p>
+
+<h2 id="sec-5">怎么开始搭第一条工作流</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-ai-agent-workflow/05-ai-ai-agent-workflow.webp" type="image/webp"><img src="../assets/figures/ai-ai-agent-workflow/05-ai-ai-agent-workflow.jpg" alt="配图5从两步流程起步" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>从一条两到三步的小流程入手，比如&quot;收到邮件、提取待办、写进清单&quot;。确认跑通后，再逐步加判断和工具。别一上来就把重要决定全交出去，AI智能体工作流只是帮你省掉重复劳动，关键节点仍要人来把关。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-ai-agent-workflow/06-ai-ai-agent-workflow.webp" type="image/webp"><img src="../assets/figures/ai-ai-agent-workflow/06-ai-ai-agent-workflow.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-08-31。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="what-is-ai-agent.html">什么是 AI 智能体</a></li>
+      <li><a href="what-is-ai-workflow.html">什么是 AI 工作流</a></li>
+      <li><a href="what-is-multi-agent.html">多智能体是什么</a></li>
+      <li><a href="coze-beginner-tutorial.html">Coze 新手教程</a></li>
+      <li><a href="ai-build-agent-guide.html">搭建 AI 智能体指南</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">什么是 AI智能体工作流</a></li>
+      <li><a href="#sec-2">一个能落地的订单处理例子</a></li>
+      <li><a href="#sec-3">工作流和单次对话差在哪</a></li>
+      <li><a href="#sec-4">新手常踩的三个坑</a></li>
+      <li><a href="#sec-5">怎么开始搭第一条工作流</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>
