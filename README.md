@@ -1,7 +1,7 @@
 # Learntide · 学习潮汐
 
 > AI 工具 / 教程 / 资讯内容站。靠 SEO 获取自然流量，后续接 Google AdSense 或联盟链接变现。
-> 主域名：`learntide.cc.cd`
+> 主域名：**[learntide.cc.cd](https://learntide.cc.cd)**
 
 ## 项目定位
 

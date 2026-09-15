@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI短剧制作全流程：剧本、分镜、配音、成片 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-short-drama-production">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 短剧制作不是把一句话丢给模型就出片。这篇拆开讲可落地的流程：定故事、拆分镜、锁角色、逐镜生成与验收，并说明每步最容易翻车的位置和判断标准，方便照着做。">
+<meta property="og:title" content="AI短剧制作全流程：剧本、分镜、配音、成片">
+<meta property="og:description" content="AI 短剧制作不是把一句话丢给模型就出片。这篇拆开讲可落地的流程：定故事、拆分镜、锁角色、逐镜生成与验收，并说明每步最容易翻车的位置和判断标准，方便照着做。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-short-drama-production">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI短剧制作全流程：剧本、分镜、配音、成片">
+<meta name="twitter:description" content="AI 短剧制作不是把一句话丢给模型就出片。这篇拆开讲可落地的流程：定故事、拆分镜、锁角色、逐镜生成与验收，并说明每步最容易翻车的位置和判断标准，方便照着做。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 短剧怎么做：从剧本到成片的完整流程",
+  "description":"AI 短剧制作不是把一句话丢给模型就出片。这篇拆开讲可落地的流程：定故事、拆分镜、锁角色、逐镜生成与验收，并说明每步最容易翻车的位置和判断标准，方便照着做。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-short-drama-production"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 短剧怎么做：从剧本到成片的完整流程"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 短剧怎么做：从剧本到成片的完整流程</h1>
+    <p class="lede">一条三分钟的短剧，真正费时间的不是生成，而是让十个镜头里的主角看起来像同一个人。</p>
+    <div class="article-meta">更新于 2026-09-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 短剧怎么做：从剧本到成片的完整流程</span>
+  </nav>
+
+<p>AI短剧制作最常见的翻车，是把它当成一次生成任务，输入一句话就等成品。能看的成片靠的是前面几张表和一张参考图，把流程拆开、每步单独验收，废片率会明显下降。定标准比挑工具重要得多。</p>
+
+<h2 id="sec-1">AI短剧制作第一步：把故事收成一句话</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-short-drama-production/01-ai-short-drama-production.webp" type="image/webp"><img src="../assets/figures/ai-short-drama-production/01-ai-short-drama-production.jpg" alt="配图1故事收成一句话" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>先别急着开软件。用一句话说清&quot;谁、在什么处境、想要什么、被什么挡住&quot;，这句立住了，后面每个镜头才有取舍依据。题材越具体越好，&quot;外卖员在暴雨夜送最后一单&quot;就比&quot;都市逆袭&quot;好用得多。一句话能站住，再扩成分集大纲，每集只解决一个小冲突，别一集塞三个转折。大纲里顺手写下每集的结尾钩子，真到剪辑时你会庆幸提前想过。</p>
+
+<h2 id="sec-2">二、分镜表：一个镜头只安排一件动作</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-short-drama-production/02-ai-short-drama-production.webp" type="image/webp"><img src="../assets/figures/ai-short-drama-production/02-ai-short-drama-production.jpg" alt="配图2分镜表骨架" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>分镜表是整条片子的骨架。每个镜头写四件事：画面内容、镜头运动、时长、台词或字幕。一个镜头只安排一个主要动作，二到五秒最稳。让模型同时表演走、转身、说话、拿东西，画面必然变形。分镜表用表格或纯文本都行，关键是每行都能独立交给一次生成任务，脱离上下文也能看懂：</p>
+
+<pre><code>shot: 03
+duration: 4s
+subject: 外卖员推门进入便利店
+camera: 缓慢前推
+dialogue: 还有热的吗</code></pre>
+
+<h2 id="sec-3">三、锁角色：让二十个镜头是同一个人</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-short-drama-production/03-ai-short-drama-production.webp" type="image/webp"><img src="../assets/figures/ai-short-drama-production/03-ai-short-drama-production.jpg" alt="配图3锁角色参考图" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>人物变形是短剧的头号问题。做法是先出一张角色设定图，正面半身、光线干净，再把这张图作为参考图喂给每个镜头。参考图比提示词管用，&quot;三十岁短发男性&quot;这样的文字描述会得到二十张不同的脸。角色图定稿后单独建档，之后每次生成都从这里取。服装、发型、配件也写进参考说明，换场不换装，观众才认得出。</p>
+
+<h2 id="sec-4">四、逐镜生成与验收标准</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-short-drama-production/04-ai-short-drama-production.webp" type="image/webp"><img src="../assets/figures/ai-short-drama-production/04-ai-short-drama-production.jpg" alt="配图4逐镜生成与验收" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>先低成本试构图，确认了再出高清版。每个镜头存三到四个版本，挑最好的一个用，别在一个镜头上反复加描述词硬磨。重生成时只改一个变量，别同时动描述词和参考图，否则你不知道是哪一步起了作用。验收要看三处：第一帧、中间帧、最后一帧。只看缩略图会漏掉中段变形。手部、文字、镜面反射最容易出错，出现明显错误直接重新生成，不要指望剪辑能盖住。</p>
+
+<h2 id="sec-5">五、配音、剪辑与交付</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-short-drama-production/05-ai-short-drama-production.webp" type="image/webp"><img src="../assets/figures/ai-short-drama-production/05-ai-short-drama-production.jpg" alt="配图5配音剪辑与交付" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>先把台词录好，再按语音长度反推镜头时长，别反过来做。字幕按目标平台重排，竖屏要留出安全边距，同时单独外挂一份字幕文件备用。转场别超过两种，短视频的节奏靠剪辑密度，不靠特效堆叠。交付前在手机上看一遍，电脑上清楚的字体到手机上经常糊成一片。</p>
+
+<p>AI短剧制作拼的不是模型强弱，是流程纪律。分镜表没写完就别开机，参考图没锁定就别生成，验收没过的镜头也别凑合用。每周只改一个环节，做完留一版归档，三个月后回头看，你会清楚自己到底卡在哪一步。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-short-drama-production/06-ai-short-drama-production.webp" type="image/webp"><img src="../assets/figures/ai-short-drama-production/06-ai-short-drama-production.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-09-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-video-script-writing.html">短视频脚本写法</a></li>
+      <li><a href="how-ai-video-generation-works.html">AI 视频生成的原理</a></li>
+      <li><a href="ai-digital-human-tutorial.html">数字人口播教程</a></li>
+      <li><a href="ai-video-tools-compare.html">视频工具横评</a></li>
+      <li><a href="ai-video-editing-advanced.html">视频剪辑进阶</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI短剧制作第一步：把故事收成一句话</a></li>
+      <li><a href="#sec-2">二、分镜表：一个镜头只安排一件动作</a></li>
+      <li><a href="#sec-3">三、锁角色：让二十个镜头是同一个人</a></li>
+      <li><a href="#sec-4">四、逐镜生成与验收标准</a></li>
+      <li><a href="#sec-5">五、配音、剪辑与交付</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

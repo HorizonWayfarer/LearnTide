@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI游戏素材怎么做：从立绘到切图的完整流程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-game-asset-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 游戏素材能顶掉一部分外包，但顶不掉风格统一这件事。这篇讲清参考图怎么定基调、图标立绘场景各自的做法、切图和格式的工程细节，以及商用前必须确认的边界。">
+<meta property="og:title" content="AI游戏素材怎么做：从立绘到切图的完整流程">
+<meta property="og:description" content="AI 游戏素材能顶掉一部分外包，但顶不掉风格统一这件事。这篇讲清参考图怎么定基调、图标立绘场景各自的做法、切图和格式的工程细节，以及商用前必须确认的边界。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-game-asset-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI游戏素材怎么做：从立绘到切图的完整流程">
+<meta name="twitter:description" content="AI 游戏素材能顶掉一部分外包，但顶不掉风格统一这件事。这篇讲清参考图怎么定基调、图标立绘场景各自的做法、切图和格式的工程细节，以及商用前必须确认的边界。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 游戏素材怎么做：从立绘到切图的完整流程",
+  "description":"AI 游戏素材能顶掉一部分外包，但顶不掉风格统一这件事。这篇讲清参考图怎么定基调、图标立绘场景各自的做法、切图和格式的工程细节，以及商用前必须确认的边界。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-game-asset-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 游戏素材怎么做：从立绘到切图的完整流程"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 游戏素材怎么做：从立绘到切图的完整流程</h1>
+    <p class="lede">独立开发者缺的往往不是一张好看的图，而是两百张看起来出自同一个画师的图。</p>
+    <div class="article-meta">更新于 2026-09-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 游戏素材怎么做：从立绘到切图的完整流程</span>
+  </nav>
+
+<p>AI游戏素材的难点从来不是生成，而是量产之后还能保持一致。一张好看的图十分钟能出，两百张能拼成一套的图，需要先定规则再开工。把风格、尺寸、命名三件事钉死，后面才不用返工。</p>
+
+<h2 id="sec-1">AI游戏素材能省掉哪部分外包</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-game-asset-guide/01-ai-game-asset-guide.webp" type="image/webp"><img src="../assets/figures/ai-game-asset-guide/01-ai-game-asset-guide.jpg" alt="配图1AI 能替代与不能替代的素材分工" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>道具图标、边框、背景板、状态特效这些重复度高的素材最值得交给模型，它们有明确的形态约束，也容易被描述清楚。主角立绘和关键场景不建议全交给模型，这两类东西需要稳定的叙事表达，通常要人工再过一遍。比较实际的组合是模型出草稿和变体，人工定稿关键张，其余的量产部分交给模型补齐。</p>
+
+<h2 id="sec-2">二、风格统一靠参考图不靠提示词</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-game-asset-guide/02-ai-game-asset-guide.webp" type="image/webp"><img src="../assets/figures/ai-game-asset-guide/02-ai-game-asset-guide.jpg" alt="配图2风格统一靠基准图而非提示词" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>风格漂移的根因是用文字描述风格。改成先用一张通过验收的成品当基准图，之后每次生成都带上它，并固定同一个模型和同一组参数。同时建立一个负面清单，写明不要出现的东西，比如厚涂笔触、写实光影、多余装饰。基准图加固定参数，比反复润色提示词有效得多。每次调整只动一个变量，这样出问题时你知道该回退到哪一步。</p>
+
+<h2 id="sec-3">三、图标、立绘、场景做法不同</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-game-asset-guide/03-ai-game-asset-guide.webp" type="image/webp"><img src="../assets/figures/ai-game-asset-guide/03-ai-game-asset-guide.jpg" alt="配图3图标、立绘、场景三类素材的不同做法" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>图标追求可辨识，要控制细节密度，缩到最小尺寸还能看出是什么。立绘追求特征稳定，重点是脸、发型、服装三层在多次生成里不变。场景追求可复用，生成时预留边缘区域，方便后期扩展和拼接。三类素材的收敛顺序是图标最先、场景最后，因为场景的容错度最高。先易后难。同一类素材攒够二十张再统一过一遍，比逐张检查效率高。</p>
+
+<pre><code>assets/
+  icons/      64x64    naming: icon_&lt;type&gt;_&lt;name&gt;@2x.png
+  portraits/  512x768  naming: chr_&lt;id&gt;_&lt;pose&gt;.png
+  scenes/     1920x1080 naming: bg_&lt;area&gt;_&lt;variant&gt;.jpg</code></pre>
+
+<h2 id="sec-4">四、切图与格式这些工程细节</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-game-asset-guide/04-ai-game-asset-guide.webp" type="image/webp"><img src="../assets/figures/ai-game-asset-guide/04-ai-game-asset-guide.jpg" alt="配图4切图与格式的工程细节" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>导出的透明边缘要留一到两像素的余量，避免缩放到小尺寸时出现黑边。图标统一输出两倍图，运行时再缩，比直接输出小图清晰。场景图用有损格式压到合理体积，立绘和图标用带透明通道的格式。命名规则早点定下来，后期批量替换靠脚本就能完成，不用手点。图集打包前先统计总体积，移动端往往卡在这一步。</p>
+
+<h2 id="sec-5">五、商用前要确认的边界</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-game-asset-guide/05-ai-game-asset-guide.webp" type="image/webp"><img src="../assets/figures/ai-game-asset-guide/05-ai-game-asset-guide.jpg" alt="配图5商用前必须确认的边界" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>先看生成平台的服务条款，确认生成内容的商用授权范围，以及是否允许用于游戏这类商业产品。再检查有没有出现受保护的品牌标识、真实人物面孔、他人作品特征。游戏上线后还要面对平台的素材审核，保留生成记录和提示词，遇到质疑时能说明来源。这一步花的半小时，可能决定项目能不能顺利上架。先问清楚，再上架。</p>
+
+<p>AI游戏素材的正确用法是先立规则再量产。别把验收放在最后做，每出十张就抽查一次风格一致性，发现偏移立刻回到基准图重来。也别一次性生成几百张再挑，那样挑图的成本比生成还高。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-game-asset-guide/06-ai-game-asset-guide.webp" type="image/webp"><img src="../assets/figures/ai-game-asset-guide/06-ai-game-asset-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-09-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-illustration-guide.html">AI 插画生成方法</a></li>
+      <li><a href="ai-image-outpainting-guide.html">图像扩图技巧</a></li>
+      <li><a href="ai-3d-model-guide.html">AI 生成 3D 模型</a></li>
+      <li><a href="ai-design-tools-compare-2026.html">设计工具横评</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI游戏素材能省掉哪部分外包</a></li>
+      <li><a href="#sec-2">二、风格统一靠参考图不靠提示词</a></li>
+      <li><a href="#sec-3">三、图标、立绘、场景做法不同</a></li>
+      <li><a href="#sec-4">四、切图与格式这些工程细节</a></li>
+      <li><a href="#sec-5">五、商用前要确认的边界</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

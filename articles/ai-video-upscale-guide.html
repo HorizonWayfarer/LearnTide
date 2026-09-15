@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI视频修复该怎么做：超分与插帧的先后顺序 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/ai-video-upscale-guide">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="AI 视频修复能救回模糊和抖动，救不回没拍到的细节。这篇先教你把损伤分成三类，再说明超分与插帧该谁先谁后、参数怎么设才不假，最后给出处理前后的验收方法。">
+<meta property="og:title" content="AI视频修复该怎么做：超分与插帧的先后顺序">
+<meta property="og:description" content="AI 视频修复能救回模糊和抖动，救不回没拍到的细节。这篇先教你把损伤分成三类，再说明超分与插帧该谁先谁后、参数怎么设才不假，最后给出处理前后的验收方法。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/ai-video-upscale-guide">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AI视频修复该怎么做：超分与插帧的先后顺序">
+<meta name="twitter:description" content="AI 视频修复能救回模糊和抖动，救不回没拍到的细节。这篇先教你把损伤分成三类，再说明超分与插帧该谁先谁后、参数怎么设才不假，最后给出处理前后的验收方法。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"AI 视频修复该怎么做：超分与插帧的先后顺序",
+  "description":"AI 视频修复能救回模糊和抖动，救不回没拍到的细节。这篇先教你把损伤分成三类，再说明超分与插帧该谁先谁后、参数怎么设才不假，最后给出处理前后的验收方法。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/ai-video-upscale-guide"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"AI 视频修复该怎么做：超分与插帧的先后顺序"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>AI 视频修复该怎么做：超分与插帧的先后顺序</h1>
+    <p class="lede">手机拍的老素材能不能变清晰，取决于原始画面里还留着多少信息，而不取决于模型有多新。</p>
+    <div class="article-meta">更新于 2026-09-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">AI 视频修复该怎么做：超分与插帧的先后顺序</span>
+  </nav>
+
+<p>AI视频修复最容易被误解的地方，是把它当成万能放大镜。它擅长把已有的信息整理得更清楚，但不会凭空补出没拍到的东西。先判断素材还剩下多少可用信息，再决定值不值得花时间处理。</p>
+
+<h2 id="sec-1">AI视频修复能救什么不能救什么</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-video-upscale-guide/01-ai-video-upscale-guide.webp" type="image/webp"><img src="../assets/figures/ai-video-upscale-guide/01-ai-video-upscale-guide.jpg" alt="配图1能救什么不能救什么" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>能救的是分辨率不足、压缩噪点、边缘发糊、轻微抖动这几类问题。救不回的是严重失焦、运动拖影、曝光过度到没有细节，以及本来就拍不到的部分。判断方法很简单：把一帧放大到百分之三百，如果还能看出物体轮廓，就有救；如果只剩一片色块，处理完也只是把色块磨得更平滑。花十分钟做这个判断，比处理两小时再发现白干划算。</p>
+
+<h2 id="sec-2">二、先把损伤分成三类</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-video-upscale-guide/02-ai-video-upscale-guide.webp" type="image/webp"><img src="../assets/figures/ai-video-upscale-guide/02-ai-video-upscale-guide.jpg" alt="配图2损伤分成三类" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一类是清晰度问题，靠超分解决。第二类是流畅度问题，画面顿、动作一跳一跳，靠插帧解决。第三类是稳定性问题，整幅画面在抖，靠防抖处理解决。三类混在一起时会互相干扰，比如先插帧再超分，插出来的中间帧会把噪点也放大一遍。分清楚再动手，成功率高一截。一次只处理一类问题，是基本的纪律。别混着来。</p>
+
+<h2 id="sec-3">三、超分与插帧的先后顺序</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-video-upscale-guide/03-ai-video-upscale-guide.webp" type="image/webp"><img src="../assets/figures/ai-video-upscale-guide/03-ai-video-upscale-guide.jpg" alt="配图3处理顺序与流程" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>常规顺序是先处理噪点，再做超分，最后插帧。原因是超分模型对干净画面的表现明显更好，而插帧最怕输入画面里全是噪点，它会把噪点当成细节去追踪。如果一定要插帧，先把帧率翻倍到两倍即可，不要一次冲到六十帧，中间帧生成得越多，伪影越明显。中间结果都单独留档，方便随时回退。</p>
+
+<pre><code>#三步分开跑，中间结果留档，出问题只重跑一步
+ffmpeg -i in.mp4 -vf &quot;hqdn3d=4:3:6:4.5&quot; -c:a copy step1.mp4
+ffmpeg -i step1.mp4 -vf &quot;scale=iw*2:ih*2:flags=lanczos&quot; -c:a copy step2.mp4</code></pre>
+
+<h2 id="sec-4">四、参数怎么设才不假</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-video-upscale-guide/04-ai-video-upscale-guide.webp" type="image/webp"><img src="../assets/figures/ai-video-upscale-guide/04-ai-video-upscale-guide.jpg" alt="配图4参数设对不假" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>超分强度拉满会让画面变成塑料质感，皮肤失去纹理，布料变得像涂抹过。多数素材的合适区间在中等强度，处理完放大看能不能看到毛孔或织纹，看不到就是过了。插帧同理，强度高会把快速动作糊成一团，运动场景宁可保守一点。参数没有通用最优值，只有针对这批素材的合适值。找到一组满意的参数就存成预设，下次直接复用。</p>
+
+<h2 id="sec-5">五、处理前后的验收</h2>
+
+<p>抽三个时间点：开头、中间、结尾，各截一帧同位置放大对比。要看的是结构有没有变、人脸有没有换人、文字有没有糊。再完整看一遍动态效果，重点盯快速平移和人物转身的片段。有条件的话导出后在同一台设备上播一次，避免只在预览窗口里看。字幕和片头这类带文字的素材，处理完要逐字核对一遍。</p>
+
+<p>AI视频修复说到底是个判断题，不是技术题。别拿修复当补拍，拍的时候把参数设对，比事后修十遍都值。也别在一条素材上反复叠加处理，每多过一遍模型，画面就多损一分。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/ai-video-upscale-guide/05-ai-video-upscale-guide.webp" type="image/webp"><img src="../assets/figures/ai-video-upscale-guide/05-ai-video-upscale-guide.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-09-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="ai-old-photo-restore.html">老照片修复教程</a></li>
+      <li><a href="ai-photo-retouch-guide.html">照片精修方法</a></li>
+      <li><a href="ai-video-editing-advanced.html">视频剪辑进阶</a></li>
+      <li><a href="ai-video-clipping-guide.html">视频切片教程</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">AI视频修复能救什么不能救什么</a></li>
+      <li><a href="#sec-2">二、先把损伤分成三类</a></li>
+      <li><a href="#sec-3">三、超分与插帧的先后顺序</a></li>
+      <li><a href="#sec-4">四、参数怎么设才不假</a></li>
+      <li><a href="#sec-5">五、处理前后的验收</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>

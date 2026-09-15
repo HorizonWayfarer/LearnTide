@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>n8n教程：零代码把重复的工作交给自动化流程 — Learntide</title>
+<link rel="canonical" href="https://learntide.cc.cd/articles/n8n-beginner-tutorial">
+<link rel="stylesheet" href="../assets/style.css">
+<link rel="icon" type="image/svg+xml" href="../assets/learntide-logo.svg">
+<meta name="description" content="n8n 教程的第一课不是背节点，而是学会把一件事拆成触发、处理、输出三段。这篇从一次手动触发讲起，带你把定时抓取、AI 分类和消息推送串成一条能跑的工作流。">
+<meta property="og:title" content="n8n教程：零代码把重复的工作交给自动化流程">
+<meta property="og:description" content="n8n 教程的第一课不是背节点，而是学会把一件事拆成触发、处理、输出三段。这篇从一次手动触发讲起，带你把定时抓取、AI 分类和消息推送串成一条能跑的工作流。">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://learntide.cc.cd/articles/n8n-beginner-tutorial">
+<meta property="og:site_name" content="Learntide 学习潮汐">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="n8n教程：零代码把重复的工作交给自动化流程">
+<meta name="twitter:description" content="n8n 教程的第一课不是背节点，而是学会把一件事拆成触发、处理、输出三段。这篇从一次手动触发讲起，带你把定时抓取、AI 分类和消息推送串成一条能跑的工作流。">
+<meta name="twitter:image" content="https://learntide.cc.cd/assets/og-default.png">
+<meta name="robots" content="index,follow">
+<script src="../assets/js/img-cache.js"></script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"Article",
+  "headline":"n8n 教程：把重复工作交给自动化流程",
+  "description":"n8n 教程的第一课不是背节点，而是学会把一件事拆成触发、处理、输出三段。这篇从一次手动触发讲起，带你把定时抓取、AI 分类和消息推送串成一条能跑的工作流。",
+  "image":"https://learntide.cc.cd/assets/og-default.png",
+  "datePublished":"2026-09-14","dateModified":"2026-09-14",
+  "inLanguage":"zh-CN",
+  "articleSection":"使用教程",
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://learntide.cc.cd/articles/n8n-beginner-tutorial"},
+  "author":{"@type":"Organization","name":"Learntide 学习潮汐"},
+  "publisher":{"@type":"Organization","name":"Learntide 学习潮汐"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org","@type":"BreadcrumbList",
+  "itemListElement":[
+    {"@type":"ListItem","position":1,"name":"首页","item":"https://learntide.cc.cd/"},
+    {"@type":"ListItem","position":2,"name":"使用教程","item":"https://learntide.cc.cd/articles.html"},
+    {"@type":"ListItem","position":3,"name":"n8n 教程：把重复工作交给自动化流程"}
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <span class="brand"><img class="brand-logo" src="../assets/learntide-logo.svg" alt="Learntide 学习潮汐" width="30" height="30"><span class="brand-name">Learn<b>Tide</b></span><small>学习潮汐</small></span>
+    <nav class="nav">
+      <a href="../index.html">首页 <small>Home</small></a>
+      <a href="../tools.html">AI 工具 <small>Tools</small></a>
+      <a href="../articles.html" class="active" aria-current="page">全部文章 <small>Articles</small></a>
+      <a href="../about.html">关于 <small>About</small></a>
+    </nav>
+  </div>
+</header>
+
+<article class="article-shell">
+  <header class="article-hero">
+    <span class="cat-pill">使用教程</span>
+    <h1>n8n 教程：把重复工作交给自动化流程</h1>
+    <p class="lede">自动化真正的门槛不在工具，而在于你能否把手里那件重复事，拆成机器看得懂的几段。</p>
+    <div class="article-meta">更新于 2026-09-14</div>
+  </header>
+  <div class="article-layout">
+    <div class="article-main article">
+  <nav class="breadcrumb" aria-label="面包屑">
+    <a href="../index.html">首页</a>
+    <span aria-hidden="true">›</span>
+    <a href="../articles.html">使用教程</a>
+    <span aria-hidden="true">›</span>
+    <span class="current">n8n 教程：把重复工作交给自动化流程</span>
+  </nav>
+
+<p>n8n教程里最容易被跳过的一步，是把需求说清楚。多数人上手就跑去看节点列表，结果连了半天也对不上自己那件重复事。换个顺序：先写清触发条件、处理逻辑、输出目标，再进软件找对应的节点。</p>
+
+<h2 id="sec-1">n8n教程第一课：先把重复的事说清楚</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/n8n-beginner-tutorial/01-n8n-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/n8n-beginner-tutorial/01-n8n-beginner-tutorial.jpg" alt="配图1先把重复的事说清楚" loading="lazy" fetchpriority="high" decoding="async"></picture></p>
+
+<p>拿一张纸写三行：什么时候开始、中间要做什么判断、结果送到哪里去。比如&quot;每天早上八点抓取行业资讯，按主题分类，把重要的发到工作群&quot;。这三行写完，工作流的骨架就定了。凡是写不出这三行的任务，多半还不适合交给自动化，先手工做几遍再说。手工做过的事，才知道哪一步会出意外。所以先做几遍。</p>
+
+<h2 id="sec-2">二、节点、连线与数据流</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/n8n-beginner-tutorial/02-n8n-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/n8n-beginner-tutorial/02-n8n-beginner-tutorial.jpg" alt="配图2节点、连线与数据流" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>节点是动作，连线是数据流的方向。上游节点输出一段数据，下游节点把它当成输入。初学者最容易忽略的是数据结构：上一个节点吐出的可能是一整个列表，下一个节点却期待单条记录，于是循环或拆分节点就派上用场。抓取类任务的骨架大致是这样：</p>
+
+<pre><code>trigger: 定时任务 08:00
+step_1: 抓取 RSS 列表
+step_2: 逐条送入 AI 分类
+step_3: 过滤出高优先级
+step_4: 推送到工作群</code></pre>
+
+<h2 id="sec-3">三、搭第一条能跑的工作流</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/n8n-beginner-tutorial/03-n8n-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/n8n-beginner-tutorial/03-n8n-beginner-tutorial.jpg" alt="配图3先跑通最短路径" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>别一上来就搭复杂流程。先用最长的那一段做验证：只做&quot;抓取&quot;加&quot;推送&quot;，跑通一次，确认数据能到手上。然后再插入分类和过滤。每加一个节点就跑一次，出问题容易定位。相反，一口气连十个节点再调试，报错时你根本不知道是哪一段把数据弄丢了。调试时把每一步的中间结果都打印出来，别只看最后一步。</p>
+
+<h2 id="sec-4">四、把 AI 节点接进流程</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/n8n-beginner-tutorial/04-n8n-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/n8n-beginner-tutorial/04-n8n-beginner-tutorial.jpg" alt="配图4把 AI 节点接进流程" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>分类、摘要、改写成固定格式，这三件事交给模型最划算。接的时候把输出格式写死，比如只允许返回几个固定标签之一，并给出兜底值。模型偶尔不守格式是常态，流程里要留一个判断分支接住它，而不是指望每次都对。涉及金额、日期这类字段，保持由代码节点计算，不要交给模型口算。</p>
+
+<h2 id="sec-5">五、上线前要做的三件事</h2>
+
+<p class="article-img"><picture><source srcset="../assets/figures/n8n-beginner-tutorial/05-n8n-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/n8n-beginner-tutorial/05-n8n-beginner-tutorial.jpg" alt="配图5上线前的三件事" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+<p>第一，加上失败重试和告警，任务挂掉时你要能第一时间知道。第二，把接口密钥放进凭据管理，不要写在节点配置里。第三，先让流程只做记录空跑几天，确认触发时间和数据量都符合预期，再打开真正的写操作。批量写入前先拿十条数据试跑一遍，比事后回滚省事。空跑这几天，别嫌慢。</p>
+
+<p>n8n教程看到这里，最有价值的一步其实是挑任务：别拿涉及资金和客户隐私的流程做第一个实验，从资讯整理、文件归档这类低风险的事开始，跑顺了再往上加。工具本身不难，难的是每天真的愿意花十分钟维护它。</p>
+
+<p class="article-img"><picture><source srcset="../assets/figures/n8n-beginner-tutorial/06-n8n-beginner-tutorial.webp" type="image/webp"><img src="../assets/figures/n8n-beginner-tutorial/06-n8n-beginner-tutorial.jpg" alt="尾图核心要点回顾" loading="lazy" fetchpriority="low" decoding="async"></picture></p>
+
+  <p class="verify-note">本文信息核对于 2026-09-14。AI 产品的价格、免费额度与功能变动频繁，实际以各工具官网当前说明为准。</p>
+
+  <aside class="related">
+    <h4>相关阅读</h4>
+    <ul>
+      <li><a href="dify-beginner-tutorial.html">Dify 入门教程</a></li>
+      <li><a href="coze-vs-dify-compare.html">Coze 与 Dify 对比</a></li>
+      <li><a href="ai-workflow-automation-guide.html">工作流自动化指南</a></li>
+      <li><a href="ai-ai-agent-workflow.html">AI 智能体工作流</a></li>
+    </ul>
+  </aside>
+    </div>
+    <aside class="article-aside">
+  <div class="toc">
+    <h4><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 4h8M6 8h8M6 12h8"/><path d="M3 4h.01M3 8h.01M3 12h.01"/></svg>本文目录</h4>
+    <ol>
+      <li><a href="#sec-1">n8n教程第一课：先把重复的事说清楚</a></li>
+      <li><a href="#sec-2">二、节点、连线与数据流</a></li>
+      <li><a href="#sec-3">三、搭第一条能跑的工作流</a></li>
+      <li><a href="#sec-4">四、把 AI 节点接进流程</a></li>
+      <li><a href="#sec-5">五、上线前要做的三件事</a></li>
+    </ol>
+  </div>
+
+    </aside>
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="container">
+    <span>Learntide · 学习潮汐 — 内容站（信息流动）<small>AI tools, tutorials &amp; news in Chinese</small></span>
+    <a href="../about.html">关于本站 <small>About</small></a>
+  </div>
+</footer>
+</body>
+</html>
